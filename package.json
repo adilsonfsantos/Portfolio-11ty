@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-11ty",
+  "version": "1.0.0",
+  "description": "Portfolio of Adilson Santos using 11ty and Gulp",
+  "main": "gulpfile.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adilsonfsantos/Portfolio-11ty.git"
+  },
+  "author": "Adilson Santos",
+  "keywords": [
+    "11ty",
+    "Eleventy",
+    "Gulp"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adilsonfsantos/Portfolio-11ty/issues"
+  },
+  "homepage": "https://github.com/adilsonfsantos/Portfolio-11ty#readme",
+  "Dependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "gulp": "^4.0.2"
+  }
+}
