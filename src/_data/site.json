@@ -1,0 +1,18 @@
+{
+  "name": "Adilson Santos",
+  "title": "Adilson Santos",
+  "url": "https://adilsonsantos.netlify.com",
+  "lang": "pt-BR",
+  "description": "Meu nome é Adilson Santos e eu sou um designer focado em identidades visuais, UI e UX.",
+  "image": "https://adilsonsantos.netlify.com/assets/images/thumbnail.jpg",
+  "feed": {
+    "subtitle": "Meu nome é Adilson Santos e eu sou um designer focado em identidades visuais, UI e UX.",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://adilsonsantos.netlify.com"
+  },
+  "author": {
+    "name": "Adilson Santos",
+    "email": "adilson.santos97@live.com"
+  }
+}

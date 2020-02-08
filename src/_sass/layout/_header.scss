@@ -1,0 +1,77 @@
+.header {
+  @include grid();
+  @include grid--base();
+  @include elevation(header, $black, false, $overlay: none);
+  @include color('border-bottom', $white, $black, divider-white);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  position: fixed;
+  width: 100%;
+  z-index: 4;
+
+  &__content {
+    @include flex;
+    align-items: center;
+    grid-column: span 4;
+
+
+    @include viewport(sm-small) {
+      grid-column: span 8;
+    }
+
+    @include viewport(sm-medium) {
+      grid-column: span 12;
+    }
+
+    &--logo {
+      @include color('color', $white, $white, body);
+    }
+
+    &--logo>svg {
+      display: inherit;
+      fill: currentcolor;
+      height: $base-size * 1.5;
+      margin: $base-size 0;
+      width: auto;
+
+      @include viewport(xs-medium) {
+        height: $base-size * 1.5;
+      }
+
+    }
+
+    &--spacer {
+      flex-grow: 1;
+    }
+
+    &__nav {
+      @include flex();
+      align-self: center;
+    }
+  }
+}
+
+.nav {
+  &__link {
+    @include font--body();
+    @include font--color($white, secondary);
+    @include transition(all, .15s, $animation-standard);
+    line-height: 1.2;
+    padding: 1rem 0;
+    text-decoration: underline;
+
+
+    &:hover,
+    &:focus {
+      @include font--color ($white, primary);
+    }
+
+    &:not(:last-child) {
+      margin-right: $base-size;
+    }
+
+    &--active {
+      @include font--color ($white, primary);
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.postnav {
+  @include grid();
+  @include grid--base();
+  background: $gray;
+  // max-width: 100vw;
+  padding: $base-size * 2.25 0;
+
+  @include viewport(xs-large) {
+    padding: $base-size * 3 0;
+  }
+
+  @include viewport(md-medium) {
+    padding: $base-size * 4.5 0;
+  }
+
+  &--container {
+    @include grid();
+    grid-column: 2;
+  }
+
+  &__link {
+    @include flex();
+    align-items: center;
+    margin-left: auto;
+
+    &--caption {
+      @include font--color($white, primary);
+      @include font--overline--small();
+      @include font--position(right);
+      margin-right: $base-size;
+
+      @include viewport(sm-small) {
+        @include font--overline();
+      }
+    }
+
+    &--content {
+      @include font--color($white, primary);
+    }
+
+    &--title {
+      @include font--body--l();
+      @include font--color($white, primary);
+      @include font--position(right);
+      @include font--weight(regular);
+      margin-right: $base-size;
+    }
+    &--icon {
+      @include elevation(fab, $secondary);
+      @include transition(
+        all,
+        $elevation-transition-duration,
+        $animation-standard
+      );
+      border-radius: 50%;
+      padding: 0.625rem;
+      position: relative;
+    }
+    &--forward {
+      display: block;
+      fill: rgba($black, 0.87);
+      width: $base-size * 1.5;
+      height: $base-size * 1.5;
+    }
+  }
+}

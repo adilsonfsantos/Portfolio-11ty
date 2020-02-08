@@ -1,0 +1,6 @@
+{
+  "nav": [
+    { "name": "Projetos", "url": "/" },
+    { "name": "Sobre", "url": "/sobre/" }
+  ]
+}

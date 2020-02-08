@@ -1,0 +1,88 @@
+.btn {
+  @include font--button();
+  @include font--position(center);
+  @include radius(0.25);
+  @include transition(background, 0.3s, $animation-standard);
+  background-position: center;
+  min-width: 120px;
+  padding: ($base-size * 0.25) ($base-size * 0.5);
+  position: relative;
+
+  @include viewport(xs-small) {
+    padding: ($base-size * 0.25) $base-size;
+  }
+
+  &::after {
+    @include absolute();
+    @include radius(0.25);
+    @include transition(
+      all,
+      $elevation-transition-duration,
+      $animation-standard
+    );
+    opacity: 0;
+  }
+
+  &__primary {
+    @include font--color($secondary, primary);
+    border: solid 1px $secondary;
+
+    &:hover,
+    &:focus {
+      @include font--color($black, primary);
+      background: $secondary
+        radial-gradient(circle, transparent 1%, $secondary 1%) center / 150000%;
+    }
+
+    &:active {
+      background-color: $white;
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  &__secondary {
+    // @include elevation(button, $black, false);
+    @include font--color($black, primary);
+    border: solid 2px rgba($black, .87);
+
+    &:hover,
+    &:focus {
+      @include font--color($white, primary);
+      background: $black radial-gradient(circle, transparent 1%, $black 1%)
+        center / 150000%;
+    }
+
+    &:active {
+      background-color: $white;
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  &__terciary {
+    @include font--color($white, primary);
+    border: solid 1px $white;
+
+    &:hover,
+    &:focus {
+      @include font--color($black, primary);
+      background: $white radial-gradient(circle, transparent 1%, $white 1%)
+        center / 150000%;
+    }
+
+    &:active {
+      background-color: $black;
+      background-size: 100%;
+      opacity: 0.2;
+      transition: background 0s;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      opacity: 1;
+    }
+  }
+}

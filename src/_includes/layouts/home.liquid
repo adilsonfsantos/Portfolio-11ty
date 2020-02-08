@@ -1,0 +1,29 @@
+---
+layout: default
+---
+{% include hero %}
+<section class="projetos" id="projetos">
+  <div class="grid--module">
+    <div class="projetos__header">
+      <h2 class="projetos__header--title">Principais projetos</h2>
+      <span class="projetos__header--subtitle"
+        >Ou algumas coisas legais que eu fiz.</span
+      >
+    </div>
+    <div class="projetos__principais">
+      {%- for post in collections.posts -%}
+      <a href="{{ post.url | url }}" class="card" title="{{ post.data.title }}">
+        {% picture-card post.data.image, post.data.description, "card__picture", "card__picture--image" %}
+        <div class="card__description">
+          <h3 class="card__description--title">{{ post.data.title }}</h3>
+          <span
+            class="card__description--tag"
+            >{{ post.data.categories | join: " • ") }}</span
+          >
+        </div>
+      </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{% include contact %}

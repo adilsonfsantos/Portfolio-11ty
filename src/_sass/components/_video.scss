@@ -1,0 +1,19 @@
+.video-responsive {
+  grid-column: 1/-1;
+  height: 0;
+  margin-bottom: $base-size * 2;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  z-index: 2;
+
+  iframe,
+  object,
+  embed {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}

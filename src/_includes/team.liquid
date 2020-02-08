@@ -1,0 +1,13 @@
+<div class="team">
+  <h3 class="post__info--title">Equipe</h3>
+  {% for person in team %}
+  <p class="post__info--text">
+    {%- assign portfolio = person.portfolio -%} {%- if portfolio ==
+    false -%}
+    <span>{{ person.name }}</span>
+    {%- else -%}
+    <a href="{{ portfolio }}" target="_blank" rel="noopener">{{ person.name }}</a>
+    {%- endif -%}, {{ person.role }}
+  </p>
+  {% endfor %}
+</div>

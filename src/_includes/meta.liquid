@@ -1,0 +1,104 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>{% if title %} {{ title }} | {{ site.title }} {% else %} {{ site.title }} {% endif %}</title>
+<meta
+  name="description"
+  content="{% if description %}{{ description }}{% else %}{{
+    site.description
+  }}{% endif %}"
+/>
+<meta itemprop="keywords" content="Adilson, Santos, Adilson Santos, Design, Designer, UI, UX, branding, ilustrações, visuais, Portfólio, Portfolio{% if
+page.keywords == blank %} {% else %} ,{{ page.keywords | join: ", " }}
+{% endif %}"/>
+
+{%- comment -%}Twitter{%- endcomment -%}
+<meta name="twitter:card" content="summary_large_image" />
+
+<meta name="twitter:title"
+  content="{% if page.title %}{{ page.title }}{% else %}{{
+    site.title }}{% endif %}"
+/>
+<meta name="twitter:description" content="
+  {% if page.description %}{{ page.description }}{% else %}{{
+    site.description }}{% endif %}"/>
+<meta name="twitter:site" content="{{ site.url }}" />
+<meta name="twitter:creator" content="{{ site.author.name }}" />
+<meta name="twitter:image:src" content="{{ site.url }}{{ image }}"
+/>
+
+{%- comment -%}Open Graph{%- endcomment -%}
+<meta
+  name="og:title"
+  content="{% if page.title %}{{ page.title }}{% else %}{{
+    site.title
+  }}{% endif %}"
+/>
+<meta
+  name="og:description"
+  content="{% if page.description %}{{ page.description }}{% else %}{{
+    site.description
+  }}{% endif %}"
+/>
+<meta name="og:image" content="{{ site.url }}{{ image }}" />
+<meta name="og:url" content="{{ site.url }}{{ page.url }}" />
+<meta name="og:site_name" content="{{ site.name }}" />
+<meta name="og:locale" content="{{ site.lang }}"/>
+<meta name="og:type" content="website"/>
+
+{%- comment -%}JSOn-LD Structured data{%- endcomment -%}
+<script type="application/ld+json">
+  {"description": "{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}",
+  "@type": "WebSite",
+  "url": "{{ site.url }}",
+  "headline": "{{ site.title }}",
+  "name": "{{ site.name }}",
+  {% assign sameLinks = social.links | map: 'url' %}
+  "sameAs": {{ sameLinks | array_to_sentence_string: '' }},
+  "image": "{{ site.url }}{{ image | url }}",
+  "author": { "@type": "Person", "name": "{{site.author.name}}" },
+  "@context": "https://schema.org"}
+</script>
+{%- comment -%}Icons{%- endcomment -%}
+<link
+  href="/apple-touch-icon.png?v=qAJrmaOJA9"
+  rel="apple-touch-icon"
+  sizes="180x180"
+/>
+<link
+  href="/favicon-32x32.png?v=qAJrmaOJA9"
+  rel="icon"
+  sizes="32x32"
+  type="image/png"
+/>
+<link
+  href="/favicon-16x16.png?v=qAJrmaOJA9"
+  rel="icon"
+  sizes="16x16"
+  type="image/png"
+/>
+<link href="/site.webmanifest?v=qAJrmaOJA9" rel="manifest" />
+<link
+  color="#212121"
+  href="/safari-pinned-tab.svg?v=qAJrmaOJA9"
+  rel="mask-icon"
+/>
+<link href="/favicon.ico?v=qAJrmaOJA9" rel="shortcut icon" />
+<meta content="#1d1d1d" name="msapplication-TileColor" />
+<meta
+  content="/mstile-144x144.png?v=qAJrmaOJA9"
+  name="msapplication-TileImage"
+/>
+<meta content="#121212" name="theme-color" />
+<meta content="/browserconfig.xml" name="msapplication-config" />
+<meta content="nopin" name="pinterest" />
+
+{% if layout == 'home' %}
+<style>
+  {% include critical-home.css %}
+</style>
+{% elsif layout == 'post' or layout == 'page' %}
+<style>
+  {% include critical-post.css %}
+</style>
+{% endif %}

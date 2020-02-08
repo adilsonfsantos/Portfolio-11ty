@@ -1,0 +1,92 @@
+.projetos {
+  @include grid();
+  @include grid--base();
+
+  &__header {
+    grid-column: span 4;
+    margin-bottom: $base-size * 1.5;
+    margin-top: $base-size * 4.5;
+
+    @include viewport(xs-small) {
+      grid-column: span 4;
+      margin-bottom: $base-size * 2;
+    }
+
+    @include viewport(xs-medium) {
+      margin-bottom: $base-size * 1.2;
+        }
+
+    @include viewport(sm-small) {
+      grid-column: span 8;
+      margin-bottom: $base-size * 1.8;
+    }
+
+    @include viewport(md-small) {
+      grid-column: span 12;
+    }
+
+    &--title {
+      @include font--color ($white, primary);
+      @include font--headline5();
+      @include font--weight(bold);
+      @include viewport(xs-small) {
+        @include font--headline4;
+      }
+      @include viewport(xs-medium) {
+        @include font--headline3;
+      }
+    }
+
+    &--subtitle {
+      @include font--color ($white, secondary);
+      @include font--body();
+      @include font--weight(regular);
+
+      @include viewport(sm-medium) {
+        @include font--body--l;
+      }
+    }
+  }
+
+  &__principais {
+    @include grid();
+    gap: ($base-size * 2);
+    grid-auto-rows: auto;
+    grid-column: span 4;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-bottom: ($base-size * 5);
+
+    @include viewport(xs-small) {
+      grid-column: span 4;
+      grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+    }
+
+    @include viewport(xs-medium) {
+      grid-column: span 4;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    @include viewport(xs-large) {
+      gap: $base-size;
+    }
+
+    @include viewport(sm-small) {
+      gap: $base-size * 1.5;
+      grid-column: span 8;
+    }
+
+    @include viewport(sm-medium) {
+      grid-column: span 12;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    @include viewport(md-small) {
+      grid-column: span 12;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+
+    @include viewport(md-medium) {
+      grid-column: span 12;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    }
+  }
+}

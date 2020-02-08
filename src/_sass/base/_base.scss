@@ -1,0 +1,58 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  @include font--primary();
+  background-color: $black;
+  font-feature-settings: "calt" 1, "liga" 1, "case" 1;
+  font-size: $font--size;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  hyphens: auto;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+}
+
+article,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+::selection {
+  background: $accent;
+  color: $white;
+}
+
+a,
+a:visited {
+  list-style: none;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}

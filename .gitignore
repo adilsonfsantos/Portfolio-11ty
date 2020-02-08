@@ -2,6 +2,7 @@
 *.sublime-workspace
 .DS_Store
 .asset-cache
+.directory
 .jekyll-cache
 .jekyll-metadata
 .sass-cache

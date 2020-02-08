@@ -22,5 +22,22 @@
   "Dependencies": {
     "@11ty/eleventy": "^0.10.0",
     "gulp": "^4.0.2"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "devDependencies": {
+    "gulp-load-plugins": "^2.0.2"
+  },
+  "dependencies": {
+    "eleventy-xml-plugin": "^0.1.0",
+    "markdown-it": "^10.0.0",
+    "markdown-it-anchor": "^5.2.5",
+    "markdown-it-attrs": "^3.0.2",
+    "markdown-it-link-attributes": "^3.0.0",
+    "require-dir": "^1.2.0",
+    "slugify": "^1.3.6",
+    "stylelint": "^13.0.0",
+    "stylelint-scss": "^3.14.2"
   }
 }

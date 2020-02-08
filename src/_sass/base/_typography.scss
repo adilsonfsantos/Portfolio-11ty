@@ -1,0 +1,107 @@
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Inter"), url("/assets/fonts/Inter-Regular.woff2") format("woff2"),
+    url("/assets/fonts/Inter-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Inter"), url("/assets/fonts/Inter-SemiBold.woff2") format("woff2"),
+    url("/assets/fonts/Inter-SemiBold.woff") format("woff");
+}
+
+@mixin font--headline1 {
+  @include font--weight(bold);
+  font-size: 3.051875rem;
+  letter-spacing: -0.022rem;
+  line-height: 3.6875rem;
+}
+
+@mixin font--headline2 {
+  @include font--weight(bold);
+  font-size: 2.44125rem;
+  letter-spacing: -0.022rem;
+  line-height: 2.95625rem;
+}
+
+@mixin font--headline3 {
+  @include font--weight(bold);
+  font-size: 1.953125rem;
+  letter-spacing: -0.022rem;
+  line-height: 2.3625rem;
+}
+
+@mixin font--headline4 {
+  @include font--weight(bold);
+  font-size: 1.5625rem;
+  letter-spacing: -0.02rem;
+  line-height: 1.89375rem;
+}
+
+@mixin font--headline5 {
+  @include font--weight(bold);
+  font-size: 1.25rem;
+  letter-spacing: -0.017rem;
+  line-height: 1.5125rem;
+}
+
+@mixin font--body--l {
+  font-size: 1.25rem;
+  letter-spacing: -0.017rem;
+  line-height: 1.75rem;
+}
+
+@mixin font--body--text-l {
+  font-size: 1.25rem;
+  letter-spacing: -0.017rem;
+  line-height: 2.125rem;
+}
+
+@mixin font--body--text {
+  font-size: 1rem;
+  letter-spacing: -0.011rem;
+  line-height: 1.5rem;
+}
+
+@mixin font--body {
+  font-size: 1rem;
+  letter-spacing: -0.011rem;
+  line-height: 1.3rem;
+}
+
+@mixin font--small {
+  @include font--weight(bold);
+  font-size: 0.8rem;
+  letter-spacing: -0.002rem;
+  line-height: 0.96875rem;
+}
+
+@mixin font--button {
+  @include font--weight(bold);
+  font-size: 1rem;
+  letter-spacing: -0.011rem;
+  line-height: 2.475rem;
+  text-transform: uppercase;
+}
+
+@mixin font--overline {
+  @include font--weight(bold);
+  font-size: 1rem;
+  letter-spacing: -0.011rem;
+  line-height: 1.3rem;
+  text-transform: uppercase;
+}
+
+@mixin font--overline--small {
+  @include font--weight(bold);
+  font-size: 0.8rem;
+  letter-spacing: -0.002rem;
+  line-height: 0.96875rem;
+  text-transform: uppercase;
+}
