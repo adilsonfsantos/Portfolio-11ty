@@ -1,3 +1,4 @@
-const instant = require("instant.page");
-const yall = require("yall-js");
-document.addEventListener("DOMContentLoaded", yall);
+import lazysizes from "lazysizes";
+import 'lazysizes/plugins/native-loading/ls.native-loading';
+
+import instant from "instant.page";

@@ -38,6 +38,10 @@
   grid-template-columns: minmax(5vw, 1fr) minmax(0, 1280px) minmax(5vw, 1fr);
 }
 
+@mixin grid--image {
+  grid-template-columns: minmax(5vw, 1fr) minmax(0, 1024px) minmax(5vw, 1fr);
+}
+
 @mixin layout--grid($size, $column: column, $margin: margin) {
   @if not(index(map-keys($grid-breakpoints-map), $size)) {
     @warn 'Atenção: `#{size}` não é um breakpoint válido.';
@@ -71,11 +75,11 @@
   margin: auto;
 }
 
-// @mixin skeleton () {
-//   @include animation(skeleton, 1.6s, ease-in-out, infinite);
-//   animation-fill-mode: forwards;
-//   background: linear-gradient(to right, $black 0%, $black 20%, $black 100%);
-// }
+@mixin skeleton () {
+  @include animation(skeleton, 1.6s, ease-in-out, infinite);
+  animation-fill-mode: forwards;
+  background: linear-gradient(to right, $white 0%, $accent 20%, $white 100%);
+}
 
 // COLORS
 @mixin color($property, $color, $background, $type) {
@@ -176,11 +180,11 @@
 }
 
 //ANIMATION
-@mixin transition($name, $duration, $speed, $delay: 0ms) {
-  transition: all $duration $speed $delay;
+@mixin transition($name: all, $duration: $elevation-transition-duration, $speed: $animation-standard, $delay: 0ms) {
+  transition: $name $duration $speed $delay;
 }
 
-@mixin animation($name, $duration, $timing, $loop) {
+@mixin animation($name, $duration, $timing, $loop, $delay: 0ms) {
   animation: $name $duration $timing $loop;
 }
 

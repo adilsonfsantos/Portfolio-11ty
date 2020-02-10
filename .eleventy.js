@@ -9,6 +9,7 @@ const mila = require("markdown-it-link-attributes");
 const componentsDir = "./src/_includes/components";
 const pictureCard = require(`${componentsDir}/PictureCard.js`);
 const picture = require(`${componentsDir}/Picture.js`);
+const pictureHero = require(`${componentsDir}/PictureHero.js`)
 
 const filtersDir = "./src/_includes/filters";
 const base64 = require(`${filtersDir}/base64.js`);
@@ -18,6 +19,7 @@ module.exports = function(eleventyConfig) {
   //  SHORTCODE
   eleventyConfig.addShortcode("picture-card", pictureCard);
   eleventyConfig.addShortcode("picture", picture);
+  eleventyConfig.addShortcode("picture-hero", pictureHero)
 
   //  FILTERS
   eleventyConfig.addFilter("base64", base64);
@@ -84,10 +86,15 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addLayoutAlias("default", "layouts/default.liquid");
   eleventyConfig.addLayoutAlias("home", "layouts/home.liquid");
   eleventyConfig.addLayoutAlias("post", "layouts/post.liquid");
+  eleventyConfig.addLayoutAlias("page", "layouts/page.liquid");
+
   eleventyConfig.addLayoutAlias("404", "layouts/404.liquid");
 
-  // PASSTHROUGH COPY FILES
+  // COPY ICONS
   eleventyConfig.addPassthroughCopy({ "src/icons/*": "/" });
+
+  // DON'T USE .GITIGNORE
+  eleventyConfig.setUseGitIgnore(false);
 
   return {
     dir: {

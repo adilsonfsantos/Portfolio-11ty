@@ -1,8 +1,10 @@
 ---
-layout: default
+layout: page
 title: Sobre mim
 description: Conheça um pouco mais sobre Adilson Santos designer de identidades visuais, UI e UX.
 ---
+# {{ title }}
+
 Olá, tudo bem? Meu nome é Adilson Santos.
 
 Sou um designer multidisciplinar que no momento estou focado na área de UI e UX, porque essas áreas estão bastante ligadas ao estudo do comportamento humano e a comunicação, que são meus assuntos favoritos na área do design e que também pretendo me especializar.

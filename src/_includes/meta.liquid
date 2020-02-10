@@ -14,32 +14,28 @@ page.keywords == blank %} {% else %} ,{{ page.keywords | join: ", " }}
 
 {%- comment -%}Twitter{%- endcomment -%}
 <meta name="twitter:card" content="summary_large_image" />
-
 <meta name="twitter:title"
   content="{% if page.title %}{{ page.title }}{% else %}{{
-    site.title }}{% endif %}"
-/>
+    site.title }}{% endif %}"/>
 <meta name="twitter:description" content="
   {% if page.description %}{{ page.description }}{% else %}{{
     site.description }}{% endif %}"/>
 <meta name="twitter:site" content="{{ site.url }}" />
 <meta name="twitter:creator" content="{{ site.author.name }}" />
-<meta name="twitter:image:src" content="{{ site.url }}{{ image }}"
-/>
+<meta name="twitter:image:src" content="{{ site.url }}{{ image }}"/>
+<meta name="twitter:dnt" content="on">
 
 {%- comment -%}Open Graph{%- endcomment -%}
 <meta
   name="og:title"
   content="{% if page.title %}{{ page.title }}{% else %}{{
     site.title
-  }}{% endif %}"
-/>
+  }}{% endif %}"/>
 <meta
   name="og:description"
   content="{% if page.description %}{{ page.description }}{% else %}{{
     site.description
-  }}{% endif %}"
-/>
+  }}{% endif %}"/>
 <meta name="og:image" content="{{ site.url }}{{ image }}" />
 <meta name="og:url" content="{{ site.url }}{{ page.url }}" />
 <meta name="og:site_name" content="{{ site.name }}" />
@@ -92,8 +88,8 @@ page.keywords == blank %} {% else %} ,{{ page.keywords | join: ", " }}
 <meta content="#121212" name="theme-color" />
 <meta content="/browserconfig.xml" name="msapplication-config" />
 <meta content="nopin" name="pinterest" />
-
-{% if layout == 'home' %}
+<meta name="generator" content="Eleventy">
+<!-- {% if layout == 'home' %}
 <style>
   {% include critical-home.css %}
 </style>
@@ -101,4 +97,4 @@ page.keywords == blank %} {% else %} ,{{ page.keywords | join: ", " }}
 <style>
   {% include critical-post.css %}
 </style>
-{% endif %}
+{% endif %} -->

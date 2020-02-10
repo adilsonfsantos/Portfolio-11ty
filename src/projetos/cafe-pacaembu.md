@@ -31,6 +31,6 @@ pequena torre de torrefação de café no centro de Vargem Grande do sul,
 interior de São Paulo e desde então o Café Pacaembu busca satisfazer seus
 clientes por meio do sabor e qualidade. E durante o meu estágio na [Agência Chleba](https://www.chleba.net/) criei alguns posts para as redes sociais remetendo a história e conceitos da marca do Café Pacaembu.
 
-{% picture "/assets/images/cafe-pacaembu-receita.jpg", "Stories e post da receita que ensina a fazer um café com suco de laranja.","", "post__photo", "post__photo--image" %}
+{% picture "/assets/images/cafe-pacaembu-receita.jpg", "Stories e post da receita que ensina a fazer um café com suco de laranja.", "post__photo", "post__photo--image" %}
 
-{% picture "/assets/images/cafe-pacaembu-independencia.jpg", "Stories e post para a comemoração da independência do Brasil na imagem tem um copo de café sobre um fundo amarelo com o texto o jeitinho brasileiro de fazer café.", "", "post__photo", "post__photo--image" %}
+{% picture "/assets/images/cafe-pacaembu-independencia.jpg", "Stories e post para a comemoração da independência do Brasil na imagem tem um copo de café sobre um fundo amarelo com o texto o jeitinho brasileiro de fazer café.", "post__photo", "post__photo--image" %}

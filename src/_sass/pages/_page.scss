@@ -1,14 +1,13 @@
-.post {
+.page {
   @include grid();
   @include grid--base();
   background: $black;
-  padding-top: $base-size * 3.5;
+  padding-top: $base-size * 10;
 
   &__header {
     @include grid;
     @include grid--base();
     grid-column: 1/-1;
-    min-height: 55vh;
 
     &--container {
       @include grid;
@@ -37,109 +36,14 @@
         grid-column: 2;
       }
     }
-
-    &--description {
-      @include font--color($white, primary);
-      @include font--body();
-      @include font--weight(regular);
-      grid-column: 1;
-
-      @include viewport(xs-small) {
-        @include font--body--l();
-      }
-
-      @include viewport(sm-small) {
-        grid-column: 2;
-      }
-    }
-  }
-
-  &__hero {
-    @include grid;
-    @include grid--base();
-    grid-column: 1/-1;
-    padding-bottom: $base-size * 2.5;
-
-    &--container {
-      @include grid();
-      @include grid--post();
-      grid-column: 2;
-    }
-  }
-
-  &__info {
-    @include grid();
-    gap: $base-size * 1.5;
-    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
-    margin-top: $base-size * 1.5;
-
-    @include viewport(sm-small) {
-      grid-column: 2;
-    }
-  }
-
-  &__info--title {
-    @include font--color($white, secondary);
-    @include font--overline--small();
-    margin-bottom: $base-size * 0.25;
-
-    @include viewport(sm-small) {
-      @include font--overline();
-    }
-  }
-
-  &__info--list {
-    margin-bottom: $base-size * 1.5;
-    margin-left: $base-size;
-  }
-
-  &__info--text {
-    @include font--color($white, primary);
-    @include font--body--text();
-
-    @include viewport(xs-small) {
-      @include font--body--text-l();
-    }
-  }
-
-  &__info--text:not(:last-child) {
-    margin: 0;
-    margin-bottom: $base-size * 0.5;
-  }
-
-  &__info--text:last-child {
-    margin: 0;
-  }
-
-  &__splash {
-    display: grid;
-    @include grid--base();
-    background: linear-gradient(
-      0deg,
-      rgba(33, 33, 33, 1) 0%,
-      rgba(33, 33, 33, 1) 50%,
-      rgba(18, 18, 18, 1) 50%,
-      rgba(18, 18, 18, 1) 100%
-    );
-    grid-column: 1/-1;
-
-    &--picture {
-      grid-column: 2;
-      width: 100%;
-    }
-
-    &--image {
-      // margin: 0 auto;
-      @include center--horizontal();
-    }
   }
 
   &__content {
     @include grid;
     @include grid--base;
-    background-color: $gray;
+    // background-color: $gray;
     grid-column: 1/-1;
-    padding-top: $base-size;
+    // padding-top: $base-size;
 
     &--container {
       @include grid;
@@ -157,6 +61,23 @@
     .headline-link {
       @include font--color($white, secondary);
       text-decoration: underline;
+    }
+
+    h1 {
+      @include font--color($white, primary);
+      @include font--headline3();
+      @include font--weight(bold);
+      // margin-bottom: $base-size * 0.5;
+
+      @include viewport(xs-medium) {
+        @include font--headline2();
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        height: $base-size * 5;
+      }
     }
 
     h2,
@@ -194,7 +115,7 @@
         @include font--body--text-l();
       }
       & + p {
-        margin-top: $base-size * 2;
+        margin-top: $base-size;
       }
       // &+ ul,
       // &+ ol{
@@ -224,42 +145,5 @@
     li:not(:last-child) {
       margin-bottom: $base-size * 0.75;
     }
-  }
-
-  blockquote {
-    border-left: 2px solid $primary;
-    color: $white;
-    padding-left: $base-size;
-
-    p {
-      @include font--body--text();
-      margin: 0;
-
-      @include viewport(xs-small) {
-        @include font--body--text-l;
-      }
-    }
-
-    h5 {
-      @include font--color($white, primary);
-      @include font--headline5();
-      margin-top: $base-size;
-    }
-  }
-  .post__photo {
-    grid-column: 1/-1;
-    width: 100%;
-
-    @include viewport(sm-medium) {
-      margin: $base-size 0;
-    }
-  }
-
-  .post__photo + .post__photo {
-    margin-top: 0;
-  }
-
-  .post__photo--img {
-    @include center--horizontal();
   }
 }

@@ -1,33 +1,17 @@
 <!DOCTYPE html>
-<script>document.documentElement.classList.remove("no-js")</script>
 <html lang="{{ site.lang }}" class="no-js">
   <head>
+    <script>document.documentElement.classList.remove("no-js")</script>
       <!-- htmlmin:ignore -->
     {% include meta %}
       <!-- htmlmin:ignore -->
     {% assign main_js = site.data.js-manifest['main.js'] | default: 'main.js' | prepend: '/assets/js/' %}
-    <script type="module" defer src="{{ main_js }}"></script>
+    <script type="module" async src="{{ main_js }}"></script>
   </head>
   <body>
     {% include header %} {{ content }}
     {% include footer %}
-    <noscript id="deferred-styles">
-      <link rel="stylesheet" type="text/css" href="{{ layout | prepend: '/assets/css/' | append: '.css'}}"/>
-    </noscript>
-    <script>
-      var loadDeferredStyles = function() {
-        var addStylesNode = document.getElementById("deferred-styles");
-        var replacement = document.createElement("div");
-        replacement.innerHTML = addStylesNode.textContent;
-        document.body.appendChild(replacement)
-        addStylesNode.parentElement.removeChild(addStylesNode);
-      };
-      var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-          window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-      else window.addEventListener('load', loadDeferredStyles);
-</script>
     {% include scripts %}
-    <noscript><link rel="stylesheet" href="{{ layout | prepend: '/assets/css/' | append: '.css'}}"></noscript>
+    <link rel="stylesheet" href="{{ layout | prepend: '/assets/css/' | append: '.css'}}">
   </body>
 </html>

@@ -24,7 +24,7 @@
     margin-left: auto;
 
     &--caption {
-      @include font--color($white, primary);
+      @include font--color($white, secondary);
       @include font--overline--small();
       @include font--position(right);
       margin-right: $base-size;

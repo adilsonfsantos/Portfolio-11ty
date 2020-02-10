@@ -31,6 +31,7 @@ header,
 main,
 menu,
 nav,
+picture
 section,
 summary {
   display: block;
@@ -55,4 +56,35 @@ img {
   display: block;
   max-width: 100%;
   object-fit: cover;
+  width: 100%;
 }
+
+.no-js .lazy {
+  display: none;
+}
+
+.lazyload,
+.lazyloading {
+  // @include transition(filter, $elevation-transition-duration,$animation-standard);
+  @include transition($duration: 2s);
+  filter: blur(10px);
+  transform: scale3d(1.05, 1.05, 1.05);
+
+  &::before{
+    content: '';
+    position: absolute;
+  }
+  // transition: filter 3s linear;
+}
+
+.lazyloaded {
+  filter: blur(0px);
+  // transform: scale3d(1, 1, 1);
+}
+
+.filter {
+  height: 0;
+}
+
+img[data-sizes="auto"] { display: block; width: 100%; }
+
