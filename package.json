@@ -19,10 +19,6 @@
     "url": "https://github.com/adilsonfsantos/Portfolio-11ty/issues"
   },
   "homepage": "https://github.com/adilsonfsantos/Portfolio-11ty#readme",
-  "Dependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "gulp": "^4.0.2"
-  },
   "browserslist": [
     "defaults"
   ],
@@ -33,6 +29,7 @@
     "stylelint-scss": "^3.14.2"
   },
   "dependencies": {
+    "@11ty/eleventy": "^0.10.0",
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "babelify": "^10.0.0",
