@@ -41,7 +41,7 @@ gulp.task("build", gulp.series("clean", "assets", "build:site", "html"));
 //   WARNING: .html files referenced need to exist, run after `gulp build` to ensure.
 gulp.task(
   "critical",
-  gulp.series("styles:critical:home", "styles:critical:post")
+  gulp.series("styles:critical:home", "styles:critical:post","styles:critical:page", "styles:critical:404")
 );
 
 // 'gulp deploy' -- deploy site to production and submit sitemap XML

@@ -90,8 +90,9 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addLayoutAlias("404", "layouts/404.liquid");
 
-  // COPY ICONS
+  // PASSTHROUGHT ELEMENTS
   eleventyConfig.addPassthroughCopy({ "src/icons/*": "/" });
+  eleventyConfig.addPassthroughCopy({ "src/netlify.toml": "/netlify.toml" });
 
   // DON'T USE .GITIGNORE
   eleventyConfig.setUseGitIgnore(false);

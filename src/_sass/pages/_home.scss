@@ -63,7 +63,6 @@
 
     @include viewport(xs-medium) {
       grid-column: span 4;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
     @include viewport(xs-large) {
       gap: $base-size;

@@ -1,0 +1,43 @@
+[build]
+  command = "gulp build --prod"
+  publish = "dist"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "max-age=604800"
+    Expect-CT = "max-age=31536000"
+    Feature-Policy= "geolocation 'self'"
+    Referrer-Policy = "no-referrer"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Content-Security-Policy = "script-src 'self'"
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "http://adilsonsantos.netlify.com/*"
+  to = "https://adilsonsantos.netlify.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "www.adilsonsantos.netlify.com/*"
+  to = "https://adilsonsantos.netlify.com/:splat"
+  status = 301
+  force = true
+
+[context.production.environment]
+  NODE_ENV = "production"
+  NPM_FLAGS = '–production'
+
+[context.deploy-preview.environment]
+  NODE_ENV = "development"
+
+[context.branch-deploy.environment]
+  NODE_ENV = "development"

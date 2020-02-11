@@ -1,8 +1,8 @@
 "use strict";
 const argv = require("yargs").argv;
 const autoprefixer = require("autoprefixer");
-const babelify = require("babelify")
-const bro = require("gulp-bro")
+const babelify = require("babelify");
+const bro = require("gulp-bro");
 const browserSync = require("browser-sync").create();
 // const concat = require("gulp-concat");
 const cssnano = require("cssnano");
@@ -29,10 +29,11 @@ gulp.task("scripts", () => {
   return (
     gulp
       .src([paths.jsFiles + "/*.js"])
-      .pipe(bro({
-        transform: [
-          babelify.configure({ presets: ['@babel/preset-env'] })]
-      }))
+      .pipe(
+        bro({
+          transform: [babelify.configure({ presets: ["@babel/preset-env"] })]
+        })
+      )
       .pipe(when(!argv.prod, sourcemaps.init()))
       // .pipe(concat("main.js"))
       // .pipe(source('main.js'))
@@ -123,8 +124,6 @@ function reload(done) {
 // in source files and update them when needed
 gulp.task("serve", done => {
   browserSync.init({
-    // tunnel: true,
-    // open: false,
     port: 4000, // change port to match default Jekyll
     ui: { port: 4001 },
     server: [paths.tmp, paths.dist],
@@ -148,15 +147,6 @@ gulp.task("serve", done => {
           });
           res.end("Redirecting!");
         });
-      }
-    },
-    // scripts in body conflict with Turbolinks
-    snippetOptions: {
-      rule: {
-        match: /<\/head>/i,
-        fn: function(snippet, match) {
-          return snippet + match;
-        }
       }
     }
   });

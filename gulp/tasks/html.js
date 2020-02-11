@@ -68,15 +68,14 @@ var pageDimensions = [
 //   into /_includes/critical-page.css
 gulp.task("styles:critical:page", () => {
   return gulp
-    .src(paths.tempDir + paths.siteDir + "sobre.html")
+    .src(paths.tempDir + paths.siteDir + "/sobre/index.html")
     .pipe(
       critical({
-        base: paths.tempDir,
+        base: paths.sourceDir,
         inline: false,
         css: [paths.sassFilesTemp + "/page.css"],
         dimensions: pageDimensions,
-        dest:
-          paths.sourceDir + paths.includes + "/critical-page.css",
+        dest: paths.includes + "/critical-page.css",
         minify: true,
         extract: false,
         ignore: ["@font-face", "/print/", /url\(/, ".popular-list"] // defer loading of webfonts and background images
@@ -91,11 +90,11 @@ gulp.task("styles:critical:post", () => {
     .src(paths.tempDir + paths.siteDir + "/projetos/plaenge/index.html")
     .pipe(
       critical({
-        base: paths.tempDir,
+        base: paths.sourceDir ,
         inline: false,
         css: [paths.sassFilesTemp + "/post.css"],
         dimensions: pageDimensions,
-        dest: paths.sourceDir + paths.includes + "/critical-post.css",
+        dest: paths.includes + "/critical-post.css",
         minify: true,
         extract: false,
         ignore: ["@font-face", "/print/", /url\(/, ".popular-list"] // defer loading of webfonts and background images
@@ -108,10 +107,10 @@ gulp.task("styles:critical:post", () => {
 gulp.task("styles:critical:home", () => {
   return gulp.src(paths.tempDir + paths.siteDir + "index.html").pipe(
     critical({
-      base: paths.tempDir,
+      base: paths.sourceDir,
       css: [paths.sassFilesTemp + "/home.css"],
       dimensions: pageDimensions,
-      dest: paths.sourceDir + paths.includes + "/critical-home.css",
+      dest: paths.includes + "/critical-home.css",
       minify: true,
       extract: false,
       ignore: ["@font-face", "/print/", /url\(/, ".popular-list"] // defer loading of webfonts and background images
@@ -122,12 +121,12 @@ gulp.task("styles:critical:home", () => {
 // 'gulp styles:critical:404' -- extract layout.home critical CSS
 //   into /_includes/critical-404.css
 gulp.task("styles:critical:404", () => {
-  return gulp.src(paths.tempDir + paths.siteDir + "index.html").pipe(
+  return gulp.src(paths.siteDir + "404.html").pipe(
     critical({
-      base: paths.tempDir,
+      base: paths.sourceDir ,
       css: [paths.sassFilesTemp + "/404.css"],
       dimensions: pageDimensions,
-      dest: paths.sourceDir + paths.includes + "/critical-404.css",
+      dest: paths.includes + "/critical-404.css",
       minify: true,
       extract: false,
       ignore: ["@font-face", "/print/", /url\(/, ".popular-list"] // defer loading of webfonts and background images

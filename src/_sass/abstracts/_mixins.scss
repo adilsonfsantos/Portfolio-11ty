@@ -184,8 +184,8 @@
   transition: $name $duration $speed $delay;
 }
 
-@mixin animation($name, $duration, $timing, $loop, $delay: 0ms) {
-  animation: $name $duration $timing $loop;
+@mixin animation($name, $duration: $elevation-transition-duration, $speed: $animation-standard, $loop: 1, $delay: 0ms) {
+  animation: $name $duration $speed $loop;
 }
 
 @mixin radius($range) {

@@ -1,0 +1,10 @@
+{% if layout == 'home' %}
+{% assign style_css = css-manifest['home.css'] | prepend: '/assets/css/' %}
+{% elsif layout == 'post' %}
+{% assign style_css = css-manifest['post.css'] | prepend: '/assets/css/' %}
+{% elsif layout == 'page' %}
+{% assign style_css = css-manifest['page.css'] | prepend: '/assets/css/' %}
+{% elsif layout == '404' %}
+{% assign style_css = css-manifest['404.css'] | prepend: '/assets/css/' %}
+{% endif %}
+<link rel="stylesheet" href="{{ style_css }}">

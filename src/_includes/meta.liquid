@@ -89,12 +89,20 @@ page.keywords == blank %} {% else %} ,{{ page.keywords | join: ", " }}
 <meta content="/browserconfig.xml" name="msapplication-config" />
 <meta content="nopin" name="pinterest" />
 <meta name="generator" content="Eleventy">
-<!-- {% if layout == 'home' %}
+{% if layout == 'home' %}
 <style>
   {% include critical-home.css %}
 </style>
-{% elsif layout == 'post' or layout == 'page' %}
+{% elsif layout == 'post' %}
 <style>
   {% include critical-post.css %}
 </style>
-{% endif %} -->
+{% elsif layout == 'page' %}
+<style>
+  {% include critical-page.css %}
+</style>
+{% elsif layout == '404' %}
+<style>
+  {% include critical-404.css %}
+</style>
+{% endif %}

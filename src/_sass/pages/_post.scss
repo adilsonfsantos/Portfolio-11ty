@@ -123,8 +123,15 @@
     );
     grid-column: 1/-1;
 
-    >* {
-      grid-column: 2;
+    // >* {
+    //   grid-column: 2;
+    // }
+
+    &--container {
+      // @include grid--base();
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 1024px) 1fr;
+    grid-column: 2;
     }
 
 
@@ -132,6 +139,7 @@
       @include center--horizontal();
       @include aspect-ratio(1920, 960);
       @include radius(.25);
+      grid-column: 2;
       max-width: 1024px;
       overflow: hidden;
       position: relative;

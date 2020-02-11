@@ -5,13 +5,13 @@
       <!-- htmlmin:ignore -->
     {% include meta %}
       <!-- htmlmin:ignore -->
-    {% assign main_js = site.data.js-manifest['main.js'] | default: 'main.js' | prepend: '/assets/js/' %}
-    <script type="module" async src="{{ main_js }}"></script>
+    {% assign main_js = js-manifest['main.js'] | prepend: '/assets/js/' %}
+    <script async src="{{ main_js }}"></script>
   </head>
   <body>
     {% include header %} {{ content }}
     {% include footer %}
     {% include scripts %}
-    <link rel="stylesheet" href="{{ layout | prepend: '/assets/css/' | append: '.css'}}">
+    {% include css %}
   </body>
 </html>
