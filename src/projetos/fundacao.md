@@ -42,26 +42,18 @@ redesign do site para as aulas de arquitetura da informação e programação we
 
 A primeira etapa foi identificar os problemas principais e diretamente no primeiro uso percebemos que a otimização do site era algo a ser trabalhado.
 
-![Resultados da auditoria inicial do site.](/assets/images/fundacao-lighthouse-report.jpg)
+{% picture "/assets/images/fundacao-lighthouse-report.jpg", "Resultados da auditoria inicial do site.", "post__photo", "post__photo--image" %}
 
 Os testes com a ferramenta de auditoria [Lighthouse](https://developers.google.com/web/tools/lighthouse/?hl=pt-br) da Google identificamos quais eram os problemas principais do site atual e utilizamos essas informações para poder guiar o desenvolvimento do novo site.
 
 Outro problema era a usabilidade, pois ao identificar a jornada do usuário percebemos que o site se dividia em dois criando uma complexidade desnecessária para o usuário.
 
-![Mapa da jornada do usuário original.](/assets/images/fundacao-jornada-usuario-original.jpg)
+{% picture "/assets/images/fundacao-jornada-usuario-original.jpg", "Mapa da jornada do usuário original.", "post__photo", "post__photo--image" %}
 
 ## Solução
 
 Primeiramente decidimos simplificar a distribuição das páginas e ordenar o conteúdo de forma lógica, dando destaque as informações mais importantes.
 
-![Mapa da jornada do usuário final.](/assets/images/fundacao-jornada-usuario-final.jpg)
+{% picture "/assets/images/fundacao-jornada-usuario-final.jpg", "Mapa da jornada do usuário final.", "post__photo", "post__photo--image" %}
 
-Para o desenvolvimento foi utilizado apenas HTML5 e CSS3, utilizando o conceito de mobile-first e técnicas como flexbox e grid o site foi rapidamente finalizado.
-
-<!-- markdownlint-disable -->
-<!-- <div class="post__content--flexible">
-<a href="https://adilsonfsantos.github.io/Oscar-Americano/" class="btn btn__primary">Visite o site</a>
-<a href="https://github.com/adilsonfsantos/Oscar-Americano" class="btn btn__secondary">Veja o código</a>
-<a href="https://adilsonfsantos.github.io/Oscar-Americano/" class="btn btn__terciary">TEste</a>
-</div> -->
-<!-- markdownlint-enable -->
+Para o desenvolvimento foi utilizado apenas HTML5 e CSS3, utilizando o conceito de mobile-first e técnicas de CSS como flexbox e grid o site foi rapidamente finalizado.

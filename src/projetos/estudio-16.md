@@ -14,8 +14,11 @@ categories:
 roles:
   - Designer Gráfico
 ---
-Buscando um público alvo jovem, a principal inspiração veio da antiga logo do Instagram que era inspirado pela Polaroid, então a ideia foi mesclar a câmera analógica e o número 16.
+
+## Sobre
+
+Estúdio 16 foi uma empresa criada para o trabalho de conclusão do curso de Aprendizagem comercial em serviços administrativos do Senac em 2016, a marca atuava com a fotografia de eventos.
+
+A principal inspiração veio das câmeras Polaroid que são referências na fotografia e a turma 16 que criou a empresa.
 
 A paleta de cores reflete a personalidade da marca, que busca utilizar cores vivas para trazer uma maior identificação com o público alvo.
-
-Esta empresa foi criada para o trabalho de conclusão do curso de Aprendizagem comercial em serviços administrativos – Senac - 2016

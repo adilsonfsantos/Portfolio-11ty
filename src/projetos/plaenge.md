@@ -57,10 +57,10 @@ Para a composição do layout utilizamos como referência a Golden Hour, que dir
 
 A paleta de cores utilizada busca trazer calor e conforto mantendo o foco na sofisticação, a tipografia busca manter o conceito de exclusividade com a fonte principal geométrica sem serifa.
 
-![Fontes e paleta de cores do layout.](/assets/images/plaenge-guide.jpg)
+{% picture "/assets/images/plaenge-guide.jpg", "Fontes e paleta de cores do layout.", "post__photo", "post__photo--image" %}
 
 O uso de espaço foi generosamente utilizado para garantir o respiro e a elegância dos elementos
 
-![Diversas telas do app.](/assets/images/plaenge-full.jpg)
+{% picture "/assets/images/plaenge-full.jpg", "Imagem da home.", "post__photo", "post__photo--image" %}
 
-![Diversas telas do app.](/assets/images/plaenge-app-outro.jpg)
+{% picture "/assets/images/plaenge-app-outro.jpg", "Diversas telas do app.", "post__photo", "post__photo--image" %}

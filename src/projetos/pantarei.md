@@ -2,8 +2,8 @@
 title: Pantarei
 date: 2017-08-07T03:16:00.000Z
 image: /assets/images/pantareiwide.jpg
-alt: Processo de criação da marca e identidade visual da empresa de móveis Pantarei.
-description: Criação da marca e identidade visual para a empresa de móveis Pantarei criada para a aula de empreendedorismo.
+alt: Processo de criação da marca da empresa Pantarei.
+description: Criação da marca para uma empresa de soluções em design.
 keywords:
   - Heráclito
   - Pantarei
@@ -16,10 +16,15 @@ categories:
 roles:
   - Designer Gráfico
 ---
+
+## Introdução
+
+A Pantarei é uma empresa focada em desenvolver soluções com design, seja na comunicação gráfica ou com produto a Pantarei busca trazer qualidade e sustentabilidade para as suas criações.
+
 > "Ninguém pode entrar duas vezes no mesmo rio, pois quando nele se entra novamente, não se encontra as mesmas águas e o próprio ser já se modificou."
 >
 > ##### Heráclito
 
-![Cartão de visita](/assets/images/pantarei-card.jpg)
+A marca foi baseada no pensamento de Heráclito que busca passar o conceito da constante transformação, as curvas representam a água e a simetria do ambigrama além de auxiliar na visualização da marca trazem essa transformação ao demonstrar que a sua experiência com a Pantarei nunca será a mesma.
 
-Baseado no pensamento de Heráclito a marca utiliza curvas e a simetria do ambigrama para passar o conceito da constante transformação.
+{% picture "/assets/images/pantarei-card.jpg", "Cartão de visita da Pantarei", "post__photo", "post__photo--image" %}

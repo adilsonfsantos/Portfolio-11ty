@@ -93,6 +93,7 @@ module.exports = function(eleventyConfig) {
   // PASSTHROUGHT ELEMENTS
   eleventyConfig.addPassthroughCopy({ "src/icons/*": "/" });
   eleventyConfig.addPassthroughCopy({ "src/netlify.toml": "/netlify.toml" });
+  eleventyConfig.addPassthroughCopy({ "src/assets/images/thumbnail.jpg": "/assets/images/thumbnail.jpg" });
 
   // DON'T USE .GITIGNORE
   eleventyConfig.setUseGitIgnore(false);
