@@ -3,6 +3,7 @@
   @include grid--base();
   background: $black;
   padding-top: $base-size * 10;
+  padding-bottom: $base-size * 5;
 
   &__header {
     @include grid;

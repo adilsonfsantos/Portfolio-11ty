@@ -11,21 +11,23 @@ Sou um designer multidisciplinar que no momento estou focado na área de UI e UX
 
 Atualmente sou estudante de design na [Universidade Nove de julho](https://www.uninove.br/) e estou trabalhando na [Agência Chleba](https://www.chleba.net/) como estagiário em UI Design.
 
-Também sou apaixonado por de descobrir e participar de projetos novos, principalmente projetos open-source.
+Também sou apaixonado por descobrir e participar de novos projetos, principalmente projetos open-source.
 
 ## Sobre este site
 
-Este site foi desenvolvido do zero usando [Eleventy](https://www.11ty.dev/) e automatizado com o [Gulp](https://gulpjs.com/).
+O site foi projetado no [Figma](https://www.figma.com/) utilizando como base conceitos de mobile-first, modularidade e responsividade, a paleta de cores é derivada do uniforme nº03 de 2016 do São Paulo Futebol Clube, que homenageia os 25 anos de clube do goleiro Rogério Ceni.Para a tipografia foi escolhida a [Inter UI](https://github.com/rsms/inter), por ela ser criada para interfaces e também por ser open-source.
 
-Todo o CSS do site foi projetado utilizando [Sass](https://sass-lang.com/) para ser mobile first, responsivo e modular.
+Venha dar uma olhada no meu [Style guide](https://www.figma.com/file/wvojqUGNq1pvKtyCw55E0a/Portfolio-v2?node-id=0%3A1) e veja o sistema por trás desse site.
 
-A família tipográfica utilizada é a [Inter UI](https://github.com/rsms/inter), uma tipografia totalmente open-source
+Sobre o desenvolvimento escolhi o [Eleventy](https://www.11ty.dev/) por ser similar ao [Jekyll](jekyllrb.com/) o qual tenho experiência e por ser em Javascript o qual estou aprendendo. Decidi utilizar o [Gulp](https://gulpjs.com/) para automatização dos processos de otimização dos arquivos.
 
-As únicas livrarias de javascript utilizadas são [Instant Page](https://instant.page/) para navegação mais rápida e o [lazySizes](https://github.com/aFarkas/lazysizes) para carregamento de images otimizados.
+Todo o CSS do site foi feito utilizando [Sass](https://sass-lang.com/) com a arquitetura 7-1 como padrão para melhor organização dos arquivos.
 
-Todo o código é implementado e hospedado no [Netlify](https://netlify.com/).
+As livrarias de javascript que eu uso são o [Instant Page](https://instant.page/) que serve para trazer uma navegação rápida entre as páginas e o [lazySizes](https://github.com/aFarkas/lazysizes) para carregamento de lento de imagens.
 
-Não há nenhum tipo de ferramenta invasiva de coleta de dados e analítica rastreamento.
+E com esse todo esse sistema o código é implementado e hospedado no [Netlify](https://netlify.com/).
+
+Sobre privacidade **Não** há nenhum tipo de ferramenta invasiva de coleta de dados e de rastreamento neste site, a sua privacidade é importante para mim.
 
 Além disso, muito obrigado por parar por aqui e dar uma olhada no meu portfólio!\
 Isso significa muito para mim, espero que tenha gostado.
