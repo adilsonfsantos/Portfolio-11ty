@@ -14,7 +14,7 @@ roles:
   - Designer Gráfico
 ---
 
-# Introdução
+## Introdução
 
 Para a aula de percepção visual foi solicitada uma arte que utilizando pelo menos dois elementos da Gestalt e que fosse baseada em uma série ou filme, eu decidi escolher a série Mr. Robot porque além de ser uma das minhas séries favoritas ela abordava questões psicológicas, engenharia social, privacidade e segurança digital.
 
