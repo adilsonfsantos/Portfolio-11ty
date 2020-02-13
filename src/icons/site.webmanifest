@@ -1,19 +1,22 @@
 {
-    "name": "",
-    "short_name": "",
-    "icons": [
-        {
-            "src": "/android-chrome-192x192.png?v=qAJrmaOJA9",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/android-chrome-512x512.png?v=qAJrmaOJA9",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#121212",
-    "background_color": "#121212",
-    "display": "standalone"
+  "name": "Adilson Santos",
+  "short_name": "Adilson Santos",
+  "description": "Meu nome é Adilson Santos e eu sou um designer focado em identidades visuais, UI e UX.",
+  "dir": "rtl",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png?v=qAJrmaOJA9",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png?v=qAJrmaOJA9",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#121212",
+  "background_color": "#121212",
+  "display": "standalone"
 }

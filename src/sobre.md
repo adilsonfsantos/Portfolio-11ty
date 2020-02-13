@@ -27,7 +27,7 @@ As livrarias de javascript que eu uso são o [Instant Page](https://instant.page
 
 E com esse todo esse sistema o código é implementado e hospedado no [Netlify](https://netlify.com/).
 
-Sobre privacidade **Não** há nenhum tipo de ferramenta invasiva de coleta de dados e de rastreamento neste site, a sua privacidade é importante para mim.
+Sobre privacidade **não** há nenhum tipo de ferramenta invasiva de coleta de dados e de rastreamento neste site, a sua privacidade é importante para mim.
 
 Além disso, muito obrigado por parar por aqui e dar uma olhada no meu portfólio!\
 Isso significa muito para mim, espero que tenha gostado.

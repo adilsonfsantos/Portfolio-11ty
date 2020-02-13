@@ -5,14 +5,37 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Cache-Control = "max-age=604800"
-    Expect-CT = "max-age=31536000"
-    Feature-Policy= "geolocation 'self'"
     Referrer-Policy = "no-referrer"
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Strict-Transport-Security = "max-age=0; includeSubDomains; preload"
     X-Content-Type-Options = "nosniff"
+
+  for = "/"
+  [headers.values]
+    Expect-CT = "max-age=2592000"
+    Feature-Policy = "vibrate 'none'; geolocation 'none'; midi 'none'; notifications 'none'; push 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; vibrate 'none'; payment 'none'"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; img-src 'self'; connect-src 'self'; font-src 'self';style-src 'self' 'unsafe-inline'; manifest-src 'self'"
+
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+  for = "*.(apng|bmp|css|ico|jpeg|jpg|js|png|svg|webp)"
+  [headers.values]
+    Cache-Control = "public, max-age=5184000, must-revalidate"
+
+  for = "*.(xml|txt)"
+  [headers.values]
+    Cache-Control = "max-age=172800, public, must-revalidate"
+
+  for = "*.(woff|woff2)"
+  [headers.values]
+    Cache-Control = "max-age=604800, public, must-revalidate"
+
+  for = "/site.webmanifest"
+  [headers.values]
+    Cache-Control = "max-age=604800, public, must-revalidate"
 
 [[redirects]]
   from = "/*"
