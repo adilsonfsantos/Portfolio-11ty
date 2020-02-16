@@ -32,21 +32,14 @@
   //   }
   // }
 
-
-
   &__picture {
-    @include aspect-ratio(1920, 960);
     border-radius: 0.25rem 0.25rem 0 0;
     overflow: hidden;
-    position: relative;
     width: 100%;
 
     &--image {
       @include font--color($white, primary);
       border-radius: 0.25rem 0.25rem 0 0;
-      height: auto;
-      position: absolute;
-      top: 0;
       width: 100%;
     }
   }

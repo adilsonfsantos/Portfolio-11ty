@@ -294,14 +294,16 @@
     @include viewport(sm-medium) {
       margin: $base-size * 1.5 auto;
     }
-
-    >img {
-      @include radius(.25);
-      height: auto;
-
-    }
   }
 
+  .post__photo > img {
+    @include radius(.25);
+    height: auto;
+  }
+
+  span {
+    grid-column: 1/-1;
+  }
 
   .post__photo--lazy {
     @include aspect-ratio(1920, 1080);

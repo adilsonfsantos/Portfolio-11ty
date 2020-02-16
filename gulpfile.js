@@ -44,13 +44,6 @@ gulp.task(
   gulp.series("styles:critical:home", "styles:critical:post","styles:critical:page", "styles:critical:404")
 );
 
-// 'gulp deploy' -- deploy site to production and submit sitemap XML
-// gulp.task("deploy", gulp.series("upload", "submit:sitemap"));
-
-// 'gulp rebuild' -- WARNING: removes all assets, images, and built site
-gulp.task("rebuild", gulp.series("clean", "clean:images"));
-
-
 // 'gulp' -- removes assets and gzipped files, creates assets and revs version
 //   in includes or layouts, builds site, serves site
 // 'gulp --prod' -- same as above but with production settings

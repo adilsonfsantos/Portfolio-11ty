@@ -19,7 +19,7 @@ O site foi projetado no [Figma](https://www.figma.com/) utilizando como base con
 
 Venha dar uma olhada no meu [Style guide](https://www.figma.com/file/wvojqUGNq1pvKtyCw55E0a/Portfolio-v2?node-id=0%3A1) e veja o sistema por trás desse site.
 
-Sobre o desenvolvimento escolhi o [Eleventy](https://www.11ty.dev/) por ser similar ao [Jekyll](jekyllrb.com/) o qual tenho experiência e por ser em Javascript o qual estou aprendendo. Decidi utilizar o [Gulp](https://gulpjs.com/) para automatização dos processos de otimização dos arquivos.
+Sobre o desenvolvimento escolhi o [Eleventy](https://www.11ty.dev/) por ser similar ao [Jekyll](https://jekyllrb.com/) o qual tenho experiência e por ser em Javascript o qual estou aprendendo. Decidi utilizar o [Gulp](https://gulpjs.com/) para automatização dos processos de otimização dos arquivos.
 
 Todo o CSS do site foi feito utilizando [Sass](https://sass-lang.com/) com a arquitetura 7-1 como padrão para melhor organização dos arquivos.
 

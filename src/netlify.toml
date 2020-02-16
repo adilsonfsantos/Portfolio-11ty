@@ -6,7 +6,7 @@
   for = "/*"
   [headers.values]
     Referrer-Policy = "no-referrer"
-    Strict-Transport-Security = "max-age=0; includeSubDomains; preload"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     X-Content-Type-Options = "nosniff"
 
   for = "/"
@@ -15,7 +15,7 @@
     Feature-Policy = "vibrate 'none'; geolocation 'none'; midi 'none'; notifications 'none'; push 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; vibrate 'none'; payment 'none'"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; img-src 'self'; connect-src 'self'; font-src 'self';style-src 'self' 'unsafe-inline'; manifest-src 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; img-src 'self'; connect-src 'self'; font-src 'self';style-src 'self' 'unsafe-inline'; manifest-src 'self'"
 
   for = "*.html"
   [headers.values]
