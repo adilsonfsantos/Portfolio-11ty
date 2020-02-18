@@ -15,7 +15,7 @@
     Feature-Policy = "vibrate 'none'; geolocation 'none'; midi 'none'; notifications 'none'; push 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; vibrate 'none'; payment 'none'"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
-    Content-Security-Policy = "default-src 'self'; script-src 'self'; img-src 'self'; connect-src 'self'; font-src 'self';style-src 'self' 'unsafe-inline'; manifest-src 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'sha256-17f8cb1ebffeb69ec7afb505943df2f10abd0133fda68573c5a0af60e8c4d5f5' 'sha256-d00dd2a0d9ce8ff543e6b2ad5836f83d2bcdf01afe41189b6f094cfbce2891f6'; img-src 'self'; connect-src 'self'; font-src 'self';style-src 'self' 'unsafe-inline'; manifest-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none';"
 
   for = "*.html"
   [headers.values]
