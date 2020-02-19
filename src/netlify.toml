@@ -15,7 +15,7 @@
     Feature-Policy = "vibrate 'none'; geolocation 'none'; midi 'none'; notifications 'none'; push 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; vibrate 'none'; payment 'none'"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'sha256-0A3SoNnOj/VD5rKtWDb4PSvN8Br+QRibbwlM+84okfY=' 'sha256-F/jLHr/+tp7Hr7UFlD3y8Qq9ATP9poVzxaCvYOjE1fU='; img-src 'self'; connect-src 'self'; font-src 'self';style-src 'self' 'unsafe-inline'; manifest-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none';"
+    Content-Security-Policy = "default-src 'none'; script-src 'self' 'sha256-0A3SoNnOj/VD5rKtWDb4PSvN8Br+QRibbwlM+84okfY='; img-src 'self'; connect-src 'self'; font-src 'self';style-src 'self' 'sha256-khvzhAU/dKZbqNrgJoW9kDW8x12gQLhuiMfzajFnMQ8=' 'sha256-mTBWIOAy7idtDdh3aMPODPdQE9hE9fWRcNVJbck6w1E=' 'sha256-+qeorT3ZM8mlr96U3lLkH0VOhWCUUcZCw5ICfK615lg=' 'sha256-A1ggTQlC0Q1PPxrieplPjhTgdjEBUNny5IqyEtzhu5E='; manifest-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'; prefetch-src 'self'; upgrade-insecure-requests;  block-all-mixed-content; disown-opener; report-uri 'https://adilsonsantos.report-uri.com/r/d/csp/wizard'"
 
   for = "*.html"
   [headers.values]

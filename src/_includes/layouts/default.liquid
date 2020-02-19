@@ -2,6 +2,8 @@
 <html lang="{{ site.lang }}" class="no-js">
   <head>
     <script type="text/javascript">document.documentElement.classList.remove("no-js")</script>
+    <link rel="preload" as="font" href="/assets/fonts/Inter-Regular.woff2" type="font/woff2" crossorigin="crossorigin">
+    <link rel="preload" as="font" href="/assets/fonts/Inter-SemiBold.woff2" type="font/woff2" crossorigin="crossorigin">
       <!-- htmlmin:ignore -->
     {% include meta %}
       <!-- htmlmin:ignore -->
@@ -11,7 +13,6 @@
   <body>
     {% include header %} {{ content }}
     {% include footer %}
-    {% include scripts %}
     {% include css %}
   </body>
 </html>
