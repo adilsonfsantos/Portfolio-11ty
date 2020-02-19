@@ -15,7 +15,8 @@
     Feature-Policy = "vibrate 'none'; geolocation 'none'; midi 'none'; notifications 'none'; push 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; vibrate 'none'; payment 'none'"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
-    Content-Security-Policy-Report-Only = "default-src 'none'; script-src 'self' 'sha256-0A3SoNnOj/VD5rKtWDb4PSvN8Br+QRibbwlM+84okfY='; img-src 'self'; connect-src 'self'; font-src 'self';style-src 'self'; manifest-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests;  block-all-mixed-content; disown-opener; report-to 'https://adilsonsantos.report-uri.com/r/d/csp/wizard'; report-uri 'https://adilsonsantos.report-uri.com/r/d/csp/wizard'; prefetch-src 'self'"
+    Content-Security-Policy-Report-Only = "default-src 'none'; form-action 'none'; frame-ancestors 'none'; report-to 'https://adilsonsantos.report-uri.com/r/d/csp/wizard'; report-uri 'https://adilsonsantos.report-uri.com/r/d/csp/wizard';"
+    # Content-Security-Policy-Report-Only = "default-src 'none'; script-src 'self' 'sha256-0A3SoNnOj/VD5rKtWDb4PSvN8Br+QRibbwlM+84okfY='; img-src 'self'; connect-src 'self'; font-src 'self';style-src 'self'; manifest-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests;  block-all-mixed-content; disown-opener; report-to 'https://adilsonsantos.report-uri.com/r/d/csp/wizard'; report-uri 'https://adilsonsantos.report-uri.com/r/d/csp/wizard'; prefetch-src 'self'"
 
   for = "*.html"
   [headers.values]
