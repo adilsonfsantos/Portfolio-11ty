@@ -47,6 +47,9 @@ gulp.task("images", () => {
               rename: { suffix: "-1024" }
             },
             {
+              width: 1280,
+            },
+            {
               width: 1366,
               rename: { suffix: "-1366" }
             },

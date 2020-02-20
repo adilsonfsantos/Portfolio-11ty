@@ -9,7 +9,7 @@ keywords:
   - redes sociais
   - social
   - redes
-  - midia
+  - mídia
   - post
 categories:
   - Social Media

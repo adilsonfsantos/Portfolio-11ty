@@ -6,7 +6,7 @@ description: Criação da marca e identidade visual para a empresa de fotografia
 keywords:
   - Polaroid
   - Estúdio
-  - Senac
+  - SENAC
   - Instagram
   - inspiração
 categories:

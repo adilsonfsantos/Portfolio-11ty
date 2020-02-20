@@ -56,4 +56,4 @@ Primeiramente decidimos simplificar a distribuição das páginas e ordenar o co
 
 {% picture "/assets/images/fundacao-jornada-usuario-final.jpg", "Mapa da jornada do usuário final.", "post__photo", "post__photo--image" %}
 
-Para o desenvolvimento foi utilizado apenas HTML5 e CSS3, utilizando o conceito de mobile-first e técnicas de CSS como flexbox e grid o site foi rapidamente finalizado.
+Para o desenvolvimento foi utilizado apenas HTML5 e CSS3, utilizando o conceito de mobile-first junto com técnicas de CSS como flexbox e grid para trazer responsividade para a interface.
