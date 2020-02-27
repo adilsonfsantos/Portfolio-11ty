@@ -102,8 +102,8 @@ module.exports = function(eleventyConfig) {
     dir: {
       data: "_data",
       includes: "_includes",
-      input: ".tmp/src",
-      output: ".tmp/dist"
+      input: "tmp/src",
+      output: "tmp/dist"
     }
   };
 };
