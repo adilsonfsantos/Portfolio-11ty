@@ -7,7 +7,7 @@ description: Conheça um pouco mais sobre Adilson Santos designer de identidades
 
 Olá, tudo bem? Meu nome é Adilson Santos.
 
-Sou um designer multidisciplinar que no momento estou focado na área de UI e UX, porque essas áreas estão bastante ligadas ao estudo do comportamento humano e a comunicação, que são meus assuntos favoritos no design e que também são segmentos em que eu pretendo me especializar.
+Sou um designer multidisciplinar que no momento está focado na área de UI e UX, porque essas áreas estão bastante ligadas ao estudo do comportamento humano e a comunicação, que são meus assuntos favoritos no design e que também são segmentos no qual eu pretendo me especializar.
 
 Atualmente sou estudante de design na [Universidade Nove de julho](https://www.uninove.br/) e estou trabalhando na [Agência Chleba](https://www.chleba.net/) como estagiário em UI Design.
 
@@ -15,7 +15,7 @@ Também sou apaixonado por descobrir e participar de novos projetos, principalme
 
 ## Sobre este site
 
-O site foi projetado no [Figma](https://www.figma.com/) utilizando como base conceitos de mobile-first, modularidade e responsividade, a paleta de cores é derivada do uniforme nº03 de 2016 do São Paulo Futebol Clube, que homenageia os 25 anos de clube do goleiro Rogério Ceni.Para a tipografia foi escolhida a [Inter UI](https://github.com/rsms/inter), por ela ser criada para interfaces e também por ser open-source.
+O site foi projetado no [Figma](https://www.figma.com/) utilizando como base conceitos de mobile-first, modularidade e responsividade, a paleta de cores é derivada do uniforme nº03 de 2016 do São Paulo Futebol Clube, que homenageia os 25 anos de clube do goleiro Rogério Ceni. Para a tipografia foi escolhida a [Inter UI](https://github.com/rsms/inter), por ela ser criada para interfaces e também por ser open-source.
 
 Venha dar uma olhada no meu [Style guide](https://www.figma.com/file/wvojqUGNq1pvKtyCw55E0a/Portfolio-v2?node-id=0%3A1) e veja o sistema por trás desse site.
 
