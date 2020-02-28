@@ -1,8 +1,8 @@
 .hero {
   @include gradient(to top right, $secondary, $primary);
-  background-color: $gray;
   @include grid();
   @include grid--base();
+  background-color: $gray;
 
   &__error {
     @include flex();
@@ -16,25 +16,22 @@
       @include font--color($black, surface);
       @include font--weight(bold);
       @include font--position(center);
+      @include font--headline4;
       margin-bottom: $base-size * 1.5;
       margin-top: $base-size * 3;
       width: 100%;
-    }
 
-    @include viewport(xs-small) {
-      grid-column: span 4;
-    }
+      @include viewport(xs-small) {
+        @include font--headline3;
+      }
 
-    @include viewport(sm-small) {
-      grid-column: span 8;
-    }
+      @include viewport(xs-large) {
+        @include font--headline2;
+      }
 
-    @include viewport(sm-medium) {
-      grid-column: span 12;
-    }
-
-    @include viewport(md-small) {
-      grid-column: span 12;
+      @include viewport(sm-medium) {
+        @include font--headline1;
+      }
     }
 
     .emoji {

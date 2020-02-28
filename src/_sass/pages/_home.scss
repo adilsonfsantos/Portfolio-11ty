@@ -14,7 +14,7 @@
 
     @include viewport(xs-medium) {
       margin-bottom: $base-size * 1.2;
-        }
+    }
 
     @include viewport(sm-small) {
       grid-column: span 8;
@@ -26,19 +26,20 @@
     }
 
     &--title {
-      @include font--color ($white, primary);
+      @include font--color($white, primary);
       @include font--headline5();
       @include font--weight(bold);
       @include viewport(xs-small) {
         @include font--headline4;
       }
+
       @include viewport(xs-medium) {
         @include font--headline3;
       }
     }
 
     &--subtitle {
-      @include font--color ($white, secondary);
+      @include font--color($white, secondary);
       @include font--body();
       @include font--weight(regular);
 
@@ -64,6 +65,7 @@
     @include viewport(xs-medium) {
       grid-column: span 4;
     }
+
     @include viewport(xs-large) {
       gap: $base-size;
     }
@@ -74,6 +76,7 @@
     }
 
     @include viewport(sm-medium) {
+      gap: $base-size * 2;
       grid-column: span 12;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
