@@ -37,7 +37,8 @@
   from {
     filter: blur(10px);
   }
+
   to {
-    filter: blur(0px);
+    filter: blur(0);
   }
 }

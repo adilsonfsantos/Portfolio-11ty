@@ -101,9 +101,9 @@
   $unit-02: unit($max-vw);
   $unit-03: unit($min-font-size);
   $unit-04: unit($max-font-size);
-  $a: -0.0223;
-  $b: 0.185;
-  $c: -0.1745;
+  $a: -.0223;
+  $b: .185;
+  $c: -.1745;
   $min-spacing: $a + $b * ($c * $min-font-size);
   $max-spacing: $a + $b * ($c * $max-font-size);
   $spacing: calc(
@@ -132,9 +132,9 @@
 }
 
 @mixin spacing($font-size) {
-  $a: -0.0223;
-  $b: 0.185;
-  $c: -0.1745;
+  $a: -.0223;
+  $b: .185;
+  $c: -.1745;
   $spacing: $a + $b * ($c * $font-size);
 
   letter-spacing: $spacing;
@@ -142,17 +142,17 @@
 
 @mixin font--color($color, $opacity) {
   @if $opacity == primary {
-    color: transparentize($color, 0.13);
+    color: transparentize($color, .13);
   } @else if $opacity == secondary {
-    color: transparentize($color, 0.4);
+    color: transparentize($color, .4);
   } @else if $opacity == terciary {
-    color: transparentize($color, 0.62);
+    color: transparentize($color, .62);
   }
 }
 
 @mixin font--primary {
   font-display: swap;
-  font-family: "Inter UI", -apple-system, BlinkMacSystemFont, Helvetica Neue,
+  font-family: 'Inter UI', -apple-system, BlinkMacSystemFont, Helvetica Neue,
     Roboto, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
     Segoe UI Symbol, Noto Color Emoji;
 }
@@ -168,7 +168,7 @@
 }
 
 @mixin font--shadow($color) {
-  text-shadow: 1px 1px 6px rgba($black, 0.3);
+  text-shadow: 1px 1px 6px rgba($black, .3);
 }
 
 @mixin font--weight($weight) {
@@ -193,7 +193,7 @@
 }
 
 @mixin absolute {
-  content: "";
+  content: '';
   height: 100%;
   left: 0;
   position: absolute;
@@ -205,7 +205,7 @@
 // @param {Number} $number - Number to remove unit from
 // @return {Number} - Unitless number
 @function strip-unit($number) {
-  @if type-of($number) == "number" and not unitless($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
     @return $number / ($number * 0 + 1);
   }
 
@@ -223,7 +223,7 @@
   $z-elevation: map-get(map-get($elevation-map, $level), elevation);
   $z-overlay: map-get(map-get($elevation-map, $level), overlay);
   @if $shadow == false {
-    /* return */
+    // return
   } @else {
     $z-value: strip-unit($z-elevation);
 
@@ -246,9 +246,9 @@
     );
   }
 
-  @if $background == "none" {
-    /* return */
-  } @else if $overlay == "none" {
+  @if $background == 'none' {
+    // return
+  } @else if $overlay == 'none' {
     background-color: $background;
   } @else {
     $percent: alpha($overlay) * $z-overlay;

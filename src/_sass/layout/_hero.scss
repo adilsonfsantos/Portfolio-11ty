@@ -63,13 +63,13 @@
       border-style: solid;
       border-width: 2px;
       margin-bottom: $base-size;
-      padding: 0.625rem;
+      padding: .625rem;
       position: relative;
     }
 
     &--down {
       display: block;
-      fill: rgba($black, 0.87);
+      fill: rgba($black, .87);
       height: $base-size * 1.5;
       width: $base-size * 1.5;
     }

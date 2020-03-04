@@ -2,8 +2,8 @@
   @include grid();
   @include grid--base();
   background: $black;
-  padding-top: $base-size * 10;
   padding-bottom: $base-size * 5;
+  padding-top: $base-size * 10;
 
   &__header {
     @include grid;
@@ -14,8 +14,8 @@
       @include grid;
       @include grid--post();
       grid-column: 2;
-      padding-top: $base-size * 3;
       padding-bottom: $base-size * 2;
+      padding-top: $base-size * 3;
 
       @include viewport(xs-small) {
         padding-top: $base-size * 6;
@@ -27,7 +27,7 @@
       @include font--headline3();
       @include font--weight(bold);
       grid-column: 1/-1;
-      margin-bottom: $base-size * 0.5;
+      margin-bottom: $base-size * .5;
 
       @include viewport(xs-medium) {
         @include font--headline2();
@@ -45,6 +45,11 @@
     // background-color: $gray;
     grid-column: 1/-1;
     // padding-top: $base-size;
+    @include viewport(sm-small) {
+      &--container > * {
+        grid-column: 2;
+      }
+    }
 
     &--container {
       @include grid;
@@ -53,14 +58,10 @@
       row-gap: $base-size;
     }
 
-    @include viewport(sm-small) {
-      &--container > * {
-        grid-column: 2;
-      }
-    }
+
 
     .headline-link {
-      @include font--color($white, secondary);
+      @include font--color($secondary, primary);
       text-decoration: underline;
     }
 
@@ -73,12 +74,12 @@
       @include viewport(xs-medium) {
         @include font--headline2();
       }
+    }
 
-      &::before {
-        content: "";
-        display: block;
-        height: $base-size * 5;
-      }
+    h1::before {
+      content: '';
+      display: block;
+      height: $base-size * 5;
     }
 
     h2,
@@ -90,22 +91,16 @@
       @include viewport(xs-medium) {
         @include font--headline3();
       }
+
       @include viewport(xs-large) {
         @include font--headline3();
       }
-      &::before {
-        content: "";
-        display: block;
-        height: $base-size * 5;
-      }
     }
 
-    h2:hover,
-    h3:hover,
-    h4:hover {
-      .headline-link {
-        @include font--color($secondary, primary);
-      }
+    h4::before {
+      content: '';
+      display: block;
+      height: $base-size * 5;
     }
 
     p {
@@ -115,23 +110,16 @@
       @include viewport(xs-small) {
         @include font--body--text-l();
       }
-      & + p {
+
+      + p {
         margin-top: $base-size;
       }
-      // &+ ul,
-      // &+ ol{
-      //   margin-top: $base-size * 1.5;
-      // }
     }
 
     ul,
     ol {
       margin-bottom: $base-size * 1.5;
       margin-left: $base-size;
-    }
-
-    li > ul {
-      margin: ($base-size * 0.5);
     }
 
     li {
@@ -141,10 +129,18 @@
       @include viewport(xs-small) {
         @include font--body--l();
       }
+
+      > ul {
+        margin: ($base-size * .5);
+      }
     }
 
+    li
+
+
+
     li:not(:last-child) {
-      margin-bottom: $base-size * 0.75;
+      margin-bottom: $base-size * .75;
     }
   }
 }

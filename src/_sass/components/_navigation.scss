@@ -45,6 +45,7 @@
       @include font--weight(regular);
       margin-right: $base-size;
     }
+
     &--icon {
       @include elevation(fab, $secondary);
       @include transition(
@@ -53,14 +54,15 @@
         $animation-standard
       );
       border-radius: 50%;
-      padding: 0.625rem;
+      padding: .625rem;
       position: relative;
     }
+
     &--forward {
       display: block;
-      fill: rgba($black, 0.87);
-      width: $base-size * 1.5;
+      fill: rgba($black, .87);
       height: $base-size * 1.5;
+      width: $base-size * 1.5;
     }
   }
 }

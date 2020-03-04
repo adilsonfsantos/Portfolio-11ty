@@ -1,9 +1,10 @@
 html {
   box-sizing: border-box;
 }
+
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
@@ -30,7 +31,7 @@ header,
 main,
 menu,
 nav,
-picture
+picture,
 section,
 summary {
   display: block;
@@ -62,5 +63,7 @@ img {
   display: none;
 }
 
-img[data-sizes="auto"] { display: block; width: 100%; }
-
+.lazyload[data-sizes="auto"] {
+  display: block;
+  width: 100%;
+}
