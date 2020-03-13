@@ -43,11 +43,11 @@ Clone o repositório e use o comando ```npm install```
 │   ├── _drafts
 │   ├── icons
 │   ├── _includes
-│   │   ├── components # Códigos auxiliares  de imagens para o 11ty
+│   │   ├── components # Códigos auxiliares de imagens para o 11ty
 │   │   ├── filters    # Códigos auxiliares de filtros para o 11ty
 │   │   └── layouts    # Contém arquivos Liquid para as páginas
 │   ├── projetos
-│   └── _sass          # Arquivos SCSS segundo a arquitetura 7-1
+│   └── _sass          # Arquivos SCSS seguindo a arquitetura 7-1
 │       ├── abstracts
 │       ├── base
 │       ├── components
@@ -85,7 +85,7 @@ Seu CSS e JS vão possuir sourcemaps, porém apenas com o argumento ```--prod]``
 
 #### ```gulp images```
 
-Redimensiona imagens e otimiza para que elas sejam servidas de forma responsiva.
+Redimensiona imagens e as otimiza para que elas sejam servidas de forma responsiva.
 
 #### ```gulp html --prod```
 
@@ -103,13 +103,11 @@ Deleta os seus arquivos do assets no ```.tmp``` assim como no ```dist```, també
 
 Extrai o CSS crítico dos layouts ```home```, ```page```, ```post``` e ```404```, para que ele seja incluído no layout via ```{% include %}``` **Nota:** Deve-se rodar o gulp build antes de rodar o critical, pois o critical utiliza os arquivos HTML gerados para criar o CSS.
 
-Deleta os seus arquivos do assets no ```.tmp``` assim como no ```dist```, também deleta todos os arquivos gzipados. **Nota:** Não deleta as suas imagens do ```.tmp``` para que o tempo da build não aumente devido as otimizações de imagem.
-
 ## 5. Códigos auxiliares
 
 ### Picture
 
-Recomendado para qualquer imagem com.
+Recomendado para qualquer imagem.
 
 ```{% picture "url para imagem", "alt", "class para picture", "classe para img" %}```
 

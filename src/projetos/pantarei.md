@@ -1,7 +1,7 @@
 ---
 title: Pantarei
 date: 2017-08-07T03:16:00.000Z
-image: /assets/images/pantareiwide.jpg
+image: /assets/images/pantarei-wide.png
 alt: Processo de criação da marca da empresa Pantarei.
 description: Criação da marca para uma empresa de soluções em design.
 keywords:
@@ -12,7 +12,7 @@ keywords:
   - simetria
   - móveis
 categories:
-  - Branding
+  - Logo
 roles:
   - Designer Gráfico
 ---
@@ -27,4 +27,4 @@ A Pantarei é uma empresa focada em desenvolver soluções com design, seja na c
 
 A marca foi baseada no pensamento de Heráclito que busca passar o conceito da constante transformação, as curvas representam a água e a simetria do ambigrama além de auxiliar na visualização da marca trazem essa transformação ao demonstrar que a sua experiência com a Pantarei nunca será a mesma.
 
-{% picture "/assets/images/pantarei-card.jpg", "Cartão de visita da Pantarei", "post__photo", "post__photo--image" %}
+{% picture "/assets/images/pantarei-cartao.png", "Cartão de visita da Pantarei", "post__photo", "post__photo--image" %}

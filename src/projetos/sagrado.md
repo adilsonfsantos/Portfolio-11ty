@@ -1,7 +1,7 @@
 ---
 title: Sagrado Boulangerie
 date: 2019-11-31T00:00:00.000Z
-image: /assets/images/sagrado-wide.jpg
+image: /assets/images/sagrado-wide.png
 description: >-
   Processo de como foi realizado o redesign do site da Sagrado Boulangerie
 keywords:
@@ -25,25 +25,26 @@ team:
 ---
 ## Introdução
 
-Infelizmente eu não posso dar muitos detalhes sobre o que eu realizei, porém o que eu posso compartilhar é o como foi o pontapé inicial do processo de criação.
+Fundada em 2015 a Sagrado Boulangerie tem o propósito de busca resgatar a qualidade na panificação, apenas trabalhando com pães artesanais que não utilizam processos químicos ou aditivos na manufatura.
+Infelizmente eu não posso dar muitos detalhes do projeto, então irei mostrar a base do layout.
 
-## Briefing
+## Desafio
 
-Durante o meu estágio na [Agência Chleba](https://www.chleba.net/), a Sagrado Boulangerie solicitou um redesign do seu site para refletir o seu novo posicionamento da marca.
+Durante o meu estágio na [Agência Chleba](https://www.chleba.net/), a Sagrado Boulangerie solicitou um redesign do seu site para refletir algumas mudanças da marca.
 
-Baseado no Briefing realizado junto a Sagrado definimos os conceitos básicos que a nova UI deve possuir para se adequar ao novo posicionamento da marca:
+Baseado no Briefing realizado junto a Sagrado definimos os conceitos básicos para nova UI:
 
 - Interface deve clean, sofisticada e moderna
 - A navegação deve ser intuitiva com foco em demonstrar a qualidade dos produtos e das franquias
 - Deve utilizar formas geométricas para se opor ao estilo do romantismo francês, pois apesar do nome francês Boulangerie a Sagrado não busca utilizar o estilo orgânico que marca o romantismo francês.
 
-## Prototipagem
+## Solução
 
 Antes de começar a projetar, eu desenvolvi um guide para o layout que utilizava as cores e a tipografia da marca.
 Na tipografia foi utilizada a escala Perfect Fourth ou Quarta Justa (1.333) para criar um ritmo mais agradável de leitura.
 
-{% picture "/assets/images/sagrado-guide.jpg", "Guide com fontes e paleta de cores do layout.", "post__photo", "post__photo--image" %}
+{% picture "/assets/images/sagrado-guide.png", "Guide com fontes e paleta de cores do layout.", "post__photo", "post__photo--image" %}
 
 A utilização de espaço em branco é bastante utilizada para guiar os olhos do usuários além de dar respiro entre os elementos do layout.
 
-{% picture "/assets/images/sagrado-full.jpg", "Imagem demonstra uma parte do layout da página sobre a história da Sagrado.", "post__photo", "post__photo--image" %}
+{% picture "/assets/images/sagrado-full.png", "Imagem demonstra uma parte do layout da página sobre a história da Sagrado.", "post__photo", "post__photo--image" %}

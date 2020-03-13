@@ -2,9 +2,11 @@
 layout: default
 ---
 <article class="page grid--module" role="article">
-  <!-- <div class="page__header">
+  {%- comment -%}
+    <div class="page__header">
     <div class="page__header--container"><h1 class="page__header--title" itemprop="name headline">{{ title | escape }}</h1></div>
-  </div> -->
+  </div>
+  {%- endcomment -%}
   <div class="page__content" itemprop="articleBody">
     <div class="page__content--container">
       {{ content }}

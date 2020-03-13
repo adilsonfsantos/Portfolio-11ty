@@ -1,7 +1,7 @@
 ---
 title: Plaenge
 date: 2019-05-01T22:31:40.716Z
-image: /assets/images/plaenge-wide.jpg
+image: /assets/images/plaenge-wide.png
 description: >-
   Conheça um pouco do processo em trazer praticidade e elegância para o site e o aplicativo da construtora Plaenge.
 keywords:
@@ -40,7 +40,7 @@ Em Maio de 2019 durante o meu estágio como UI designer na [Agência Chleba](htt
 
 Antes de falar do layout você precisa saber de algumas coisas sobre a Plaenge, atuando há mais de 40 anos nos segmentos de incorporação residencial, construção civil, projetos e montagens industriais, a Plaenge é atualmente a maior construtora imobiliária do sul do Brasil e um dos mais tradicionais grupos de engenharia do país. Presente em 4 estados do brasileiros e no também no Chile a Plaenge sempre busca trazer nos seus serviços a sofisticação e conforto para os seus clientes.
 
-#### Problemas
+#### Desafio
 
 O site anterior da Plaenge possui diversos problemas de usabilidade os quais você pode ver no case de UX feito pela [Francianne Tonin](https://www.behance.net/gallery/83533089/UX-UI-Construtora-Plaenge) e a partir deste case foram definidos os seguintes princípios da nova UI:
 
@@ -49,18 +49,18 @@ O site anterior da Plaenge possui diversos problemas de usabilidade os quais voc
 - Valorizar possíveis clientes e torná-los parte da Plaenge.
 - Trazer os conceito de sofisticação e exclusividade para o layout.
 
-#### Prototipagem
+#### Solução
 
 Com os wireframes desenvolvidos pela Francianne e utilizando referencias de marcas como a [Tesla](https://www.tesla.com/) e o [El Moderne Hotel](https://elmodernehotel.com/en/), eu desenvolvi os layouts do site e app utilizando os conceitos da marca.
 
 Para a composição do layout utilizamos como referência a Golden Hour, que diretamente remete ao horário da volta para casa, a satisfação, a sensação de dever cumprido e o momento de recuperar energias.
 
+{% picture "/assets/images/plaenge-guide.png", "Fontes e paleta de cores do layout.", "post__photo", "post__photo--image" %}
+
 A paleta de cores utilizada busca trazer calor e conforto mantendo o foco na sofisticação, a tipografia busca manter o conceito de exclusividade com a fonte principal geométrica sem serifa.
 
-{% picture "/assets/images/plaenge-guide.jpg", "Fontes e paleta de cores do layout.", "post__photo", "post__photo--image" %}
+O uso de espaço foi generosamente utilizado para garantir o respiro e a elegância dos elementos, ao mesmo tempo mantendo a conforto proposto para o layout.
 
-O uso de espaço foi generosamente utilizado para garantir o respiro e a elegância dos elementos
+{% picture "/assets/images/plaenge-full.png", "Imagem da home.", "post__photo", "post__photo--image" %}
 
-{% picture "/assets/images/plaenge-full.jpg", "Imagem da home.", "post__photo", "post__photo--image" %}
-
-{% picture "/assets/images/plaenge-app-outro.jpg", "Diversas telas do app.", "post__photo", "post__photo--image" %}
+{% picture "/assets/images/plaenge-app-outro.png", "Diversas telas do app.", "post__photo", "post__photo--image" %}

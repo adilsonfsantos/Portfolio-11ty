@@ -33,6 +33,7 @@
   // }
 
   &__picture {
+    // @include radius(.25);
     border-radius: .25rem .25rem 0 0;
     overflow: hidden;
     width: 100%;

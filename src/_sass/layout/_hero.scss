@@ -1,8 +1,28 @@
 .hero {
   @include grid();
   @include grid--base();
-  @include gradient(to top right, $secondary, $primary);
+  background: linear-gradient(
+    60.06deg,
+    #e5cd9a 0%,
+    #e5cc99 6.67%,
+    #e4c897 13.33%,
+    #e2c294 20%,
+    #dfb88f 26.67%,
+    #dcac88 33.33%,
+    #d89e81 40%,
+    #d48f79 46.67%,
+    #d07e70 53.33%,
+    #cc6f68 60%,
+    #c86160 66.67%,
+    #c5555a 73.33%,
+    #c24c55 80%,
+    #c04552 86.67%,
+    #bf4150 93.33%,
+    #bf404f 100%
+  );
+  background-attachment: fixed;
   background-color: $gray;
+
 
   &__normal {
     @include flex();
@@ -48,30 +68,40 @@
       }
 
       @include viewport(sm-medium) {
-        @include font--headline1;
+        @include font--headline2;
+      }
+
+      @include viewport(md-small) {
+        @include font--headlinexl;
       }
     }
 
     &--subtitle {
       @include font--body--l;
+
+      @include viewport(sm-medium) {
+        @include font--headline3;
+      }
+
+      @include viewport(md-small) {
+        @include font--headline2;
+      }
     }
 
     &--scroll {
+      margin: 0 auto $base-size auto;
+    }
+
+    &--down {
+      display: block;
       @include center--horizontal();
       border-color: $black;
       border-radius: 50%;
       border-style: solid;
       border-width: 2px;
-      margin-bottom: $base-size;
-      padding: .625rem;
-      position: relative;
-    }
-
-    &--down {
-      display: block;
-      fill: rgba($black, .87);
-      height: $base-size * 1.5;
-      width: $base-size * 1.5;
+      fill: rgba($black, 0.87);
+      padding: 0.625rem;
+      width: $base-size * 3;
     }
   }
 }

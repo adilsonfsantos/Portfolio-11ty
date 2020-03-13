@@ -43,7 +43,7 @@ paths.fontFilesSite = paths.siteDir + paths.assetsDir + paths.fonts;
 // Glob patterns by file type.
 paths.sassPattern = "/**/*.scss";
 paths.jsPattern = "/**/*.js";
-paths.imagePattern = "*.+(jpg,JPG,jpeg,JPEG,webp,WEBP)";
+paths.imagePattern = "*.+(jpg,JPG,jpeg,JPEG,png,PNG,webp,WEBP)";
 paths.markdownPattern = "/**/*.+(md|MD|markdown|MARKDOWN)";
 paths.liquidPattern = "/**/*.liquid";
 paths.txtPattern = "/**/*.txt";

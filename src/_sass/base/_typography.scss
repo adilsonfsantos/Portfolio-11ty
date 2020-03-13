@@ -16,36 +16,38 @@
     url('/assets/fonts/Inter-SemiBold.woff') format('woff');
 }
 
+@mixin font--headlinexl {
+  font-size: 3.815rem;
+  letter-spacing: -.022rem;
+  // line-height: 4.625rem;
+  line-height: 3.815rem;
+}
+
 @mixin font--headline1 {
-  @include font--weight(bold);
   font-size: 3.051875rem;
   letter-spacing: -.022rem;
   line-height: 3.6875rem;
 }
 
 @mixin font--headline2 {
-  @include font--weight(bold);
   font-size: 2.44125rem;
   letter-spacing: -.022rem;
   line-height: 2.95625rem;
 }
 
 @mixin font--headline3 {
-  @include font--weight(bold);
   font-size: 1.953125rem;
   letter-spacing: -.022rem;
   line-height: 2.3625rem;
 }
 
 @mixin font--headline4 {
-  @include font--weight(bold);
   font-size: 1.5625rem;
   letter-spacing: -.02rem;
   line-height: 1.89375rem;
 }
 
 @mixin font--headline5 {
-  @include font--weight(bold);
   font-size: 1.25rem;
   letter-spacing: -.017rem;
   line-height: 1.5125rem;
@@ -76,14 +78,12 @@
 }
 
 @mixin font--small {
-  @include font--weight(bold);
   font-size: .8rem;
   letter-spacing: -.002rem;
   line-height: .96875rem;
 }
 
 @mixin font--button {
-  @include font--weight(bold);
   font-size: 1rem;
   letter-spacing: -.011rem;
   line-height: 2.475rem;
@@ -91,7 +91,6 @@
 }
 
 @mixin font--overline {
-  @include font--weight(bold);
   font-size: 1rem;
   letter-spacing: -.011rem;
   line-height: 1.3rem;
@@ -99,7 +98,6 @@
 }
 
 @mixin font--overline--small {
-  @include font--weight(bold);
   font-size: .8rem;
   letter-spacing: -.002rem;
   line-height: .96875rem;

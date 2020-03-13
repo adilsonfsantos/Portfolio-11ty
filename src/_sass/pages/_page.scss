@@ -87,20 +87,30 @@
     h4 {
       @include font--headline4();
       @include font--color($white, primary);
+      // margin-top: $base-size * 5;
 
       @include viewport(xs-medium) {
         @include font--headline3();
       }
-
-      @include viewport(xs-large) {
-        @include font--headline3();
+      // @include viewport(xs-large) {
+      //   @include font--headline2();
+      // }
+      &::before {
+        content: "";
+        display: block;
+        height: $base-size * 5;
+        // margin-top: $base-size * -5;
+        pointer-events: none;
+        visibility: hidden;
       }
     }
 
-    h4::before {
-      content: '';
-      display: block;
-      height: $base-size * 5;
+    h2:hover,
+    h3:hover,
+    h4:hover {
+      .headline-link {
+        @include font--color($secondary, primary);
+      }
     }
 
     p {

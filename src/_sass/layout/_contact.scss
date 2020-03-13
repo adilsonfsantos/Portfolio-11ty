@@ -29,6 +29,7 @@
 
     &--cta {
       @include font--position(center);
+      @include font--weight(bold);
       @include font--color($white, primary);
       @include font--headline4();
 

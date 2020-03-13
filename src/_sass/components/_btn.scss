@@ -1,5 +1,6 @@
 .btn {
   @include font--button();
+  @include font--weight(bold);
   @include font--position(center);
   @include radius(.25);
   @include transition(background, .3s, $animation-standard);
