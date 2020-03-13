@@ -1,25 +1,7 @@
 .hero {
   @include grid();
   @include grid--base();
-  background: linear-gradient(
-    60.06deg,
-    #e5cd9a 0%,
-    #e5cc99 6.67%,
-    #e4c897 13.33%,
-    #e2c294 20%,
-    #dfb88f 26.67%,
-    #dcac88 33.33%,
-    #d89e81 40%,
-    #d48f79 46.67%,
-    #d07e70 53.33%,
-    #cc6f68 60%,
-    #c86160 66.67%,
-    #c5555a 73.33%,
-    #c24c55 80%,
-    #c04552 86.67%,
-    #bf4150 93.33%,
-    #bf404f 100%
-  );
+  @include gradient(to top right, $secondary, $primary);
   background-attachment: fixed;
   background-color: $gray;
 
