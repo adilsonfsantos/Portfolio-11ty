@@ -15,6 +15,11 @@ categories:
   - Logo
 roles:
   - Designer Gráfico
+showteam: true
+team:
+  - name: Jefferson Ribeiro
+    portfolio: false
+    role: Designer Gráfico
 ---
 
 ## Introdução

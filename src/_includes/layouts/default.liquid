@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang }}" class="no-js">
   <head>
+    <!-- htmlmin:ignore -->
+    {% include meta %}
+    <!-- htmlmin:ignore -->
     <script type="text/javascript">document.documentElement.classList.remove("no-js")</script>
     <link rel="preload" as="font" href="/assets/fonts/Inter-Regular.woff2" type="font/woff2" crossorigin="crossorigin">
     <link rel="preload" as="font" href="/assets/fonts/Inter-SemiBold.woff2" type="font/woff2" crossorigin="crossorigin">
-      <!-- htmlmin:ignore -->
-    {% include meta %}
-      <!-- htmlmin:ignore -->
     {% assign main_js = js-manifest['main.js'] | prepend: '/assets/js/' %}
     <script async src="{{ main_js }}"></script>
   </head>
