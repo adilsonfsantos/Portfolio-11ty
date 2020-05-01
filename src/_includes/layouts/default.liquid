@@ -9,7 +9,7 @@
     <link rel="preload" as="font" href="/assets/fonts/Inter-Regular.woff2" type="font/woff2" crossorigin="crossorigin">
     <link rel="preload" as="font" href="/assets/fonts/Inter-SemiBold.woff2" type="font/woff2" crossorigin="crossorigin">
     {% assign main_js = js-manifest['main.js'] | prepend: '/assets/js/' %}
-    <script async src="{{ main_js }}"></script>
+    <script async src="{{ main_js }}" charset="UTF-8"></script>
   </head>
   <body>
     {% include header %} {{ content }}
