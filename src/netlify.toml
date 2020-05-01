@@ -22,7 +22,7 @@
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'sha256-0A3SoNnOj/VD5rKtWDb4PSvN8Br+QRibbwlM+84okfY='; img-src 'self'; connect-src 'self'; font-src 'self'; style-src 'self' 'sha256-7ef72rlgLEEUh2HX2mNXnVBU8KUM62WkfG6aUzs+j/M' 'sha256-PGGzYD5ePSiHBAweHqXZjomSNW3ckmK6v/0vATR5nX0=' 'sha256-Zq1DHilMmUoxZKuGCqk6QFU77+ObyuR5SSjw8Hpiuto=' 'sha256-2/2BjJ54DFNeLDeJPe8YOI3dj0Ja7BqTEizdp0eR7gk='; manifest-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests;  block-all-mixed-content; disown-opener; report-to default; report-uri 'https://adilsonsantos.report-uri.com/r/d/csp/enforce'; prefetch-src 'self'"
     #Ordem do style-src= Home, Post, Page e 404
 
-  for = "*.(apng|bmp|css|ico|jpeg|jpg|js|png|svg|webp)"
+  for = "*.(apng|bmp|ico|jpeg|jpg|png|svg|webp)"
   [headers.values]
     Cache-Control = "public, max-age=31536000"
     Content-Security-Policy = "img-src 'self'"
@@ -52,13 +52,11 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
     Content-Type = "text/javascript; charset=utf-8"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'sha256-0A3SoNnOj/VD5rKtWDb4PSvN8Br+QRibbwlM+84okfY='; report-to default; report-uri 'https://adilsonsantos.report-uri.com/r/d/csp/enforce'"
 
 for = "*.css"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
     Content-Type = "text/css; charset=utf-8"
-    Content-Security-Policy = "style-src 'self' 'sha256-7ef72rlgLEEUh2HX2mNXnVBU8KUM62WkfG6aUzs+j/M' 'sha256-PGGzYD5ePSiHBAweHqXZjomSNW3ckmK6v/0vATR5nX0=' 'sha256-Zq1DHilMmUoxZKuGCqk6QFU77+ObyuR5SSjw8Hpiuto=' 'sha256-2/2BjJ54DFNeLDeJPe8YOI3dj0Ja7BqTEizdp0eR7gk='"
 
 [[redirects]]
   from = "/*"
