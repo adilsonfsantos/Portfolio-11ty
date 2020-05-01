@@ -8,9 +8,9 @@
     Content-Security-Policy = "default-src 'self'; manifest-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests; block-all-mixed-content; disown-opener; report-to default; report-uri 'https://adilsonsantos.report-uri.com/r/d/csp/enforce'; prefetch-src 'self'"
     Referrer-Policy = "no-referrer"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
 
+[[headers]]
   for = "/*"
   [headers.values]
     Expect-CT = "max-age=2592000, report-uri=https://adilsonsantos.report-uri.com/r/d/ct/enforce"
@@ -18,42 +18,51 @@
     X-XSS-Protection = "1; mode=block"
     Report-To = """{"group":"default","max_age":31536000,"endpoints":[{"url":"https://adilsonsantos.report-uri.com/a/d/g"}],"include_subdomains":true}"""
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'sha256-0A3SoNnOj/VD5rKtWDb4PSvN8Br+QRibbwlM+84okfY='; img-src 'self'; connect-src 'self'; font-src 'self'; style-src 'self' 'sha256-7ef72rlgLEEUh2HX2mNXnVBU8KUM62WkfG6aUzs+j/M' 'sha256-PGGzYD5ePSiHBAweHqXZjomSNW3ckmK6v/0vATR5nX0=' 'sha256-Zq1DHilMmUoxZKuGCqk6QFU77+ObyuR5SSjw8Hpiuto=' 'sha256-2/2BjJ54DFNeLDeJPe8YOI3dj0Ja7BqTEizdp0eR7gk='; manifest-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests;  block-all-mixed-content; disown-opener; report-to default; report-uri 'https://adilsonsantos.report-uri.com/r/d/csp/enforce'; prefetch-src 'self'"
+    X-Content-Type-Options = "nosniff"
     #Ordem do style-src= Home, Post, Page e 404
 
+[[headers]]
   for = "/*.html"
   [headers.values]
     Content-Type = "text/html; charset=utf-8"
-    Cache-Control = "no-cache"
 
-  for = "*.(apng|bmp|ico|jpeg|jpg|png|svg|webp)"
+[[headers]]
+  for = "/*.(apng|bmp|ico|jpeg|jpg|png|svg|webp)"
   [headers.values]
     Cache-Control = "public, max-age=31536000"
     Content-Security-Policy = "img-src 'self'"
 
-  for = "*.(xml|txt)"
+[[headers]]
+  for = "/*.(xml|txt)"
   [headers.values]
     Cache-Control = "public, max-age=172800"
 
-  for = "/assets/fonts/*.woff2"
+[[headers]]
+  for = "/*.woff2"
   [headers.values]
     Cache-Control = "public, max-age=604800"
     Content-Security-Policy = "font-src 'self'"
 
-      for = "/assets/fonts/*.woff"
+[[headers]]
+      for = "/*.woff"
   [headers.values]
     Cache-Control = "public, max-age=604800"
     Content-Security-Policy = "font-src 'self'"
 
+[[headers]]
   for = "/site.webmanifest"
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
-  for = "/assets/js/*.js"
+[[headers]]
+  for = "/*.js"
 [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "text/javascript; charset=utf-8"
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'sha256-0A3SoNnOj/VD5rKtWDb4PSvN8Br+QRibbwlM+84okfY='; report-to default; report-uri 'https://adilsonsantos.report-uri.com/r/d/csp/enforce';"
 
-for = "/assets/css/*.css"
+[[headers]]
+for = "/*.css"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
     Content-Security-Policy = "style-src 'self' 'sha256-7ef72rlgLEEUh2HX2mNXnVBU8KUM62WkfG6aUzs+j/M' 'sha256-PGGzYD5ePSiHBAweHqXZjomSNW3ckmK6v/0vATR5nX0=' 'sha256-Zq1DHilMmUoxZKuGCqk6QFU77+ObyuR5SSjw8Hpiuto=' 'sha256-2/2BjJ54DFNeLDeJPe8YOI3dj0Ja7BqTEizdp0eR7gk=';"
