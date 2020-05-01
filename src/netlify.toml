@@ -6,6 +6,7 @@
   for = "/"
   [headers.values]
     Content-Type = "text/html; charset=utf-8"
+    Cache-Control = "no-cache"
     Content-Security-Policy = "default-src 'self'; manifest-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests; block-all-mixed-content; disown-opener; report-to default; report-uri 'https://adilsonsantos.report-uri.com/r/d/csp/enforce'; prefetch-src 'self'"
     Referrer-Policy = "no-referrer"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
@@ -14,7 +15,6 @@
 
   for = "/*"
   [headers.values]
-    Cache-Control = "max-age=180"
     Expect-CT = "max-age=2592000, report-uri=https://adilsonsantos.report-uri.com/r/d/ct/enforce"
     Feature-Policy = "vibrate 'none'; geolocation 'none'; midi 'none'; notifications 'none'; push 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; vibrate 'none'; payment 'none'"
     X-XSS-Protection = "1; mode=block"
@@ -48,6 +48,7 @@
   for = "*.js"
 [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "charset=utf-8"
 
 for = "*.css"
   [headers.values]
