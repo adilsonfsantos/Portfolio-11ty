@@ -31,7 +31,9 @@ gulp.task("scripts", () => {
       .src([paths.jsFiles + "/*.js"])
       .pipe(
         bro({
-          transform: [babelify.configure({ presets: ["@babel/preset-env"] })]
+          transform: [
+            babelify.configure({ presets: ["@babel/preset-env"] }),
+          ],
         })
       )
       .pipe(when(!argv.prod, sourcemaps.init()))
@@ -63,7 +65,7 @@ gulp.task("scripts:gzip", () => {
         argv.prod,
         size({
           gzip: true,
-          showFiles: true
+          showFiles: true,
         })
       )
     )
@@ -80,7 +82,7 @@ gulp.task("styles", () => {
       .pipe(when(!argv.prod, sourcemaps.init()))
       .pipe(
         sass({
-          includePaths: [paths.sassFiles] // Tell Sass where to look for files
+          includePaths: [paths.sassFiles], // Tell Sass where to look for files
         }).on("error", sass.logError)
       )
       // .pipe(when(argv.prod,when("*.css",postcss(plugins))))
@@ -108,7 +110,7 @@ gulp.task("styles:gzip", () => {
         argv.prod,
         size({
           gzip: true,
-          showFiles: true
+          showFiles: true,
         })
       )
     )
@@ -122,33 +124,33 @@ function reload(done) {
 }
 // 'gulp serve' -- open site in browser and watch for changes
 // in source files and update them when needed
-gulp.task("serve", done => {
+gulp.task("serve", (done) => {
   browserSync.init({
     port: 4000, // change port to match default Jekyll
     ui: { port: 4001 },
     server: [paths.tmp, paths.dist],
     serveStaticOptions: {
-      extensions: ["html"]
+      extensions: ["html"],
     },
     callbacks: {
       /**
        * This 'ready' callback can be used
        * to access the Browsersync instance
        */
-      ready: function(err, bs) {
+      ready: function (err, bs) {
         // example of accessing URLS
         console.log(bs.options.get("urls"));
 
         // example of adding a middleware at the end
         // of the stack after Browsersync is running
-        bs.addMiddleware("*", function(req, res) {
+        bs.addMiddleware("*", function (req, res) {
           res.writeHead(302, {
-            location: "404.html"
+            location: "404.html",
           });
           res.end("Redirecting!");
         });
-      }
-    }
+      },
+    },
   });
   done();
 

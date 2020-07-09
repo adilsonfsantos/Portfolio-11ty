@@ -12,7 +12,7 @@ gulp.task("clean:assets", () => {
     "!" + paths.assetFilesTemp,
     paths.assetFilesSite + "/**/*",
     "!" + paths.imageFilesSite,
-    "!" + paths.imageFilesSite + "/**/*"
+    "!" + paths.imageFilesSite + "/**/*",
   ]);
 });
 
@@ -28,7 +28,7 @@ gulp.task("clean:dist", () => {
       paths.dist + "/**/*",
       "!" + paths.assetFilesSite,
       "!" + paths.imageFilesSite,
-      "!" + paths.imageFilesSite + "/**/*"
+      "!" + paths.imageFilesSite + "/**/*",
     ],
     { dot: true }
   );

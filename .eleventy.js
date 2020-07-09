@@ -9,17 +9,17 @@ const mila = require("markdown-it-link-attributes");
 const componentsDir = "./src/_includes/components";
 const pictureCard = require(`${componentsDir}/PictureCard.js`);
 const picture = require(`${componentsDir}/Picture.js`);
-const pictureHero = require(`${componentsDir}/PictureHero.js`)
+const pictureHero = require(`${componentsDir}/PictureHero.js`);
 
 const filtersDir = "./src/_includes/filters";
 const base64 = require(`${filtersDir}/base64.js`);
 const slug = require(`${filtersDir}/slug.js`);
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   //  SHORTCODE
   eleventyConfig.addShortcode("picture-card", pictureCard);
   eleventyConfig.addShortcode("picture", picture);
-  eleventyConfig.addShortcode("picture-hero", pictureHero)
+  eleventyConfig.addShortcode("picture-hero", pictureHero);
 
   //  FILTERS
   eleventyConfig.addFilter("base64", base64);
@@ -29,7 +29,7 @@ module.exports = function(eleventyConfig) {
   const markdownItOptions = {
     html: true,
     linkify: true,
-    typographer: true
+    typographer: true,
   };
   const markdownItAnchorOptions = {
     level: [2, 3, 4],
@@ -37,24 +37,24 @@ module.exports = function(eleventyConfig) {
     permalinkSymbol: "#",
     permalinkClass: "headline-link",
     permalinkBefore: true,
-    slugify: function(str) {
+    slugify: function (str) {
       return slugify(str, {
         replacement: "-",
-        lower: true
+        lower: true,
       });
-    }
+    },
   };
   const markdownItAttrsOptions = {
     leftDelimiter: "{:",
     rightDelimiter: "}",
-    allowedAttributes: ["id", "class", /^data\-.*$/]
+    allowedAttributes: ["id", "class", /^data\-.*$/],
   };
   const milaOptions = {
     pattern: /^https:/,
     attrs: {
       target: "_blank",
-      rel: "noopener"
-    }
+      rel: "noopener",
+    },
   };
 
   const markdown = markdownIt(markdownItOptions)
@@ -68,7 +68,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(xmlFiltersPlugin);
 
   //  COLLECTIONS
-  eleventyConfig.addCollection("posts", collection => {
+  eleventyConfig.addCollection("posts", (collection) => {
     const coll = collection.getFilteredByTag("post");
 
     for (let i = 0; i < coll.length; i++) {
@@ -92,8 +92,12 @@ module.exports = function(eleventyConfig) {
 
   // PASSTHROUGHT ELEMENTS
   eleventyConfig.addPassthroughCopy({ "src/icons/*": "/" });
-  eleventyConfig.addPassthroughCopy({ "src/netlify.toml": "/netlify.toml" });
-  eleventyConfig.addPassthroughCopy({ "src/assets/images/thumbnail.jpg": "/assets/images/thumbnail.jpg" });
+  eleventyConfig.addPassthroughCopy({
+    "src/netlify.toml": "/netlify.toml",
+  });
+  eleventyConfig.addPassthroughCopy({
+    "src/assets/images/thumbnail.jpg": "/assets/images/thumbnail.jpg",
+  });
 
   // DON'T USE .GITIGNORE
   eleventyConfig.setUseGitIgnore(false);
@@ -103,7 +107,7 @@ module.exports = function(eleventyConfig) {
       data: "_data",
       includes: "_includes",
       input: "tmp/src",
-      output: "tmp/dist"
-    }
+      output: "tmp/dist",
+    },
   };
 };

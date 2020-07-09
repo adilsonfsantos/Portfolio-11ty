@@ -27,7 +27,7 @@ Esse é o código fonte do portfólio de Adilson Santos, feito com base no repos
 
 ### 2. Instalação
 
-Clone o repositório e use o comando ```npm install```
+Clone o repositório e use o comando `npm install`
 
 ### 3. Estrutura
 
@@ -67,41 +67,41 @@ Clone o repositório e use o comando ```npm install```
 
 ### 4. Utilização
 
-#### ```gulp [--prod]```
+#### `gulp [--prod]`
 
 Esse é o comando padrão, ele processa o CSS, JS, imagens e o site com as configurações de desenvolvimento, também abre o código atual no seu navegador com o [BrowserSync](https://github.com/shakyShane/browser-sync) que enquanto você modifica os arquivos ele vai atualizando o navegador automaticamente.
 
 > --prod
 
-Utilizando com o argumento ```--prod``` o seu CSS, JS e HTML serão minificados e gzipados.
+Utilizando com o argumento `--prod` o seu CSS, JS e HTML serão minificados e gzipados.
 
-#### ```gulp build [--prod]```
+#### `gulp build [--prod]`
 
-O comando é idêntico ao ```gulp [--prod]```, porém ele não irá abrir o navegador.
+O comando é idêntico ao `gulp [--prod]`, porém ele não irá abrir o navegador.
 
-#### ```gulp styles|scripts [--prod]```
+#### `gulp styles|scripts [--prod]`
 
-Seu CSS e JS vão possuir sourcemaps, porém apenas com o argumento ```--prod]``` eles serão minificados e gzipados.
+Seu CSS e JS vão possuir sourcemaps, porém apenas com o argumento `--prod]` eles serão minificados e gzipados.
 
-#### ```gulp images```
+#### `gulp images`
 
 Redimensiona imagens e as otimiza para que elas sejam servidas de forma responsiva.
 
-#### ```gulp html --prod```
+#### `gulp html --prod`
 
 Redimensiona imagens e otimiza para que elas sejam servidas de forma responsiva.
 
-#### ```gulp serve```
+#### `gulp serve`
 
 Serve apenas para acompanhar o seu site no navegador.
 
-#### ```gulp clean```
+#### `gulp clean`
 
-Deleta os seus arquivos do assets no ```.tmp``` assim como no ```dist```, também deleta todos os arquivos gzipados. **Nota:** Não deleta as suas imagens do ```.tmp``` para que o tempo da build não aumente devido as otimizações de imagem.
+Deleta os seus arquivos do assets no `.tmp` assim como no `dist`, também deleta todos os arquivos gzipados. **Nota:** Não deleta as suas imagens do `.tmp` para que o tempo da build não aumente devido as otimizações de imagem.
 
-#### ```gulp critical```
+#### `gulp critical`
 
-Extrai o CSS crítico dos layouts ```home```, ```page```, ```post``` e ```404```, para que ele seja incluído no layout via ```{% include %}``` **Nota:** Deve-se rodar o gulp build antes de rodar o critical, pois o critical utiliza os arquivos HTML gerados para criar o CSS.
+Extrai o CSS crítico dos layouts `home`, `page`, `post` e `404`, para que ele seja incluído no layout via `{% include %}` **Nota:** Deve-se rodar o gulp build antes de rodar o critical, pois o critical utiliza os arquivos HTML gerados para criar o CSS.
 
 ## 5. Códigos auxiliares
 
@@ -109,19 +109,19 @@ Extrai o CSS crítico dos layouts ```home```, ```page```, ```post``` e ```404```
 
 Recomendado para qualquer imagem.
 
-```{% picture "url para imagem", "alt", "class para picture", "classe para img" %}```
+`{% picture "url para imagem", "alt", "class para picture", "classe para img" %}`
 
 ### PictureCard
 
 Recomendado para imagens dos cards da home.
 
-```{% picture-card "url para imagem", "alt", "class para picture", "classe para img" %}```
+`{% picture-card "url para imagem", "alt", "class para picture", "classe para img" %}`
 
 ### PictureHero
 
 Recomendado para imagens de banner, ela **não** utiliza o lazysizes.
 
-```{% picture-hero "url para imagem", "alt", "class para picture", "classe para img" %}```
+`{% picture-hero "url para imagem", "alt", "class para picture", "classe para img" %}`
 
 **Nota:** A biblioteca [Lazysizes](https://github.com/aFarkas/lazysizes) é utilizada para carregamento lento das images, porém em caso do Javascript não estar disponível o navegador utilizará as imagens geradas para a tag noscript.
 

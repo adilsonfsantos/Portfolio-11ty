@@ -41,7 +41,12 @@ gulp.task("build", gulp.series("clean", "assets", "build:site", "html"));
 //   WARNING: .html files referenced need to exist, run after `gulp build` to ensure.
 gulp.task(
   "critical",
-  gulp.series("styles:critical:home", "styles:critical:post","styles:critical:page", "styles:critical:404")
+  gulp.series(
+    "styles:critical:home",
+    "styles:critical:post",
+    "styles:critical:page",
+    "styles:critical:404"
+  )
 );
 
 // 'gulp' -- removes assets and gzipped files, creates assets and revs version

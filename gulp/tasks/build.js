@@ -12,7 +12,7 @@ gulp.task("site:tmp", () => {
       [
         paths.src + "/**/*",
         "!" + paths.sourceDir + paths.assets + "/**/*",
-        "!" + paths.sourceDir + paths.assets
+        "!" + paths.sourceDir + paths.assets,
       ],
       { dot: true }
     )
@@ -23,7 +23,7 @@ gulp.task("site:tmp", () => {
 // 'gulp site' -- builds site with development settings
 // 'gulp site --prod' -- builds site with production settings
 gulp.task("site", () => {
-  return cp.spawn("npx",["eleventy", "--quiet"], {
-    stdio: "inherit"
+  return cp.spawn("npx", ["eleventy", "--quiet"], {
+    stdio: "inherit",
   });
 });
