@@ -23,7 +23,7 @@
     "defaults"
   ],
   "devDependencies": {
-    "critical": "^2.0.1",
+    "critical": "^2.0.3",
     "prettier": "2.0.5",
     "stylelint": "^13.6.1",
     "stylelint-config-prettier": "^8.0.2",
@@ -32,10 +32,10 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
-    "@babel/core": "^7.10.4",
-    "@babel/preset-env": "^7.10.4",
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
     "babelify": "^10.0.0",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.12",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
     "eleventy-xml-plugin": "^0.1.0",
@@ -63,7 +63,7 @@
     "markdown-it-link-attributes": "^3.0.0",
     "node-sass": "^4.14.1",
     "require-dir": "^1.2.0",
-    "slugify": "^1.4.4",
-    "yargs": "^15.4.0"
+    "slugify": "^1.4.5",
+    "yargs": "^15.4.1"
   }
 }
