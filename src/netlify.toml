@@ -6,7 +6,7 @@
   for = "/"
   [headers.values]
     Cache-Control = "no-cache"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'sha256-0A3SoNnOj/VD5rKtWDb4PSvN8Br+QRibbwlM+84okfY='; img-src 'self'; connect-src 'self'; font-src 'self'; style-src 'self' 'sha256-7ef72rlgLEEUh2HX2mNXnVBU8KUM62WkfG6aUzs+j/M' 'sha256-PGGzYD5ePSiHBAweHqXZjomSNW3ckmK6v/0vATR5nX0=' 'sha256-Zq1DHilMmUoxZKuGCqk6QFU77+ObyuR5SSjw8Hpiuto=' 'sha256-2/2BjJ54DFNeLDeJPe8YOI3dj0Ja7BqTEizdp0eR7gk='; manifest-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests;  block-all-mixed-content; disown-opener; report-to default; report-uri 'https://adilsonsantos.report-uri.com/r/d/csp/enforce'; prefetch-src 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; img-src 'self'; connect-src 'self'; font-src 'self'; style-src 'self' 'unsafe-inline'; manifest-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests;  block-all-mixed-content; disown-opener; report-to default; report-uri 'https://adilsonsantos.report-uri.com/r/d/csp/enforce'; prefetch-src 'self'"
     Feature-Policy = "vibrate 'none'; geolocation 'none'; midi 'none'; notifications 'none'; push 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; vibrate 'none'; payment 'none'"
     Referrer-Policy = "no-referrer"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
@@ -75,14 +75,14 @@ for = "/*.css"
   status = 404
 
 [[redirects]]
-  from = "http://adilsonsantos.netlify.com/*"
-  to = "https://adilsonsantos.netlify.com/:splat"
+  from = "http://adilsonsantos.netlify.app/*"
+  to = "https://adilsonsantos.netlify.app/:splat"
   status = 301
   force = true
 
 [[redirects]]
-  from = "www.adilsonsantos.netlify.com/*"
-  to = "https://adilsonsantos.netlify.com/:splat"
+  from = "www.adilsonsantos.netlify.app/*"
+  to = "https://adilsonsantos.netlify.app/:splat"
   status = 301
   force = true
 

@@ -23,17 +23,17 @@
     "defaults"
   ],
   "devDependencies": {
-    "critical": "^2.0.3",
-    "prettier": "2.0.5",
-    "stylelint": "^13.6.1",
+    "critical": "^2.0.4",
+    "prettier": "2.1.1",
+    "stylelint": "^13.7.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-scss": "^3.18.0"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
-    "@babel/core": "^7.11.4",
-    "@babel/preset-env": "^7.11.0",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
     "babelify": "^10.0.0",
     "browser-sync": "^2.26.12",
     "cssnano": "^4.1.10",
@@ -64,6 +64,6 @@
     "node-sass": "^4.14.1",
     "require-dir": "^1.2.0",
     "slugify": "^1.4.5",
-    "yargs": "^15.4.1"
+    "yargs": "^16.0.3"
   }
 }
