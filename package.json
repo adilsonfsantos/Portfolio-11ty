@@ -35,7 +35,7 @@
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "babelify": "^10.0.0",
-    "browser-sync": "^2.26.12",
+    "browser-sync": "^2.26.13",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
     "eleventy-xml-plugin": "^0.1.0",
