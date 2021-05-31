@@ -1,4 +1,6 @@
 //MEDIA QUERIES
+@use "sass:math";
+
 @mixin viewport($size, $width: width) {
   @if not(index(map-keys($grid-breakpoints-map), $size)) {
     @warn 'Atenção: `#{$size}` não é um breakpoint válido.';
@@ -10,7 +12,7 @@
 }
 //ASPECT RATIO PARA AS IMAGENS CARREGADAS
 @mixin aspect-ratio($width, $height) {
-  padding-top: ($height / $width) * 100%;
+  padding-top: math.div($height , $width) * 100%;
 }
 //LAYOUT
 @mixin flex {

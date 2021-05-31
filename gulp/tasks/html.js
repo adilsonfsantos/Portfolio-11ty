@@ -29,7 +29,7 @@ gulp.task("html", () => {
         })
       )
     )
-    .pipe(when(argv.prod, size({ title: "optimized HTML" })))
+    // .pipe(when(argv.prod, size()))
     .pipe(when(argv.prod, gulp.dest(paths.dist)))
     .pipe(when(argv.prod, gzip({ append: true })))
     .pipe(

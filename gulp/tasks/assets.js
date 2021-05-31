@@ -10,7 +10,7 @@ const gulp = require("gulp");
 const gzip = require("gulp-gzip");
 const postcss = require("gulp-postcss");
 const rev = require("gulp-rev");
-const sass = require("gulp-sass");
+const { sassSync } = require("@mr-hope/gulp-sass");
 const size = require("gulp-size");
 const sourcemaps = require("gulp-sourcemaps");
 const uglify = require("gulp-uglify-es").default;
@@ -80,22 +80,23 @@ gulp.task("styles", () => {
     gulp
       .src([paths.sassFiles + "/*.scss"])
       .pipe(when(!argv.prod, sourcemaps.init()))
+      // .pipe(sass().on("error", sass.logError))
       .pipe(
-        sass({
+        sassSync({
           includePaths: [paths.sassFiles], // Tell Sass where to look for files
-        }).on("error", sass.logError)
+        }).on("error", sassSync.logError)
       )
       // .pipe(when(argv.prod,when("*.css",postcss(plugins))))
       .pipe(when(argv.prod, postcss(plugins)))
-      .pipe(size({ showFiles: true }))
+      // .pipe(size({ showFiles: true }))
       .pipe(when(argv.prod, sourcemaps.write(".")))
       .pipe(when(argv.prod, gulp.dest(paths.sassFilesTemp + "/")))
       .pipe(when(argv.prod, rev()))
-      .pipe(when(argv.prod, size({ showFiles: true })))
+      // .pipe(when(argv.prod, size({ showFiles: true })))
       .pipe(gulp.dest(paths.sassFilesTemp + "/"))
       .pipe(rev.manifest("css-manifest.json"))
       .pipe(gulp.dest([paths.tempDir + paths.sourceDir + paths.data]))
-      .pipe(when(argv.prod, size({ showFiles: true })))
+      // .pipe(when(argv.prod, size({ showFiles: true })))
       .pipe(when(!argv.prod, browserSync.stream()))
   );
 });

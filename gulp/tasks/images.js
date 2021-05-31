@@ -1,7 +1,7 @@
 "use strict";
 var assetCache = require("gulp-asset-cache");
 var gulp = require("gulp");
-var responsive = require("gulp-responsive");
+var responsive = require("@cjquines/gulp-responsive");
 
 // include paths file
 var paths = require("../paths");
