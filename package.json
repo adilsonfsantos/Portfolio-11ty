@@ -25,7 +25,7 @@
     "defaults"
   ],
   "devDependencies": {
-    "critical": "^3.1.0",
+    "critical": "^4.0.0",
     "prettier": "2.3.0",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
