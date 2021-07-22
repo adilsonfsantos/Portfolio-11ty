@@ -40,7 +40,7 @@
     "@mr-hope/gulp-sass": "^2.0.0",
     "babelify": "^10.0.0",
     "browser-sync": "^2.26.14",
-    "cssnano": "^5.0.5",
+    "cssnano": "^5.0.7",
     "del": "^6.0.0",
     "eleventy-xml-plugin": "^0.1.0",
     "gulp": "^4.0.2",
