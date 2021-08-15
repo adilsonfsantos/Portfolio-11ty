@@ -4,13 +4,12 @@ const autoprefixer = require("autoprefixer");
 const babelify = require("babelify");
 const bro = require("gulp-bro");
 const browserSync = require("browser-sync").create();
-// const concat = require("gulp-concat");
 const cssnano = require("cssnano");
 const gulp = require("gulp");
 const gzip = require("gulp-gzip");
 const postcss = require("gulp-postcss");
 const rev = require("gulp-rev");
-const { sassSync } = require("@mr-hope/gulp-sass");
+const sass = require("gulp-sass")(require('sass'));
 const size = require("gulp-size");
 const sourcemaps = require("gulp-sourcemaps");
 const uglify = require("gulp-uglify-es").default;
@@ -37,21 +36,19 @@ gulp.task("scripts", () => {
         })
       )
       .pipe(when(!argv.prod, sourcemaps.init()))
-      // .pipe(concat("main.js"))
-      // .pipe(source('main.js'))
       .pipe(size({ showFiles: true }))
       .pipe(when(argv.prod, when("*.js", uglify())))
       .pipe(when(!argv.prod, sourcemaps.write(".")))
       .pipe(gulp.dest(paths.jsFilesTemp))
       // JS cache bursting
-      .pipe(when(argv.prod, rev()))
-      .pipe(when(argv.prod, size({ showFiles: true })))
+      .pipe(rev())
+      .pipe(size({ showFiles: true }))
       // gera arquivos compactados
       .pipe(when(argv.prod, gulp.dest(paths.jsFilesTemp)))
       // gera manifesto dos arquivos compactados
       .pipe(rev.manifest("js-manifest.json"))
       .pipe(gulp.dest(paths.tempDir + paths.sourceDir + paths.data))
-      .pipe(when(argv.prod, size({ showFiles: true })))
+      .pipe(size({ showFiles: true }))
   );
 });
 
@@ -80,23 +77,25 @@ gulp.task("styles", () => {
     gulp
       .src([paths.sassFiles + "/*.scss"])
       .pipe(when(!argv.prod, sourcemaps.init()))
-      // .pipe(sass().on("error", sass.logError))
+      .pipe(sass().on("error", sass.logError))
       .pipe(
-        sassSync({
+        sass({
           includePaths: [paths.sassFiles], // Tell Sass where to look for files
-        }).on("error", sassSync.logError)
+        }).on("error", sass.logError)
       )
-      // .pipe(when(argv.prod,when("*.css",postcss(plugins))))
+      .pipe(when(argv.prod,when("*.css",postcss(plugins))))
       .pipe(when(argv.prod, postcss(plugins)))
-      // .pipe(size({ showFiles: true }))
+      .pipe(size({ showFiles: true }))
       .pipe(when(argv.prod, sourcemaps.write(".")))
       .pipe(when(argv.prod, gulp.dest(paths.sassFilesTemp + "/")))
-      .pipe(when(argv.prod, rev()))
-      // .pipe(when(argv.prod, size({ showFiles: true })))
+      // CSS cache bursting
+      .pipe(rev())
+      .pipe(size({ showFiles: true }))
+      // gera arquivos compactados
       .pipe(gulp.dest(paths.sassFilesTemp + "/"))
       .pipe(rev.manifest("css-manifest.json"))
       .pipe(gulp.dest([paths.tempDir + paths.sourceDir + paths.data]))
-      // .pipe(when(argv.prod, size({ showFiles: true })))
+      .pipe(when(argv.prod, size({ showFiles: true })))
       .pipe(when(!argv.prod, browserSync.stream()))
   );
 });

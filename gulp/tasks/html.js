@@ -74,11 +74,6 @@ gulp.task("styles:critical:page", () => {
         base: "./",
         inline: false,
         css: [paths.sassFilesTemp + "/page.css"],
-        dimensions: pageDimensions,
-        target: paths.sourceDir + paths.includes + "/critical-page.css",
-        minify: true,
-        extract: false,
-        ignore: ["@font-face", "/print/", /url\(/, ".popular-list"], // defer loading of webfonts and background images
       })
     );
 });
@@ -93,11 +88,6 @@ gulp.task("styles:critical:post", () => {
         base: "./",
         inline: false,
         css: [paths.sassFilesTemp + "/post.css"],
-        dimensions: pageDimensions,
-        target: paths.sourceDir + paths.includes + "/critical-post.css",
-        minify: true,
-        extract: false,
-        ignore: ["@font-face", "/print/", /url\(/, ".popular-list"], // defer loading of webfonts and background images
       })
     );
 });
@@ -110,11 +100,6 @@ gulp.task("styles:critical:home", () => {
       base: "./",
       inline: false,
       css: [paths.sassFilesTemp + "/home.css"],
-      dimensions: pageDimensions,
-      target: paths.sourceDir + paths.includes + "/critical-home.css",
-      minify: true,
-      extract: false,
-      ignore: ["@font-face", "/print/", /url\(/, ".popular-list"], // defer loading of webfonts and background images
     })
   );
 });
@@ -127,11 +112,6 @@ gulp.task("styles:critical:404", () => {
       base: "./",
       inline: false,
       css: [paths.sassFilesTemp + "/404.css"],
-      dimensions: pageDimensions,
-      target: paths.sourceDir + paths.includes + "/critical-404.css",
-      minify: true,
-      extract: false,
-      ignore: ["@font-face", "/print/", /url\(/, ".popular-list"], // defer loading of webfonts and background images
     })
   );
 });

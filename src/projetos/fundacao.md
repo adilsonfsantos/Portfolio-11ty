@@ -43,10 +43,7 @@ team:
 ---
 ## Desafio
 
-Com uma extensa mata de 75.000 m² e um grande acervo de obras a Fundação Maria
-Luisa e Oscar Americano é um dos principais pontos de cultura e lazer de São
-Paulo. E para refletir a importância da Fundação foi feito este conceito de
-redesign do site para as aulas de arquitetura da informação e programação web.
+Com uma extensa mata de 75.000 m² e um grande acervo de obras a Fundação Maria Luisa e Oscar Americano é um dos principais pontos de cultura e lazer de São Paulo. E para refletir a importância da Fundação foi feito este conceito de redesign do site para as aulas de arquitetura da informação e programação web.
 
 ## Solução
 

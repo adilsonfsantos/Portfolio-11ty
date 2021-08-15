@@ -27,68 +27,48 @@ gulp.task("images", () => {
               rename: { suffix: "-lq", extname: ".jpg" },
             },
             {
-              width: 240,
-              rename: { suffix: "-240", extname: ".jpg" },
+              width: 320,
+              rename: { suffix: "-320", extname: ".jpg" },
             },
             {
               width: 480,
               rename: { suffix: "-480", extname: ".jpg" },
             },
             {
-              width: 640,
-              rename: { suffix: "-640", extname: ".jpg" },
-            },
-            {
               width: 768,
               rename: { suffix: "-768", extname: ".jpg" },
             },
             {
-              width: 1024,
-              rename: { suffix: "-1024", extname: ".jpg" },
+              width: 992,
+              rename: { suffix: "-992", extname: ".jpg" },
             },
             {
-              width: 1280,
+              width: 1200,
               rename: { extname: ".jpg" },
-            },
-            {
-              width: 1366,
-              rename: { suffix: "-1366", extname: ".jpg" },
-            },
-            {
-              width: 1600,
-              rename: { suffix: "-1600", extname: ".jpg" },
             },
             {
               width: 1920,
               rename: { suffix: "-1920", extname: ".jpg" },
             },
             {
-              width: 240,
-              rename: { suffix: "-240", extname: ".webp" },
+              width: 320,
+              rename: { suffix: "-320", extname: ".webp" },
             },
             {
               width: 480,
               rename: { suffix: "-480", extname: ".webp" },
             },
             {
-              width: 640,
-              rename: { suffix: "-640", extname: ".webp" },
-            },
-            {
               width: 768,
               rename: { suffix: "-768", extname: ".webp" },
             },
             {
-              width: 1024,
+              width: 992,
               rename: { suffix: "-1024", extname: ".webp" },
             },
             {
-              width: 1366,
+              width: 1200,
               rename: { suffix: "-1366", extname: ".webp" },
-            },
-            {
-              width: 1600,
-              rename: { suffix: "-1600", extname: ".webp" },
             },
             {
               width: 1920,
