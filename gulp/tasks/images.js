@@ -44,7 +44,7 @@ gulp.task("images", () => {
             },
             {
               width: 1200,
-              rename: { extname: ".jpg" },
+              rename: { suffix: "-1200", extname: ".jpg" },
             },
             {
               width: 1920,
@@ -64,11 +64,11 @@ gulp.task("images", () => {
             },
             {
               width: 992,
-              rename: { suffix: "-1024", extname: ".webp" },
+              rename: { suffix: "-992", extname: ".webp" },
             },
             {
               width: 1200,
-              rename: { suffix: "-1366", extname: ".webp" },
+              rename: { suffix: "-1200", extname: ".webp" },
             },
             {
               width: 1920,
