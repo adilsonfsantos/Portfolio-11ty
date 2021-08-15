@@ -2,7 +2,7 @@
   @include grid();
   @include grid--base();
   @include elevation(header, $black, false, $overlay: none);
-  @include color('border-bottom', $white, $black, divider-white);
+  @include color("border-bottom", $white, $black, divider-white);
   border-bottom-style: solid;
   border-bottom-width: 1px;
   position: fixed;
@@ -14,7 +14,6 @@
     align-items: center;
     grid-column: span 4;
 
-
     @include viewport(sm-small) {
       grid-column: span 8;
     }
@@ -24,10 +23,10 @@
     }
 
     &--logo {
-      @include color('color', $white, $white, body);
+      @include color("color", $white, $white, body);
     }
 
-    &--logo>svg {
+    &--logo > svg {
       display: inherit;
       fill: currentcolor;
       height: $base-size * 1.5;
@@ -37,7 +36,6 @@
       @include viewport(xs-medium) {
         height: $base-size * 1.5;
       }
-
     }
 
     &--spacer {
@@ -55,15 +53,14 @@
   &__link {
     @include font--body();
     @include font--color($white, secondary);
-    @include transition(all, .15s, $animation-standard);
+    @include transition(all, 0.15s, $animation-standard);
     line-height: 1.2;
     padding: 1rem 0;
     text-decoration: underline;
 
-
     &:hover,
     &:focus {
-      @include font--color ($white, primary);
+      @include font--color($white, primary);
     }
 
     &:not(:last-child) {
@@ -71,7 +68,7 @@
     }
 
     &--active {
-      @include font--color ($white, primary);
+      @include font--color($white, primary);
     }
   }
 }

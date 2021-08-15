@@ -27,7 +27,7 @@
       @include font--headline3();
       @include font--weight(bold);
       grid-column: 1/-1;
-      margin-bottom: $base-size * .5;
+      margin-bottom: $base-size * 0.5;
 
       @include viewport(xs-medium) {
         @include font--headline2();
@@ -58,8 +58,6 @@
       row-gap: $base-size;
     }
 
-
-
     .headline-link {
       @include font--color($secondary, primary);
       text-decoration: underline;
@@ -77,7 +75,7 @@
     }
 
     h1::before {
-      content: '';
+      content: "";
       display: block;
       height: $base-size * 5;
     }
@@ -141,16 +139,12 @@
       }
 
       > ul {
-        margin: ($base-size * .5);
+        margin: ($base-size * 0.5);
       }
     }
 
-    li
-
-
-
-    li:not(:last-child) {
-      margin-bottom: $base-size * .75;
+    li li:not(:last-child) {
+      margin-bottom: $base-size * 0.75;
     }
   }
 }

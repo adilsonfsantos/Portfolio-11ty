@@ -15,44 +15,44 @@ $font--size: $base-size;
 $elevation-map: (
   body: (
     elevation: 0,
-    overlay: 0%
+    overlay: 0%,
   ),
   divider-black: (
     elevation: 0,
-    overlay: 12%
+    overlay: 12%,
   ),
   divider-white: (
     elevation: 0,
-    overlay: 20%
+    overlay: 20%,
   ),
   card: (
     elevation: 1,
-    overlay: 5%
+    overlay: 5%,
   ),
   button: (
     elevation: 2,
-    overlay: 7%
+    overlay: 7%,
   ),
   header: (
     elevation: 4,
-    overlay: 9%
+    overlay: 9%,
   ),
   card-hover: (
     elevation: 8,
-    overlay: 12%
+    overlay: 12%,
   ),
   button-hover: (
     elevation: 8,
-    overlay: 12%
+    overlay: 12%,
   ),
   dialog: (
     elevation: 12,
-    overlay: 14%
+    overlay: 14%,
   ),
   fab: (
     elevation: 6,
-    overlay: 11%
-  )
+    overlay: 11%,
+  ),
 );
 
 //Breakpoints
@@ -60,38 +60,38 @@ $grid-breakpoints-map: (
   xs-small: (
     width: 319px,
     column: 4,
-    margin: $base-size
+    margin: $base-size,
   ),
   xs-medium: (
     width: 359px,
     column: 4,
-    margin: $base-size
+    margin: $base-size,
   ),
   xs-large: (
     width: 567px,
     column: 4,
-    margin: $base-size
+    margin: $base-size,
   ),
   sm-small: (
     width: 639px,
     column: 8,
-    margin: $base-size * 1.5
+    margin: $base-size * 1.5,
   ),
   sm-medium: (
     width: 767px,
     column: 12,
-    margin: $base-size * 1.5
+    margin: $base-size * 1.5,
   ),
   md-small: (
     width: 1024px,
     column: 12,
-    margin: $base-size * 1.5
+    margin: $base-size * 1.5,
   ),
   md-medium: (
     width: 1280px,
     column: 12,
-    margin: $base-size * 1.5
-  )
+    margin: $base-size * 1.5,
+  ),
 );
 
 //Elevation
@@ -120,7 +120,7 @@ $elevation-umbra-map: (
   21: "0px 10px 13px -6px",
   22: "0px 10px 14px -6px",
   23: "0px 11px 14px -7px",
-  24: "0px 11px 15px -7px"
+  24: "0px 11px 15px -7px",
 ) !default;
 
 $elevation-penumbra-map: (
@@ -148,7 +148,7 @@ $elevation-penumbra-map: (
   21: "0px 21px 33px 3px",
   22: "0px 22px 35px 3px",
   23: "0px 23px 36px 3px",
-  24: "0px 24px 38px 3px"
+  24: "0px 24px 38px 3px",
 ) !default;
 
 $elevation-ambient-map: (
@@ -176,7 +176,7 @@ $elevation-ambient-map: (
   21: "0px 8px 40px 7px",
   22: "0px 8px 42px 7px",
   23: "0px 9px 44px 8px",
-  24: "0px 9px 46px 8px"
+  24: "0px 9px 46px 8px",
 ) !default;
 
 $elevation-overlay-color: $white;
@@ -189,17 +189,7 @@ $elevation-overlay-property: opacity !default;
 $elevation-transition-duration: 280ms !default;
 
 //Animation
-$animation-deceleration: cubic-bezier(
-  0,
-  0,
-  0.2,
-  1
-) !default;
+$animation-deceleration: cubic-bezier(0, 0, 0.2, 1) !default;
 $animation-standard: cubic-bezier(0.4, 0, 0.2, 1) !default;
-$animation-acceleration: cubic-bezier(
-  0.4,
-  0,
-  1,
-  1
-) !default;
+$animation-acceleration: cubic-bezier(0.4, 0, 1, 1) !default;
 $animation-sharp: cubic-bezier(0.4, 0, 0.6, 1) !default;

@@ -13,56 +13,38 @@ var paths = require("../paths");
 // 'gulp html' -- does nothing
 // 'gulp html --prod' -- minifies and gzips HTML files for production
 gulp.task("html", () => {
-  return gulp
-    .src(paths.dist + paths.liquidPattern)
-    .pipe(
-      when(
-        argv.prod,
-        htmlmin({
-          removeComments: true,
-          collapseWhitespace: true,
-          collapseBooleanAttributes: false,
-          removeAttributeQuotes: false,
-          removeRedundantAttributes: false,
-          minifyJS: true,
-          minifyCSS: true,
-        })
+  return (
+    gulp
+      .src(paths.dist + paths.liquidPattern)
+      .pipe(
+        when(
+          argv.prod,
+          htmlmin({
+            removeComments: true,
+            collapseWhitespace: true,
+            collapseBooleanAttributes: false,
+            removeAttributeQuotes: false,
+            removeRedundantAttributes: false,
+            minifyJS: true,
+            minifyCSS: true,
+          })
+        )
       )
-    )
-    // .pipe(when(argv.prod, size()))
-    .pipe(when(argv.prod, gulp.dest(paths.dist)))
-    .pipe(when(argv.prod, gzip({ append: true })))
-    .pipe(
-      when(
-        argv.prod,
-        size({
-          title: "gzipped HTML",
-          gzip: true,
-        })
+      // .pipe(when(argv.prod, size()))
+      .pipe(when(argv.prod, gulp.dest(paths.dist)))
+      .pipe(when(argv.prod, gzip({ append: true })))
+      .pipe(
+        when(
+          argv.prod,
+          size({
+            title: "gzipped HTML",
+            gzip: true,
+          })
+        )
       )
-    )
-    .pipe(when(argv.prod, gulp.dest(paths.dist)));
+      .pipe(when(argv.prod, gulp.dest(paths.dist)))
+  );
 });
-
-// Page dimensions for critical CSS
-var pageDimensions = [
-  {
-    width: 240,
-    height: 320,
-  },
-  {
-    width: 320,
-    height: 568,
-  },
-  {
-    width: 1024,
-    height: 1024,
-  },
-  {
-    width: 1366,
-    height: 768,
-  },
-];
 
 // 'gulp styles:critical:page' -- extract layout.archive critical CSS
 //   into /_includes/critical-page.css
@@ -74,6 +56,24 @@ gulp.task("styles:critical:page", () => {
         base: "./",
         inline: false,
         css: [paths.sassFilesTemp + "/page.css"],
+        dimensions: [
+          {
+            width: 240,
+            height: 320,
+          },
+          {
+            width: 320,
+            height: 568,
+          },
+          {
+            width: 1024,
+            height: 1024,
+          },
+          {
+            width: 1366,
+            height: 768,
+          },
+        ],
       })
     );
 });
@@ -88,6 +88,24 @@ gulp.task("styles:critical:post", () => {
         base: "./",
         inline: false,
         css: [paths.sassFilesTemp + "/post.css"],
+        dimensions: [
+          {
+            width: 240,
+            height: 320,
+          },
+          {
+            width: 320,
+            height: 568,
+          },
+          {
+            width: 1024,
+            height: 1024,
+          },
+          {
+            width: 1366,
+            height: 768,
+          },
+        ],
       })
     );
 });
@@ -100,6 +118,24 @@ gulp.task("styles:critical:home", () => {
       base: "./",
       inline: false,
       css: [paths.sassFilesTemp + "/home.css"],
+      dimensions: [
+        {
+          width: 240,
+          height: 320,
+        },
+        {
+          width: 320,
+          height: 568,
+        },
+        {
+          width: 1024,
+          height: 1024,
+        },
+        {
+          width: 1366,
+          height: 768,
+        },
+      ],
     })
   );
 });
@@ -112,6 +148,24 @@ gulp.task("styles:critical:404", () => {
       base: "./",
       inline: false,
       css: [paths.sassFilesTemp + "/404.css"],
+      dimensions: [
+        {
+          width: 240,
+          height: 320,
+        },
+        {
+          width: 320,
+          height: 568,
+        },
+        {
+          width: 1024,
+          height: 1024,
+        },
+        {
+          width: 1366,
+          height: 768,
+        },
+      ],
     })
   );
 });

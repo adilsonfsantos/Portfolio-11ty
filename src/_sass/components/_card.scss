@@ -1,14 +1,18 @@
 .card {
-  @include transition(all, $elevation-transition-duration, $animation-standard);
+  @include transition(
+    all,
+    $elevation-transition-duration,
+    $animation-standard
+  );
   @include elevation(card, $black);
   @include flex();
   @include flex--column();
-  @include radius(.25);
+  @include radius(0.25);
   max-width: 100%;
   position: relative;
 
   &::after {
-    @include radius(.25);
+    @include radius(0.25);
     @include elevation(card-hover, none);
     @include absolute();
     opacity: 0;
@@ -34,13 +38,13 @@
 
   &__picture {
     // @include radius(.25);
-    border-radius: .25rem .25rem 0 0;
+    border-radius: 0.25rem 0.25rem 0 0;
     overflow: hidden;
     width: 100%;
 
     &--image {
       @include font--color($white, primary);
-      border-radius: .25rem .25rem 0 0;
+      border-radius: 0.25rem 0.25rem 0 0;
       width: 100%;
     }
   }
@@ -57,7 +61,7 @@
       @include font--color($white, primary);
       @include font--headline5();
       @include font--weight(bold);
-      margin-bottom: $base-size * .5;
+      margin-bottom: $base-size * 0.5;
 
       @include viewport(sm-medium) {
         @include font--headline4;

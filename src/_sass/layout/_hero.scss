@@ -5,7 +5,6 @@
   background-attachment: fixed;
   background-color: $gray;
 
-
   &__normal {
     @include flex();
     @include flex--column();

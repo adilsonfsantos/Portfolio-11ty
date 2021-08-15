@@ -9,7 +9,7 @@ const gulp = require("gulp");
 const gzip = require("gulp-gzip");
 const postcss = require("gulp-postcss");
 const rev = require("gulp-rev");
-const sass = require("gulp-sass")(require('sass'));
+const sass = require("gulp-sass")(require("sass"));
 const size = require("gulp-size");
 const sourcemaps = require("gulp-sourcemaps");
 const uglify = require("gulp-uglify-es").default;
@@ -83,7 +83,7 @@ gulp.task("styles", () => {
           includePaths: [paths.sassFiles], // Tell Sass where to look for files
         }).on("error", sass.logError)
       )
-      .pipe(when(argv.prod,when("*.css",postcss(plugins))))
+      .pipe(when(argv.prod, when("*.css", postcss(plugins))))
       .pipe(when(argv.prod, postcss(plugins)))
       .pipe(size({ showFiles: true }))
       .pipe(when(argv.prod, sourcemaps.write(".")))

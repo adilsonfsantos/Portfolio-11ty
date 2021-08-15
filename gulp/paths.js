@@ -60,8 +60,10 @@ paths.txtFilesGlob = paths.src + paths.txtPattern;
 paths.xmlFilesGlob = paths.src + paths.xmlPattern;
 paths.ymlFilesGlob = paths.src + paths.ymlPattern;
 
+// eslint-disable-next-line no-unused-vars
 var imageFilesCachePath;
 
+// eslint-disable-next-line no-undef
 if (process.env.CONTEXT === "production") {
   paths.imageFilesCachePath = "/opt/build/cache/assets/images";
 } else {

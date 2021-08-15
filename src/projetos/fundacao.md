@@ -3,7 +3,7 @@ title: Fundação Maria Luisa e Oscar Americano
 date: 2018-08-22T14:42:00.000Z
 image: /assets/images/oscar-americano-wide.png
 description: >-
-   Conceito de redesign para o site da Fundação Maria Luisa e Oscar Americano.
+  Conceito de redesign para o site da Fundação Maria Luisa e Oscar Americano.
 keywords:
   - otimização
   - usabilidade
@@ -41,6 +41,7 @@ team:
     portfolio: false
     role: UX Designer
 ---
+
 ## Desafio
 
 Com uma extensa mata de 75.000 m² e um grande acervo de obras a Fundação Maria Luisa e Oscar Americano é um dos principais pontos de cultura e lazer de São Paulo. E para refletir a importância da Fundação foi feito este conceito de redesign do site para as aulas de arquitetura da informação e programação web.

@@ -24,6 +24,7 @@ team:
     portfolio: false
     role: Redatora
 ---
+
 ## Introdução
 
 Em 1957 Michel Halla uniu sua paixão pelo futebol e pelo café e com uma

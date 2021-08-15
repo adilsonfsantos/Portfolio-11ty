@@ -23,6 +23,7 @@ team:
     portfolio: false
     role: UX Designer
 ---
+
 ## Introdução
 
 Fundada em 2015 a Sagrado Boulangerie tem o propósito de busca resgatar a qualidade na panificação, apenas trabalhando com pães artesanais que não utilizam processos químicos ou aditivos na manufatura.

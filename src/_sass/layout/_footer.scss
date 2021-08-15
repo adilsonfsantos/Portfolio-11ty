@@ -42,7 +42,7 @@
     list-style-type: none;
 
     li {
-      margin: ($base-size * .5) 0;
+      margin: ($base-size * 0.5) 0;
     }
 
     > li:not(:last-child) {
@@ -52,7 +52,7 @@
     a {
       @include font--color($white, secondary);
       @include font--body();
-      padding: .5rem 0;
+      padding: 0.5rem 0;
       text-decoration: underline;
     }
 

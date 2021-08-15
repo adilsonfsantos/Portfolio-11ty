@@ -54,13 +54,13 @@
         $animation-standard
       );
       border-radius: 50%;
-      padding: .625rem;
+      padding: 0.625rem;
       position: relative;
     }
 
     &--forward {
       display: block;
-      fill: rgba($black, .87);
+      fill: rgba($black, 0.87);
       height: $base-size * 1.5;
       width: $base-size * 1.5;
     }

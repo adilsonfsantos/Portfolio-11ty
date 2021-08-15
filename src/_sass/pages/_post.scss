@@ -129,16 +129,15 @@
 
     &--container {
       // @include grid--base();
-    display: grid;
-    grid-template-columns: 1fr minmax(0, 1024px) 1fr;
-    grid-column: 2;
+      display: grid;
+      grid-template-columns: 1fr minmax(0, 1024px) 1fr;
+      grid-column: 2;
     }
-
 
     &--picture {
       @include center--horizontal();
       @include aspect-ratio(1920, 960);
-      @include radius(.25);
+      @include radius(0.25);
       grid-column: 2;
       max-width: 1024px;
       overflow: hidden;
@@ -148,7 +147,7 @@
 
     &--image {
       @include font--color($white, primary);
-      @include radius(.25);
+      @include radius(0.25);
       height: auto;
       max-width: none;
       position: absolute;
@@ -241,7 +240,7 @@
 
     ul,
     ol {
-      margin-top: $base-size * .25;
+      margin-top: $base-size * 0.25;
       margin-left: $base-size;
     }
 
@@ -285,7 +284,7 @@
   }
   .post__photo {
     @include center--horizontal();
-    @include radius(.25);
+    @include radius(0.25);
     grid-column: 1/-1;
     max-width: 1024px;
     overflow: hidden;
@@ -297,7 +296,7 @@
   }
 
   .post__photo > img {
-    @include radius(.25);
+    @include radius(0.25);
     height: auto;
   }
 
@@ -319,7 +318,7 @@
 
   &__photo--image--lazy {
     @include font--color($white, primary);
-    @include radius(.25);
+    @include radius(0.25);
     height: auto;
     max-width: none;
     position: absolute;

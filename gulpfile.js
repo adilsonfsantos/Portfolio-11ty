@@ -1,8 +1,9 @@
 "use strict";
 const gulp = require("gulp");
-const cp = require("child_process");
 const requireDir = require("require-dir");
+// eslint-disable-next-line no-unused-vars
 const tasks = requireDir("./gulp/tasks", { recurse: true });
+// eslint-disable-next-line no-unused-vars
 const paths = require("./gulp/paths");
 
 // 'gulp build:site' -- copies, replaces rev'd references, builds, and then copies it again

@@ -24,6 +24,7 @@ team:
     portfolio: false
     role: Redator
 ---
+
 ## Introdução
 
 O Mackenzie Aeja é um projeto que desde 2009 oferece ensino gratuito para jovens e adultos que não tiveram acesso ou não deram continuidade ao seus estudos.

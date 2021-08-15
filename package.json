@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Portfolio of Adilson Santos using 11ty and Gulp",
   "main": "gulpfile.js",
-  "scripts": {
-    "postinstall": "patch-package"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/adilsonfsantos/Portfolio-11ty.git"
@@ -26,6 +24,9 @@
   ],
   "devDependencies": {
     "critical": "^4.0.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "prettier": "2.3.2",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
@@ -63,7 +64,6 @@
     "markdown-it-anchor": "^8.1.2",
     "markdown-it-attrs": "^4.0.0",
     "markdown-it-link-attributes": "^3.0.0",
-    "patch-package": "^6.4.7",
     "require-dir": "^1.2.0",
     "sass": "^1.37.5",
     "slugify": "^1.6.0",

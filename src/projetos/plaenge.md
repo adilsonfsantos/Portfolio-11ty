@@ -34,6 +34,7 @@ project:
   - name: Veja o site
     link: https://www.plaenge.com.br/
 ---
+
 #### Introdução
 
 Em Maio de 2019 durante o meu estágio como UI designer na [Agência Chleba](https://www.chleba.net/), a Plaenge solicitou um redesign do seu site para que ele possa refletir a nova identidade visual da marca e também um aplicativo para facilitar o acesso dos usuários as informações dos empreendimentos.
