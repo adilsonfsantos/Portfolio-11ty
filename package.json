@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
-    "@babel/core": "^7.15.0",
+    "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.0",
     "@cjquines/gulp-responsive": "^3.0.1",
     "babelify": "^10.0.0",
