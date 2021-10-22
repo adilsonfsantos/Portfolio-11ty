@@ -65,7 +65,7 @@
     "markdown-it-attrs": "^4.0.0",
     "markdown-it-link-attributes": "^3.0.0",
     "require-dir": "^1.2.0",
-    "sass": "^1.37.5",
+    "sass": "^1.43.3",
     "slugify": "^1.6.0",
     "yargs": "^17.1.1"
   }
