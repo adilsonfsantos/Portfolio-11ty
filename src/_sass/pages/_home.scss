@@ -1,6 +1,6 @@
 .projetos {
-  @include grid();
-  @include grid--base();
+  @include grid;
+  @include grid-base;
 
   &__header {
     grid-column: span 4;
@@ -26,32 +26,34 @@
     }
 
     &--title {
-      @include font--color($white, primary);
-      @include font--headline5();
-      @include font--weight(bold);
+      @include font-color($white, primary);
+      @include font-headline5;
+      @include font-weight(bold);
+
       @include viewport(xs-small) {
-        @include font--headline4;
+        @include font-headline4;
       }
 
       @include viewport(xs-medium) {
-        @include font--headline3;
+        @include font-headline3;
       }
     }
 
     &--subtitle {
-      @include font--color($white, secondary);
-      @include font--body();
-      @include font--weight(regular);
+      @include font-color($white, secondary);
+      @include font-body;
+      @include font-weight(regular);
 
       @include viewport(sm-medium) {
-        @include font--body--l;
+        @include font-body-l;
       }
     }
   }
 
   &__principais {
-    @include grid();
+    @include grid;
     gap: ($base-size * 2);
+
     grid-auto-rows: auto;
     grid-column: span 4;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

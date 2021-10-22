@@ -1,13 +1,15 @@
 .hero {
-  @include grid();
-  @include grid--base();
+  @include grid;
+  @include grid-base;
   @include gradient(to top right, $secondary, $primary);
+
   background-attachment: fixed;
   background-color: $gray;
 
   &__normal {
-    @include flex();
-    @include flex--column();
+    @include flex;
+    @include flex-column;
+
     grid-column: span 4;
     justify-content: center;
     min-height: 100vh;
@@ -30,42 +32,42 @@
     }
 
     .emoji {
-      @include font--weight(regular);
+      @include font-weight(regular);
     }
 
     &--text {
-      @include center--vertical();
+      @include center-vertical;
     }
 
     &--title {
-      @include font--headline4;
+      @include font-headline4;
 
       @include viewport(xs-small) {
-        @include font--headline3;
+        @include font-headline3;
       }
 
       @include viewport(xs-large) {
-        @include font--headline2;
+        @include font-headline2;
       }
 
       @include viewport(sm-medium) {
-        @include font--headline2;
+        @include font-headline2;
       }
 
       @include viewport(md-small) {
-        @include font--headlinexl;
+        @include font-headlinexl;
       }
     }
 
     &--subtitle {
-      @include font--body--l;
+      @include font-body-l;
 
       @include viewport(sm-medium) {
-        @include font--headline3;
+        @include font-headline3;
       }
 
       @include viewport(md-small) {
-        @include font--headline2;
+        @include font-headline2;
       }
     }
 
@@ -74,8 +76,9 @@
     }
 
     &--down {
+      @include center-horizontal;
+
       display: block;
-      @include center--horizontal();
       border-color: $black;
       border-radius: 50%;
       border-style: solid;

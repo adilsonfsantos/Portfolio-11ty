@@ -1,6 +1,7 @@
 .contato {
-  @include grid();
-  @include grid--base();
+  @include grid;
+  @include grid-base;
+
   background-color: $gray;
   padding: 3rem 0;
 
@@ -13,9 +14,10 @@
   }
 
   &__call {
-    @include flex();
-    @include flex--center();
-    @include flex--column();
+    @include flex;
+    @include flex-center;
+    @include flex-column;
+
     grid-column: span 4;
     justify-content: center;
 
@@ -28,17 +30,18 @@
     }
 
     &--cta {
-      @include font--position(center);
-      @include font--weight(bold);
-      @include font--color($white, primary);
-      @include font--headline4();
+      @include font-position(center);
+      @include font-weight(bold);
+      @include font-color($white, primary);
+      @include font-headline4;
 
       @include viewport(xs-small) {
-        @include font--headline3();
+        @include font-headline3;
       }
 
       @include viewport(md-medium) {
-        @include font--headline2();
+        @include font-headline2;
+
         max-width: 900px;
       }
     }

@@ -1,8 +1,9 @@
 .header {
-  @include grid();
-  @include grid--base();
+  @include grid;
+  @include grid-base;
   @include elevation(header, $black, false, $overlay: none);
   @include color("border-bottom", $white, $black, divider-white);
+
   border-bottom-style: solid;
   border-bottom-width: 1px;
   position: fixed;
@@ -11,6 +12,7 @@
 
   &__content {
     @include flex;
+
     align-items: center;
     grid-column: span 4;
 
@@ -28,7 +30,7 @@
 
     &--logo > svg {
       display: inherit;
-      fill: currentcolor;
+      fill: currentColor;
       height: $base-size * 1.5;
       margin: $base-size 0;
       width: auto;
@@ -43,7 +45,8 @@
     }
 
     &__nav {
-      @include flex();
+      @include flex;
+
       align-self: center;
     }
   }
@@ -51,16 +54,17 @@
 
 .nav {
   &__link {
-    @include font--body();
-    @include font--color($white, secondary);
+    @include font-body;
+    @include font-color($white, secondary);
     @include transition(all, 0.15s, $animation-standard);
+
     line-height: 1.2;
     padding: 1rem 0;
     text-decoration: underline;
 
     &:hover,
     &:focus {
-      @include font--color($white, primary);
+      @include font-color($white, primary);
     }
 
     &:not(:last-child) {
@@ -68,7 +72,7 @@
     }
 
     &--active {
-      @include font--color($white, primary);
+      @include font-color($white, primary);
     }
   }
 }

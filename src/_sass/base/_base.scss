@@ -12,10 +12,11 @@ html {
 
 html,
 body {
-  @include font--primary();
+  @include font-primary;
+
   background-color: $black;
   font-feature-settings: "calt" 1, "liga" 1, "case" 1;
-  font-size: $font--size;
+  font-size: $font-size;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   height: 100%;

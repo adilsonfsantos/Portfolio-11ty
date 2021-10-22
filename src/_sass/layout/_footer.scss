@@ -1,11 +1,13 @@
 .footer {
-  @include grid();
-  @include grid--base();
+  @include grid;
+  @include grid-base;
+
   align-items: center;
   background-color: $black;
 
   &__container {
-    @include flex();
+    @include flex;
+
     align-items: center;
     flex-wrap: wrap;
     grid-column: span 4;
@@ -25,9 +27,10 @@
     }
 
     &--copyright {
-      @include center--vertical();
-      @include font--color($white, secondary);
-      @include font--body--text();
+      @include center-vertical;
+      @include font-color($white, secondary);
+      @include font-body-text;
+
       margin: ($base-size) 0;
     }
 
@@ -37,7 +40,8 @@
   }
 
   &__container--social {
-    @include flex();
+    @include flex;
+
     flex-wrap: wrap;
     list-style-type: none;
 
@@ -50,15 +54,16 @@
     }
 
     a {
-      @include font--color($white, secondary);
-      @include font--body();
+      @include font-color($white, secondary);
+      @include font-body;
+
       padding: 0.5rem 0;
       text-decoration: underline;
     }
 
     a:hover,
     a:focus {
-      @include font--color($white, primary);
+      @include font-color($white, primary);
     }
   }
 }

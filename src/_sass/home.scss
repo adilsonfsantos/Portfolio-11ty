@@ -1,18 +1,13 @@
 @charset 'UTF-8';
-
 @import "abstracts/variables";
 @import "abstracts/mixins";
-
 @import "base/base";
 @import "base/typography";
-
 @import "layout/grid";
 @import "layout/contact";
 @import "layout/footer";
 @import "layout/header";
 @import "layout/hero";
-
 @import "components/btn";
 @import "components/card";
-
 @import "pages/home";

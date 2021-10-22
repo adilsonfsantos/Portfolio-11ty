@@ -1,6 +1,5 @@
 "use-strict";
 const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
 const markdownItAttrs = require("markdown-it-attrs");
 const slugify = require("slugify");
 const xmlFiltersPlugin = require("eleventy-xml-plugin");
@@ -31,24 +30,12 @@ module.exports = function (eleventyConfig) {
     linkify: true,
     typographer: true,
   };
-  const markdownItAnchorOptions = {
-    level: [2, 3, 4],
-    permalink: true,
-    permalinkSymbol: "#",
-    permalinkClass: "headline-link",
-    permalinkBefore: true,
-    slugify: function (str) {
-      return slugify(str, {
-        replacement: "-",
-        lower: true,
-      });
-    },
-  };
   const markdownItAttrsOptions = {
     leftDelimiter: "{:",
     rightDelimiter: "}",
     allowedAttributes: ["id", "class", /^data\-.*$/],
   };
+
   const milaOptions = {
     pattern: /^https:/,
     attrs: {
@@ -58,7 +45,6 @@ module.exports = function (eleventyConfig) {
   };
 
   const markdown = markdownIt(markdownItOptions)
-    .use(markdownItAnchor, markdownItAnchorOptions)
     .use(markdownItAttrs, markdownItAttrsOptions)
     .use(mila, milaOptions);
 

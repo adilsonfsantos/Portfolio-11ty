@@ -1,17 +1,20 @@
-.grid--module {
-  @include grid();
-  @include layout--grid(xs-small);
-  grid-column: 2;
+.grid {
+  &--module {
+    @include grid;
+    @include layout-grid(xs-small);
 
-  @include viewport(xs-medium) {
-    @include layout--grid(xs-medium);
-  }
+    grid-column: 2;
 
-  @include viewport(sm-small) {
-    @include layout--grid(sm-small);
-  }
+    @include viewport(xs-medium) {
+      @include layout-grid(xs-medium);
+    }
 
-  @include viewport(sm-medium) {
-    @include layout--grid(sm-medium);
+    @include viewport(sm-small) {
+      @include layout-grid(sm-small);
+    }
+
+    @include viewport(sm-medium) {
+      @include layout-grid(sm-medium);
+    }
   }
 }

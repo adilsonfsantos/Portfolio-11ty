@@ -3,7 +3,8 @@
   font-family: "Inter UI";
   font-style: normal;
   font-weight: 400;
-  src: url("/assets/fonts/Inter-Regular.woff2") format("woff2"),
+  src:
+    url("/assets/fonts/Inter-Regular.woff2") format("woff2"),
     url("/assets/fonts/Inter-Regular.woff") format("woff");
 }
 
@@ -12,94 +13,94 @@
   font-family: "Inter UI";
   font-style: normal;
   font-weight: 600;
-  src: url("/assets/fonts/Inter-SemiBold.woff2") format("woff2"),
+  src:
+    url("/assets/fonts/Inter-SemiBold.woff2") format("woff2"),
     url("/assets/fonts/Inter-SemiBold.woff") format("woff");
 }
 
-@mixin font--headlinexl {
+@mixin font-headlinexl {
   font-size: 3.815rem;
   letter-spacing: -0.022rem;
-  // line-height: 4.625rem;
   line-height: 3.815rem;
 }
 
-@mixin font--headline1 {
-  font-size: 3.051875rem;
+@mixin font-headline1 {
+  font-size: 3.0519rem;
   letter-spacing: -0.022rem;
   line-height: 3.6875rem;
 }
 
-@mixin font--headline2 {
-  font-size: 2.44125rem;
+@mixin font-headline2 {
+  font-size: 2.4413rem;
   letter-spacing: -0.022rem;
-  line-height: 2.95625rem;
+  line-height: 2.9562rem;
 }
 
-@mixin font--headline3 {
-  font-size: 1.953125rem;
+@mixin font-headline3 {
+  font-size: 1.9531rem;
   letter-spacing: -0.022rem;
   line-height: 2.3625rem;
 }
 
-@mixin font--headline4 {
+@mixin font-headline4 {
   font-size: 1.5625rem;
   letter-spacing: -0.02rem;
-  line-height: 1.89375rem;
+  line-height: 1.8938rem;
 }
 
-@mixin font--headline5 {
+@mixin font-headline5 {
   font-size: 1.25rem;
   letter-spacing: -0.017rem;
   line-height: 1.5125rem;
 }
 
-@mixin font--body--l {
+@mixin font-body-l {
   font-size: 1.25rem;
   letter-spacing: -0.017rem;
   line-height: 1.75rem;
 }
 
-@mixin font--body--text-l {
+@mixin font-body-text-l {
   font-size: 1.25rem;
   letter-spacing: -0.017rem;
   line-height: 2.125rem;
 }
 
-@mixin font--body--text {
+@mixin font-body-text {
   font-size: 1rem;
   letter-spacing: -0.011rem;
   line-height: 1.5rem;
 }
 
-@mixin font--body {
+@mixin font-body {
   font-size: 1rem;
   letter-spacing: -0.011rem;
   line-height: 1.3rem;
 }
 
-@mixin font--small {
+@mixin font-small {
   font-size: 0.8rem;
   letter-spacing: -0.002rem;
-  line-height: 0.96875rem;
+  line-height: 0.9688rem;
 }
 
-@mixin font--button {
+@mixin font-button {
   font-size: 1rem;
   letter-spacing: -0.011rem;
   line-height: 2.475rem;
   text-transform: uppercase;
 }
 
-@mixin font--overline {
+@mixin font-overline {
   font-size: 1rem;
   letter-spacing: -0.011rem;
   line-height: 1.3rem;
   text-transform: uppercase;
 }
 
-@mixin font--overline--small {
+@mixin font-overline-small {
   font-size: 0.8rem;
   letter-spacing: -0.002rem;
-  line-height: 0.96875rem;
+  line-height: 0.9688rem;
   text-transform: uppercase;
 }

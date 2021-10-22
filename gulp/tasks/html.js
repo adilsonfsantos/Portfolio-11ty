@@ -55,7 +55,7 @@ gulp.task("styles:critical:page", () => {
       critical({
         base: "./",
         inline: false,
-        css: [paths.sassFilesTemp + "/page.css"],
+        css: [paths.sassFilesTemp + "/page.**"],
         dimensions: [
           {
             width: 240,
@@ -87,7 +87,7 @@ gulp.task("styles:critical:post", () => {
       critical({
         base: "./",
         inline: false,
-        css: [paths.sassFilesTemp + "/post.css"],
+        css: [paths.sassFilesTemp + "/post.**"],
         dimensions: [
           {
             width: 240,
@@ -117,7 +117,7 @@ gulp.task("styles:critical:home", () => {
     critical({
       base: "./",
       inline: false,
-      css: [paths.sassFilesTemp + "/home.css"],
+      css: [paths.sassFilesTemp + "/home.**"],
       dimensions: [
         {
           width: 240,
@@ -147,7 +147,7 @@ gulp.task("styles:critical:404", () => {
     critical({
       base: "./",
       inline: false,
-      css: [paths.sassFilesTemp + "/404.css"],
+      css: [paths.sassFilesTemp + "/404.**"],
       dimensions: [
         {
           width: 240,
