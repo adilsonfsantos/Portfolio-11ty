@@ -27,7 +27,7 @@
   ],
   "devDependencies": {
     "critical": "^4.0.1",
-    "eslint": "^8.0.1",
+    "eslint": "^8.2.0",
     "eslint-config-prettier": "^8.3.0",
     "prettier": "2.4.1",
     "stylelint": "^14.0.0",
