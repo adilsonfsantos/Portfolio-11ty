@@ -27,22 +27,22 @@
   ],
   "devDependencies": {
     "critical": "^4.0.1",
-    "eslint": "^8.0.1",
+    "eslint": "^8.2.0",
     "eslint-config-prettier": "^8.3.0",
     "prettier": "2.4.1",
-    "stylelint": "^14.0.0",
-    "stylelint-config-standard-scss": "^2.0.0",
+    "stylelint": "^14.1.0",
+    "stylelint-config-standard-scss": "^2.0.1",
     "stylelint-scss": "^4.0.0"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
-    "@babel/core": "^7.15.8",
-    "@babel/preset-env": "^7.15.8",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
     "@cjquines/gulp-responsive": "^3.0.1",
-    "autoprefixer": "^10.3.7",
+    "autoprefixer": "^10.4.0",
     "babelify": "^10.0.0",
-    "browser-sync": "^2.27.5",
-    "cssnano": "^5.0.8",
+    "browser-sync": "^2.27.7",
+    "cssnano": "^5.0.11",
     "del": "^6.0.0",
     "eleventy-xml-plugin": "^0.1.0",
     "gulp": "^4.0.2",
@@ -67,8 +67,8 @@
     "markdown-it-link-attributes": "^3.0.0",
     "postcss": "^8.3.11",
     "require-dir": "^1.2.0",
-    "sass": "^1.43.3",
-    "slugify": "^1.6.1",
+    "sass": "^1.43.4",
+    "slugify": "^1.6.2",
     "yargs": "^17.2.1"
   }
 }
