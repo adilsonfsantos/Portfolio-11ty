@@ -42,7 +42,7 @@
     "autoprefixer": "^10.4.0",
     "babelify": "^10.0.0",
     "browser-sync": "^2.27.7",
-    "cssnano": "^5.0.11",
+    "cssnano": "^5.0.12",
     "del": "^6.0.0",
     "eleventy-xml-plugin": "^0.1.0",
     "gulp": "^4.0.2",
