@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8"/>
     <!-- htmlmin:ignore -->
-    {% include meta %}
+    {% include "meta" %}
     <!-- htmlmin:ignore -->
     <script type="text/javascript">document.documentElement.classList.remove("no-js")</script>
     <link rel="preload" as="font" href="/assets/fonts/Inter-Regular.woff2" type="font/woff2" crossorigin="crossorigin">
@@ -12,8 +12,8 @@
     <script async src="{{ main_js }}" charset="UTF-8"></script>
   </head>
   <body>
-    {% include header %} {{ content }}
-    {% include footer %}
-    {% include css %}
+    {% include "header" %} {{ content }}
+    {% include "footer" %}
+    {% include "css" %}
   </body>
 </html>

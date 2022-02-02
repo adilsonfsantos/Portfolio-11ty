@@ -48,7 +48,7 @@ page.keywords == blank %} {% else %} ,{{ page.keywords | join: ", " }}
   "headline": "{{ site.title }}",
   "name": "{{ site.name }}",
   {% assign sameLinks = social.links | map: 'url' %}
-  "sameAs": {{ sameLinks | array_to_sentence_string: '' }},
+  "sameAs": {{ sameLinks | json }},
   "image": "{{ site.url }}{{ image | url }}",
   "author": { "@type": "Person", "name": "{{site.author.name}}" },
   "@context": "https://schema.org"}
@@ -86,11 +86,11 @@ page.keywords == blank %} {% else %} ,{{ page.keywords | join: ", " }}
 <meta content="nopin" name="pinterest" />
 <meta name="generator" content="Eleventy">
 {% if layout == 'home' %}
-<style>{% include critical-home.css %}</style>
+<style>{% include "critical-home.css" %}</style>
 {% elsif layout == 'post' %}
-<style>{% include critical-post.css %}</style>
+<style>{% include "critical-post.css" %}</style>
 {% elsif layout == 'page' %}
-<style>{% include critical-page.css %}</style>
+<style>{% include "critical-page.css" %}</style>
 {% elsif layout == '404' %}
-<style>{% include critical-404.css %}</style>
+<style>{% include "critical-404.css"%}</style>
 {% endif %}
