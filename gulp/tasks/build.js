@@ -23,7 +23,7 @@ gulp.task("site:tmp", () => {
 // 'gulp site' -- builds site with development settings
 // 'gulp site --prod' -- builds site with production settings
 gulp.task("site", () => {
-  return cp.spawn("npx", ["eleventy", "--quiet"], {
+  return cp.spawn("npx", ["eleventy", "--incremental"], {
     stdio: "inherit",
   });
 });
