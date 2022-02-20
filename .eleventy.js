@@ -1,7 +1,6 @@
 "use-strict";
 const markdownIt = require("markdown-it");
 const markdownItAttrs = require("markdown-it-attrs");
-const slugify = require("slugify");
 const xmlFiltersPlugin = require("eleventy-xml-plugin");
 const mila = require("markdown-it-link-attributes");
 
@@ -12,7 +11,6 @@ const pictureHero = require(`${componentsDir}/PictureHero.js`);
 
 const filtersDir = "./src/_includes/filters";
 const base64 = require(`${filtersDir}/base64.js`);
-const slug = require(`${filtersDir}/slug.js`);
 const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
 module.exports = function (eleventyConfig) {
@@ -25,7 +23,6 @@ module.exports = function (eleventyConfig) {
 
   //  FILTERS
   eleventyConfig.addFilter("base64", base64);
-  eleventyConfig.addFilter("slug", slug);
 
   //  MARKDOWN SETTINGS
   const markdownItOptions = {
