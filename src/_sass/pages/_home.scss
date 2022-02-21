@@ -3,93 +3,85 @@
   @include grid-base;
 
   &__header {
+    background-color: $black;
+    border-top: 2px solid $black-80;
     grid-column: span 4;
     margin-bottom: $base-size * 1.5;
-    margin-top: $base-size * 4.5;
+    padding-top: $base-size * 2.5;
 
     @include viewport(xs-small) {
-      grid-column: span 4;
+      grid-column: 1/-1;
       margin-bottom: $base-size * 2;
     }
 
-    @include viewport(xs-medium) {
-      margin-bottom: $base-size * 1.2;
+    @include viewport(xs-large) {
+      grid-column: 1/-1;
     }
 
     @include viewport(sm-small) {
-      grid-column: span 8;
-      margin-bottom: $base-size * 1.8;
+      grid-column: span 6;
     }
 
     @include viewport(md-small) {
-      grid-column: span 12;
+      grid-column: span 8;
     }
 
     &--title {
-      @include font-color($white, primary);
-      @include font-headline5;
-      @include font-weight(bold);
+      @include typescale(scale-3, bold, headline);
+
+      color: $white;
 
       @include viewport(xs-small) {
-        @include font-headline4;
-      }
-
-      @include viewport(xs-medium) {
-        @include font-headline3;
+        @include typescale(scale-4, bold, headline);
       }
     }
 
     &--subtitle {
-      @include font-color($white, secondary);
-      @include font-body;
-      @include font-weight(regular);
+      @include typescale(scale-1, normal, text);
 
-      @include viewport(sm-medium) {
-        @include font-body-l;
+      color: $black-30;
+
+      @include viewport(xs-small) {
+        @include typescale(scale-2, normal, text);
       }
     }
   }
 
   &__principais {
     @include grid;
-    gap: ($base-size * 2);
 
+    border-bottom: 2px solid $black-80;
+    gap: $base-size * 2;
     grid-auto-rows: auto;
-    grid-column: span 4;
+    grid-column: 1/-1;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    margin-bottom: ($base-size * 5);
+    padding-bottom: $base-size * 5;
 
     @include viewport(xs-small) {
-      grid-column: span 4;
+      gap: $base-size * 2;
       grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
     }
 
     @include viewport(xs-medium) {
-      grid-column: span 4;
-    }
-
-    @include viewport(xs-large) {
-      gap: $base-size;
+      gap: $base-size * 1.5;
     }
 
     @include viewport(sm-small) {
-      gap: $base-size * 1.5;
-      grid-column: span 8;
-    }
-
-    @include viewport(sm-medium) {
       gap: $base-size * 2;
-      grid-column: span 12;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
 
+    @include viewport(sm-medium) {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+
     @include viewport(md-small) {
-      grid-column: span 12;
+      gap: $base-size * 2.5;
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     }
 
     @include viewport(md-medium) {
-      grid-column: span 12;
+      gap: $base-size * 3;
       grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
     }
   }

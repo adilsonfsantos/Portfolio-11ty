@@ -4,7 +4,7 @@
 
   background: $black;
   padding-bottom: $base-size * 5;
-  padding-top: $base-size * 10;
+  padding-top: $base-size * 3.5;
 
   &__header {
     @include grid;
@@ -26,15 +26,18 @@
     }
 
     &--title {
-      @include font-color($white, primary);
-      @include font-headline3;
-      @include font-weight(bold);
+      @include typescale(scale-2, bold, headline);
 
+      color: $white;
       grid-column: 1/-1;
       margin-bottom: $base-size * 0.5;
 
-      @include viewport(xs-medium) {
-        @include font-headline2;
+      @include viewport(xs-small) {
+        @include typescale(scale-3, bold, headline);
+      }
+
+      @include viewport(xs-large) {
+        @include typescale(scale-4, bold, headline);
       }
 
       @include viewport(sm-small) {
@@ -64,65 +67,42 @@
     }
 
     .headline-link {
-      @include font-color($secondary, primary);
-
+      color: $black-30;
       text-decoration: underline;
     }
 
     h1 {
-      @include font-color($white, primary);
-      @include font-headline3;
-      @include font-weight(bold);
+      @include typescale(scale-2, bold, headline);
 
-      @include viewport(xs-medium) {
-        @include font-headline2;
+      color: $white;
+      margin-top: $base-size * 3;
+
+      @include viewport(xs-small) {
+        @include typescale(scale-3, bold, headline);
       }
-    }
 
-    h1::before {
-      content: "";
-      display: block;
-      height: $base-size * 5;
+      @include viewport(xs-large) {
+        @include typescale(scale-4, bold, headline);
+      }
     }
 
     h2,
     h3,
     h4 {
-      @include font-headline4;
-      @include font-color($white, primary);
+      @include typescale(scale-2, bold, headline);
 
-      @include viewport(xs-medium) {
-        @include font-headline3;
-      }
+      color: $white;
+      margin-top: $base-size * 3;
 
-      &::before {
-        content: "";
-        display: block;
-        height: $base-size * 5;
-        pointer-events: none;
-        visibility: hidden;
-      }
-    }
-
-    h2:hover,
-    h3:hover,
-    h4:hover {
-      .headline-link {
-        @include font-color($secondary, primary);
+      @include viewport(xs-small) {
+        @include typescale(scale-3, bold, headline);
       }
     }
 
     p {
-      @include font-body-text;
-      @include font-color($white, primary);
+      @include typescale(scale-1, normal, text);
 
-      @include viewport(xs-small) {
-        @include font-body-text-l;
-      }
-
-      + p {
-        margin-top: $base-size;
-      }
+      color: $black-30;
     }
 
     ul,
@@ -132,12 +112,10 @@
     }
 
     li {
-      @include font-body-text;
-      @include font-color($white, primary);
+      @include typescale(scale-1, normal, text);
 
-      @include viewport(xs-small) {
-        @include font-body-l;
-      }
+      color: $black-30;
+      margin-bottom: $base-size * 0.5;
 
       > ul {
         margin: ($base-size * 0.5);

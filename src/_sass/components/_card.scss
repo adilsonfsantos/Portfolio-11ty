@@ -1,34 +1,18 @@
 .card {
-  @include transition(
-    all,
-    $elevation-transition-duration,
-    $animation-standard
-  );
-  @include elevation(card, $black);
   @include flex;
   @include flex-column;
-  @include radius(0.25);
+  @include transition(all, 0.15s, $animation-standard);
 
+  border: 2px solid $black-80;
   max-width: 100%;
-  position: relative;
-
-  &::after {
-    @include radius(0.25);
-    @include elevation(card-hover, none);
-    @include absolute;
-
-    opacity: 0%;
-  }
 
   &__picture {
-    border-radius: 0.25rem 0.25rem 0 0;
+    border-bottom: 2px solid $black-80;
     overflow: hidden;
-    width: 100%;
+    width: 100;
 
     &--image {
-      @include font-color($white, primary);
-
-      border-radius: 0.25rem 0.25rem 0 0;
+      color: $white;
       width: 100%;
     }
   }
@@ -43,35 +27,33 @@
     width: 100%;
 
     &--title {
-      @include font-color($white, primary);
-      @include font-headline5;
-      @include font-weight(bold);
+      @include typescale(scale-2, bold, text);
 
-      margin-bottom: $base-size * 0.5;
+      color: $white;
+      font-weight: 500;
+      line-height: 125%;
+      margin-bottom: $base-size * 1.5;
 
-      @include viewport(sm-medium) {
-        @include font-headline4;
+      @include viewport(xs-small) {
+        @include typescale(scale-3, bold, text);
       }
     }
 
     &--tag {
-      @include font-color($white, secondary);
-      @include font-overline-small;
+      @include typescale(scale-0, normal, text);
 
-      @include viewport(sm-medium) {
-        @include font-overline;
+      color: $black-30;
+
+      @include viewport(xs-small) {
+        @include typescale(scale-1, normal, text);
       }
     }
   }
 
   &:hover,
-  &:focus {
-    @include elevation(card-hover, $black, false);
-
-    transform: translate3d(0, -5px, 0);
-
-    &::after {
-      opacity: 100%;
-    }
+  &:focus,
+  &:hover > *,
+  &:focus > * {
+    border-color: $black-40;
   }
 }

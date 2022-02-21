@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: "/projetos/{{page.fileSlug}}/index.html"
+permalink: "/projetos/{{page.fileSlug}}/"
 ---
 
 <article
@@ -17,6 +17,11 @@ permalink: "/projetos/{{page.fileSlug}}/index.html"
       <h2 class="post__header--description" itemprop="description">
         {{ description }}
       </h2>
+    </div>
+      <div class="post__splash">
+      <div class="post__splash--container">
+        {% picture-hero image, title %}
+      </div>
     </div>
     <div class="post__hero">
       <div class="post__hero--container">
@@ -40,11 +45,6 @@ permalink: "/projetos/{{page.fileSlug}}/index.html"
         </div>
       </div>
     </div>
-    <div class="post__splash">
-      <div class="post__splash--container">
-        {% picture-hero image, title, "post__splash--picture", "post__splash--image" %}
-      </div>
-    </div>
   </div>
   <div class="post__content" itemprop="articleBody">
     <div class="post__content--container">
@@ -55,21 +55,10 @@ permalink: "/projetos/{{page.fileSlug}}/index.html"
 <section class="postnav">
   <div class="postnav--container">
   {% if prevPost %}
-  <a href="{{ prevPost.url }}" class="postnav__link" rel="next">
-      <div class="postnav__link--content">
-        <p class="postnav__link--caption">Próximo projeto</p>
-        <h3 class="postnav__link--title">{{ prevPost.data.title }}</h3>
-      </div>
-      <div class="postnav__link--icon"><svg class="postnav__link--forward" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg></div>
+  <a href="{{ prevPost.url }}" class="postnav__link" rel="next">Próximo projeto →<br><span class="postnav__link--title">{{ prevPost.data.title }}</span>
   </a>
   {%- else -%}
-  <a href="{{ "/" | url }}" class="postnav__link" rel="prev">
-      <div>
-        <p class="postnav__link--caption">Sem mais projetos</p>
-          <h3 class="postnav__link--title">Voltar</h3>
-      </div>
-      <div class="postnav__link--icon"><svg class="postnav__link--forward" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg></div>
-  </a>
+  <a href="{{ "/" | url }}" class="postnav__link" rel="prev">Sem mais projetos →<br><span class="postnav__link--title">Voltar para a home</span></a>
   {% endif %}
 </div>
 </section>

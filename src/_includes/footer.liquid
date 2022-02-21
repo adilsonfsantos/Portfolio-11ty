@@ -9,7 +9,7 @@
           {% if site.author.email == blank %}
             {% else %}
             <li>
-              <a href="mailto:{{ site.author.email | base64 }}">Email</a>
+              <a href="mailto:{{ site.author.email }}">Email</a>
             </li>
           {% endif %}
           {%- for link in social.links -%}

@@ -14,7 +14,7 @@
 
     &--container {
       @include grid;
-      @include grid-post;
+      @include grid-base;
 
       grid-column: 2;
       padding-top: $base-size * 3;
@@ -26,15 +26,18 @@
     }
 
     &--title {
-      @include font-color($white, primary);
-      @include font-headline3;
-      @include font-weight(bold);
+      @include typescale(scale-2, bold, headline);
 
+      color: $white;
       grid-column: 1/-1;
       margin-bottom: $base-size * 0.5;
 
-      @include viewport(xs-medium) {
-        @include font-headline2;
+      @include viewport(xs-small) {
+        @include typescale(scale-3, bold, headline);
+      }
+
+      @include viewport(xs-large) {
+        @include typescale(scale-4, bold, headline);
       }
 
       @include viewport(sm-small) {
@@ -43,14 +46,13 @@
     }
 
     &--description {
-      @include font-color($white, primary);
-      @include font-body;
-      @include font-weight(regular);
+      @include typescale(scale-1, normal, text);
 
-      grid-column: 1;
+      color: $black-30;
+      grid-column: 1/-1;
 
       @include viewport(xs-small) {
-        @include font-body-l;
+        @include typescale(scale-2, normal, text);
       }
 
       @include viewport(sm-small) {
@@ -64,12 +66,12 @@
     @include grid-base;
 
     grid-column: 1/-1;
-    padding-bottom: $base-size * 2.5;
 
     &--container {
       @include grid;
       @include grid-post;
 
+      border-bottom: 2px solid $black-80;
       grid-column: 2;
     }
   }
@@ -78,8 +80,9 @@
     @include grid;
 
     gap: $base-size * 1.5;
-    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
-    margin-top: $base-size * 1.5;
+    grid-column: 1/-1;
+    grid-template-columns: repeat(auto-fit, minmax(160px, auto));
+    margin: $base-size * 2 0;
 
     @include viewport(sm-small) {
       grid-column: 2;
@@ -87,14 +90,10 @@
   }
 
   &__info--title {
-    @include font-color($white, secondary);
-    @include font-overline-small;
+    @include typescale(scale-1, bold, text);
 
+    color: $white;
     margin-bottom: $base-size * 0.25;
-
-    @include viewport(sm-small) {
-      @include font-overline;
-    }
   }
 
   &__info--list {
@@ -103,55 +102,51 @@
   }
 
   &__info--text {
-    @include font-color($white, primary);
-    @include font-body-text;
+    @include typescale(scale-1, normal, text);
 
-    @include viewport(xs-small) {
-      @include font-body-text-l;
-    }
+    color: $black-30;
   }
 
   &__splash {
+    @include grid;
     @include grid-base;
 
     display: grid;
-    background:
-      linear-gradient(
-        0deg,
-        rgba($gray, 100%) 0%,
-        rgba($gray, 100%) 50%,
-        rgba($black, 100%) 50%,
-        rgba($black, 100%) 100%
-      );
     grid-column: 1/-1;
 
+    @include viewport(sm-small) {
+      grid-column: 1/-1;
+    }
+
     &--container {
-      display: grid;
-      grid-template-columns: 1fr minmax(0, 1024px) 1fr;
-      grid-column: 2;
+      @include grid;
+      @include grid-base;
+
+      grid-column: 1/-1;
     }
 
     &--picture {
       @include center-horizontal;
       @include aspect-ratio(1920, 960);
-      @include radius(0.25);
 
       grid-column: 2;
-      max-width: 1024px;
       overflow: hidden;
       position: relative;
       width: 100%;
     }
 
     &--image {
-      @include font-color($white, primary);
-      @include radius(0.25);
-
+      color: $white;
+      grid-column: 1/-1;
       height: auto;
       max-width: none;
       position: absolute;
       top: 0;
       width: 100%;
+
+      @include viewport(sm-small) {
+        grid-column: 2;
+      }
     }
   }
 
@@ -159,16 +154,14 @@
     @include grid;
     @include grid-base;
 
-    background-color: $gray;
     grid-column: 1/-1;
-    padding-top: $base-size;
 
     &--container {
       @include grid;
       @include grid-post;
 
       grid-column: 2;
-      row-gap: $base-size;
+      row-gap: $base-size * 0.5;
     }
 
     @include viewport(sm-small) {
@@ -178,50 +171,33 @@
     }
 
     .headline-link {
-      @include font-color($secondary, primary);
-
+      color: $white;
       text-decoration: underline;
     }
 
     h2,
     h3,
     h4 {
-      @include font-headline4;
-      @include font-color($white, primary);
+      @include typescale(scale-2, bold, headline);
 
-      @include viewport(xs-medium) {
-        @include font-headline3;
-      }
+      color: $white;
+      margin-top: $base-size * 3;
 
-      &::before {
-        content: "";
-        display: block;
-        height: $base-size * 5;
-        pointer-events: none;
-        visibility: hidden;
-      }
-    }
-
-    h2:hover,
-    h3:hover,
-    h4:hover {
-      .headline-link {
-        @include font-color($secondary, primary);
+      @include viewport(xs-small) {
+        @include typescale(scale-3, bold, headline);
       }
     }
 
     p {
-      @include font-body-text;
-      @include font-color($white, primary);
+      @include typescale(scale-1, normal, text);
 
-      @include viewport(xs-small) {
-        @include font-body-text-l;
-      }
+      color: $black-30;
     }
 
     ul,
     ol {
-      margin-top: $base-size * 0.25;
+      @include typescale(scale-1, normal, text);
+
       margin-left: $base-size;
     }
 
@@ -230,16 +206,13 @@
     }
 
     li {
-      @include font-body-text;
-      @include font-color($white, primary);
+      @include typescale(scale-1, normal, text);
 
-      @include viewport(xs-small) {
-        @include font-body-l;
-      }
+      color: $black-30;
     }
 
     li:not(:last-child) {
-      margin-bottom: $base-size * 0.75;
+      margin-bottom: $base-size * 0.5;
     }
   }
 
@@ -247,42 +220,34 @@
     border-left: 2px solid $primary;
     color: $white;
     padding-left: $base-size;
+    margin: $base-size * 2 0;
 
     p {
-      @include font-body-text;
+      @include typescale(scale-1, normal, text);
 
+      color: $white;
       margin: 0;
-
-      @include viewport(xs-small) {
-        @include font-body-text-l;
-      }
     }
 
     h5 {
-      @include font-color($white, primary);
-      @include font-headline5;
+      @include typescale(scale-2, bold, headline);
 
+      color: $white;
       margin-top: $base-size;
     }
   }
 
   &__photo {
     @include center-horizontal;
-    @include radius(0.25);
 
     grid-column: 1/-1;
-    max-width: 1024px;
+    margin-top: $base-size * 3;
+    max-width: 1280px;
     overflow: hidden;
     width: 100%;
-
-    @include viewport(sm-medium) {
-      margin: $base-size * 1.5 auto;
-    }
   }
 
   &__photo > img {
-    @include radius(0.25);
-
     height: auto;
   }
 
@@ -298,15 +263,13 @@
     overflow: hidden;
     width: 100%;
 
-    @include viewport(sm-medium) {
-      margin: $base-size * 1.5 0;
-    }
+    // @include viewport(sm-medium) {
+    //   margin: $base-size * 1.5 0;
+    // }
   }
 
   &__photo--image--lazy {
-    @include font-color($white, primary);
-    @include radius(0.25);
-
+    color: $white;
     height: auto;
     max-width: none;
     position: absolute;
@@ -320,5 +283,9 @@
 
   &__photo--lazy + &__photo--lazy {
     margin-top: 0;
+  }
+
+  & noscript + p {
+    margin-top: $base-size;
   }
 }

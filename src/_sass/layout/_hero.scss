@@ -1,38 +1,42 @@
 .hero {
   @include grid;
   @include grid-base;
-  @include gradient(to top right, $secondary, $primary);
 
-  background-attachment: fixed;
-  background-color: $gray;
+  background-color: $black;
 
   &__normal {
     @include flex;
     @include flex-column;
 
-    grid-column: span 4;
+    grid-column: 1/-1;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 98vh;
     padding-top: $base-size * 4;
 
+    @include viewport(default, landscape) {
+      min-height: 100vh;
+      margin-bottom: $base-size * 1.5;
+    }
+
     @include viewport(xs-small) {
-      grid-column: span 4;
+      min-height: 96vh;
+    }
+
+    @include viewport(xs-medium) {
+      min-height: 96vh;
     }
 
     @include viewport(sm-small) {
-      grid-column: span 8;
+      grid-column: span 6;
     }
 
     @include viewport(sm-medium) {
-      grid-column: span 12;
+      grid-column: span 6;
     }
 
     @include viewport(md-small) {
-      grid-column: span 12;
-    }
-
-    .emoji {
-      @include font-weight(regular);
+      grid-column: span 8;
+      margin-bottom: $base-size * 0.5;
     }
 
     &--text {
@@ -40,34 +44,49 @@
     }
 
     &--title {
-      @include font-headline4;
+      @include typescale(scale-3, bold, headline);
+
+      color: $white;
+      margin-bottom: $base-size * 0.25;
 
       @include viewport(xs-small) {
-        @include font-headline3;
+        @include typescale(scale-4, bold, headline);
+
+        margin-bottom: $base-size * 0.5;
+      }
+
+      @include viewport(xs-medium) {
+        @include typescale(scale-4, bold, headline);
       }
 
       @include viewport(xs-large) {
-        @include font-headline2;
+        @include typescale(scale-5, bold, headline);
       }
 
       @include viewport(sm-medium) {
-        @include font-headline2;
+        @include typescale(scale-6, bold, headline);
       }
 
       @include viewport(md-small) {
-        @include font-headlinexl;
+        @include typescale(scale-6, bold, headline);
       }
     }
 
     &--subtitle {
-      @include font-body-l;
+      @include typescale(scale-1, normal, text);
 
-      @include viewport(sm-medium) {
-        @include font-headline3;
+      color: $black-30;
+
+      @include viewport(xs-small) {
+        @include typescale(scale-2, normal, text);
       }
 
-      @include viewport(md-small) {
-        @include font-headline2;
+      @include viewport(xs-medium) {
+        @include typescale(scale-2, normal, text);
+      }
+
+      @include viewport(sm-medium) {
+        @include typescale(scale-3, normal, text);
       }
     }
 
@@ -79,11 +98,11 @@
       @include center-horizontal;
 
       display: block;
-      border-color: $black;
+      border-color: $white;
       border-radius: 50%;
       border-style: solid;
       border-width: 2px;
-      fill: rgba($black, 0.87);
+      fill: $white;
       padding: 0.625rem;
       width: $base-size * 3;
     }

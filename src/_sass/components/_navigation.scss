@@ -2,70 +2,47 @@
   @include grid;
   @include grid-base;
 
-  background: $gray;
-  padding: $base-size * 2.25 0;
-
-  @include viewport(xs-large) {
-    padding: $base-size * 3 0;
-  }
-
-  @include viewport(md-medium) {
-    padding: $base-size * 4.5 0;
-  }
-
   &--container {
     @include grid;
 
+    padding: $base-size * 4 0;
     grid-column: 2;
   }
 
   &__link {
-    @include flex;
+    @include typescale(scale-1, bold, text);
+    @include font-position(right);
 
-    align-items: center;
+    color: $secondary-30;
     margin-left: auto;
 
-    &--caption {
-      @include font-color($white, secondary);
-      @include font-overline-small;
-      @include font-position(right);
-
-      margin-right: $base-size;
-
-      @include viewport(sm-small) {
-        @include font-overline;
-      }
+    @include viewport(xs-small) {
+      @include typescale(scale-2, bold, text);
     }
 
     &--content {
-      @include font-color($white, primary);
+      color: $white;
     }
 
     &--title {
-      @include font-body-l;
-      @include font-color($white, primary);
+      @include typescale(scale-2, bold, headline);
       @include font-position(right);
-      @include font-weight(regular);
 
-      margin-right: $base-size;
+      color: $white;
+
+      @include viewport(xs-small) {
+        @include typescale(scale-3, bold, headline);
+      }
     }
 
     &--icon {
-      @include elevation(fab, $secondary);
-      @include transition(
-        all,
-        $elevation-transition-duration,
-        $animation-standard
-      );
-
-      border-radius: 50%;
-      padding: 0.625rem;
+      padding-left: $base-size;
       position: relative;
     }
 
     &--forward {
       display: block;
-      fill: rgba($black, 0.87);
+      fill: $secondary-30;
       height: $base-size * 1.5;
       width: $base-size * 1.5;
     }

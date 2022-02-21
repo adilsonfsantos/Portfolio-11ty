@@ -12,95 +12,113 @@
   font-display: swap;
   font-family: "Inter UI";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   src:
-    url("/assets/fonts/Inter-SemiBold.woff2") format("woff2"),
-    url("/assets/fonts/Inter-SemiBold.woff") format("woff");
+    url("/assets/fonts/Inter-Medium.woff2") format("woff2"),
+    url("/assets/fonts/Inter-Medium.woff") format("woff");
 }
 
-@mixin font-headlinexl {
-  font-size: 3.815rem;
-  letter-spacing: -0.022rem;
-  line-height: 3.815rem;
-}
+// @mixin font-headline-xxl {
+//   font-size: $base-size * 3.5;
+//   font-weight: 500;
+//   letter-spacing: -0.022rem;
+//   line-height: 125%;
+// }
 
-@mixin font-headline1 {
-  font-size: 3.0519rem;
-  letter-spacing: -0.022rem;
-  line-height: 3.6875rem;
-}
+// @mixin font-headline-xl {
+//   font-size: $base-size * 2;
+//   font-weight: 500;
+//   letter-spacing: -0.022rem;
+//   line-height: 125%;
+// }
 
-@mixin font-headline2 {
-  font-size: 2.4413rem;
-  letter-spacing: -0.022rem;
-  line-height: 2.9562rem;
-}
+// @mixin font-headline-l {
+//   font-size: $base-size * 2.5;
+//   font-weight: 500;
+//   letter-spacing: -0.022rem;
+//   line-height: 125%;
+// }
 
-@mixin font-headline3 {
-  font-size: 1.9531rem;
-  letter-spacing: -0.022rem;
-  line-height: 2.3625rem;
-}
+// @mixin font-headline-m {
+//   font-size: $base-size * 2;
+//   font-weight: 500;
+//   letter-spacing: -0.022rem;
+//   line-height: 125%;
+// }
 
-@mixin font-headline4 {
-  font-size: 1.5625rem;
-  letter-spacing: -0.02rem;
-  line-height: 1.8938rem;
-}
+// @mixin font-headline-s {
+//   font-size: $base-size * 2;
+//   font-weight: 500;
+//   letter-spacing: -0.019rem;
+//   line-height: 125%;
+// }
 
-@mixin font-headline5 {
-  font-size: 1.25rem;
-  letter-spacing: -0.017rem;
-  line-height: 1.5125rem;
-}
+// @mixin font-body-xxl {
+//   font-size: $base-size * 2;
+//   font-weight: 400;
+//   letter-spacing: -0.022rem;
+//   line-height: 150%;
+// }
 
-@mixin font-body-l {
-  font-size: 1.25rem;
-  letter-spacing: -0.017rem;
-  line-height: 1.75rem;
-}
+// @mixin font-body-xl {
+//   font-size: $base-size * 1.5;
+//   font-weight: 400;
+//   letter-spacing: -0.019rem;
+//   line-height: 150%;
+// }
 
-@mixin font-body-text-l {
-  font-size: 1.25rem;
-  letter-spacing: -0.017rem;
-  line-height: 2.125rem;
-}
+// @mixin font-body-l {
+//   font-size: $base-size * 1.125;
+//   font-weight: 400;
+//   letter-spacing: -0.014rem;
+//   line-height: 150%;
+// }
 
-@mixin font-body-text {
-  font-size: 1rem;
-  letter-spacing: -0.011rem;
-  line-height: 1.5rem;
-}
+// @mixin font-body-m {
+//   font-size: $base-size;
+//   font-weight: 400;
+//   letter-spacing: -0.011rem;
+//   line-height: 150%;
+// }
 
-@mixin font-body {
-  font-size: 1rem;
-  letter-spacing: -0.011rem;
-  line-height: 1.3rem;
-}
+// @mixin font-body-m-link {
+//   font-size: $base-size;
+//   font-weight: 500;
+//   letter-spacing: -0.011rem;
+//   line-height: 100%;
+// }
 
-@mixin font-small {
-  font-size: 0.8rem;
-  letter-spacing: -0.002rem;
-  line-height: 0.9688rem;
-}
+// @mixin font-body-s {
+//   font-size: $base-size * 0.875;
+//   font-weight: 400;
+//   letter-spacing: -0.006rem;
+//   line-height: 150%;
+// }
 
-@mixin font-button {
-  font-size: 1rem;
-  letter-spacing: -0.011rem;
-  line-height: 2.475rem;
-  text-transform: uppercase;
-}
+// @mixin font-button-l {
+//   font-size: $base-size * 1.25;
+//   font-weight: 500;
+//   letter-spacing: -0.017rem;
+//   line-height: 100%;
+// }
 
-@mixin font-overline {
-  font-size: 1rem;
-  letter-spacing: -0.011rem;
-  line-height: 1.3rem;
-  text-transform: uppercase;
-}
+// @mixin font-button-s {
+//   font-size: $base-size;
+//   font-weight: 400;
+//   letter-spacing: -0.011rem;
+//   line-height: 100%;
+// }
 
-@mixin font-overline-small {
-  font-size: 0.8rem;
-  letter-spacing: -0.002rem;
-  line-height: 0.9688rem;
-  text-transform: uppercase;
-}
+// @mixin font-card-title {
+//   font-size: $base-size * 1.125;
+//   font-weight: 500;
+//   letter-spacing: -0.014rem;
+//   line-height: 100%;
+// }
+
+// @mixin font-card-tag {
+//   font-size: $base-size;
+//   font-weight: 400;
+//   letter-spacing: -0.011rem;
+//   line-height: 125%;
+// }

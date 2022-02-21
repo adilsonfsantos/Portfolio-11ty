@@ -9,12 +9,24 @@
       @include layout-grid(xs-medium);
     }
 
+    @include viewport(xs-large) {
+      @include layout-grid(xs-large);
+    }
+
     @include viewport(sm-small) {
       @include layout-grid(sm-small);
     }
 
     @include viewport(sm-medium) {
       @include layout-grid(sm-medium);
+    }
+
+    @include viewport(md-small) {
+      @include layout-grid(md-small);
+    }
+
+    @include viewport(md-medium) {
+      @include layout-grid(md-medium);
     }
   }
 }

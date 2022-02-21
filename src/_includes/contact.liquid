@@ -1,9 +1,12 @@
 <section class="contato" id="contato">
   <div class="grid--module">
-    <div class="contato__call">
-      <p class="contato__call--cta">Se você quer começar um projeto ou acha que eu sou a pessoa certa para sua equipe.
-      </p>
-      <a role="button" href="mailto:{{ site.author.email | base64 }}" class="btn btn__primary">Entre em contato</a>
+    <div class="contato__info">
+      <div class="contato__call">
+        <p class="contato__call--cta">Vamos conversar?
+        </p>
+        <p class="contato__call--subtitle">Ficarei feliz em ajudar no seu projeto ou em fazer parte da sua equipe.</p>
+        <a href="mailto:{{ site.author.email }}" class="contato__call--email">{{ site.author.email }}</a>
+      </div>
     </div>
   </div>
 </section>

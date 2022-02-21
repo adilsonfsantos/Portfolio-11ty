@@ -92,5 +92,5 @@ page.keywords == blank %} {% else %} ,{{ page.keywords | join: ", " }}
 {% elsif layout == 'page' %}
 <style>{% include "critical-page.css" %}</style>
 {% elsif layout == '404' %}
-<style>{% include "critical-404.css"%}</style>
+<style>{% include "critical-404.css" %}</style>
 {% endif %}

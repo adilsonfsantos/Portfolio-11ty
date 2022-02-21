@@ -8,7 +8,6 @@ span > a,
 
 article p > a,
 article li > a {
-  @include font-color($secondary, primary);
-
+  color: $secondary-30;
   text-decoration: underline;
 }

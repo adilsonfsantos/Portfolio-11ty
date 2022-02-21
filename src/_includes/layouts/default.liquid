@@ -7,12 +7,18 @@
     <!-- htmlmin:ignore -->
     <script type="text/javascript">document.documentElement.classList.remove("no-js")</script>
     <link rel="preload" as="font" href="/assets/fonts/Inter-Regular.woff2" type="font/woff2" crossorigin="crossorigin">
-    <link rel="preload" as="font" href="/assets/fonts/Inter-SemiBold.woff2" type="font/woff2" crossorigin="crossorigin">
+    <link rel="preload" as="font" href="/assets/fonts/Inter-Medium.woff2" type="font/woff2" crossorigin="crossorigin">
     {% assign main_js = js-manifest['main.js'] | prepend: '/assets/js/' %}
     <script async src="{{ main_js }}" charset="UTF-8"></script>
   </head>
+    {% comment %}
+    // TODO adicionar skip to main
+    {% endcomment %}
   <body>
-    {% include "header" %} {{ content }}
+    {% include "header" %}
+    <main>
+    {{ content }}
+    </main>
     {% include "footer" %}
     {% include "css" %}
   </body>

@@ -2,56 +2,80 @@
   @include grid;
   @include grid-base;
 
-  background-color: $gray;
-  padding: 3rem 0;
+  background-color: $black;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
 
   @include viewport(xs-small) {
-    padding: 4.5rem 0;
+    padding-bottom: 4.5rem;
+    padding-top: 4.5rem;
   }
 
   @include viewport(md-medium) {
-    padding: 7.5rem 0;
+    padding-bottom: 6rem;
+    padding-top: 6rem;
+  }
+
+  &__info {
+    grid-column: 1/-1;
+
+    @include viewport(xs-large) {
+      grid-column: span 4;
+    }
+
+    @include viewport(sm-small) {
+      @include font-position(center);
+
+      grid-column: 2/-2;
+    }
+
+    @include viewport(md-small) {
+      grid-column: 3/-3;
+    }
   }
 
   &__call {
     @include flex;
-    @include flex-center;
     @include flex-column;
 
-    grid-column: span 4;
     justify-content: center;
 
-    @include viewport(sm-small) {
-      grid-column: span 8;
-    }
-
-    @include viewport(sm-medium) {
-      grid-column: span 12;
-    }
-
     &--cta {
-      @include font-position(center);
-      @include font-weight(bold);
-      @include font-color($white, primary);
-      @include font-headline4;
+      @include typescale(scale-3, bold, headline);
+
+      color: $white;
+      margin-bottom: $base-size * 0.5;
 
       @include viewport(xs-small) {
-        @include font-headline3;
+        @include typescale(scale-4, bold, headline);
       }
 
-      @include viewport(md-medium) {
-        @include font-headline2;
-
-        max-width: 900px;
+      @include viewport(sm-small) {
+        @include typescale(scale-5, bold, headline);
       }
     }
-  }
 
-  .btn {
-    margin-top: $base-size * 1.5;
+    &--subtitle {
+      @include typescale(scale-1, normal, text);
 
-    @include viewport(xs-small) {
-      margin-top: $base-size * 2.5;
+      color: $black-30;
+      margin-bottom: $base-size * 2;
+      max-width: 680px;
+
+      @include viewport(xs-small) {
+        @include typescale(scale-2, normal, text);
+      }
+    }
+
+    &--email {
+      @include typescale(scale-1, bold, text);
+
+      color: $secondary-30;
+      word-break: break-all;
+
+      @include viewport(xs-small) {
+        @include typescale(scale-2, bold, text);
+      }
     }
   }
 }

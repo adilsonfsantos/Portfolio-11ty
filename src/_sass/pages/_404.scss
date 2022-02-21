@@ -1,9 +1,15 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 .hero {
-  @include gradient(to top right, $secondary, $primary);
   @include grid;
   @include grid-base;
 
-  background-color: $gray;
+  background-color: $black;
+  flex-grow: 1;
 
   &__error {
     @include flex;
@@ -12,33 +18,15 @@
     align-items: center;
     grid-column: 2;
     justify-content: center;
-    min-height: 100vh;
 
     &--title {
-      @include font-color($black, surface);
-      @include font-weight(bold);
+      @include typescale(scale-4, bold, headline);
       @include font-position(center);
-      @include font-headline4;
 
+      color: $white;
       margin-bottom: $base-size * 1.5;
       margin-top: $base-size * 3;
       width: 100%;
-
-      @include viewport(xs-small) {
-        @include font-headline3;
-      }
-
-      @include viewport(xs-large) {
-        @include font-headline2;
-      }
-
-      @include viewport(sm-medium) {
-        @include font-headline1;
-      }
-    }
-
-    .emoji {
-      @include font-weight(regular);
     }
   }
 }
