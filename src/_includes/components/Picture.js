@@ -1,9 +1,7 @@
-module.exports = (
-  src,
+module.exports = function (src,
   altText = "",
   classParent = "",
-  classDescendent = ""
-) => {
+  classDescendent = "") {
   const filename = src.replace(/\.[^/.]+$/, "");
   return `
 <picture class="lazy ${classParent}">
