@@ -1,19 +1,22 @@
 // MEDIA QUERIES
 @use "sass:math";
 @use "sass:map";
-@use "sass:color";
 
-@mixin viewport($size, $width: width) {
+@mixin viewport($size, $orientation: portrait, $width: width) {
   @if not(index(map-keys($grid-breakpoints-map), $size)) {
     @warn "Atenção: `#{$size}` não é um breakpoint válido.";
+  } @else if $orientation == landscape {
+    @media (min-width: #{map.get($grid-breakpoints-map, $size, $width)}) and (orientation: landscape) {
+      @content;
+    }
   } @else {
-    @media (min-width: #{map.get(map.get($grid-breakpoints-map, $size), $width)}) {
+    @media (min-width: #{map.get($grid-breakpoints-map, $size, $width)}) {
       @content;
     }
   }
 }
 
-// ASPECT RATIO PARA AS IMAGENS CARREGADAS
+// ASPECT RATIO FOR LAZYLOAD IMAGES
 @mixin aspect-ratio($width, $height) {
   padding-top: math.div($height, $width) * 100%;
 }
@@ -21,14 +24,6 @@
 // LAYOUT
 @mixin flex {
   display: flex;
-}
-
-@mixin inline {
-  display: inline-block;
-}
-
-@mixin grid {
-  display: grid;
 }
 
 @mixin flex-column {
@@ -40,12 +35,26 @@
   justify-content: center;
 }
 
-@mixin grid-base {
-  grid-template-columns:
-    minmax(5vw, 1fr) minmax(0, 1280px) minmax(
-      5vw,
-      1fr
-    );
+@mixin grid {
+  display: grid;
+}
+
+@mixin inline {
+  display: inline-block;
+}
+
+@mixin grid-base() {
+  @each $name, $width, $column, $margin in $grid-breakpoints-map {
+    $grid-margin: #{map.get($grid-breakpoints-map, $name, margin)};
+
+    @if $name == "default" {
+      grid-template-columns: minmax(5vw, 1fr) minmax(0, $page-width) minmax(5vw, 1fr);
+    } @else {
+      @include viewport($name) {
+        grid-template-columns: minmax($grid-margin, auto) minmax(0, $page-width) minmax($grid-margin, auto);
+      }
+    }
+  }
 }
 
 @mixin grid-image {
@@ -56,24 +65,24 @@
     );
 }
 
-@mixin layout-grid($size, $column: column, $margin: margin) {
+@mixin layout-grid($size, $column: column, $gap: gap) {
   @if not(index(map-keys($grid-breakpoints-map), $size)) {
     @warn "Atenção: `#{size}` não é um breakpoint válido.";
   } @else {
-    column-gap: #{map.get(map.get($grid-breakpoints-map, $size), $margin)};
+    column-gap: #{map.get($grid-breakpoints-map, $size, $gap)};
     grid-template-columns:
       repeat(
-        #{map.get(map.get($grid-breakpoints-map, $size), $column)},
+        #{map.get($grid-breakpoints-map, $size, $column)},
         minmax(0, 1fr)
       );
   }
 }
 
 @mixin grid-post {
-  grid-template-columns: minmax(0, 640px);
+  grid-template-columns: minmax(0, 680px);
 
   @include viewport(sm-small) {
-    grid-template-columns: 1fr minmax(0, 640px) 1fr;
+    grid-template-columns: 1fr minmax(0, 680px) 1fr;
   }
 }
 
@@ -90,88 +99,46 @@
   margin: auto;
 }
 
-@mixin skeleton() {
-  @include animation(skeleton, 1.6s, ease-in-out, infinite);
-
-  animation-fill-mode: forwards;
-  background:
-    linear-gradient(
-      to right,
-      $white 0%,
-      $accent 20%,
-      $white 100%
-    );
+// ANIMATION
+@mixin transition(
+  $name: all,
+  $duration: $elevation-transition-duration,
+  $speed: $animation-standard,
+  $delay: 0ms
+) {
+  transition: $name $duration $speed $delay;
 }
 
-// COLORS
-@mixin color($property, $color, $background, $type) {
-  $value: map.get(map.get($elevation-map, $type), overlay);
-  $percent: color.alpha($color) * $value;
-  $opaque: color.scale($color, $alpha: 100%);
-  $solid-color: color.mix($opaque, $background, $percent);
-
-  #{$property}: $solid-color;
+@mixin animation(
+  $name,
+  $duration: $elevation-transition-duration,
+  $speed: $animation-standard,
+  $loop: 1,
+  $delay: 0ms
+) {
+  animation: $name $duration $speed $loop;
 }
 
-@mixin gradient($deg, $start-color, $end-color) {
-  background: linear-gradient($deg, $start-color, $end-color);
-}
+// FONT
+@mixin typescale($size, $weight, $line) {
+  font-size: #{map.get($type-map, $size, size)};
 
-// FONT ELEMENTS
-
-@mixin font-responsive($min-vw, $max-vw, $min-font-size, $max-font-size) {
-  $unit-01: math.unit($min-vw);
-  $unit-02: math.unit($max-vw);
-  $unit-03: math.unit($min-font-size);
-  $unit-04: math.unit($max-font-size);
-  $a: -0.0223;
-  $b: 0.185;
-  $c: -0.1745;
-  $min-spacing: $a + $b * ($c * $min-font-size);
-  $max-spacing: $a + $b * ($c * $max-font-size);
-  $spacing: calc(
-    #{$min-spacing} + #{strip-unit($max-spacing - $min-spacing)} * (
-      (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
-    );
-
-  @if $unit-01 == $unit-02 and $unit-01 == $unit-03 and $unit-01 == $unit-04 {
-    & {
-      font-size: $min-font-size;
-      letter-spacing: $min-spacing;
-
-      @media screen and (min-width: $min-vw) {
-        font-size:
-          calc(
-            #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * (
-              (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
-            );
-        letter-spacing: $spacing;
-      }
-
-      @media screen and (min-width: $max-vw) {
-        font-size: $max-font-size;
-        letter-spacing: $max-spacing;
-      }
-    }
+  @if $weight == "bold" {
+    font-weight: 500;
+  } @else if $weight == "normal" {
+    font-weight: 400;
+  } @else {
+    @warn " Atenção: `#{$weight}` não é um valor válido.";
   }
-}
 
-@mixin spacing($font-size) {
-  $a: -0.0223;
-  $b: 0.185;
-  $c: -0.1745;
-  $spacing: $a + $b * ($c * $font-size);
+  letter-spacing: #{map.get($type-map, $size, spacing)};
 
-  letter-spacing: $spacing;
-}
-
-@mixin font-color($color, $opacity) {
-  @if $opacity == primary {
-    color: color.scale($color, $alpha: -13%);
-  } @else if $opacity == secondary {
-    color: color.scale($color, $alpha: -40%);
-  } @else if $opacity == terciary {
-    color: color.scale($color, $alpha: -62%);
+  @if $line == "headline" {
+    line-height: 125%;
+  } @else if $line == "text" {
+    line-height: 150%;
+  } @else {
+    @warn " Atenção: `#{$line}` não é um valor válido.";
   }
 }
 
@@ -201,42 +168,7 @@
   }
 }
 
-@mixin font-shadow($color) {
-  text-shadow: 1px 1px 6px rgba($black, 0.3);
-}
-
-@mixin font-weight($weight) {
-  @if $weight == regular {
-    font-weight: 400;
-  } @else if $weight == bold {
-    font-weight: 600;
-  }
-}
-
-// ANIMATION
-@mixin transition(
-  $name: all,
-  $duration: $elevation-transition-duration,
-  $speed: $animation-standard,
-  $delay: 0ms
-) {
-  transition: $name $duration $speed $delay;
-}
-
-@mixin animation(
-  $name,
-  $duration: $elevation-transition-duration,
-  $speed: $animation-standard,
-  $loop: 1,
-  $delay: 0ms
-) {
-  animation: $name $duration $speed $loop;
-}
-
-@mixin radius($range) {
-  border-radius: $range * 1rem;
-}
-
+// HELPER
 @mixin absolute {
   content: "";
   height: 100%;
@@ -244,62 +176,4 @@
   position: absolute;
   top: 0;
   width: 100%;
-}
-
-// Remove the unit of a length
-// @param {Number} $number - Number to remove unit from
-// @return {Number} - Unitless number
-@function strip-unit($number) {
-  @if type-of($number) == "number" and not unitless($number) {
-    @return $number / ($number * 0 + 1);
-  }
-
-  @return $number;
-}
-
-@mixin elevation(
-  $level,
-  $background,
-  $shadow: true,
-  $color: $elevation-baseline-color,
-  $overlay: $elevation-overlay-color,
-  $opacity-boost: 0
-) {
-  $z-elevation: map.get(map.get($elevation-map, $level), elevation);
-  $z-overlay: map.get(map.get($elevation-map, $level), overlay);
-
-  @if $shadow == false {
-    // return
-  } @else {
-    $z-value: strip-unit($z-elevation);
-
-    @if $z-value < 0 or $z-value > 24 {
-      @error "$z-value deve estar entre 0 e 24, mas recebeu  '#{$z-value}'";
-    }
-
-    $umbra-z-value: map.get($elevation-umbra-map, $z-value);
-    $penumbra-z-value: map.get($elevation-penumbra-map, $z-value);
-    $ambient-z-value: map.get($elevation-ambient-map, $z-value);
-    $umbra-color: rgba($color, $elevation-umbra-opacity + $opacity-boost);
-    $penumbra-color: rgba($color, $elevation-penumbra-opacity + $opacity-boost);
-    $ambient-color: rgba($color, $elevation-ambient-opacity + $opacity-boost);
-
-    box-shadow: (
-      #{$umbra-z-value} #{$umbra-color},
-      #{$penumbra-z-value} #{$penumbra-color},
-      #{$ambient-z-value} $ambient-color
-    );
-  }
-
-  @if $background == "none" {
-    // return
-  } @else if $overlay == "none" {
-    background-color: $background;
-  } @else {
-    $percent: color.alpha($overlay) * $z-overlay;
-    $opaque: color.scale($overlay, $alpha: 100%);
-    $solid-color: color.mix($opaque, $background, $percent);
-
-    background-color: $solid-color;
-  }
 }
