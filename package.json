@@ -37,7 +37,7 @@
   "dependencies": {
     "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-upgrade-help": "^1.0.1",
-    "@babel/core": "^7.16.12",
+    "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
     "@cjquines/gulp-responsive": "^3.0.1",
     "autoprefixer": "^10.4.2",
