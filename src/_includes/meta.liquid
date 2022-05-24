@@ -84,7 +84,7 @@ page.keywords == blank %} {% else %} ,{{ page.keywords | join: ", " }}
 <meta content="#121212" name="theme-color" />
 <meta content="/browserconfig.xml" name="msapplication-config" />
 <meta content="nopin" name="pinterest" />
-<meta name="generator" content="Eleventy">
+<meta name="generator" content="{{ eleventy.generator }}">
 {% if layout == 'home' %}
 <style>{% include "critical-home.css" %}</style>
 {% elsif layout == 'post' %}
