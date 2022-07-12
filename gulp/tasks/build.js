@@ -5,7 +5,7 @@ const size = require("gulp-size");
 
 const paths = require("../paths");
 
-// 'gulp site:tmp' -- copies Jekyll site to a temporary directory to be processed
+// 'gulp site:tmp' -- copies 11ty site to a temporary directory to be processed
 gulp.task("site:tmp", () => {
   return gulp
     .src(
@@ -24,6 +24,6 @@ gulp.task("site:tmp", () => {
 // 'gulp site --prod' -- builds site with production settings
 gulp.task("site", () => {
   return cp.spawn("npx", ["eleventy", "--incremental"], {
-    stdio: "inherit",
+    stdio: "inherit", shell: true
   });
 });
