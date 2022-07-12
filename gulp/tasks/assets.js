@@ -139,7 +139,7 @@ gulp.task("serve", (done) => {
        */
       ready: function (err, bs) {
         // example of accessing URLS
-        console.log(bs.options.get("urls"));
+        console.log(bs.options.getIn(["urls", "local"]));
 
         // example of adding a middleware at the end
         // of the stack after Browsersync is running
@@ -167,6 +167,6 @@ gulp.task("serve", (done) => {
   gulp.watch(paths.sassFilesGlob, gulp.series("styles", reload));
   gulp.watch(
     paths.imageFilesGlob,
-    gulp.series("copy:images", "images", reload)
+    gulp.series("copy:images", reload)
   );
 });

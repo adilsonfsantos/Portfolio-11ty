@@ -18,7 +18,6 @@ gulp.task(
     gulp.series(
       "scripts:gzip",
       "styles:gzip",
-      "images",
       "copy:assets",
       "copy:images:cached",
       "copy:images",
@@ -30,7 +29,7 @@ gulp.task(
 // 'gulp clean' -- removes assets and gzipped files
 gulp.task(
   "clean",
-  gulp.parallel("clean:assets", "clean:gzip", "clean:dist", "clean:site")
+  gulp.parallel("clean:assets", "clean:images", "clean:gzip", "clean:dist", "clean:site")
 );
 
 // 'gulp build' -- same as 'gulp' but doesn't serve site

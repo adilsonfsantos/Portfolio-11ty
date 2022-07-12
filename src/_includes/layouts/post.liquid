@@ -2,7 +2,6 @@
 layout: default
 permalink: "/projetos/{{page.fileSlug}}/"
 ---
-
 <article
   class="post"
   itemscope
@@ -20,7 +19,8 @@ permalink: "/projetos/{{page.fileSlug}}/"
     </div>
       <div class="post__splash">
       <div class="post__splash--container">
-        {% picture-hero image, title %}
+        {% assign picture = image | prepend : "src" %}
+        {% images picture, title, "post__splash--picture", "post__splash--image" %}
       </div>
     </div>
     <div class="post__hero">

@@ -39,8 +39,8 @@ Durante a criação a principal referência foi a minha relação com a volta à
 
 O azul da paleta de cores foi escolhido por ser um oposto direto ao vermelho tradicional Mackenzie e para passar um sentimento de segurança e receptividade aos alunos, as ilustrações dos elementos ao redor utilizam cores pastéis para que o contraste com o fundo fosse agradável e ao mesmo tempo não passar um conceito infantil.
 
-{% picture "/assets/images/mackenzie_aeja_cartaz.png", "Cartaz de volta às aulas com a frase &quot;Sejam bem-vindos a um novo ano cheio de desafios oportunidades e conquistas ao alcance de todos.&quot;", "post__photo", "post__photo--image" %}
+{% images "src/assets/images/mackenzie_aeja_cartaz.png", "Cartaz de volta às aulas com a frase &quot;Sejam bem-vindos a um novo ano cheio de desafios oportunidades e conquistas ao alcance de todos.&quot;", "post__photo", "post__photo--image" %}
 
-{% picture "/assets/images/mackenzie_aeja_banner_site.png", "Cartaz de volta às aulas com a frase &quot;Sejam bem-vindos a um novo ano cheio de desafios oportunidades e conquistas ao alcance de todos.&quot;", "post__photo", "post__photo--image" %}
+{% images "src/assets/images/mackenzie_aeja_banner_site.png", "Cartaz de volta às aulas com a frase &quot;Sejam bem-vindos a um novo ano cheio de desafios oportunidades e conquistas ao alcance de todos.&quot;", "post__photo", "post__photo--image" %}
 
-{% picture "/assets/images/mackenzie_aeja_instagram.png", "Cartaz de volta às aulas com a frase &quot;Sejam bem-vindos a um novo ano cheio de desafios oportunidades e conquistas ao alcance de todos.&quot;", "post__photo", "post__photo--image" %}
+{% images "src/assets/images/mackenzie_aeja_instagram.png", "Cartaz de volta às aulas com a frase &quot;Sejam bem-vindos a um novo ano cheio de desafios oportunidades e conquistas ao alcance de todos.&quot;", "post__photo", "post__photo--image" %}

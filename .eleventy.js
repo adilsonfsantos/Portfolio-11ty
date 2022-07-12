@@ -4,25 +4,55 @@ const markdownItAttrs = require("markdown-it-attrs");
 const xmlFiltersPlugin = require("eleventy-xml-plugin");
 const mila = require("markdown-it-link-attributes");
 
-const componentsDir = "./src/_includes/components";
-const pictureCard = require(`${componentsDir}/PictureCard.js`);
-const picture = require(`${componentsDir}/Picture.js`);
-const pictureHero = require(`${componentsDir}/PictureHero.js`);
+const Image = require("@11ty/eleventy-img");
+const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
+const { option } = require("yargs");
 
-const filtersDir = "./src/_includes/filters";
-const base64 = require(`${filtersDir}/base64.js`);
-const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
+async function imageShortcode(src, alt, classParent, classDescendent, sizes = "100vw") {
+  if(alt === undefined || typeof alt !== 'string') {
+    // You bet we throw an error on missing alt (alt="" works okay)
+    throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
+  }
+
+  let metadata = await Image(src, {
+    widths: [320, 480, 768, 992, 1200, 1920],
+    formats: ["webp", "jpeg"],
+    sharpOptions: {
+      ChromaSubsampling: "4:4:4",
+      Progressive: true,
+      Quality: 95,
+    },
+    urlPath: "/assets/image",
+    outputDir: "tmp/dist/assets/image"
+  });
+
+  let lowsrc = metadata.jpeg[0];
+  let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
+
+  return `<picture class="${classParent}">
+    ${Object.values(metadata).map(imageFormat => {
+      return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`;
+    }).join("\n")}
+      <img
+        class="${classDescendent}"
+        src="${lowsrc.url}"
+        width="${highsrc.width}"
+        height="${highsrc.height}"
+        alt="${alt}"
+        loading="lazy"
+        decoding="async">
+    </picture>`;
+}
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(UpgradeHelper);
+  eleventyConfig.addPlugin(directoryOutputPlugin);
 
   //  SHORTCODE
-  eleventyConfig.addShortcode("picture-card", pictureCard);
-  eleventyConfig.addShortcode("picture", picture);
-  eleventyConfig.addShortcode("picture-hero", pictureHero);
-
-  //  FILTERS
-  eleventyConfig.addFilter("base64", base64);
+  eleventyConfig.addShortcode("year", () => {
+    let year = new Date().getFullYear();
+    return year.toString(); // or `return String(year);`
+});
+  eleventyConfig.addLiquidShortcode("images", imageShortcode);
 
   //  MARKDOWN SETTINGS
   const markdownItOptions = {
@@ -73,7 +103,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("home", "layouts/home.liquid");
   eleventyConfig.addLayoutAlias("post", "layouts/post.liquid");
   eleventyConfig.addLayoutAlias("page", "layouts/page.liquid");
-
   eleventyConfig.addLayoutAlias("404", "layouts/404.liquid");
 
   // PASSTHROUGHT ELEMENTS
