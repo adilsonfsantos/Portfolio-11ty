@@ -43,6 +43,27 @@ async function imageShortcode(src, alt, classParent, classDescendent, sizes = "1
     </picture>`;
 }
 
+function blockquote(content, source, type) {
+  if (!source) {
+    /* eslint-disable max-len */
+    /* eslint-disable quotes */
+    throw new Error(
+      `Can't create Blockquote component without a source. Did you forget to pass the source as a string?`
+    );
+    /* eslint-enable max-len */
+    /* eslint-enable quotes */
+  }
+
+  const typeAttr = type ? `data-type="${type}"` : '';
+
+  return `
+    <blockquote ${typeAttr}>
+      ${content}
+      <cite>${source}</cite>
+    </blockquote>
+  `;
+}
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(directoryOutputPlugin);
 
@@ -50,8 +71,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("year", () => {
     let year = new Date().getFullYear();
     return year.toString(); // or `return String(year);`
-});
+  });
   eleventyConfig.addLiquidShortcode("images", imageShortcode);
+  // {% images "path_to_image", "alt_text", "class", "subclass" %}
+
+  eleventyConfig.addPairedShortcode("blockquote", blockquote)
+  // {% blockquote "Lorem Ipsum" %}
+  // Vestibulum id ligula porta felis euismod semper.
+  // {% endblockquote %}
 
   //  MARKDOWN SETTINGS
   const markdownItOptions = {

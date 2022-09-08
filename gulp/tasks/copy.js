@@ -17,8 +17,8 @@ function assetsCopy () {
 function imagesCopy () {
   return (
     src([path.to.fileGlob.imageFilesGlob]) // do not process feature images
-    .pipe(newer(path.to.fileGlob.imageFilesSite))
-    .pipe(dest(path.to.fileGlob.imageFilesSite)))
+    .pipe(newer(path.to.siteAssets.imageFilesSite))
+    .pipe(dest(path.to.siteAssets.imageFilesSite)))
 }
 
 // 'gulp copy:images:cached' -- copies cached images to /dist/
