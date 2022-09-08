@@ -1,21 +1,20 @@
 "use strict";
-var argv = require("yargs").argv;
-var critical = require("critical").stream;
-var gulp = require("gulp");
-var gzip = require("gulp-gzip");
-var htmlmin = require("gulp-htmlmin");
-var size = require("gulp-size");
-var when = require("gulp-if");
+const argv = require("yargs").argv;
+const critical = require("critical").stream;
+const { src, dest } = require("gulp");
+const gzip = require("gulp-gzip");
+const htmlmin = require("gulp-htmlmin");
+const size = require("gulp-size");
+const when = require("gulp-if");
 
 // include paths file
-var paths = require("../paths");
+const path = require("../paths.js");
 
 // 'gulp html' -- does nothing
 // 'gulp html --prod' -- minifies and gzips HTML files for production
-gulp.task("html", () => {
+function html() {
   return (
-    gulp
-      .src(paths.dist + paths.liquidPattern)
+      src("dist" + "/**/*.liquid")
       .pipe(
         when(
           argv.prod,
@@ -31,31 +30,31 @@ gulp.task("html", () => {
         )
       )
       // .pipe(when(argv.prod, size()))
-      .pipe(when(argv.prod, gulp.dest(paths.dist)))
+      .pipe(when(argv.prod, dest("dist")))
       .pipe(when(argv.prod, gzip({ append: true })))
       .pipe(
         when(
           argv.prod,
           size({
-            title: "gzipped HTML",
+            title: "Gzip HTML",
             gzip: true,
           })
         )
       )
-      .pipe(when(argv.prod, gulp.dest(paths.dist)))
+      .pipe(when(argv.prod, dest("dist")))
   );
-});
+}
 
 // 'gulp styles:critical:page' -- extract layout.archive critical CSS
 //   into /_includes/critical-page.css
-gulp.task("styles:critical:page", () => {
-  return gulp
-    .src(paths.tempDir + paths.siteDir + "/sobre/index.html")
+function pageCritical() {
+  return (
+    src(path.to.root.tempDir + path.to.root.siteDir + "/sobre/index.html")
     .pipe(
       critical({
         base: "./",
         inline: false,
-        css: [paths.sassFilesTemp + "/page.**"],
+        css: [path.to.tmpAssets.sassFilesTemp + "/page.**"],
         dimensions: [
           {
             width: 240,
@@ -75,19 +74,20 @@ gulp.task("styles:critical:page", () => {
           },
         ],
       })
-    );
-});
+    )
+  );
+}
 
 // 'gulp styles:critical:post' -- extract layout.post critical CSS
 //   into /_includes/critical-post.css
-gulp.task("styles:critical:post", () => {
-  return gulp
-    .src(paths.tempDir + paths.siteDir + "projetos/plaenge/index.html")
+function postCritical() {
+  return(
+    src(path.to.root.tempDir + path.to.root.siteDir + "projetos/plaenge/index.html")
     .pipe(
       critical({
         base: "./",
         inline: false,
-        css: [paths.sassFilesTemp + "/post.**"],
+        css: [path.to.tmpAssets.sassFilesTemp + "/post.**"],
         dimensions: [
           {
             width: 240,
@@ -107,17 +107,18 @@ gulp.task("styles:critical:post", () => {
           },
         ],
       })
-    );
-});
+    )
+  );
+}
 
 // 'gulp styles:critical:home' -- extract layout.home critical CSS
 //   into /_includes/critical-home.css
-gulp.task("styles:critical:home", () => {
-  return gulp.src(paths.tempDir + paths.siteDir + "index.html").pipe(
+function homeCritical() {
+  return src(path.to.root.tempDir + path.to.root.siteDir + "index.html").pipe(
     critical({
       base: "./",
       inline: false,
-      css: [paths.sassFilesTemp + "/home.**"],
+      css: [path.to.tmpAssets.sassFilesTemp + "/home.**"],
       dimensions: [
         {
           width: 240,
@@ -138,16 +139,16 @@ gulp.task("styles:critical:home", () => {
       ],
     })
   );
-});
+}
 
 // 'gulp styles:critical:404' -- extract layout.home critical CSS
 //   into /_includes/critical-404.css
-gulp.task("styles:critical:404", () => {
-  return gulp.src(paths.tempDir + paths.siteDir + "404.html").pipe(
+function errorCritical() {
+  return src(path.to.root.tempDir + path.to.root.siteDir + "404.html").pipe(
     critical({
       base: "./",
       inline: false,
-      css: [paths.sassFilesTemp + "/404.**"],
+      css: [path.to.tmpAssets.sassFilesTemp + "/404.**"],
       dimensions: [
         {
           width: 240,
@@ -168,4 +169,12 @@ gulp.task("styles:critical:404", () => {
       ],
     })
   );
-});
+}
+
+module.exports = {
+  html,
+  pageCritical,
+  postCritical,
+  homeCritical,
+  errorCritical
+}

@@ -5,7 +5,7 @@ const babelify = require("babelify");
 const bro = require("gulp-bro");
 const browserSync = require("browser-sync").create();
 const cssnano = require("cssnano");
-const gulp = require("gulp");
+const { src, dest } = require("gulp");
 const gzip = require("gulp-gzip");
 const postcss = require("gulp-postcss");
 const rev = require("gulp-rev");
@@ -15,47 +15,51 @@ const sourcemaps = require("gulp-sourcemaps");
 const uglify = require("gulp-uglify-es").default;
 const when = require("gulp-if");
 
-// // include paths file
-const paths = require("../paths");
+// include paths file
+const path = require("../paths.js");
 
-// ,'./node_modules/turbolinks/dist/turbolinks.js'
 // 'gulp scripts' -- creates a index.js file with Sourcemap from your JavaScript files
 // 'gulp scripts --prod' -- creates a index.js file from your JavaScript files,
 //   minifies, and cache busts it (does not create a Sourcemap)
-gulp.task("scripts", () => {
+function scripts() {
   // NOTE: The order here is important since it's concatenated in order from
   // top to bottom, so you want vendor scripts etc on top
   return (
-    gulp
-      .src([paths.jsFiles + "/*.js"])
-      .pipe(
+    src([path.to.srcAsset.jsFiles + "/*.js"])
+    .pipe(
         bro({
-          transform: [
+          _transform: [
             babelify.configure({ presets: ["@babel/preset-env"] }),
           ],
+          get transform() {
+            return this._transform;
+          },
+          set transform(value) {
+            this._transform = value;
+          },
         })
       )
       .pipe(when(!argv.prod, sourcemaps.init()))
       .pipe(size({ showFiles: true }))
       .pipe(when(argv.prod, when("*.js", uglify())))
       .pipe(when(!argv.prod, sourcemaps.write(".")))
-      .pipe(gulp.dest(paths.jsFilesTemp))
+      .pipe(dest(path.to.tmpAssets.jsFilesTemp))
       // JS cache bursting
       .pipe(rev())
-      .pipe(size({ showFiles: true }))
+      .pipe(size({ title: "scripts", showFiles: true }))
       // gera arquivos compactados
-      .pipe(when(argv.prod, gulp.dest(paths.jsFilesTemp)))
+      .pipe(when(argv.prod, dest(path.to.tmpAssets.jsFilesTemp)))
       // gera manifesto dos arquivos compactados
       .pipe(rev.manifest("js-manifest.json"))
-      .pipe(gulp.dest(paths.tempDir + paths.sourceDir + paths.data))
-      .pipe(size({ showFiles: true }))
+      // .pipe(dest(path.tempDir + paths.sourceDir + paths.data))
+      .pipe(dest(path.to.root.tempDir + path.to.root.sourceDir + path.to.root.dataDir))
+      .pipe(size({ title: "scripts json", showFiles: true }))
   );
-});
+}
 
 // 'gulp scripts:gzip --prod' -- gzips JS
-gulp.task("scripts:gzip", () => {
-  return gulp
-    .src([paths.jsFilesTemp + "/*.js"])
+function gzipScripts() {
+  return src([path.to.tmpAssets.jsFilesTemp + "/*.js"])
     .pipe(when(argv.prod, when("*.js", gzip({ append: true }))))
     .pipe(
       when(
@@ -63,47 +67,46 @@ gulp.task("scripts:gzip", () => {
         size({
           gzip: true,
           showFiles: true,
+          title: "Gzip scripts"
         })
       )
     )
-    .pipe(when(argv.prod, gulp.dest(paths.jsFilesTemp)));
-});
+    .pipe(when(argv.prod, dest(path.to.tmpAssets.jsFilesTemp)));
+}
 
 // 'gulp styles' -- creates a CSS file from SCSS, adds prefixes and creates a Sourcemap
 // 'gulp styles --prod' -- creates a CSS file from your SCSS, adds prefixes,
-gulp.task("styles", () => {
+function styles() {
   var plugins = [autoprefixer(), cssnano()];
   return (
-    gulp
-      .src([paths.sassFiles + "/*.scss"])
+    src([path.to.srcAsset.sassFiles + "/*.scss"])
       .pipe(when(!argv.prod, sourcemaps.init()))
       .pipe(sass().on("error", sass.logError))
       .pipe(
         sass({
-          includePaths: [paths.sassFiles], // Tell Sass where to look for files
+          includePaths: [path.to.srcAsset.sassFiles], // Tell Sass where to look for files
         }).on("error", sass.logError)
       )
       .pipe(when(argv.prod, when("*.css", postcss(plugins))))
       .pipe(when(argv.prod, postcss(plugins)))
       .pipe(size({ showFiles: true }))
       .pipe(when(argv.prod, sourcemaps.write(".")))
-      .pipe(when(argv.prod, gulp.dest(paths.sassFilesTemp + "/")))
+      .pipe(when(argv.prod, dest(path.to.tmpAssets.sassFilesTemp + "/")))
       // CSS cache bursting
       .pipe(rev())
-      .pipe(size({ showFiles: true }))
+      .pipe(size({ title: "Styles json", showFiles: true }))
       // gera arquivos compactados
-      .pipe(gulp.dest(paths.sassFilesTemp + "/"))
+      .pipe(dest(path.to.tmpAssets.sassFilesTemp + "/"))
       .pipe(rev.manifest("css-manifest.json"))
-      .pipe(gulp.dest([paths.tempDir + paths.sourceDir + paths.data]))
-      .pipe(when(argv.prod, size({ showFiles: true })))
+      .pipe(dest(path.to.root.tempDir + path.to.root.sourceDir + path.to.root.dataDir))
+      .pipe(when(argv.prod, size({ title: "Styles json", showFiles: true })))
       .pipe(when(!argv.prod, browserSync.stream()))
   );
-});
+}
 
 // 'gulp styles:gzip --prod' -- gzips CSS
-gulp.task("styles:gzip", () => {
-  return gulp
-    .src([paths.sassFilesTemp + "/*.css"])
+function gzipStyles() {
+  return src([path.to.tmpAssets.sassFilesTemp + "/*.css"])
     .pipe(when(argv.prod, when("*.css", gzip({ append: true }))))
     .pipe(
       when(
@@ -111,62 +114,16 @@ gulp.task("styles:gzip", () => {
         size({
           gzip: true,
           showFiles: true,
+          title: "Gzip styles"
         })
       )
     )
-    .pipe(when(argv.prod, gulp.dest(paths.sassFilesTemp)));
-});
-
-// function to properly reload your browser
-function reload(done) {
-  browserSync.reload();
-  done();
+    .pipe(when(argv.prod, dest(path.to.tmpAssets.sassFilesTemp)));
 }
-// 'gulp serve' -- open site in browser and watch for changes
-// in source files and update them when needed
-gulp.task("serve", (done) => {
-  browserSync.init({
-    port: 4000, // change port to match default Jekyll
-    ui: { port: 4001 },
-    server: [paths.tmp, paths.dist],
-    serveStaticOptions: {
-      extensions: ["html"],
-    },
-    callbacks: {
-      /**
-       * This 'ready' callback can be used
-       * to access the Browsersync instance
-       */
-      ready: function (err, bs) {
-        // example of accessing URLS
-        console.log(bs.options.getIn(["urls", "local"]));
 
-        // example of adding a middleware at the end
-        // of the stack after Browsersync is running
-        bs.addMiddleware("*", function (req, res) {
-          res.writeHead(302, {
-            location: "404.html",
-          });
-          res.end("Redirecting!");
-        });
-      },
-    },
-  });
-  done();
-
-  // watch various files for changes and do the needful
-  gulp.watch(
-    [paths.mdFilesGlob, paths.liquidFilesGlob, paths.ymlFilesGlob],
-    gulp.series("build:site", reload)
-  );
-  gulp.watch(
-    [paths.xmlFilesGlob, paths.txtFilesGlob],
-    gulp.series("site", reload)
-  );
-  gulp.watch(paths.jsFilesGlob, gulp.series("scripts", reload));
-  gulp.watch(paths.sassFilesGlob, gulp.series("styles", reload));
-  gulp.watch(
-    paths.imageFilesGlob,
-    gulp.series("copy:images", reload)
-  );
-});
+module.exports = {
+  scripts,
+  styles,
+  gzipScripts,
+  gzipStyles
+}

@@ -1,45 +1,52 @@
 "use strict";
 const del = require("del");
-const gulp = require("gulp");
 
 // include paths file
-const paths = require("../paths");
+const path = require("../paths.js");
 
 // 'gulp clean:assets' -- removes temporary and built CSS/JS assets
-gulp.task("clean:assets", () => {
+function assetsClean() {
   return del([
-    paths.tmp + "/**/*",
-    "!" + paths.assetFilesTemp,
-    paths.assetFilesSite + "/**/*",
-    "!" + paths.imageFilesSite,
-    "!" + paths.imageFilesSite + "/**/*",
+    "tmp" + "/**/*",
+    "!" + path.to.tmpAssets.assetFilesTemp,
+    path.to.siteAssets.assetFilesSite + "/**/*",
+    "!" + path.to.siteAssets.imageFilesSite,
+    "!" + path.to.siteAssets.imageFilesSite + "/**/*",
   ]);
-});
+}
 
 // 'gulp clean:images' -- removes only image assets
-gulp.task("clean:images", () => {
-  return del([paths.imageFilesSite]);
-});
+function imagesClean () {
+  return del([path.to.siteAssets.imageFilesSite]);
+}
 
 // 'gulp clean:dist' -- removes built site but keep images
-gulp.task("clean:dist", () => {
+function distClean () {
   return del(
     [
-      paths.dist + "/**/*",
-      "!" + paths.assetFilesSite,
-      "!" + paths.imageFilesSite,
-      "!" + paths.imageFilesSite + "/**/*",
+      "dist" + "/**/*",
+      "!" + path.to.siteAssets.assetFilesSite,
+      "!" + path.to.siteAssets.imageFilesSite,
+      "!" + path.to.siteAssets.imageFilesSite + "/**/*",
     ],
     { dot: true }
   );
-});
+}
 
 // 'gulp clean:gzip' -- removes gzip files
-gulp.task("clean:gzip", () => {
-  return del([paths.dist + "/**/*.gz"]);
-});
+function gzipClean () {
+  return del(["dist" + "/**/*.gz"]);
+}
 
 // 'gulp clean:site' -- removes temporary source
-gulp.task("clean:site", () => {
-  return del([paths.tempDir + paths.sourceFolderName]);
-});
+function siteClean () {
+  return del([path.to.root.tempDir + "src"]);
+}
+
+module.exports = {
+  imagesClean,
+  assetsClean,
+  distClean,
+  gzipClean,
+  siteClean
+}

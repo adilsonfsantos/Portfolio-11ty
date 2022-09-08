@@ -1,56 +1,72 @@
 "use strict";
-var gulp = require("gulp");
+var { src, dest } = require("gulp");
 var newer = require("gulp-newer");
 
 // include paths file
-var paths = require("../paths");
+const path = require("../paths.js");
 
 // 'gulp copy:assets' -- copies assets to /dist/
 //   to avoid Jekyll overwriting the whole directory
-gulp.task("copy:assets", () => {
-  return gulp
-    .src([paths.assetFilesTemp + "/**/*", paths.imageFiles + "/*.ico"])
-    .pipe(gulp.dest(paths.assetFilesSite));
-});
+function assetsCopy () {
+  return (
+    src([path.to.tmpAssets.assetFilesTemp + "/**/*", path.to.srcAsset.imageFiles + "/*.ico"])
+    .pipe(dest(path.to.siteAssets.assetFilesSite)))
+}
 
 // 'gulp copy:images' -- copies unoptimized images to /dist/
-gulp.task("copy:images", () => {
-  return gulp
-    .src([paths.imageFilesGlob, "!src/assets/images/{feature,feature/**}"]) // do not process feature images
-    .pipe(newer(paths.imageFilesSite))
-    .pipe(gulp.dest(paths.imageFilesSite));
-});
+function imagesCopy () {
+  return (
+    src([path.to.fileGlob.imageFilesGlob]) // do not process feature images
+    .pipe(newer(path.to.fileGlob.imageFilesSite))
+    .pipe(dest(path.to.fileGlob.imageFilesSite)))
+}
 
 // 'gulp copy:images:cached' -- copies cached images to /dist/
-gulp.task("copy:images:cached", () => {
-  return gulp
-    .src(paths.imageFilesCachePath + "/**/*")
-    .pipe(newer(paths.imageFilesSite))
-    .pipe(gulp.dest(paths.imageFilesSite));
-});
+function imagesCopyCached () {
+  if (process.env.CONTEXT === "production") {
+    return(
+    src("/opt/build/cache/assets/images" + "/**/*")
+    .pipe(newer(path.to.siteAssets.imageFilesSite))
+    .pipe(dest(path.to.siteAssets.imageFilesSite)))
+  } else {
+    return(
+    src(path.to.tmpAssets.imageFilesTemp + "/**/*")
+    .pipe(newer(path.to.siteAssets.imageFilesSite))
+    .pipe(dest(path.to.siteAssets.imageFilesSite)))
+  }
+}
 
 // 'gulp copy:icons' -- copies .ico assets to /dist/
-gulp.task("copy:icons", () => {
-  return gulp
-    .src(paths.imageFiles + "/*.ico")
-    .pipe(newer(paths.imageFilesSite))
-    .pipe(gulp.dest(paths.imageFilesSite));
-});
+function iconsCopy () {
+  return (
+    src(path.to.srcAsset.imageFiles + "/*.ico")
+    .pipe(newer(path.to.siteAssets.imageFilesSite))
+    .pipe(dest(path.to.siteAssets.imageFilesSite)))
+}
 
 // 'gulp copy:manifest' -- copies image json to /dist/
-gulp.task("copy:manifest", () => {
-  return gulp
-    .src(paths.imageFiles + "/*.json")
-    .pipe(newer(paths.imageFilesSite))
-    .pipe(gulp.dest(paths.imageFilesSite));
-});
+function manifestCopy () {
+  return (
+    src(path.to.srcAsset.imageFiles + "/*.json")
+    .pipe(newer(path.to.siteAssets.imageFilesSite))
+    .pipe(dest(path.to.siteAssets.imageFilesSite)))
+}
 
 // 'gulp copy:site' -- copies processed Jekyll site to /dist/
-gulp.task("copy:site", () => {
-  return gulp
-    .src([
-      paths.tempDir + paths.dist + "/**/*",
-      paths.tempDir + paths.dist + "/**/.*",
+function siteCopy () {
+  return (
+    src([
+      path.to.root.tempDir + "dist" + "/**/*",
+      path.to.root.tempDir + "dist" + "/**/.*",
     ])
-    .pipe(gulp.dest(paths.dist));
-});
+    .pipe(dest("dist")))
+}
+
+module.exports = {
+  assetsCopy,
+  imagesCopy,
+  // imagesCopyCached,
+  iconsCopy,
+  manifestCopy,
+  siteCopy
+}

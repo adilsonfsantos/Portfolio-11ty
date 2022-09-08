@@ -1,29 +1,34 @@
 "use strict";
-const gulp = require("gulp");
+const { src, dest } = require("gulp");
 const cp = require("child_process");
 const size = require("gulp-size");
 
-const paths = require("../paths");
+const path = require("../paths.js");
 
 // 'gulp site:tmp' -- copies 11ty site to a temporary directory to be processed
-gulp.task("site:tmp", () => {
-  return gulp
-    .src(
+function siteTmp () {
+  return src(
       [
-        paths.src + "/**/*",
-        "!" + paths.sourceDir + paths.assets + "/**/*",
-        "!" + paths.sourceDir + paths.assets,
+        "src" + "/**/*",
+        "!" + path.to.root.sourceDir + "assets" + "/**/*",
+        "!" + path.to.root.sourceDir + "assets",
       ],
       { dot: true }
     )
-    .pipe(gulp.dest(paths.tempDir + paths.src))
+    .pipe(dest(path.to.root.tempDir + "src"))
     .pipe(size({ title: "11ty" }));
-});
+}
 
 // 'gulp site' -- builds site with development settings
 // 'gulp site --prod' -- builds site with production settings
-gulp.task("site", () => {
+
+function site () {
   return cp.spawn("npx", ["eleventy", "--incremental"], {
     stdio: "inherit", shell: true
   });
-});
+}
+
+module.exports = {
+  siteTmp,
+  site
+}

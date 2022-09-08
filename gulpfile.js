@@ -1,55 +1,72 @@
 "use strict";
-const gulp = require("gulp");
-const requireDir = require("require-dir");
-// eslint-disable-next-line no-unused-vars
-const tasks = requireDir("./gulp/tasks", { recurse: true });
-// eslint-disable-next-line no-unused-vars
-const paths = require("./gulp/paths");
+const { series, parallel } = require("gulp");
+// const requireDir = require("require-dir");
+const { siteTmp, site } = require("./gulp/tasks/build.js");
+const { scripts, styles, gzipScripts, gzipStyles } = require("./gulp/tasks/assets.js");
+const serve = require("./gulp/tasks/serve.js");
+const fonts = require("./gulp/tasks/fonts.js");
+const { html, pageCritical, postCritical, homeCritical, errorCritical } = require("./gulp/tasks/html.js")
+// const { assetsCopy, imagesCopyCached, imagesCopy, manifestCopy, siteCopy } = require("./gulp/tasks/copy.js")
+const { assetsCopy, imagesCopy, manifestCopy, siteCopy } = require("./gulp/tasks/copy.js")
+const { assetsClean, imagesClean, gzipClean, distClean, siteClean } = require("./gulp/tasks/clean.js");
+// const { require } = require("yargs");
+// const path = require("../paths.js");
+
 
 // 'gulp build:site' -- copies, replaces rev'd references, builds, and then copies it again
-gulp.task("build:site", gulp.series("site:tmp", "site", "copy:site"));
+// task("build:site", series("site:tmp", "site", "copy:site"));
+exports.buildSite = series(siteTmp, site, siteCopy);
 
 // 'gulp assets' -- removes assets and rebuilds them
 // 'gulp assets --prod' -- same as above but with production settings
-gulp.task(
-  "assets",
-  gulp.series(
-    gulp.series("scripts", "styles", "fonts"),
-    gulp.series(
-      "scripts:gzip",
-      "styles:gzip",
-      "copy:assets",
-      "copy:images:cached",
-      "copy:images",
-      "copy:manifest"
+exports.assets =
+  series(
+    series(scripts, styles, fonts),
+    series(
+      gzipScripts,
+      gzipStyles,
+      assetsCopy,
+      // imagesCopyCached,
+      imagesCopy,
+      manifestCopy
     )
-  )
-);
+  );
 
 // 'gulp clean' -- removes assets and gzipped files
-gulp.task(
-  "clean",
-  gulp.parallel("clean:assets", "clean:images", "clean:gzip", "clean:dist", "clean:site")
-);
+exports.clean = parallel(assetsClean, imagesClean, gzipClean, distClean, siteClean);
 
 // 'gulp build' -- same as 'gulp' but doesn't serve site
 // 'gulp build --prod' -- same as above but with production settings
-gulp.task("build", gulp.series("clean", "assets", "build:site", "html"));
+exports.build =
+  series(
+    parallel(assetsClean, imagesClean, gzipClean, distClean, siteClean),
+    series(scripts, styles, fonts, gzipScripts, gzipStyles, assetsCopy,
+    // imagesCopyCached,
+    imagesCopy,
+    manifestCopy),
+    series(siteTmp, site, siteCopy),
+    html
+  );
 
 // 'gulp critical' -- builds critical path CSS includes
 //   WARNING: run this after substantial CSS changes
 //   WARNING: .html files referenced need to exist, run after `gulp build` to ensure.
-gulp.task(
-  "critical",
-  gulp.series(
-    "styles:critical:home",
-    "styles:critical:post",
-    "styles:critical:page",
-    "styles:critical:404"
-  )
-);
+exports.critical =
+  series(
+    pageCritical,
+    postCritical,
+    homeCritical,
+    errorCritical
+  );
 
 // 'gulp' -- removes assets and gzipped files, creates assets and revs version
 //   in includes or layouts, builds site, serves site
 // 'gulp --prod' -- same as above but with production settings
-gulp.task("default", gulp.series("build", "serve"));
+// task("default", series("build", "serve"));
+
+exports.default =
+  series(
+    parallel(assetsClean, imagesClean, gzipClean, distClean, siteClean),
+    scripts, styles, fonts, gzipScripts, gzipStyles, assetsCopy, imagesCopy, manifestCopy,
+    siteTmp, site, siteCopy, html, serve
+  );

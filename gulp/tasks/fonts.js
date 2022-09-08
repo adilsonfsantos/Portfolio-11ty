@@ -1,14 +1,16 @@
 "use strict";
-var gulp = require("gulp");
+var { src, dest } = require("gulp");
 var size = require("gulp-size");
 
 // include paths file
-var paths = require("../paths");
+const path = require("../paths.js");
 
 // 'gulp fonts' -- copies fonts to temporary assets directory
-gulp.task("fonts", () => {
-  return gulp
-    .src(paths.fontFiles + "/**/*")
-    .pipe(gulp.dest(paths.fontFilesTemp))
-    .pipe(size({ title: "fonts" }));
-});
+function fonts ()  {
+  return (
+    src(path.to.srcAsset.fontFiles + "/**/*")
+    .pipe(dest(path.to.tmpAssets.fontFilesTemp))
+    .pipe(size({ title: "fonts" })))
+}
+
+module.exports = fonts
