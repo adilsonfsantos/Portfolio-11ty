@@ -6,7 +6,6 @@ const mila = require("markdown-it-link-attributes");
 
 const Image = require("@11ty/eleventy-img");
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
-const { option } = require("yargs");
 
 async function imageShortcode(src, alt, classParent, classDescendent, sizes = "100vw") {
   if(alt === undefined || typeof alt !== 'string') {
