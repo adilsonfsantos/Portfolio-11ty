@@ -1,11 +1,8 @@
 {
   "env": {
-    "browser": true,
-    "commonjs": true,
-    "es2022": true,
-    "node": true,
+    "es2022": true
   },
-  "extends": ["eslint:recommended"],
+  "extends": ["plugin:unicorn/recommended"],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"

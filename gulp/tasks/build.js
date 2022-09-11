@@ -1,21 +1,21 @@
-"use strict";
-const { src, dest } = require("gulp");
-const cp = require("child_process");
-const size = require("gulp-size");
+import gulppkg from "gulp";
+import size from "gulp-size";
+import cp from "node:child_process";
+const { src, dest } = gulppkg;
 
-const path = require("../paths.js");
+import { path } from "../paths.js";
 
 // 'gulp site:tmp' -- copies 11ty site to a temporary directory to be processed
 function siteTmp () {
   return src(
       [
         "src" + "/**/*",
-        "!" + path.to.root.sourceDir + "assets" + "/**/*",
-        "!" + path.to.root.sourceDir + "assets",
+        "!" + path.root.sourceDir + "assets" + "/**/*",
+        "!" + path.root.sourceDir + "assets",
       ],
       { dot: true }
     )
-    .pipe(dest(path.to.root.tempDir + "src"))
+    .pipe(dest(path.root.tempDir + "src"))
     .pipe(size({ title: "11ty" }));
 }
 
@@ -28,7 +28,8 @@ function site () {
   });
 }
 
-module.exports = {
+export {
   siteTmp,
   site
-}
+};
+

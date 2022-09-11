@@ -1,13 +1,14 @@
-"use strict";
-const browserSync = require("browser-sync").create();
-const { series, watch } = require("gulp");
+import browserSync from "browser-sync";
+import gulppkg from "gulp";
+const { series, watch } = gulppkg;
 
 // include paths file
-const path = require("../paths.js");
+import { path } from "../paths.js";
+
 // const { buildSite } = require("../../gulpfile.js");
-const { imagesCopy, siteCopy } = require("./copy.js");
-const { siteTmp, site } = require("./build.js");
-const { scripts, styles } = require("./assets.js")
+import { scripts, styles } from "./assets.js";
+import { site, siteTmp } from "./build.js";
+import { imagesCopy, siteCopy } from "./copy.js";
 
 // function to properly reload your browser
 function reload(done) {
@@ -48,13 +49,14 @@ function serve(done) {
 
   // watch various files for changes and do the needful
   watch(
-    [path.to.fileGlob.mdFilesGlob, path.to.fileGlob.liquidFilesGlob, path.to.fileGlob.ymlFilesGlob],
+    [path.fileGlob.mdFilesGlob, path.fileGlob.liquidFilesGlob, path.fileGlob.ymlFilesGlob],
     series(siteTmp, site, siteCopy, reload)
   );
-  watch([path.to.fileGlob.xmlFilesGlob, path.to.fileGlob.txtFilesGlob], series(site, reload));
-  watch(path.to.fileGlob.jsFilesGlob, series(scripts, reload));
-  watch(path.to.fileGlob.sassFilesGlob, series(styles, reload));
-  watch(path.to.fileGlob.imageFilesGlob, series(imagesCopy, reload));
+  watch([path.fileGlob.xmlFilesGlob, path.fileGlob.txtFilesGlob], series(site, reload));
+  watch(path.fileGlob.jsFilesGlob, series(scripts, reload));
+  watch(path.fileGlob.sassFilesGlob, series(styles, reload));
+  watch(path.fileGlob.imageFilesGlob, series(imagesCopy, reload));
 }
 
-module.exports = serve;
+export { serve };
+

@@ -2,7 +2,11 @@
   "name": "portfolio-11ty",
   "version": "1.0.0",
   "description": "Portfolio of Adilson Santos using 11ty and Gulp",
-  "main": "gulpfile.js",
+  "exports": "./gulpfile.js",
+  "type": "module",
+  "engines": {
+    "node": ">=14.16"
+  },
   "scripts": {
     "stylelint": "stylelint \"src/**/*.scss\"",
     "eslint": "eslint \"**/*.js\""
@@ -26,9 +30,10 @@
     "defaults"
   ],
   "devDependencies": {
-    "critical": "4.0.1",
+    "critical": "5.0.1",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-unicorn": "^43.0.2",
     "prettier": "2.7.1",
     "stylelint": "^14.11.0",
     "stylelint-config-standard-scss": "^5.0.0",
@@ -44,7 +49,7 @@
     "babelify": "^10.0.0",
     "browser-sync": "^2.27.10",
     "cssnano": "^5.1.13",
-    "del": "6.1.1",
+    "del": "7.0.0",
     "eleventy-xml-plugin": "^0.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",

@@ -1,22 +1,29 @@
-"use strict";
-const argv = require("yargs").argv;
-const autoprefixer = require("autoprefixer");
-const babelify = require("babelify");
-const bro = require("gulp-bro");
-const browserSync = require("browser-sync").create();
-const cssnano = require("cssnano");
-const { src, dest } = require("gulp");
-const gzip = require("gulp-gzip");
-const postcss = require("gulp-postcss");
-const rev = require("gulp-rev");
-const sass = require("gulp-sass")(require("sass"));
-const size = require("gulp-size");
-const sourcemaps = require("gulp-sourcemaps");
-const uglify = require("gulp-uglify-es").default;
-const when = require("gulp-if");
+import autoprefixer from "autoprefixer";
+import babelify from "babelify";
+import browserSync from "browser-sync";
+import cssnano from "cssnano";
+import gulppkg from "gulp";
+import bro from "gulp-bro";
+import gzip from "gulp-gzip";
+import when from "gulp-if";
+import postcss from "gulp-postcss";
+import rev from "gulp-rev";
+import gulpSass from 'gulp-sass';
+import size from "gulp-size";
+import sourcemaps from "gulp-sourcemaps";
+import uglify_ from "gulp-uglify-es";
+import dartSass from 'sass';
+import argv from "yargs";
+const { src, dest } = gulppkg;
+const sass = gulpSass(dartSass);
+
+// Added due to bug with esm https://gitlab.com/itayronen/gulp-uglify-es/-/issues/21
+const uglify = uglify_.default
+
+
 
 // include paths file
-const path = require("../paths.js");
+import { path } from "../paths.js";
 
 // 'gulp scripts' -- creates a index.js file with Sourcemap from your JavaScript files
 // 'gulp scripts --prod' -- creates a index.js file from your JavaScript files,
@@ -25,7 +32,7 @@ function scripts() {
   // NOTE: The order here is important since it's concatenated in order from
   // top to bottom, so you want vendor scripts etc on top
   return (
-    src([path.to.srcAsset.jsFiles + "/*.js"])
+    src([path.srcAsset.jsFiles + "/*.js"])
     .pipe(
         bro({
           _transform: [
@@ -43,23 +50,23 @@ function scripts() {
       .pipe(size({ showFiles: true }))
       .pipe(when(argv.prod, when("*.js", uglify())))
       .pipe(when(!argv.prod, sourcemaps.write(".")))
-      .pipe(dest(path.to.tmpAssets.jsFilesTemp))
+      .pipe(dest(path.tmpAssets.jsFilesTemp))
       // JS cache bursting
       .pipe(rev())
       .pipe(size({ title: "scripts", showFiles: true }))
       // gera arquivos compactados
-      .pipe(when(argv.prod, dest(path.to.tmpAssets.jsFilesTemp)))
+      .pipe(when(argv.prod, dest(path.tmpAssets.jsFilesTemp)))
       // gera manifesto dos arquivos compactados
       .pipe(rev.manifest("js-manifest.json"))
-      // .pipe(dest(path.tempDir + paths.sourceDir + paths.data))
-      .pipe(dest(path.to.root.tempDir + path.to.root.sourceDir + path.to.root.dataDir))
-      .pipe(size({ title: "scripts json", showFiles: true }))
+      // .pipe(dest(tempDir + paths.sourceDir + paths.data))
+      .pipe(dest(path.root.tempDir + path.root.sourceDir + path.root.dataDir))
+      .pipe(size({ title: "Scripts json", showFiles: true }))
   );
 }
 
 // 'gulp scripts:gzip --prod' -- gzips JS
 function gzipScripts() {
-  return src([path.to.tmpAssets.jsFilesTemp + "/*.js"])
+  return src([path.tmpAssets.jsFilesTemp + "/*.js"])
     .pipe(when(argv.prod, when("*.js", gzip({ append: true }))))
     .pipe(
       when(
@@ -71,7 +78,7 @@ function gzipScripts() {
         })
       )
     )
-    .pipe(when(argv.prod, dest(path.to.tmpAssets.jsFilesTemp)));
+    .pipe(when(argv.prod, dest(path.tmpAssets.jsFilesTemp)));
 }
 
 // 'gulp styles' -- creates a CSS file from SCSS, adds prefixes and creates a Sourcemap
@@ -79,26 +86,26 @@ function gzipScripts() {
 function styles() {
   var plugins = [autoprefixer(), cssnano()];
   return (
-    src([path.to.srcAsset.sassFiles + "/*.scss"])
+    src([path.srcAsset.sassFiles + "/*.scss"])
       .pipe(when(!argv.prod, sourcemaps.init()))
       .pipe(sass().on("error", sass.logError))
       .pipe(
         sass({
-          includePaths: [path.to.srcAsset.sassFiles], // Tell Sass where to look for files
+          includePaths: [path.srcAsset.sassFiles], // Tell Sass where to look for files
         }).on("error", sass.logError)
       )
       .pipe(when(argv.prod, when("*.css", postcss(plugins))))
       .pipe(when(argv.prod, postcss(plugins)))
       .pipe(size({ showFiles: true }))
       .pipe(when(argv.prod, sourcemaps.write(".")))
-      .pipe(when(argv.prod, dest(path.to.tmpAssets.sassFilesTemp + "/")))
+      .pipe(when(argv.prod, dest(path.tmpAssets.sassFilesTemp + "/")))
       // CSS cache bursting
       .pipe(rev())
       .pipe(size({ title: "Styles json", showFiles: true }))
       // gera arquivos compactados
-      .pipe(dest(path.to.tmpAssets.sassFilesTemp + "/"))
+      .pipe(dest(path.tmpAssets.sassFilesTemp + "/"))
       .pipe(rev.manifest("css-manifest.json"))
-      .pipe(dest(path.to.root.tempDir + path.to.root.sourceDir + path.to.root.dataDir))
+      .pipe(dest(path.root.tempDir + path.root.sourceDir + path.root.dataDir))
       .pipe(when(argv.prod, size({ title: "Styles json", showFiles: true })))
       .pipe(when(!argv.prod, browserSync.stream()))
   );
@@ -106,7 +113,7 @@ function styles() {
 
 // 'gulp styles:gzip --prod' -- gzips CSS
 function gzipStyles() {
-  return src([path.to.tmpAssets.sassFilesTemp + "/*.css"])
+  return src([path.tmpAssets.sassFilesTemp + "/*.css"])
     .pipe(when(argv.prod, when("*.css", gzip({ append: true }))))
     .pipe(
       when(
@@ -118,12 +125,13 @@ function gzipStyles() {
         })
       )
     )
-    .pipe(when(argv.prod, dest(path.to.tmpAssets.sassFilesTemp)));
+    .pipe(when(argv.prod, dest(path.tmpAssets.sassFilesTemp)));
 }
 
-module.exports = {
+export {
   scripts,
   styles,
   gzipScripts,
   gzipStyles
-}
+};
+

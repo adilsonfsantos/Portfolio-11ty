@@ -1,25 +1,19 @@
-"use strict";
-const { series, parallel } = require("gulp");
+import gulppkg from "gulp";
+const { parallel, series } = gulppkg;
 // const requireDir = require("require-dir");
-const { siteTmp, site } = require("./gulp/tasks/build.js");
-const { scripts, styles, gzipScripts, gzipStyles } = require("./gulp/tasks/assets.js");
-const serve = require("./gulp/tasks/serve.js");
-const fonts = require("./gulp/tasks/fonts.js");
-const { html, pageCritical, postCritical, homeCritical, errorCritical } = require("./gulp/tasks/html.js")
+import { gzipScripts, gzipStyles, scripts, styles } from "./gulp/tasks/assets.js";
+import { site, siteTmp } from "./gulp/tasks/build.js";
+import { fonts } from "./gulp/tasks/fonts.js";
+import { errorCritical, homeCritical, html, pageCritical, postCritical } from "./gulp/tasks/html.js";
+import { serve } from "./gulp/tasks/serve.js";
 // const { assetsCopy, imagesCopyCached, imagesCopy, manifestCopy, siteCopy } = require("./gulp/tasks/copy.js")
-const { assetsCopy, imagesCopy, manifestCopy, siteCopy } = require("./gulp/tasks/copy.js")
-const { assetsClean, imagesClean, gzipClean, distClean, siteClean } = require("./gulp/tasks/clean.js");
-// const { require } = require("yargs");
-// const path = require("../paths.js");
+import { assetsClean, distClean, gzipClean, imagesClean, siteClean } from "./gulp/tasks/clean.js";
+import { assetsCopy, imagesCopy, manifestCopy, siteCopy } from "./gulp/tasks/copy.js";
+export const buildSite = series(siteTmp, site, siteCopy);
 
+import { path } from "./gulp/paths.js";
 
-// 'gulp build:site' -- copies, replaces rev'd references, builds, and then copies it again
-// task("build:site", series("site:tmp", "site", "copy:site"));
-exports.buildSite = series(siteTmp, site, siteCopy);
-
-// 'gulp assets' -- removes assets and rebuilds them
-// 'gulp assets --prod' -- same as above but with production settings
-exports.assets =
+export const assets =
   series(
     series(scripts, styles, fonts),
     series(
@@ -32,12 +26,9 @@ exports.assets =
     )
   );
 
-// 'gulp clean' -- removes assets and gzipped files
-exports.clean = parallel(assetsClean, imagesClean, gzipClean, distClean, siteClean);
+export const clean = parallel(assetsClean, imagesClean, gzipClean, distClean, siteClean);
 
-// 'gulp build' -- same as 'gulp' but doesn't serve site
-// 'gulp build --prod' -- same as above but with production settings
-exports.build =
+export const build =
   series(
     parallel(assetsClean, imagesClean, gzipClean, distClean, siteClean),
     series(scripts, styles, fonts, gzipScripts, gzipStyles, assetsCopy,
@@ -48,10 +39,7 @@ exports.build =
     html
   );
 
-// 'gulp critical' -- builds critical path CSS includes
-//   WARNING: run this after substantial CSS changes
-//   WARNING: .html files referenced need to exist, run after `gulp build` to ensure.
-exports.critical =
+export const critical =
   series(
     pageCritical,
     postCritical,
@@ -64,9 +52,17 @@ exports.critical =
 // 'gulp --prod' -- same as above but with production settings
 // task("default", series("build", "serve"));
 
-exports.default =
-  series(
-    parallel(assetsClean, imagesClean, gzipClean, distClean, siteClean),
-    scripts, styles, fonts, gzipScripts, gzipStyles, assetsCopy, imagesCopy, manifestCopy,
-    siteTmp, site, siteCopy, html, serve
-  );
+async function test () {
+  Object.keys(path).map(key => {
+    console.log(path[key])
+  })
+};
+
+export const pathLog = test;
+
+// console.log(Object.values(path))
+const _default = series(parallel(assetsClean, imagesClean, gzipClean, distClean, siteClean),
+  scripts, styles, fonts, gzipScripts, gzipStyles, assetsCopy, imagesCopy, manifestCopy,
+  siteTmp, site, siteCopy, html, serve
+);
+export { _default as default };

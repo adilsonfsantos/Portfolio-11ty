@@ -1,14 +1,14 @@
-"use strict";
-const argv = require("yargs").argv;
-const critical = require("critical").stream;
-const { src, dest } = require("gulp");
-const gzip = require("gulp-gzip");
-const htmlmin = require("gulp-htmlmin");
-const size = require("gulp-size");
-const when = require("gulp-if");
+import { stream as critical } from "critical";
+import gulppkg from "gulp";
+import gzip from "gulp-gzip";
+import htmlmin from "gulp-htmlmin";
+import when from "gulp-if";
+import size from "gulp-size";
+import argv from "yargs";
+const { src, dest } = gulppkg;
 
 // include paths file
-const path = require("../paths.js");
+import { path } from "../paths.js";
 
 // 'gulp html' -- does nothing
 // 'gulp html --prod' -- minifies and gzips HTML files for production
@@ -49,12 +49,12 @@ function html() {
 //   into /_includes/critical-page.css
 function pageCritical() {
   return (
-    src(path.to.root.tempDir + path.to.root.siteDir + "/sobre/index.html")
+    src(path.root.tempDir + path.root.siteDir + "/sobre/index.html")
     .pipe(
       critical({
         base: "./",
         inline: false,
-        css: [path.to.tmpAssets.sassFilesTemp + "/page.**"],
+        css: [path.tmpAssets.sassFilesTemp + "/page.**"],
         dimensions: [
           {
             width: 240,
@@ -82,12 +82,12 @@ function pageCritical() {
 //   into /_includes/critical-post.css
 function postCritical() {
   return(
-    src(path.to.root.tempDir + path.to.root.siteDir + "projetos/plaenge/index.html")
+    src(path.root.tempDir + path.root.siteDir + "projetos/plaenge/index.html")
     .pipe(
       critical({
         base: "./",
         inline: false,
-        css: [path.to.tmpAssets.sassFilesTemp + "/post.**"],
+        css: [path.tmpAssets.sassFilesTemp + "/post.**"],
         dimensions: [
           {
             width: 240,
@@ -114,11 +114,11 @@ function postCritical() {
 // 'gulp styles:critical:home' -- extract layout.home critical CSS
 //   into /_includes/critical-home.css
 function homeCritical() {
-  return src(path.to.root.tempDir + path.to.root.siteDir + "index.html").pipe(
+  return src(path.root.tempDir + path.root.siteDir + "index.html").pipe(
     critical({
       base: "./",
       inline: false,
-      css: [path.to.tmpAssets.sassFilesTemp + "/home.**"],
+      css: [path.tmpAssets.sassFilesTemp + "/home.**"],
       dimensions: [
         {
           width: 240,
@@ -144,11 +144,11 @@ function homeCritical() {
 // 'gulp styles:critical:404' -- extract layout.home critical CSS
 //   into /_includes/critical-404.css
 function errorCritical() {
-  return src(path.to.root.tempDir + path.to.root.siteDir + "404.html").pipe(
+  return src(path.root.tempDir + path.root.siteDir + "404.html").pipe(
     critical({
       base: "./",
       inline: false,
-      css: [path.to.tmpAssets.sassFilesTemp + "/404.**"],
+      css: [path.tmpAssets.sassFilesTemp + "/404.**"],
       dimensions: [
         {
           width: 240,
@@ -171,10 +171,11 @@ function errorCritical() {
   );
 }
 
-module.exports = {
+export {
   html,
   pageCritical,
   postCritical,
   homeCritical,
   errorCritical
-}
+};
+
