@@ -6,7 +6,6 @@ const { scripts, styles, gzipScripts, gzipStyles } = require("./gulp/tasks/asset
 const serve = require("./gulp/tasks/serve.js");
 const fonts = require("./gulp/tasks/fonts.js");
 const { html, pageCritical, postCritical, homeCritical, errorCritical } = require("./gulp/tasks/html.js")
-// const { assetsCopy, imagesCopyCached, imagesCopy, manifestCopy, siteCopy } = require("./gulp/tasks/copy.js")
 const { assetsCopy, imagesCopy, manifestCopy, siteCopy } = require("./gulp/tasks/copy.js")
 const { assetsClean, imagesClean, gzipClean, distClean, siteClean } = require("./gulp/tasks/clean.js");
 // const { require } = require("yargs");

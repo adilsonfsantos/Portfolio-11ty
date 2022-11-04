@@ -21,21 +21,6 @@ function imagesCopy () {
     .pipe(dest(path.to.siteAssets.imageFilesSite)))
 }
 
-// 'gulp copy:images:cached' -- copies cached images to /dist/
-function imagesCopyCached () {
-  if (process.env.CONTEXT === "production") {
-    return(
-    src("/opt/build/cache/assets/images" + "/**/*")
-    .pipe(newer(path.to.siteAssets.imageFilesSite))
-    .pipe(dest(path.to.siteAssets.imageFilesSite)))
-  } else {
-    return(
-    src(path.to.tmpAssets.imageFilesTemp + "/**/*")
-    .pipe(newer(path.to.siteAssets.imageFilesSite))
-    .pipe(dest(path.to.siteAssets.imageFilesSite)))
-  }
-}
-
 // 'gulp copy:icons' -- copies .ico assets to /dist/
 function iconsCopy () {
   return (
