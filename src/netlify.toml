@@ -96,13 +96,7 @@ for = "/*.css"
 
 [[plugins]]
   package = "netlify-plugin-submit-sitemap"
-  package = "netlify-plugin-cache"
 	[plugins.inputs]
-
-  paths = [
-    "tmp/dist/assets/image", # Eleventy Image Disk Cache
-    ".cache" # Remote Asset Cache
-  ]
 
 	# The base url of your site (optional, default = main URL set in Netlify)
 	baseUrl = "https://adilsonsantos.netlify.app"

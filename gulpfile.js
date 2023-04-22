@@ -1,19 +1,14 @@
 "use strict";
 const { series, parallel } = require("gulp");
-// const requireDir = require("require-dir");
 const { siteTmp, site } = require("./gulp/tasks/build.js");
 const { scripts, styles, gzipScripts, gzipStyles } = require("./gulp/tasks/assets.js");
 const serve = require("./gulp/tasks/serve.js");
 const fonts = require("./gulp/tasks/fonts.js");
 const { html, pageCritical, postCritical, homeCritical, errorCritical } = require("./gulp/tasks/html.js")
-const { assetsCopy, imagesCopy, manifestCopy, siteCopy } = require("./gulp/tasks/copy.js")
+const { assetsCopy, imagesCopy, imagesCopyCached, manifestCopy, siteCopy } = require("./gulp/tasks/copy.js")
 const { assetsClean, imagesClean, gzipClean, distClean, siteClean } = require("./gulp/tasks/clean.js");
-// const { require } = require("yargs");
-// const path = require("../paths.js");
-
 
 // 'gulp build:site' -- copies, replaces rev'd references, builds, and then copies it again
-// task("build:site", series("site:tmp", "site", "copy:site"));
 exports.buildSite = series(siteTmp, site, siteCopy);
 
 // 'gulp assets' -- removes assets and rebuilds them
@@ -25,7 +20,7 @@ exports.assets =
       gzipScripts,
       gzipStyles,
       assetsCopy,
-      // imagesCopyCached,
+      imagesCopyCached,
       imagesCopy,
       manifestCopy
     )
@@ -40,7 +35,7 @@ exports.build =
   series(
     parallel(assetsClean, imagesClean, gzipClean, distClean, siteClean),
     series(scripts, styles, fonts, gzipScripts, gzipStyles, assetsCopy,
-    // imagesCopyCached,
+    imagesCopyCached,
     imagesCopy,
     manifestCopy),
     series(siteTmp, site, siteCopy),
@@ -61,11 +56,9 @@ exports.critical =
 // 'gulp' -- removes assets and gzipped files, creates assets and revs version
 //   in includes or layouts, builds site, serves site
 // 'gulp --prod' -- same as above but with production settings
-// task("default", series("build", "serve"));
-
 exports.default =
   series(
     parallel(assetsClean, imagesClean, gzipClean, distClean, siteClean),
-    scripts, styles, fonts, gzipScripts, gzipStyles, assetsCopy, imagesCopy, manifestCopy,
+    scripts, styles, fonts, gzipScripts, gzipStyles, assetsCopy, imagesCopy, imagesCopyCached, manifestCopy,
     siteTmp, site, siteCopy, html, serve
   );

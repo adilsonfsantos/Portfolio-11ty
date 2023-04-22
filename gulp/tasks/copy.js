@@ -47,10 +47,25 @@ function siteCopy () {
     .pipe(dest("dist")))
 }
 
+// 'gulp copy:images:cached' -- copies cached images to /dist/
+function imagesCopyCached () {
+  if (process.env.CONTEXT === "production") {
+    return(
+    src("/opt/build/cache/assets/images" + "/**/*")
+    .pipe(newer(path.to.siteAssets.imageFilesSite))
+    .pipe(dest(path.to.siteAssets.imageFilesSite)))
+  } else {
+    return(
+    src(path.to.tmpAssets.imageFilesTemp + "/**/*")
+    .pipe(newer(path.to.siteAssets.imageFilesSite))
+    .pipe(dest(path.to.siteAssets.imageFilesSite)))
+  }
+}
+
 module.exports = {
   assetsCopy,
   imagesCopy,
-  // imagesCopyCached,
+  imagesCopyCached,
   iconsCopy,
   manifestCopy,
   siteCopy
