@@ -8,15 +8,11 @@ Esse é o código fonte do portfólio de Adilson Santos, feito com base no repos
 
 ![Dependências](https://img.shields.io/david/adilsonfsantos/Portfolio-11ty)
 
-![Licença](https://img.shields.io/github/license/adilsonfsantos/Portfolio-11ty)
+![GitHub](https://img.shields.io/github/license/adilsonfsantos/Portfolio-11ty)
 
-![Tamanho](https://img.shields.io/github/repo-size/adilsonfsantos/Portfolio-11ty)
+![GitHub repo size](https://img.shields.io/github/repo-size/adilsonfsantos/Portfolio-11ty)
 
-![Headers de Segurança](https://img.shields.io/security-headers?url=https%3A%2F%2Fadilsonsantos.netlify.com)
-
-![Pontuação do Mozilla HTTP Observatory](https://img.shields.io/mozilla-observatory/grade-score/adilsonsantos.netlify.com?publish)
-
-![Atividade](https://img.shields.io/github/commit-activity/w/adilsonfsantos/Portfolio-11ty)
+![Pontuação do Mozilla HTTP Observatory](https://img.shields.io/mozilla-observatory/grade/adilsonsantos.netlify.app?publish)
 
 ## Introdução
 
