@@ -21,8 +21,11 @@ async function imageShortcode(src, alt, classParent, classDescendent, sizes = "1
       Progressive: true,
       Quality: 95,
     },
-    urlPath: "/assets/image",
-    outputDir: "tmp/dist/assets/image"
+    sharpWebpOptions: {
+      nearLossless: true
+    },
+    urlPath: "/assets/images",
+    outputDir: "tmp/dist/assets/images"
   });
 
   let lowsrc = metadata.jpeg[0];
@@ -48,7 +51,8 @@ function blockquote(content, source, type) {
     /* eslint-disable max-len */
     /* eslint-disable quotes */
     throw new Error(
-      `Can't create Blockquote component without a source. Did you forget to pass the source as a string?`
+      `Can't create Blockquote component without a source.
+      New you forget to pass the source as a string?`
     );
     /* eslint-enable max-len */
     /* eslint-enable quotes */
