@@ -2,9 +2,10 @@
   @include grid;
   @include grid-base;
 
-  background-color: $black;
+  overflow: hidden;
   padding-bottom: 3rem;
   padding-top: 3rem;
+  position: relative;
 
   @include viewport(xs-small) {
     padding-bottom: 4.5rem;
@@ -14,6 +15,18 @@
   @include viewport(md-medium) {
     padding-bottom: 6rem;
     padding-top: 6rem;
+  }
+
+  &__gradient{
+    background: linear-gradient(45deg, #F4252B 0%, #F4C947 100%);
+    mask-image: radial-gradient(50% 50.00% at 50% 50.00%, rgba(0, 0, 0, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
+    filter: blur(16px);
+    position: absolute;
+    content: "";
+    bottom: -50%;
+    width: 150%;
+    left: -25%;
+    top: 50%;
   }
 
   &__info {
@@ -70,7 +83,7 @@
     &--email {
       @include typescale(scale-1, bold, text);
 
-      color: $secondary-30;
+      color: $secondary;
       word-break: break-all;
 
       @include viewport(xs-small) {

@@ -3,8 +3,14 @@
   @include grid-base;
 
   align-items: center;
-  background-color: $black;
-  border-top: 2px solid $black-80;
+  background: $black;
+  position: relative;
+
+  &__gradient {
+    background: linear-gradient(90deg, #FD3A39 0%, #F4C947 100%);
+    height: 1px;
+    grid-column: 1/-1;
+  }
 
   &__container {
     @include flex;

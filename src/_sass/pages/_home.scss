@@ -1,10 +1,13 @@
+main {
+  position: relative;
+}
+
 .projetos {
   @include grid;
   @include grid-base;
 
   &__header {
-    background-color: $black;
-    border-top: 2px solid $black-80;
+    border-top: 2px solid $black-10;
     grid-column: span 4;
     margin-bottom: $base-size * 1.5;
     padding-top: $base-size * 2.5;
@@ -50,7 +53,7 @@
   &__principais {
     @include grid;
 
-    border-bottom: 2px solid $black-80;
+    border-bottom: 2px solid $black-10;
     gap: $base-size * 2;
     grid-auto-rows: auto;
     grid-column: 1/-1;

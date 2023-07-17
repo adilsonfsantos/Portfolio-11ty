@@ -3,8 +3,8 @@
   @include grid-base;
 
   background-color: $black;
-  border-bottom: 2px solid $black-80;
-  position: fixed;
+  border-bottom: 2px solid $black-10;
+  position: absolute;
   width: 100%;
   z-index: 4;
 
@@ -47,7 +47,7 @@
     @include typescale(scale-1, bold, text);
     @include transition(all, 0.15s, $animation-standard);
 
-    color: $black-40;
+    color: $white-80;
     line-height: 1.2;
     padding: $base-size 0;
 

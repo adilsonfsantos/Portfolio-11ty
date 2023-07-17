@@ -2,7 +2,23 @@
   @include grid;
   @include grid-base;
 
-  background-color: $black;
+  position: relative;
+
+  .stripes{
+    background:
+      repeating-linear-gradient(
+         125.55deg,
+         #0f0f0f,
+         #0f0f0f 10%,
+         #3a3a3a 10%,
+         #3a3a3a 20%
+      );
+    content: "";
+    inset: 0;
+    mask-image: linear-gradient(180deg, rgba(0 0 0 / 90%) 8.26%, rgba(0 0 0 / 5%) 69.96%, rgba(3 3 3 / 5%) 69.97%, rgba(255 255 255 / 0%) 100%, rgba(0 0 0 / 0%) 100%);
+    opacity: 0.3;
+    position: absolute;
+  }
 
   &__normal {
     @include flex;
@@ -40,7 +56,7 @@
     }
 
     &--text {
-      @include center-vertical;
+      margin: 40% 0 auto;
     }
 
     &--title {
@@ -89,22 +105,7 @@
         @include typescale(scale-3, normal, text);
       }
     }
-
-    &--scroll {
-      margin: 0 auto $base-size auto;
-    }
-
-    &--down {
-      @include center-horizontal;
-
-      display: block;
-      border-color: $white;
-      border-radius: 50%;
-      border-style: solid;
-      border-width: 2px;
-      fill: $white;
-      padding: 0.625rem;
-      width: $base-size * 3;
-    }
   }
 }
+
+
