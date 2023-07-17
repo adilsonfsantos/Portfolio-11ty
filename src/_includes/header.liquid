@@ -1,13 +1,14 @@
-  <header class="header">
-    <div class="grid--module">
-      <div class="header__content">
-        <a class="header__content--logo" href="{{ '/' }}" aria-label="Voltar para a home"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 79 21"><path fill="#D1A347" d="M30 0h-6L9 21h6L30 0Z"/><path fill="#F4252B" d="M21 0h-6L0 21h6L21 0Z"/><path fill="#F2F2F2" d="M39 1.5V21h-5V7L24 21h-6L32.4.8c.4-.5 1-.8 1.6-.8h3.5c.8 0 1.5.7 1.5 1.5ZM46 6.5V8h10c1.7 0 3 1.3 3 3v4c0 3.3-2.7 6-6 6H41v-5h11.5c.8 0 1.5-.7 1.5-1.5V13H44c-1.7 0-3-1.3-3-3V6c0-3.3 2.7-6 6-6h11v5H47.5c-.8 0-1.5.7-1.5 1.5ZM79 6.5V21h-5V7.5C74 6.1 72.9 5 71.5 5H66v16h-5V0h11.5C76.1 0 79 2.9 79 6.5Z"/></svg></a>
-          <div class="header__content--spacer"></div>
-        <nav class="header__content__nav">
-          {%- for item in navigation.nav -%}
-          <a href="{{ item.url }}" class="nav__link{% if item.url == page.url %} nav__link--active{% endif %}"
-          >{{ item.name }}</a>
-          {%- endfor -%}
+<header class="header">
+  <div class="noise"></div>
+  <div class="grid--module">
+    <div class="header__content">
+      <a class="header__content--logo" href="{{ '/' }}" aria-label="Voltar para a home"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 79 21"><path fill="#D1A347" d="M30 0h-6L9 21h6L30 0Z"/><path fill="#F4252B" d="M21 0h-6L0 21h6L21 0Z"/><path fill="#F2F2F2" d="M39 1.5V21h-5V7L24 21h-6L32.4.8c.4-.5 1-.8 1.6-.8h3.5c.8 0 1.5.7 1.5 1.5ZM46 6.5V8h10c1.7 0 3 1.3 3 3v4c0 3.3-2.7 6-6 6H41v-5h11.5c.8 0 1.5-.7 1.5-1.5V13H44c-1.7 0-3-1.3-3-3V6c0-3.3 2.7-6 6-6h11v5H47.5c-.8 0-1.5.7-1.5 1.5ZM79 6.5V21h-5V7.5C74 6.1 72.9 5 71.5 5H66v16h-5V0h11.5C76.1 0 79 2.9 79 6.5Z"/></svg></a>
+      <div class="header__content--spacer"></div>
+      <nav class="header__content__nav">
+        {%- for item in navigation.nav -%}
+        <a href="{{ item.url }}" class="nav__link{% if item.url == page.url %} nav__link--active{% endif %}"
+        >{{ item.name }}</a>
+        {%- endfor -%}
         </nav>
       </div>
     </div>
