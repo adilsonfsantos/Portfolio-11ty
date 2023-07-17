@@ -48,7 +48,8 @@
     &--description {
       @include typescale(scale-1, normal, text);
 
-      color: $black-30;
+      // color: $black-30;
+
       grid-column: 1/-1;
 
       @include viewport(xs-small) {
@@ -71,7 +72,7 @@
       @include grid;
       @include grid-post;
 
-      border-bottom: 2px solid $black-80;
+      border-bottom: 2px solid $black-30;
       grid-column: 2;
     }
   }
@@ -192,6 +193,10 @@
       @include typescale(scale-1, normal, text);
 
       color: $black-30;
+
+      @include viewport(md-medium) {
+        @include typescale(scale-2, normal, text);
+      }
     }
 
     ul,
