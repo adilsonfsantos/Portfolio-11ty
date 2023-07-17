@@ -17,8 +17,6 @@ body {
   background-color: $black;
   font-feature-settings: "liga" 1, "case" 1, "ss02" on;
   font-size: $font-size;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   height: 100%;
   scroll-behavior: smooth;
   text-rendering: optimizelegibility;
@@ -39,8 +37,6 @@ summary {
 }
 
 ::selection {
-  background-color: $primary-70;
-  color: $white;
 }
 
 a,
@@ -61,11 +57,3 @@ img {
   width: 100%;
 }
 
-.no-js .lazy {
-  display: none;
-}
-
-.lazyload[data-sizes="auto"] {
-  display: block;
-  width: 100%;
-}
