@@ -3,11 +3,11 @@
   @include flex-column;
   @include transition(all, 0.15s, $animation-standard);
 
-  border: 2px solid $black-80;
+  border: 2px solid $black-20;
   max-width: 100%;
 
   &__picture {
-    border-bottom: 2px solid $black-80;
+    border-bottom: 2px solid $black-20;
     overflow: hidden;
     width: 100%;
 
@@ -55,6 +55,6 @@
   &:focus,
   &:hover > *,
   &:focus > * {
-    border-color: $black-40;
+    border-color: $white-80;
   }
 }

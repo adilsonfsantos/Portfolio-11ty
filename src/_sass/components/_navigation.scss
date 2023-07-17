@@ -13,7 +13,7 @@
     @include typescale(scale-1, bold, text);
     @include font-position(right);
 
-    color: $secondary-30;
+    color: $secondary;
     margin-left: auto;
 
     @include viewport(xs-small) {
@@ -42,7 +42,7 @@
 
     &--forward {
       display: block;
-      fill: $secondary-30;
+      fill: $secondary;
       height: $base-size * 1.5;
       width: $base-size * 1.5;
     }
