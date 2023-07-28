@@ -48,14 +48,10 @@ async function imageShortcode(src, alt, classParent, classDescendent, sizes = "1
 
 function blockquote(content, source, type) {
   if (!source) {
-    /* eslint-disable max-len */
-    /* eslint-disable quotes */
     throw new Error(
       `Can't create Blockquote component without a source.
-      New you forget to pass the source as a string?`
+      you forgot to pass the source as a string?`
     );
-    /* eslint-enable max-len */
-    /* eslint-enable quotes */
   }
 
   const typeAttr = type ? `data-type="${type}"` : '';
