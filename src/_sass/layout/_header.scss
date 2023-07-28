@@ -29,10 +29,6 @@
       height: $base-size * 1.25;
       margin: $base-size 0;
       width: auto;
-
-      @include viewport(xs-small) {
-        height: $base-size * 1.5;
-      }
     }
 
     &--spacer {
