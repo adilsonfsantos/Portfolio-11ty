@@ -4,9 +4,14 @@
 
   background-color: $black;
   border-bottom: 2px solid $black-10;
-  position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 4;
+
+  .container {
+  grid-column: 1/-1;
+  position: relative;
+  }
 
   &__content {
     @include flex;
