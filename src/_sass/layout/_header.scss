@@ -58,7 +58,7 @@
     }
 
     &:not(:last-child) {
-      margin-right: $base-size * 0.5;
+      margin-right: $base-size;
 
       @include viewport(xs-small) {
         margin-right: $base-size;
