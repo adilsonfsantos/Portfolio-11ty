@@ -16,7 +16,7 @@ body {
 
   background-color: $black;
   font-feature-settings: "liga" 1, "case" 1, "ss02" on;
-  font-size: $font-size;
+  font-feature-settings: 'ss03' on, 'ss05' on;
   height: 100%;
   scroll-behavior: smooth;
   text-rendering: optimizelegibility;
@@ -37,6 +37,8 @@ summary {
 }
 
 ::selection {
+  background-color: $primary-20;
+  color: $white;
 }
 
 a,
