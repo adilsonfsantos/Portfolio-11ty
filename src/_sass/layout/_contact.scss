@@ -2,6 +2,8 @@
   @include grid;
   @include grid-base;
 
+  align-items: center;
+  min-height: 50vh;
   overflow: hidden;
   padding-bottom: 3rem;
   padding-top: 3rem;
@@ -19,14 +21,15 @@
 
   &__gradient{
     background: linear-gradient(45deg, #F4252B 0%, #F4C947 100%);
-    mask-image: radial-gradient(50% 50.00% at 50% 50.00%, rgba(0, 0, 0, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
-    filter: blur(16px);
-    position: absolute;
-    content: "";
     bottom: -50%;
-    width: 150%;
+    content: "";
+    filter: 16px;
     left: -25%;
+    mask-image: radial-gradient(50% 50.00% at 50% 50.00%, rgba(0 0 0 / 40%) 0%, rgba(255 255 255 / 0%) 100%);
+    pointer-events: none;
+    position: absolute;
     top: 50%;
+    width: 150%;
   }
 
   &__info {
