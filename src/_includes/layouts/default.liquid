@@ -10,9 +10,7 @@
     {% assign main_js = js-manifest['main.js'] | prepend: '/assets/js/' %}
     <script async src="{{ main_js }}"></script>
   </head>
-    {% comment %}
-    TODO adicionar skip to main
-    {% endcomment %}
+  <a class="skip-to-content-link" href="#projetos">Pular para o conteúdo</a>
   <body>
     {%- comment -%}
       Bypass Facebook tracking:
@@ -21,7 +19,7 @@
     <span id="iab-pcm-sdk"></span>
     <span id="iab-autofill-sdk"></span>
     {% include "header" %}
-    <main>
+    <main id="main">
       <div class="noise"></div>
     {{ content }}
     </main>
