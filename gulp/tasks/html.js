@@ -14,7 +14,7 @@ const path = require("../paths.js");
 // 'gulp html --prod' -- minifies and gzips HTML files for production
 function html() {
   return (
-      src("dist" + "/**/*.liquid")
+    src("dist" + "/**/*.liquid")
       .pipe(
         when(
           argv.prod,
@@ -48,73 +48,75 @@ function html() {
 // 'gulp styles:critical:page' -- extract layout.archive critical CSS
 //   into /_includes/critical-page.css
 function pageCritical() {
-  return (
-    src(path.to.root.tempDir + path.to.root.siteDir + "/sobre/index.html")
-    .pipe(
-      critical({
-        base: "./",
-        inline: false,
-        css: [path.to.tmpAssets.sassFilesTemp + "/page.**"],
-        dimensions: [
-          {
-            width: 240,
-            height: 320,
-          },
-          {
-            width: 320,
-            height: 568,
-          },
-          {
-            width: 1024,
-            height: 1024,
-          },
-          {
-            width: 1366,
-            height: 768,
-          },
-        ],
-      })
-    )
+  return src(
+    path.to.root.tempDir + path.to.root.siteDir + "/sobre/index.html"
+  ).pipe(
+    critical({
+      base: "./",
+      inline: false,
+      css: [path.to.tmpAssets.sassFilesTemp + "/page.**"],
+      dimensions: [
+        {
+          width: 240,
+          height: 320,
+        },
+        {
+          width: 320,
+          height: 568,
+        },
+        {
+          width: 1024,
+          height: 1024,
+        },
+        {
+          width: 1366,
+          height: 768,
+        },
+      ],
+    })
   );
 }
 
 // 'gulp styles:critical:post' -- extract layout.post critical CSS
 //   into /_includes/critical-post.css
 function postCritical() {
-  return(
-    src(path.to.root.tempDir + path.to.root.siteDir + "projetos/plaenge/index.html")
-    .pipe(
-      critical({
-        base: "./",
-        inline: false,
-        css: [path.to.tmpAssets.sassFilesTemp + "/post.**"],
-        dimensions: [
-          {
-            width: 240,
-            height: 320,
-          },
-          {
-            width: 320,
-            height: 568,
-          },
-          {
-            width: 1024,
-            height: 1024,
-          },
-          {
-            width: 1366,
-            height: 768,
-          },
-        ],
-      })
-    )
+  return src(
+    path.to.root.tempDir +
+      path.to.root.siteDir +
+      "projetos/plaenge/index.html"
+  ).pipe(
+    critical({
+      base: "./",
+      inline: false,
+      css: [path.to.tmpAssets.sassFilesTemp + "/post.**"],
+      dimensions: [
+        {
+          width: 240,
+          height: 320,
+        },
+        {
+          width: 320,
+          height: 568,
+        },
+        {
+          width: 1024,
+          height: 1024,
+        },
+        {
+          width: 1366,
+          height: 768,
+        },
+      ],
+    })
   );
 }
 
 // 'gulp styles:critical:home' -- extract layout.home critical CSS
 //   into /_includes/critical-home.css
 function homeCritical() {
-  return src(path.to.root.tempDir + path.to.root.siteDir + "index.html").pipe(
+  return src(
+    path.to.root.tempDir + path.to.root.siteDir + "index.html"
+  ).pipe(
     critical({
       base: "./",
       inline: false,
@@ -144,7 +146,9 @@ function homeCritical() {
 // 'gulp styles:critical:404' -- extract layout.home critical CSS
 //   into /_includes/critical-404.css
 function errorCritical() {
-  return src(path.to.root.tempDir + path.to.root.siteDir + "404.html").pipe(
+  return src(
+    path.to.root.tempDir + path.to.root.siteDir + "404.html"
+  ).pipe(
     critical({
       base: "./",
       inline: false,
@@ -176,5 +180,5 @@ module.exports = {
   pageCritical,
   postCritical,
   homeCritical,
-  errorCritical
-}
+  errorCritical,
+};

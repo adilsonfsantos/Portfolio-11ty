@@ -16,12 +16,12 @@ function assetsClean() {
 }
 
 // 'gulp clean:images' -- removes only image assets
-function imagesClean () {
+function imagesClean() {
   return del([path.to.siteAssets.imageFilesSite]);
 }
 
 // 'gulp clean:dist' -- removes built site but keep images
-function distClean () {
+function distClean() {
   return del(
     [
       "dist" + "/**/*",
@@ -34,12 +34,12 @@ function distClean () {
 }
 
 // 'gulp clean:gzip' -- removes gzip files
-function gzipClean () {
+function gzipClean() {
   return del(["dist" + "/**/*.gz"]);
 }
 
 // 'gulp clean:site' -- removes temporary source
-function siteClean () {
+function siteClean() {
   return del([path.to.root.tempDir + "src"]);
 }
 
@@ -48,5 +48,5 @@ module.exports = {
   assetsClean,
   distClean,
   gzipClean,
-  siteClean
-}
+  siteClean,
+};

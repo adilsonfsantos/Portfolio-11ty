@@ -1,35 +1,34 @@
 "use strict";
 const src = "src",
-      dist = "dist",
-      tmp = "tmp",
-      assets = "assets",
-      css = "css",
-      data = "_data",
-      fonts = "fonts",
-      img = "images",
-      js = "js",
-      sass = "_sass";
+  dist = "dist",
+  tmp = "tmp",
+  assets = "assets",
+  css = "css",
+  data = "_data",
+  fonts = "fonts",
+  img = "images",
+  js = "js",
+  sass = "_sass";
 
 // Root locations.
 const assetsDir = assets + "/",
-      siteDir = dist + "/",
-      sourceDir = src + "/",
-      tempDir = tmp + "/",
-      dataDir = data + "/";
+  siteDir = dist + "/",
+  sourceDir = src + "/",
+  tempDir = tmp + "/",
+  dataDir = data + "/";
 
 // Glob patterns by file type.
 const sassPattern = "/**/*.scss",
-      jsPattern = "/**/*.js",
-      imagePattern = "*.+(jpg,JPG,jpeg,JPEG,png,PNG,webp,WEBP)",
-      markdownPattern = "/**/*.+(md|MD|markdown|MARKDOWN)",
-      liquidPattern = "/**/*.liquid",
-      txtPattern = "/**/*.txt",
-      xmlPattern = "/**/*.{xml,json}",
-      ymlPattern = "/**/*.yml";
+  jsPattern = "/**/*.js",
+  imagePattern = "*.+(jpg,JPG,jpeg,JPEG,png,PNG,webp,WEBP)",
+  markdownPattern = "/**/*.+(md|MD|markdown|MARKDOWN)",
+  liquidPattern = "/**/*.liquid",
+  txtPattern = "/**/*.txt",
+  xmlPattern = "/**/*.{xml,json}",
+  ymlPattern = "/**/*.yml";
 
 module.exports = {
   to: {
-
     // Root locations.
     root: {
       assetsDir: assets + "/",
@@ -37,7 +36,7 @@ module.exports = {
       sourceDir: src + "/",
       tempDir: tmp + "/",
       dataDir: data + "/",
-},
+    },
 
     // Source asset files locations.
     srcAsset: {
@@ -78,8 +77,8 @@ module.exports = {
       xmlFilesGlob: src + xmlPattern,
       ymlFilesGlob: src + ymlPattern,
     },
-  }
-}
+  },
+};
 //     // Source asset files locations.
 // paths.sassFiles = paths.sourceDir + paths.sass;
 // paths.jsFiles = paths.sourceDir + paths.assetsDir + paths.js;

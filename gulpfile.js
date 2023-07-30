@@ -13,52 +13,85 @@ exports.buildSite = series(siteTmp, site, siteCopy);
 
 // 'gulp assets' -- removes assets and rebuilds them
 // 'gulp assets --prod' -- same as above but with production settings
-exports.assets =
+exports.assets = series(
+  series(scripts, styles, fonts),
   series(
-    series(scripts, styles, fonts),
-    series(
-      gzipScripts,
-      gzipStyles,
-      assetsCopy,
-      imagesCopyCached,
-      imagesCopy,
-      manifestCopy
-    )
-  );
+    gzipScripts,
+    gzipStyles,
+    assetsCopy,
+    imagesCopyCached,
+    imagesCopy,
+    manifestCopy
+  )
+);
 
 // 'gulp clean' -- removes assets and gzipped files
-exports.clean = parallel(assetsClean, imagesClean, gzipClean, distClean, siteClean);
+exports.clean = parallel(
+  assetsClean,
+  imagesClean,
+  gzipClean,
+  distClean,
+  siteClean
+);
 
 // 'gulp build' -- same as 'gulp' but doesn't serve site
 // 'gulp build --prod' -- same as above but with production settings
-exports.build =
+exports.build = series(
+  parallel(
+    assetsClean,
+    imagesClean,
+    gzipClean,
+    distClean,
+    siteClean
+  ),
   series(
-    parallel(assetsClean, imagesClean, gzipClean, distClean, siteClean),
-    series(scripts, styles, fonts, gzipScripts, gzipStyles, assetsCopy,
+    scripts,
+    styles,
+    fonts,
+    gzipScripts,
+    gzipStyles,
+    assetsCopy,
     imagesCopyCached,
     imagesCopy,
-    manifestCopy),
-    series(siteTmp, site, siteCopy),
-    html
-  );
+    manifestCopy
+  ),
+  series(siteTmp, site, siteCopy),
+  html
+);
 
 // 'gulp critical' -- builds critical path CSS includes
 //   WARNING: run this after substantial CSS changes
 //   WARNING: .html files referenced need to exist, run after `gulp build` to ensure.
-exports.critical =
-  series(
+exports.critical = series(
     pageCritical,
     postCritical,
     homeCritical,
     errorCritical
-  );
+);
 
 // 'gulp' -- removes assets and gzipped files, creates assets and revs version
 //   in includes or layouts, builds site, serves site
 // 'gulp --prod' -- same as above but with production settings
-exports.default =
-  series(
-    parallel(assetsClean, imagesClean, gzipClean, distClean, siteClean),
-    scripts, styles, fonts, gzipScripts, gzipStyles, assetsCopy, imagesCopy, imagesCopyCached, manifestCopy,
-    siteTmp, site, siteCopy, html, serve
-  );
+exports.default = series(
+  parallel(
+    assetsClean,
+    imagesClean,
+    gzipClean,
+    distClean,
+    siteClean
+  ),
+  scripts,
+  styles,
+  fonts,
+  gzipScripts,
+  gzipStyles,
+  assetsCopy,
+  imagesCopy,
+  imagesCopyCached,
+  manifestCopy,
+  siteTmp,
+  site,
+  siteCopy,
+  html,
+  serve
+);

@@ -6,11 +6,10 @@ var size = require("gulp-size");
 const path = require("../paths.js");
 
 // 'gulp fonts' -- copies fonts to temporary assets directory
-function fonts ()  {
-  return (
-    src(path.to.srcAsset.fontFiles + "/**/*")
+function fonts() {
+  return src(path.to.srcAsset.fontFiles + "/**/*")
     .pipe(dest(path.to.tmpAssets.fontFilesTemp))
-    .pipe(size({ title: "fonts" })))
+    .pipe(size({ title: "fonts" }));
 }
 
-module.exports = fonts
+module.exports = fonts;

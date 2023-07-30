@@ -7,7 +7,7 @@ const path = require("../paths.js");
 // const { buildSite } = require("../../gulpfile.js");
 const { imagesCopy, siteCopy } = require("./copy.js");
 const { siteTmp, site } = require("./build.js");
-const { scripts, styles } = require("./assets.js")
+const { scripts, styles } = require("./assets.js");
 
 // function to properly reload your browser
 function reload(done) {
@@ -48,10 +48,17 @@ function serve(done) {
 
   // watch various files for changes and do the needful
   watch(
-    [path.to.fileGlob.mdFilesGlob, path.to.fileGlob.liquidFilesGlob, path.to.fileGlob.ymlFilesGlob],
+    [
+      path.to.fileGlob.mdFilesGlob,
+      path.to.fileGlob.liquidFilesGlob,
+      path.to.fileGlob.ymlFilesGlob,
+    ],
     series(siteTmp, site, siteCopy, reload)
   );
-  watch([path.to.fileGlob.xmlFilesGlob, path.to.fileGlob.txtFilesGlob], series(site, reload));
+  watch(
+    [path.to.fileGlob.xmlFilesGlob, path.to.fileGlob.txtFilesGlob],
+    series(site, reload)
+  );
   watch(path.to.fileGlob.jsFilesGlob, series(scripts, reload));
   watch(path.to.fileGlob.sassFilesGlob, series(styles, reload));
   watch(path.to.fileGlob.imageFilesGlob, series(imagesCopy, reload));

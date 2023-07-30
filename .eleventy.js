@@ -7,8 +7,14 @@ const mila = require("markdown-it-link-attributes");
 const Image = require("@11ty/eleventy-img");
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 
-async function imageShortcode(src, alt, classParent, classDescendent, sizes = "100vw") {
-  if(alt === undefined || typeof alt !== 'string') {
+async function imageShortcode(
+  src,
+  alt,
+  classParent,
+  classDescendent,
+  sizes = "100vw"
+) {
+  if (alt === undefined || typeof alt !== "string") {
     // You bet we throw an error on missing alt (alt="" works okay)
     throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
   }
@@ -22,19 +28,25 @@ async function imageShortcode(src, alt, classParent, classDescendent, sizes = "1
       Quality: 95,
     },
     sharpWebpOptions: {
-      nearLossless: true
+      nearLossless: true,
     },
     urlPath: "/assets/images",
-    outputDir: "tmp/dist/assets/images"
+    outputDir: "tmp/dist/assets/images",
   });
 
   let lowsrc = metadata.jpeg[0];
   let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
 
   return `<picture class="${classParent}">
-    ${Object.values(metadata).map(imageFormat => {
-      return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`;
-    }).join("\n")}
+    ${Object.values(metadata)
+      .map((imageFormat) => {
+        return `  <source type="${
+          imageFormat[0].sourceType
+        }" srcset="${imageFormat
+          .map((entry) => entry.srcset)
+          .join(", ")}" sizes="${sizes}">`;
+      })
+      .join("\n")}
       <img
         class="${classDescendent}"
         src="${lowsrc.url}"
@@ -54,7 +66,7 @@ function blockquote(content, source, type) {
     );
   }
 
-  const typeAttr = type ? `data-type="${type}"` : '';
+  const typeAttr = type ? `data-type="${type}"` : "";
 
   return `
     <blockquote ${typeAttr}>
@@ -75,7 +87,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLiquidShortcode("images", imageShortcode);
   // {% images "path_to_image", "alt_text", "class", "subclass" %}
 
-  eleventyConfig.addPairedShortcode("blockquote", blockquote)
+  eleventyConfig.addPairedShortcode("blockquote", blockquote);
   // {% blockquote "Lorem Ipsum" %}
   // Vestibulum id ligula porta felis euismod semper.
   // {% endblockquote %}

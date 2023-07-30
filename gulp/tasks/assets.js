@@ -26,7 +26,7 @@ function scripts() {
   // top to bottom, so you want vendor scripts etc on top
   return (
     src([path.to.srcAsset.jsFiles + "/*.js"])
-    .pipe(
+      .pipe(
         bro({
           _transform: [
             babelify.configure({ presets: ["@babel/preset-env"] }),
@@ -52,7 +52,13 @@ function scripts() {
       // gera manifesto dos arquivos compactados
       .pipe(rev.manifest("js-manifest.json"))
       // .pipe(dest(path.tempDir + paths.sourceDir + paths.data))
-      .pipe(dest(path.to.root.tempDir + path.to.root.sourceDir + path.to.root.dataDir))
+      .pipe(
+        dest(
+          path.to.root.tempDir +
+            path.to.root.sourceDir +
+            path.to.root.dataDir
+        )
+      )
       .pipe(size({ title: "scripts json", showFiles: true }))
   );
 }
@@ -67,7 +73,7 @@ function gzipScripts() {
         size({
           gzip: true,
           showFiles: true,
-          title: "Gzip scripts"
+          title: "Gzip scripts",
         })
       )
     )
@@ -98,8 +104,16 @@ function styles() {
       // gera arquivos compactados
       .pipe(dest(path.to.tmpAssets.sassFilesTemp + "/"))
       .pipe(rev.manifest("css-manifest.json"))
-      .pipe(dest(path.to.root.tempDir + path.to.root.sourceDir + path.to.root.dataDir))
-      .pipe(when(argv.prod, size({ title: "Styles json", showFiles: true })))
+      .pipe(
+        dest(
+          path.to.root.tempDir +
+            path.to.root.sourceDir +
+            path.to.root.dataDir
+        )
+      )
+      .pipe(
+        when(argv.prod, size({ title: "Styles json", showFiles: true }))
+      )
       .pipe(when(!argv.prod, browserSync.stream()))
   );
 }
@@ -114,7 +128,7 @@ function gzipStyles() {
         size({
           gzip: true,
           showFiles: true,
-          title: "Gzip styles"
+          title: "Gzip styles",
         })
       )
     )
@@ -125,5 +139,5 @@ module.exports = {
   scripts,
   styles,
   gzipScripts,
-  gzipStyles
-}
+  gzipStyles,
+};
