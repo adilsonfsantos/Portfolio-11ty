@@ -49,6 +49,7 @@ function serve(done) {
   // watch various files for changes and do the needful
   watch(
     [
+      path.to.fileGlob.sassFilesGlob,
       path.to.fileGlob.mdFilesGlob,
       path.to.fileGlob.liquidFilesGlob,
       path.to.fileGlob.ymlFilesGlob,
