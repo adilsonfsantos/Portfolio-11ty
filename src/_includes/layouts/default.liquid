@@ -7,8 +7,8 @@
     <!-- htmlmin:ignore -->
     <link rel="preload" as="font" href="/assets/fonts/Inter-Regular.woff2" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="/assets/fonts/Inter-Medium.woff2" type="font/woff2" crossorigin=>
-    {% assign main_js = js-manifest['main.js'] | prepend: '/assets/js/' %}
-    <script async src="{{ main_js }}"></script>
+    {% assign text = mainjs %}
+    <script async src="{{ text | replace_first: 'dist', '' }}"></script>
   </head>
   <a class="skip-to-content-link" href="#projetos">Pular para o conteúdo</a>
   <body>

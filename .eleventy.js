@@ -3,7 +3,9 @@ const markdownIt = require("markdown-it");
 const markdownItAttrs = require("markdown-it-attrs");
 const xmlFiltersPlugin = require("eleventy-xml-plugin");
 const mila = require("markdown-it-link-attributes");
-
+const { build } = require('esbuild');
+const fs = require('node:fs')
+const obj = JSON.parse(fs.readFileSync("./src/_data/meta.json"));
 const Image = require("@11ty/eleventy-img");
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 
@@ -31,7 +33,7 @@ async function imageShortcode(
       nearLossless: true,
     },
     urlPath: "/assets/images",
-    outputDir: "tmp/dist/assets/images",
+    outputDir: "dist/assets/images",
   });
 
   let lowsrc = metadata.jpeg[0];
@@ -77,6 +79,8 @@ function blockquote(content, source, type) {
 }
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.setServerOptions({});
+
   eleventyConfig.addPlugin(directoryOutputPlugin);
 
   //  SHORTCODE
@@ -101,7 +105,7 @@ module.exports = function (eleventyConfig) {
   const markdownItAttrsOptions = {
     leftDelimiter: "{:",
     rightDelimiter: "}",
-    allowedAttributes: ["id", "class", /^data\-.*$/],
+    allowedAttributes: ["id", "class", /^data-.*$/],
   };
 
   const milaOptions = {
@@ -152,15 +156,39 @@ module.exports = function (eleventyConfig) {
     "src/assets/images/thumbnail.jpg": "/assets/images/thumbnail.jpg",
   });
 
+  eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+
+  eleventyConfig.addWatchTarget("**/*.(scss|liquid|md)");
+
   // DON'T USE .GITIGNORE
   eleventyConfig.setUseGitIgnore(false);
+
+  // COMPILE
+  build({
+    entryPoints: ['node_modules/instant.page/instantpage.js'],
+    entryNames: '[name]-[hash]',
+    bundle: true,
+    minify: true,
+    sourcemap: true,
+    metafile: true,
+    logLevel: "info",
+    outfile: 'dist/assets/js/main.js',
+  }).then((result) =>  {
+
+    fs.writeFileSync('src/_data/meta.json', JSON.stringify(result, null, 2));
+
+  }).catch(() => process.exit(1))
+
+  // COMPILED MAINJS VARIABLE TO LIQUID
+  eleventyConfig.addGlobalData("mainjs", Object.keys(obj.metafile.outputs)[1]);
+
 
   return {
     dir: {
       data: "_data",
       includes: "_includes",
-      input: "tmp/src",
-      output: "tmp/dist",
+      input: "src",
+      output: "dist",
     },
   };
 };

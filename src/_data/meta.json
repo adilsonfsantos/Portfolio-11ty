@@ -1,0 +1,31 @@
+{
+  "errors": [],
+  "warnings": [],
+  "metafile": {
+    "inputs": {
+      "node_modules/instant.page/instantpage.js": {
+        "bytes": 11672,
+        "imports": []
+      }
+    },
+    "outputs": {
+      "dist/assets/js/main-XKZJMBDV.js.map": {
+        "imports": [],
+        "exports": [],
+        "inputs": {},
+        "bytes": 16311
+      },
+      "dist/assets/js/main-XKZJMBDV.js": {
+        "imports": [],
+        "exports": [],
+        "entryPoint": "node_modules/instant.page/instantpage.js",
+        "inputs": {
+          "node_modules/instant.page/instantpage.js": {
+            "bytesInOutput": 2895
+          }
+        },
+        "bytes": 3109
+      }
+    }
+  }
+}
