@@ -3,7 +3,7 @@
   @include grid-base;
 
   background-color: $black;
-  border-bottom: 2px solid $black-10;
+  border-bottom: 1px solid $black-10;
   position: fixed;
   width: 100%;
   z-index: 4;
@@ -46,7 +46,7 @@
 .nav {
   &__link {
     @include typescale(scale-1, bold, text);
-    @include transition(all, 0.15s, $animation-standard);
+    @include transition(color, 0.4s, $animation-standard);
 
     color: $white-80;
     line-height: 1.2;
