@@ -29,9 +29,6 @@ async function imageShortcode(
       Progressive: true,
       Quality: 95,
     },
-    sharpWebpOptions: {
-      nearLossless: true,
-    },
     urlPath: "/assets/images",
     outputDir: "dist/assets/images",
   });
