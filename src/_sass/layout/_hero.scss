@@ -2,44 +2,30 @@
   @include grid;
   @include grid-base;
 
+  height: 100%;
   position: relative;
-
-  .stripes{
-    background:
-      repeating-linear-gradient(
-         125.55deg,
-         #0f0f0f,
-         #0f0f0f 10%,
-         #3a3a3a 10%,
-         #3a3a3a 20%
-      );
-    content: "";
-    inset: 0;
-    mask-image: linear-gradient(180deg, rgba(0 0 0 / 90%) 8.26%, rgba(0 0 0 / 5%) 69.96%, rgba(3 3 3 / 5%) 69.97%, rgba(255 255 255 / 0%) 100%, rgba(0 0 0 / 0%) 100%);
-    opacity: 0.3;
-    position: absolute;
-  }
 
   &__normal {
     @include flex;
     @include flex-column;
 
     grid-column: 1/-1;
-    justify-content: center;
-    min-height: 98vh;
-    padding-top: $base-size * 4;
+    justify-content: end;
+    min-height: 96svh;
+    padding-bottom: $base-size * 0.5;
+    padding-top: $base-size * 3.5;
+    z-index: 2;
 
     @include viewport(default, landscape) {
       min-height: 100vh;
-      margin-bottom: $base-size * 1.5;
     }
 
     @include viewport(xs-small) {
-      min-height: 96vh;
+      min-height: 96svh;
     }
 
     @include viewport(xs-medium) {
-      min-height: 96vh;
+      min-height: 96svh;
     }
 
     @include viewport(sm-small) {
@@ -52,23 +38,17 @@
 
     @include viewport(md-small) {
       grid-column: span 8;
-      margin-bottom: $base-size * 0.5;
-    }
-
-    &--text {
-      margin: 40% 0 auto;
+      padding-bottom: $base-size * 5.5;
     }
 
     &--title {
       @include typescale(scale-3, bold, headline);
 
       color: $white;
-      margin-bottom: $base-size * 0.25;
 
       @include viewport(xs-small) {
         @include typescale(scale-4, bold, headline);
 
-        margin-bottom: $base-size * 0.5;
       }
 
       @include viewport(xs-medium) {
@@ -91,7 +71,7 @@
     &--subtitle {
       @include typescale(scale-1, normal, text);
 
-      color: $black-30;
+      color: $white-80;
 
       @include viewport(xs-small) {
         @include typescale(scale-2, normal, text);

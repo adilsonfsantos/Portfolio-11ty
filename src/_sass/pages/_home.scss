@@ -6,13 +6,11 @@ main {
   @include grid;
   @include grid-base;
 
-  position: relative;
-
   &__header {
     border-top: 2px solid $black-10;
     grid-column: span 4;
     margin-bottom: $base-size * 1.5;
-    padding-top: $base-size * 2.5;
+    padding-top: $base-size * 4.5;
 
     @include viewport(xs-small) {
       grid-column: 1/-1;
