@@ -71,10 +71,7 @@ $grid-breakpoints-map: (
 );
 
 // Animation
-$animation-deceleration: cubic-bezier(0, 0, 0.2, 1) !default;
-$animation-standard: cubic-bezier(0.4, 0, 0.2, 1) !default;
-$animation-acceleration: cubic-bezier(0.4, 0, 1, 1) !default;
-$animation-sharp: cubic-bezier(0.4, 0, 0.6, 1) !default;
+$animation-standard: cubic-bezier(0.22, 1, 0.36, 1) !default;
 
 // Font Size
 $font-size: $base-size;
@@ -100,7 +97,7 @@ $type-map: (
     spacing: -0.019rem,
   ),
   scale-2: (
-    size: $base-size * 1.25,
+    size: $base-size * 1.125,
     spacing: -0.017rem,
   ),
   scale-1: (
