@@ -11,7 +11,7 @@ layout: default
       >
     </div>
     <div class="projetos__principais">
-      {%- for post in collections.posts -%}
+      {%- for post in collections.post reversed -%}
       <a href="{{ post.url | url }}" class="card" title="{{ post.data.title }}">
         {% assign card = post.data.image | prepend : "src" %}
         {% assign alt = post.data.description %}

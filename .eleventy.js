@@ -122,21 +122,6 @@ module.exports = function (eleventyConfig) {
   //   PLUGINS
   eleventyConfig.addPlugin(xmlFiltersPlugin);
 
-  //  COLLECTIONS
-  eleventyConfig.addCollection("posts", (collection) => {
-    const coll = collection.getFilteredByTag("post");
-
-    for (let i = 0; i < coll.length; i++) {
-      const prevPost = coll[i - 1];
-      const nextPost = coll[i + 1];
-
-      coll[i].data["prevPost"] = prevPost;
-      coll[i].data["nextPost"] = nextPost;
-    }
-
-    return coll.reverse();
-  });
-
   //  LAYOUT ALIASES
   eleventyConfig.addLayoutAlias("default", "layouts/default.liquid");
   eleventyConfig.addLayoutAlias("home", "layouts/home.liquid");

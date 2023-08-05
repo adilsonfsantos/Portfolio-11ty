@@ -54,11 +54,12 @@ permalink: "/projetos/{{page.fileSlug}}/"
 </article>
 <section class="postnav">
   <div class="postnav--container">
-  {% if prevPost %}
-  <a href="{{ prevPost.url }}" class="postnav__link" rel="next">Próximo projeto →<br><span class="postnav__link--title">{{ prevPost.data.title }}</span>
-  </a>
-  {%- else -%}
-  <a href="{{ "/" | url }}" class="postnav__link" rel="prev">Sem mais projetos →<br><span class="postnav__link--title">Voltar para a home</span></a>
+    {% assign previousPost = collections.post | getPreviousCollectionItem %}
+    {% if previousPost %}
+    <a href="{{ previousPost.url }}" class="postnav__link" rel="next">Próximo projeto →<br><span class="postnav__link--title">{{ previousPost.data.title }}</span>
+    </a>
+    {%- else -%}
+    <a href="{{ "/" | url }}" class="postnav__link" rel="prev">Sem mais projetos →<br><span class="postnav__link--title">Voltar para a home</span></a>
   {% endif %}
 </div>
 </section>
