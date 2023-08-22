@@ -1,9 +1,10 @@
 .btn {
   @include typescale(scale-1, bold, text);
   @include font-position(center);
-  @include transition(background, 0.3s, $animation-standard);
+  @include transition(background, 0.4s, $animation-standard);
 
   background-position: center;
+  border-radius: $base-size * 1.5;
   min-width: 120px;
   padding: $base-size * 0.875 $base-size;
   position: relative;
@@ -16,9 +17,9 @@
   }
 
   &__primary {
-    color: $secondary;
-    background-color: $black;
-    border: solid 1px $secondary;
+    color: $white;
+    background-color: $black-20;
+    border: solid 1px $black-20;
 
     &:hover,
     &:focus {
