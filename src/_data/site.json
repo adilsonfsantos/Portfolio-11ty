@@ -14,5 +14,19 @@
   "author": {
     "name": "Adilson Santos",
     "email": "adilson.design@outlook.com"
-  }
+  },
+  "social": [
+    {
+      "name": "Behance",
+      "url": "https://behance.net/adilsonfsantos"
+    },
+    {
+      "name": "Github",
+      "url": "https://github.com/adilsonfsantos"
+    },
+    {
+      "name": "Linkedin",
+      "url": "https://linkedin.com/in/adilsonfsantos"
+    }
+  ]
 }

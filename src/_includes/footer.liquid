@@ -14,7 +14,7 @@
               <a href="mailto:{{ site.author.email }}">Email</a>
             </li>
           {% endif %}
-          {%- for link in social.links -%}
+          {%- for link in site.social -%}
           <li><a href="{{ link.url }}" rel="noopener">{{link.name}}</a></li>
           {%- endfor -%}
         </ul>

@@ -39,7 +39,7 @@
   "url": "{{ site.url }}",
   "headline": "{{ site.title }}",
   "name": "{{ site.name }}",
-  {% assign sameLinks = social.links | map: 'url' %}
+  {% assign sameLinks = site.social | map: 'url' %}
   "sameAs": {{ sameLinks | json }},
   "image": "{{ site.url }}{{ image | url }}",
   "author": { "@type": "Person", "name": "{{site.author.name}}" },
