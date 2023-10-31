@@ -10,8 +10,6 @@ keywords:
   - entregar
 ---
 
-# {{ title }}
-
 Olá, tudo bem? Meu nome é Adilson Santos.
 
 Sou um designer focado em UI/UX e criação de identidades visuais, gosto de trabalhar com o método de Design Sprints e utilizar os conceitos de Design Emocional, Design Estratégico e Design Thinking. Que permitem abordar o projeto da forma mais humanizada e profunda, assim fazendo com que os as necessidades dos usuários e as expectativas dos clientes.
