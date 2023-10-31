@@ -13,7 +13,7 @@ permalink: "/projetos/{{page.fileSlug}}/"
     <div class="post__header">
       <div class="post__header--container">
         <h1 class="post__header--title" itemprop="name headline">
-          {{- title | addNbsp -}}
+          {{ title | escape | addNbsp }}
         </h1>
         <h2 class="post__header--description" itemprop="description">
           {{ description }}
