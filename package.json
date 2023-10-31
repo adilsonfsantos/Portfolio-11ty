@@ -4,8 +4,10 @@
   "description": "Portfolio of Adilson Santos using 11ty and Gulp",
   "main": "gulpfile.js",
   "scripts": {
-    "stylelint": "stylelint \"src/**/*.scss\"",
-    "eslint": "eslint \"**/*.js\""
+    "stylelint": "stylelint \"src/**/*.scss\" --ignore-path .gitignore",
+    "eslint": "eslint \"**/*.js\" --ignore-path .gitignore",
+    "prod": "npx @11ty/eleventy --incremental --quiet",
+    "dev": "npx @11ty/eleventy --incremental --serve"
   },
   "repository": {
     "type": "git",
@@ -14,8 +16,7 @@
   "author": "Adilson Santos",
   "keywords": [
     "11ty",
-    "Eleventy",
-    "Gulp"
+    "Eleventy"
   ],
   "license": "GPL-3.0-or-later",
   "bugs": {
@@ -25,47 +26,30 @@
   "browserslist": [
     "defaults"
   ],
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "critical": "4.0.1",
-    "eslint": "^8.45.0",
-    "eslint-config-prettier": "^8.9.0",
-    "prettier": "3.0.0",
-    "stylelint": "^15.10.2",
-    "stylelint-config-standard-scss": "^10.0.0",
-    "stylelint-scss": "^5.0.1"
-  },
   "dependencies": {
-    "@11ty/eleventy-img": "^3.1.0",
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-img": "^3.1.6",
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
-    "autoprefixer": "^10.4.14",
-    "babelify": "^10.0.0",
-    "cssnano": "^6.0.1",
-    "del": "6.1.1",
+    "@11tyrocks/eleventy-plugin-sass-lightningcss": "^1.1.0",
+    "eleventy-critical-css": "^2.0.2",
+    "eleventy-plugin-rev": "^1.1.1",
     "eleventy-xml-plugin": "^0.1.0",
-    "esbuild": "0.18.17",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-bro": "^2.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-gzip": "^1.4.2",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-if": "^3.0.0",
-    "gulp-newer": "^1.4.0",
-    "gulp-postcss": "^9.0.1",
-    "gulp-rev": "9.0.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-size": "^4.0.1",
-    "gulp-sourcemaps": "^3.0.0",
-    "gulp-uglify-es": "^3.0.0",
-    "instant.page": "^5.2.0",
-    "markdown-it": "^13.0.1",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "html-minifier-terser": "^7.2.0",
+    "markdown-it": "^13.0.2",
     "markdown-it-attrs": "^4.1.6",
     "markdown-it-link-attributes": "^4.0.1",
-    "postcss": "^8.4.27",
+    "normalize.css": "^8.0.1",
+    "prettier": "3.0.3",
     "require-dir": "^1.2.0",
-    "sass": "^1.64.1",
+    "sass": "^1.69.5",
     "slugify": "^1.6.6",
-    "yargs": "^17.7.2"
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard-scss": "^11.0.0",
+    "stylelint-scss": "^5.3.0"
+  },
+  "devDependencies": {
+    "eleventy-plugin-compress": "^1.0.5"
   }
 }
