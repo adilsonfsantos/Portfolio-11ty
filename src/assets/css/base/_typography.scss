@@ -2,10 +2,10 @@
   font-display: swap;
   font-family: "Inter UI";
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   src:
-    url("/assets/fonts/Inter-Light.woff2") format("woff2"),
-    url("/assets/fonts/Inter-Light.woff") format("woff");
+    url("/assets/fonts/Inter-Regular.woff2") format("woff2"),
+    url("/assets/fonts/Inter-Regular.woff") format("woff");
 }
 
 @font-face {
@@ -18,107 +18,42 @@
     url("/assets/fonts/Inter-Medium.woff") format("woff");
 }
 
-// @mixin font-headline-xxl {
-//   font-size: $base-size * 3.5;
-//   font-weight: 500;
-//   letter-spacing: -0.022rem;
-//   line-height: 125%;
-// }
+@font-face {
+  font-display: swap;
+  font-family: "Inter UI";
+  font-style: normal;
+  font-weight: 300;
+  src:
+    url("/assets/fonts/Inter-Light.woff2") format("woff2"),
+    url("/assets/fonts/Inter-Light.woff") format("woff");
+}
 
-// @mixin font-headline-xl {
-//   font-size: $base-size * 2;
-//   font-weight: 500;
-//   letter-spacing: -0.022rem;
-//   line-height: 125%;
-// }
+@font-face {
+  font-display: swap;
+  font-family: "iA Writer Duo ";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url("/assets/fonts/iAWriterDuoS-Regular.woff2") format("woff2"),
+    url("/assets/fonts/iAWriterDuoS-Regular.woff") format("woff");
+}
 
-// @mixin font-headline-l {
-//   font-size: $base-size * 2.5;
-//   font-weight: 500;
-//   letter-spacing: -0.022rem;
-//   line-height: 125%;
-// }
+@font-face {
+  font-display: swap;
+  font-family: "iA Writer Duo";
+  font-style: normal;
+  font-weight: 600;
+  src:
+    url("/assets/fonts/iAWriterDuoS-Bold.woff2") format("woff2"),
+    url("/assets/fonts/iAWriterDuoS-Bold.woff") format("woff");
+}
 
-// @mixin font-headline-m {
-//   font-size: $base-size * 2;
-//   font-weight: 500;
-//   letter-spacing: -0.022rem;
-//   line-height: 125%;
-// }
-
-// @mixin font-headline-s {
-//   font-size: $base-size * 2;
-//   font-weight: 500;
-//   letter-spacing: -0.019rem;
-//   line-height: 125%;
-// }
-
-// @mixin font-body-xxl {
-//   font-size: $base-size * 2;
-//   font-weight: 400;
-//   letter-spacing: -0.022rem;
-//   line-height: 150%;
-// }
-
-// @mixin font-body-xl {
-//   font-size: $base-size * 1.5;
-//   font-weight: 400;
-//   letter-spacing: -0.019rem;
-//   line-height: 150%;
-// }
-
-// @mixin font-body-l {
-//   font-size: $base-size * 1.125;
-//   font-weight: 400;
-//   letter-spacing: -0.014rem;
-//   line-height: 150%;
-// }
-
-// @mixin font-body-m {
-//   font-size: $base-size;
-//   font-weight: 400;
-//   letter-spacing: -0.011rem;
-//   line-height: 150%;
-// }
-
-// @mixin font-body-m-link {
-//   font-size: $base-size;
-//   font-weight: 500;
-//   letter-spacing: -0.011rem;
-//   line-height: 100%;
-// }
-
-// @mixin font-body-s {
-//   font-size: $base-size * 0.875;
-//   font-weight: 400;
-//   letter-spacing: -0.006rem;
-//   line-height: 150%;
-// }
-
-// @mixin font-button-l {
-//   font-size: $base-size * 1.25;
-//   font-weight: 500;
-//   letter-spacing: -0.017rem;
-//   line-height: 100%;
-// }
-
-// @mixin font-button-s {
-//   font-size: $base-size;
-//   font-weight: 400;
-//   letter-spacing: -0.011rem;
-//   line-height: 100%;
-// }
-
-// @mixin font-card-title {
-//   font-size: $base-size * 1.125;
-//   font-weight: 500;
-//   letter-spacing: -0.014rem;
-//   line-height: 100%;
-// }
-
-// @mixin font-card-tag {
-//   font-size: $base-size;
-//   font-weight: 400;
-//   letter-spacing: -0.011rem;
-//   line-height: 125%;
-// }
+@font-face {
+  font-display: swap;
+  font-family: "iA Writer Duo";
+  font-style: normal;
+  font-weight: 300;
+  src:
+    url("/assets/fonts/iAWriterDuoS-.woff2") format("woff2"),
+    url("/assets/fonts/iAWriterDuoS-Regular.woff") format("woff");
+}

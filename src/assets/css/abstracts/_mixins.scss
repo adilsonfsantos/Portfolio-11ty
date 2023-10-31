@@ -1,16 +1,17 @@
-// MEDIA QUERIES
+@use "sass:list";
 @use "sass:math";
 @use "sass:map";
+@use "variables";
 
 @mixin viewport($size, $orientation: portrait, $width: width) {
-  @if not(index(map-keys($grid-breakpoints-map), $size)) {
+  @if not(list.index(map.keys(variables.$grid-breakpoints-map), $size)) {
     @warn "Atenção: `#{$size}` não é um breakpoint válido.";
   } @else if $orientation == landscape {
-    @media (min-width: #{map.get($grid-breakpoints-map, $size, $width)}) and (orientation: landscape) {
+    @media (min-width: #{map.get(variables.$grid-breakpoints-map, $size, $width)}) and (orientation: landscape) {
       @content;
     }
   } @else {
-    @media (min-width: #{map.get($grid-breakpoints-map, $size, $width)}) {
+    @media (min-width: #{map.get(variables.$grid-breakpoints-map, $size, $width)}) {
       @content;
     }
   }
@@ -43,19 +44,20 @@
   display: inline-block;
 }
 
-@mixin grid-base() {
-  @each $name, $width, $column, $margin in $grid-breakpoints-map {
-    $grid-margin: #{map.get($grid-breakpoints-map, $name, margin)};
+// @mixin grid-base() {
+  // @each $name, $width, $column, $margin in $grid-breakpoints-map {
+  //   $grid-margin: #{map.get($grid-breakpoints-map, $name, margin)};
 
-    @if $name == "default" {
-      grid-template-columns: minmax(5vw, 1fr) minmax(0, $page-width) minmax(5vw, 1fr);
-    } @else {
-      @include viewport($name) {
-        grid-template-columns: minmax($grid-margin, auto) minmax(0, $page-width) minmax($grid-margin, auto);
-      }
-    }
-  }
-}
+  //   @if $name == "default" {
+  //     grid-template-columns: minmax(5vw, 1fr) minmax(0, $page-width) minmax(5vw, 1fr);
+  //   } @else {
+  //     @include viewport($name) {
+  //       grid-template-columns: minmax($grid-margin, auto) minmax(0, $page-width) minmax($grid-margin, auto);
+  //     }
+  //   }
+  // }
+
+// }
 
 @mixin grid-image {
   grid-template-columns:
@@ -65,23 +67,26 @@
     );
 }
 
-@mixin layout-grid($size, $column: column, $gap: gap) {
-  @if not(index(map-keys($grid-breakpoints-map), $size)) {
-    @warn "Atenção: `#{size}` não é um breakpoint válido.";
-  } @else {
-    column-gap: #{map.get($grid-breakpoints-map, $size, $gap)};
-grid-template-columns:
-      repeat(
-        #{map.get($grid-breakpoints-map, $size, $column)},
-        minmax(0, 1fr)
-      );
-  }
-}
+// @mixin layout-grid($size, $column: column, $gap: gap) {
+//   @if not(index(map-keys($grid-breakpoints-map), $size)) {
+//     @warn "Atenção: `#{size}` não é um breakpoint válido.";
+//   } @else {
+//     column-gap: #{map.get($grid-breakpoints-map, $size, $gap)};
+// grid-template-columns:
+//       repeat(
+//         #{map.get($grid-breakpoints-map, $size, $column)},
+//         minmax(0, 1fr)
+//       );
+//   }
+
+
+
+// }
 
 @mixin grid-post {
   grid-template-columns: minmax(0, 680px);
 
-  @include viewport(sm-small) {
+  @include viewport(large) {
     grid-template-columns: 1fr minmax(0, 680px) 1fr;
   }
 }
@@ -103,7 +108,7 @@ grid-template-columns:
 @mixin transition(
   $name: all,
   $duration: $elevation-transition-duration,
-  $speed: $animation-standard,
+  $speed: variables.$animation-standard,
   $delay: 0ms
 ) {
   transition: $name $duration $speed $delay;
@@ -112,7 +117,7 @@ grid-template-columns:
 @mixin animation(
   $name,
   $duration: $elevation-transition-duration,
-  $speed: $animation-standard,
+  $speed: variables.$animation-standard,
   $loop: 1,
   $delay: 0ms
 ) {
@@ -120,41 +125,61 @@ grid-template-columns:
 }
 
 // FONT
-@mixin typescale($size, $weight, $line) {
-  font-size: #{map.get($type-map, $size, size)};
+@mixin typescale($size, $weight: 400, $line) {
+  font-size: #{map.get(variables.$type-map, $size, size)};
 
   @if $weight == "bold" {
     font-weight: 500;
   } @else if $weight == "normal" {
+    font-weight: 400;
+  } @else if $weight == "light"{
     font-weight: 300;
-  } @else {
+  } @else{
     @warn " Atenção: `#{$weight}` não é um valor válido.";
   }
 
-  letter-spacing: #{map.get($type-map, $size, spacing)};
-
-  @if $line == "headline" {
-    line-height: 125%;
+  @if $line == "title" {
+    line-height: 100%;
+  } @else if $line == "headline" {
+    line-height: 120%;
   } @else if $line == "text" {
     line-height: 150%;
   } @else {
-    @warn " Atenção: `#{$line}` não é um valor válido.";
+    @warn " atenção: `#{$line}` não é um valor válido.";
   }
 }
 
-@mixin font-primary {
-  font-family:
-    "Inter UI",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Helvetica Neue",
-    Roboto,
-    Arial,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
+@mixin font-family($family) {
+  @if $family == "Inter" {
+    font-family:
+      "Inter UI",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Helvetica Neue",
+      Roboto,
+      Arial,
+      sans-serif,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+      "Noto Color Emoji";
+  } @else if $family == "iA Writer" {
+    font-family:
+      "iA Writer Duo",
+      "Inter UI",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Helvetica Neue",
+      Roboto,
+      Arial,
+      sans-serif,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+      "Noto Color Emoji";
+  } @else {
+    @warn " atenção: `#{$family}` não é um valor válido.";
+  }
 }
 
 @mixin font-position($position) {

@@ -1,32 +1,21 @@
+@use "../abstracts/variables";
+
 .grid {
-  &--module {
-    @include grid;
-    @include layout-grid(xs-small);
-
-    grid-column: 2;
-
-    @include viewport(xs-medium) {
-      @include layout-grid(xs-medium);
+  &__module {
+    &--site {
+      display: grid;
+      gap: variables.$grid-gutter;
+      max-width: variables.$grid-width-site;
+      padding-inline: variables.$grid-gutter;
+      margin-inline: auto;
     }
 
-    @include viewport(xs-large) {
-      @include layout-grid(xs-large);
-    }
-
-    @include viewport(sm-small) {
-      @include layout-grid(sm-small);
-    }
-
-    @include viewport(sm-medium) {
-      @include layout-grid(sm-medium);
-    }
-
-    @include viewport(md-small) {
-      @include layout-grid(md-small);
-    }
-
-    @include viewport(md-medium) {
-      @include layout-grid(md-medium);
+    &--blog {
+      display: grid;
+      gap: variables.$grid-gutter;
+      max-width: variables.$grid-width-post;
+      padding-inline: variables.$grid-gutter;
+      margin-inline: auto;
     }
   }
 }

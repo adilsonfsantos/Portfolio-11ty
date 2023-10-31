@@ -1,37 +1,40 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 .btn {
-  @include typescale(scale-1, bold, text);
-  @include font-position(center);
-  @include transition(background, 0.4s, $animation-standard);
+  @include mixins.typescale(scale-1, bold, text);
+  @include mixins.font-position(center);
+  @include mixins.transition(background, 0.4s, variables.$animation-standard);
 
   background-position: center;
-  border-radius: $base-size * 1.5;
+  border-radius: variables.$base-size * 1.5;
   min-width: 120px;
-  padding: $base-size * 0.875 $base-size;
+  padding: variables.$base-size * 0.875 variables.$base-size;
   position: relative;
   text-transform: uppercase;
 
   &::after {
-    @include absolute;
+    @include mixins.absolute;
 
     opacity: 0;
   }
 
   &__primary {
-    color: $white;
-    background-color: $black-20;
-    border: solid 1px $black-20;
+    color: variables.$white;
+    background-color: variables.$black-20;
+    border: solid 1px variables.$black-20;
 
     &:hover,
     &:focus {
-      color: $black;
+      color: variables.$black;
       background:
-        $secondary
-        radial-gradient(circle, transparent 1%, $secondary 1%) center /
+        variables.$secondary
+        radial-gradient(circle, transparent 1%, variables.$secondary 1%) center /
         150000%;
     }
 
     &:active {
-      background-color: $white;
+      background-color: variables.$white;
       background-size: 100%;
       transition: background 0s;
     }

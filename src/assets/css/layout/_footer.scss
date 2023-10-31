@@ -1,9 +1,11 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 .footer {
-  @include grid;
-  @include grid-base;
+  @include mixins.grid;
 
   align-items: center;
-  background: $black;
+  background: variables.$black;
   position: relative;
 
   &__gradient {
@@ -13,32 +15,22 @@
   }
 
   &__container {
-    @include flex;
+    width: 100%;
+  }
+
+  &__content {
+    @include mixins.flex;
 
     align-items: center;
     flex-wrap: wrap;
-    grid-column: span 4;
-    padding: ($base-size * 2) 0;
-
-    @include viewport(xs-small) {
-      grid-column: span 4;
-    }
-
-    @include viewport(sm-small) {
-      gap: $base-size;
-      grid-column: span 8;
-    }
-
-    @include viewport(sm-medium) {
-      grid-column: span 12;
-    }
+    padding: (variables.$base-size * 2) 0;
 
     &--copyright {
-      @include center-vertical;
-      @include typescale(scale-1, normal, text);
+      @include mixins.center-vertical;
+      @include mixins.typescale(scale-0, normal, text);
 
-      color: $black-30;
-      margin: ($base-size) 0;
+      color: variables.$black-30;
+      margin: (variables.$base-size) 0;
     }
 
     &--spacer {
@@ -46,30 +38,30 @@
     }
   }
 
-  &__container--social {
-    @include flex;
+  &__content--social {
+    @include mixins.flex;
 
     flex-wrap: wrap;
     list-style-type: none;
 
     li {
-      margin: ($base-size * 0.5) 0;
+      margin: (variables.$base-size * 0.5) 0;
     }
 
     > li:not(:last-child) {
-      margin-right: $base-size;
+      margin-right: variables.$base-size;
     }
 
     a {
-      @include typescale(scale-1, bold, text);
+      @include mixins.typescale(scale-0, bold, text);
 
-      color: $black-30;
+      color: variables.$black-30;
       padding: 0.5rem 0;
     }
 
     a:hover,
     a:focus {
-      color: $white;
+      color: variables.$white;
     }
   }
 }

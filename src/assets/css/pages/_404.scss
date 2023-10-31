@@ -6,7 +6,6 @@ body {
 
 .hero {
   @include grid;
-  @include grid-base;
 
   background-color: $black;
   flex-grow: 1;

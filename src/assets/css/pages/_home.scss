@@ -1,86 +1,53 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.container{
+  position: relative;
+}
+
 .projetos {
-  @include grid;
-  @include grid-base;
+  hr {
+    height: 1px;
+    background-color: variables.$black-10;
+    border: none;
+  }
 
   &__header {
-    border-top: 2px solid $black-10;
-    grid-column: span 4;
-    margin-bottom: $base-size * 1.5;
-    padding-top: $base-size * 4.5;
-
-    @include viewport(xs-small) {
-      grid-column: 1/-1;
-      margin-bottom: $base-size * 2;
-    }
-
-    @include viewport(xs-large) {
-      grid-column: 1/-1;
-    }
-
-    @include viewport(sm-small) {
-      grid-column: span 6;
-    }
-
-    @include viewport(md-small) {
-      grid-column: span 8;
-    }
-
     &--title {
-      @include typescale(scale-3, bold, headline);
+      @include mixins.typescale(scale-2, bold, headline);
 
-      color: $white;
-
-      @include viewport(xs-small) {
-        @include typescale(scale-4, bold, headline);
-      }
+      color: variables.$white;
     }
 
     &--subtitle {
-      @include typescale(scale-1, normal, text);
+      @include mixins.typescale(scale-1, normal, text);
+      @include mixins.font-family("iA Writer");
 
-      color: $black-30;
-
-      @include viewport(xs-small) {
-        @include typescale(scale-2, normal, text);
-      }
+      color: variables.$black-30;
     }
   }
 
   &__principais {
-    @include grid;
+    @include mixins.grid;
 
-    border-bottom: 2px solid $black-10;
-    gap: $base-size * 2;
+    gap: variables.$base-size * 2;
     grid-auto-rows: auto;
-    grid-column: 1/-1;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    padding-bottom: $base-size * 5;
 
-    @include viewport(xs-small) {
-      gap: $base-size * 2;
+    @include mixins.viewport(xsmall) {
+      gap: variables.$base-size * 2;
       grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
     }
 
-    @include viewport(xs-medium) {
-      gap: $base-size * 1.5;
-    }
-
-    @include viewport(sm-small) {
-      gap: $base-size * 2;
+    @include mixins.viewport(large) {
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
 
-    @include viewport(sm-medium) {
+    @include mixins.viewport(xlarge) {
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     }
 
-    @include viewport(md-small) {
-      gap: $base-size * 2.5;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    }
-
-    @include viewport(md-medium) {
-      gap: $base-size * 3;
+    @include mixins.viewport(3xlarge) {
       grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
     }
   }

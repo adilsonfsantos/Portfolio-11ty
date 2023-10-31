@@ -15,7 +15,7 @@ $primary-40: #D40D1C;
 $secondary-90: #FDDB7D;
 
 // Sizes
-$base-size: 16px;
+$base-size: 1em;
 $page-width: $base-size * 80;
 
 // Breakpoints
@@ -26,43 +26,43 @@ $grid-breakpoints-map: (
     margin: $base-size,
     gap: 16px,
   ),
-  xs-small: (
+  xsmall: (
     width: 319px,
     column: 4,
     margin: $base-size,
     gap: 16px,
   ),
-  xs-medium: (
+  small: (
     width: 479px,
     column: 4,
     margin: $base-size * 1.5,
     gap: 24px,
   ),
-  xs-large: (
+  medium: (
     width: 639px,
     column: 6,
     margin: $base-size * 2.5,
     gap: 24px,
   ),
-  sm-small: (
+  large: (
     width: 767px,
     column: 6,
     margin: $base-size * 3,
     gap: 32px,
   ),
-  sm-medium: (
+  xlarge: (
     width: 995px,
     column: 6,
     margin: $base-size * 4,
     gap: 32px,
   ),
-  md-small: (
+  2xlarge: (
     width: 1199px,
     column: 8,
     margin: $base-size * 6,
     gap: 40px,
   ),
-  md-medium: (
+  3xlarge: (
     width: 1280px,
     column: 8,
     margin: $base-size * 4,
@@ -76,35 +76,57 @@ $animation-standard: cubic-bezier(0.22, 1, 0.36, 1) !default;
 // Font Size
 $font-size: $base-size;
 $type-map: (
-  scale-7: (
-    size: $base-size * 4,
-    spacing: -0.022rem,
-  ),
-  scale-6: (
-    size: $base-size * 3,
-    spacing: -0.022rem,
-  ),
   scale-5: (
-    size: $base-size * 2.5,
-    spacing: -0.022rem,
+    size: clamp(1.80rem, calc(1.43rem + 2.51vw), 3.43rem),
   ),
   scale-4: (
-    size: $base-size * 2,
-    spacing: -0.022rem,
+    size: clamp(1.60rem, calc(1.34rem + 1.76vw), 2.75rem),
   ),
   scale-3: (
-    size: $base-size * 1.5,
-    spacing: -0.019rem,
+    size: clamp(1.42rem, calc(1.25rem + 1.19vw), 2.20rem),
   ),
   scale-2: (
-    size: $base-size * 1.125,
-    spacing: -0.017rem,
+    size: clamp(1.27rem, calc(1.15rem + 0.76vw), 1.76rem),
   ),
   scale-1: (
-    size: $base-size,
-    spacing: -0.011rem,
+    size: clamp(1.13rem, calc(1.06rem + 0.43vw), 1.41rem),
   ),
   scale-0: (
-    size: $base-size * 0.875,
-    spacing: -0.006rem,
-  ),);
+    size: clamp(1.00rem, calc(0.97rem + 0.19vw), 1.13rem),
+  ),
+  scale--1: (
+    size: clamp(0.89rem, calc(0.89rem + 0.02vw), 0.90rem),
+  ),
+  scale--2: (
+    size: clamp(0.72rem, calc(0.81rem + -0.11vw), 0.79rem),
+  ),
+);
+$space-3xs: clamp(0.25rem, calc(0.25rem + 0.00vw), 0.25rem);
+$space-2xs: clamp(0.50rem, calc(0.50rem + 0.00vw), 0.50rem);
+$space-xs: clamp(0.75rem, calc(0.75rem + 0.00vw), 0.75rem);
+$space-s: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
+$space-m: clamp(1.50rem, calc(1.50rem + 0.00vw), 1.50rem);
+$space-l: clamp(2.00rem, calc(2.00rem + 0.00vw), 2.00rem);
+$space-xl: clamp(3.00rem, calc(3.00rem + 0.00vw), 3.00rem);
+$space-2xl: clamp(4.00rem, calc(4.00rem + 0.00vw), 4.00rem);
+$space-3xl: clamp(6.00rem, calc(6.00rem + 0.00vw), 6.00rem);
+
+/* One-up pairs */
+$space-3xs-2xs: clamp(0.25rem, calc(0.19rem + 0.40vw), 0.50rem);
+$space-2xs-xs: clamp(0.50rem, calc(0.44rem + 0.40vw), 0.75rem);
+$space-xs-s: clamp(0.75rem, calc(0.69rem + 0.40vw), 1.00rem);
+$space-s-m: clamp(1.00rem, calc(0.88rem + 0.80vw), 1.50rem);
+$space-m-l: clamp(1.50rem, calc(1.38rem + 0.80vw), 2.00rem);
+$space-l-xl: clamp(2.00rem, calc(1.76rem + 1.60vw), 3.00rem);
+$space-xl-2xl: clamp(3.00rem, calc(2.76rem + 1.60vw), 4.00rem);
+$space-2xl-3xl: clamp(4.00rem, calc(3.52rem + 3.20vw), 6.00rem);
+
+/* Custom pairs */
+$space-s-l: clamp(1.00rem, calc(0.66rem + 2.28vw), 2.25rem);
+
+// Grid sizes
+$grid-width-site: $base-size * 75;
+$grid-width-post: $base-size * 54;
+$grid-gutter: clamp(1rem, calc(0.50rem + 3.33vw),
+3.00rem);
+

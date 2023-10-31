@@ -1,3 +1,6 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 html {
   box-sizing: border-box;
 }
@@ -12,11 +15,10 @@ html {
 
 html,
 body {
-  @include font-primary;
+  @include mixins.font-family("Inter");
 
-  background-color: $black;
-  font-feature-settings: "liga" 1, "case" 1, "ss02" on;
-  font-feature-settings: 'ss03' on, 'ss05' on;
+  background-color: variables.$black;
+  font-feature-settings: "liga" 1, "case" 1, "zero" 1, "calt" 1;
   height: 100%;
   scroll-behavior: smooth;
   text-rendering: optimizelegibility;
@@ -37,8 +39,8 @@ summary {
 }
 
 ::selection {
-  background-color: $primary-20;
-  color: $white;
+  background-color: variables.$primary-20;
+  color: variables.$white;
 }
 
 a,
@@ -65,16 +67,16 @@ img {
 }
 
 .skip-to-content-link {
-   @include flex-center;
+   @include mixins.flex-center;
 
-   background-color: $black-20;
-   border-radius: $base-size * 1.5;
-   color: $white;
+   background-color: variables.$black-20;
+   border-radius: variables.$base-size * 1.5;
+   color: variables.$white;
    display: inline-flex;
-   height: $base-size * 2.5;
+   height: variables.$base-size * 2.5;
    inset: 0;
    margin: 0 auto;
-   max-width: $base-size * 14;
+   max-width: variables.$base-size * 14;
    position: absolute;
    transform: translateY(-100%);
    transition: transform 0.3s;

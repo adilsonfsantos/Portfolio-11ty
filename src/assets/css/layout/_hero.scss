@@ -1,89 +1,39 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 .hero {
-  @include grid;
-  @include grid-base;
+  @include mixins.grid;
 
   height: 100%;
   position: relative;
 
-  &__normal {
-    @include flex;
-    @include flex-column;
+  &__container {
+    width: 100vw;
+  }
 
-    grid-column: 1/-1;
-    justify-content: end;
+  &__normal {
+    @include mixins.flex;
+    @include mixins.flex-column;
+
+    justify-content: center;
     min-height: 96svh;
-    padding-bottom: $base-size * 0.5;
-    padding-top: $base-size * 3.5;
+    padding-bottom: variables.$base-size * 0.5;
+    padding-top: variables.$base-size * 4.5;
     z-index: 2;
 
-    @include viewport(default, landscape) {
-      min-height: 100vh;
-    }
-
-    @include viewport(xs-small) {
-      min-height: 96svh;
-    }
-
-    @include viewport(xs-medium) {
-      min-height: 96svh;
-    }
-
-    @include viewport(sm-small) {
-      grid-column: span 6;
-    }
-
-    @include viewport(sm-medium) {
-      grid-column: span 6;
-    }
-
-    @include viewport(md-small) {
-      grid-column: span 8;
-      padding-bottom: $base-size * 5.5;
-    }
-
     &--title {
-      @include typescale(scale-3, bold, headline);
+      @include mixins.typescale(scale-4, bold, title);
 
-      color: $white;
-
-      @include viewport(xs-small) {
-        @include typescale(scale-4, bold, headline);
-
-      }
-
-      @include viewport(xs-medium) {
-        @include typescale(scale-4, bold, headline);
-      }
-
-      @include viewport(xs-large) {
-        @include typescale(scale-5, bold, headline);
-      }
-
-      @include viewport(sm-medium) {
-        @include typescale(scale-6, bold, headline);
-      }
-
-      @include viewport(md-small) {
-        @include typescale(scale-6, bold, headline);
-      }
+      color: variables.$white;
     }
 
     &--subtitle {
-      @include typescale(scale-1, normal, text);
+      @include mixins.font-family("iA Writer");
+      @include mixins.typescale(scale-1, normal, text);
 
-      color: $white-80;
-
-      @include viewport(xs-small) {
-        @include typescale(scale-2, normal, text);
-      }
-
-      @include viewport(xs-medium) {
-        @include typescale(scale-2, normal, text);
-      }
-
-      @include viewport(sm-medium) {
-        @include typescale(scale-3, normal, text);
-      }
+      color: variables.$white-80;
+      margin-top: variables.$base-size * .5;
+      max-width: variables.$base-size * 40;
     }
   }
 }

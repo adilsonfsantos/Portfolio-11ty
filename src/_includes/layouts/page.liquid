@@ -1,16 +1,17 @@
 ---
 layout: default
 ---
-<article class="page grid--module" role="article">
-  {%- comment -%}
-    <div class="page__header">
-    <div class="page__header--container"><h1 class="page__header--title" itemprop="name headline">{{ title | escape }}</h1></div>
-  </div>
-  {%- endcomment -%}
-  <div class="page__content" itemprop="articleBody">
-    <div class="page__content--container">
-      {{ content }}
+<main id="main">
+  <div class="noise"></div>
+  <article class="page grid__module--blog" role="article">
+      <div class="page__header">
+      <div class="page__header--container"><h1 class="page__header--title" itemprop="name headline">{{ title | escape }}</h1></div>
     </div>
-  </div>
-</article>
-{% include "contact" %}
+    <div class="page__content" itemprop="articleBody">
+      <div class="page__content--container">
+        {{ content }}
+      </div>
+    </div>
+  </article>
+  {% include "contact" %}
+</main>
