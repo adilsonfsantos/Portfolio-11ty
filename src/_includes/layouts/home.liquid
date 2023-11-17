@@ -21,7 +21,7 @@ layout: default
           {% assign alt = post.data.description %}
           {% images card, alt, "card__picture", "card__picture--image" %}
           <div class="card__description">
-            <h3 class="card__description--title">{{ post.data.title | escape | addNbsp }}</h3>
+            <h3 class="card__description--title">{{ post.data.title | escape }}</h3>
             <span class="card__description--tag">
               {{ post.data.categories | join: " • " }}
             </span>
