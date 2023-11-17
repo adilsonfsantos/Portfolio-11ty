@@ -74,59 +74,63 @@ $grid-breakpoints-map: (
 $animation-standard: cubic-bezier(0.22, 1, 0.36, 1) !default;
 
 // Font Size
+// https://utopia.fyi/space/calculator?c=232,16,1.125,1240,20,1.125,6,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C5,s-l&g=s,l,xl,12
 $font-size: $base-size;
 $type-map: (
+  scale-6: (
+    size: clamp(2.0275rem, 1.9108rem + 0.8046vw, 2.5344rem),
+  ),
   scale-5: (
-    size: clamp(1.80rem, calc(1.43rem + 2.51vw), 3.43rem),
+    size: clamp(1.8019rem, 1.6982rem + 0.7153vw, 2.2525rem),
   ),
   scale-4: (
-    size: clamp(1.60rem, calc(1.34rem + 1.76vw), 2.75rem),
+    size: clamp(1.6019rem, 1.5097rem + 0.6359vw, 2.0025rem),
   ),
   scale-3: (
-    size: clamp(1.42rem, calc(1.25rem + 1.19vw), 2.20rem),
+    size: clamp(1.4238rem, 1.3418rem + 0.5655vw, 1.78rem),
   ),
   scale-2: (
-    size: clamp(1.27rem, calc(1.15rem + 0.76vw), 1.76rem),
+    size: clamp(1.2656rem, 1.1928rem + 0.502vw, 1.5819rem),
   ),
   scale-1: (
-    size: clamp(1.13rem, calc(1.06rem + 0.43vw), 1.41rem),
+    size: clamp(1.125rem, 1.0603rem + 0.4464vw, 1.4063rem),
   ),
   scale-0: (
-    size: clamp(1.00rem, calc(0.97rem + 0.19vw), 1.13rem),
+    size: clamp(1rem, 0.9425rem + 0.3968vw, 1.25rem),
   ),
   scale--1: (
-    size: clamp(0.89rem, calc(0.89rem + 0.02vw), 0.90rem),
+    size: clamp(0.8888rem, 0.8375rem + 0.3532vw, 1.1113rem),
   ),
   scale--2: (
-    size: clamp(0.72rem, calc(0.81rem + -0.11vw), 0.79rem),
+  size: clamp(0.79rem, 0.7445rem + 0.3135vw, 0.9875rem),
   ),
 );
-$space-3xs: clamp(0.25rem, calc(0.25rem + 0.00vw), 0.25rem);
-$space-2xs: clamp(0.50rem, calc(0.50rem + 0.00vw), 0.50rem);
-$space-xs: clamp(0.75rem, calc(0.75rem + 0.00vw), 0.75rem);
-$space-s: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
-$space-m: clamp(1.50rem, calc(1.50rem + 0.00vw), 1.50rem);
-$space-l: clamp(2.00rem, calc(2.00rem + 0.00vw), 2.00rem);
-$space-xl: clamp(3.00rem, calc(3.00rem + 0.00vw), 3.00rem);
-$space-2xl: clamp(4.00rem, calc(4.00rem + 0.00vw), 4.00rem);
-$space-3xl: clamp(6.00rem, calc(6.00rem + 0.00vw), 6.00rem);
+$space-3xs: clamp(0.25rem, 0.2356rem + 0.0992vw, 0.3125rem);
+$space-2xs: clamp(0.5rem, 0.4712rem + 0.1984vw, 0.625rem);
+$space-xs: clamp(0.75rem, 0.7068rem + 0.2976vw, 0.9375rem);
+$space-s: clamp(1rem, 0.9425rem + 0.3968vw, 1.25rem);
+$space-m: clamp(1.5rem, 1.4137rem + 0.5952vw, 1.875rem);
+$space-l: clamp(2rem, 1.8849rem + 0.7937vw, 2.5rem);
+$space-xl: clamp(3rem, 2.8274rem + 1.1905vw, 3.75rem);
+$space-2xl: clamp(4rem, 3.7698rem + 1.5873vw, 5rem);
+$space-3xl: clamp(5rem, 4.7123rem + 1.9841vw, 6.25rem);
 
-/* One-up pairs */
-$space-3xs-2xs: clamp(0.25rem, calc(0.19rem + 0.40vw), 0.50rem);
-$space-2xs-xs: clamp(0.50rem, calc(0.44rem + 0.40vw), 0.75rem);
-$space-xs-s: clamp(0.75rem, calc(0.69rem + 0.40vw), 1.00rem);
-$space-s-m: clamp(1.00rem, calc(0.88rem + 0.80vw), 1.50rem);
-$space-m-l: clamp(1.50rem, calc(1.38rem + 0.80vw), 2.00rem);
-$space-l-xl: clamp(2.00rem, calc(1.76rem + 1.60vw), 3.00rem);
-$space-xl-2xl: clamp(3.00rem, calc(2.76rem + 1.60vw), 4.00rem);
-$space-2xl-3xl: clamp(4.00rem, calc(3.52rem + 3.20vw), 6.00rem);
+// /* One-up pairs */
+// $space-3xs-2xs: clamp(0.25rem, calc(0.19rem + 0.40vw), 0.50rem);
+// $space-2xs-xs: clamp(0.50rem, calc(0.44rem + 0.40vw), 0.75rem);
+// $space-xs-s: clamp(0.75rem, calc(0.69rem + 0.40vw), 1.00rem);
+// $space-s-m: clamp(1.00rem, calc(0.88rem + 0.80vw), 1.50rem);
+// $space-m-l: clamp(1.50rem, calc(1.38rem + 0.80vw), 2.00rem);
+// $space-l-xl: clamp(2.00rem, calc(1.76rem + 1.60vw), 3.00rem);
+// $space-xl-2xl: clamp(3.00rem, calc(2.76rem + 1.60vw), 4.00rem);
+// $space-2xl-3xl: clamp(4.00rem, calc(3.52rem + 3.20vw), 6.00rem);
 
-/* Custom pairs */
-$space-s-l: clamp(1.00rem, calc(0.66rem + 2.28vw), 2.25rem);
+// /* Custom pairs */
+// $space-s-l: clamp(1.00rem, calc(0.66rem + 2.28vw), 2.25rem);
 
 // Grid sizes
 $grid-width-site: $base-size * 75;
-$grid-width-post: $base-size * 54;
+$grid-width-post: $base-size * 45;
 $grid-gutter: clamp(1rem, calc(0.50rem + 3.33vw),
 3.00rem);
 

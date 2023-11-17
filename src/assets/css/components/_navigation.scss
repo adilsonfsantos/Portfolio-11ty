@@ -1,40 +1,31 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
 .postnav {
-  @include grid;
-
   &--container {
-    @include grid;
+    @include mixins.grid;
 
-    padding: $base-size * 4 0;
+    padding: variables.$space-3xl 0;
   }
 
   &__link {
-    @include typescale(scale-1, bold, text);
-    @include font-position(right);
+    @include mixins.typescale(scale-3, normal, headline);
 
     color: $secondary-90;
-    margin-left: auto;
+
+    @include mixins.viewport(medium){
+      margin: auto;
+      text-align: center;
+    }
 
     &--content {
       color: $white;
     }
 
     &--title {
-      @include typescale(scale-2, bold, headline);
-      @include font-position(right);
+      @include typescale(scale-5, medium, headline);
 
       color: $white;
-    }
-
-    &--icon {
-      padding-left: $base-size;
-      position: relative;
-    }
-
-    &--forward {
-      display: block;
-      fill: $secondary;
-      height: $base-size * 1.5;
-      width: $base-size * 1.5;
     }
   }
 }

@@ -1,33 +1,26 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
 .page {
   @include grid;
 
-  padding-bottom: $base-size * 5;
-  padding-top: $base-size * 3.5;
+  padding-top: variables.$space-3xl;
 
   &__header {
-    @include grid;
-
-    &--container {
-      padding-bottom: $base-size * 2;
-      padding-top: $base-size * 3;
-    }
+    padding-top: variables.$space-xl;
+    margin-bottom: variables.$space-l;
 
     &--title {
-      @include typescale(scale-3, bold, headline);
+      @include typescale(scale-6, medium, headline);
 
       color: $white;
-      margin-bottom: $base-size * 0.5;
+      margin: 0;
     }
   }
 
   &__content {
-    @include grid;
-
     &--container {
       @include grid;
-
-      grid-column: 2;
-      row-gap: $base-size;
     }
 
     .headline-link {
@@ -35,21 +28,13 @@
       text-decoration: underline;
     }
 
-    h1 {
-      @include typescale(scale-2, bold, headline);
+    h1, h2, h3, h4 {
+      @include typescale(scale-4, medium, headline);
 
       color: $white-90;
-      margin-top: $base-size * 3;
-
-    }
-
-    h2,
-    h3,
-    h4 {
-      @include typescale(scale-2, bold, headline);
-
-      color: $white-90;
-      margin-top: $base-size * 3;
+      margin-top: variables.$space-2xl;
+      margin-bottom: variables.$space-xs;
+      width: 100%;
 
     }
 
@@ -60,10 +45,15 @@
       color: $white-80;
     }
 
+    p + p {
+      margin-top: variables.$space-xs;
+    }
+
     ul,
     ol {
-      margin-bottom: $base-size * 1.5;
-      margin-left: $base-size;
+      @include typescale(scale-0, normal, text);
+
+      padding-left: variables.$space-xs;
     }
 
     li {
@@ -71,15 +61,14 @@
       @include font-family("iA Writer");
 
       color: $white-80;
-      margin-bottom: $base-size * 0.5;
 
       > ul {
-        margin: ($base-size * 0.5);
+        margin:  variables.$space-2xs;
       }
     }
 
     li li:not(:last-child) {
-      margin-bottom: $base-size * 0.75;
+      margin-bottom: variables.$space-2xs;
     }
   }
 }

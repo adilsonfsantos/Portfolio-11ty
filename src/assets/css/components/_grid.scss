@@ -4,7 +4,7 @@
   .bg {
     background: linear-gradient(to right, variables.$black-10 1px, transparent 1px),
       linear-gradient(to bottom, variables.$black-10 1px, transparent 1px);
-    background-size: variables.$base-size * 1.5 variables.$base-size * 1.5;
+    background-size: 1.5em 1.5em;
     grid-column: 1/-1;
     inset: 0;
     position: absolute;

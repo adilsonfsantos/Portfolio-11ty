@@ -1,7 +1,7 @@
 .video-responsive {
   grid-column: 1/-1;
   height: 0;
-  margin-bottom: $base-size * 2;
+  margin-bottom: variables.$space-m;
   overflow: hidden;
   padding-bottom: 56.25%;
   position: relative;

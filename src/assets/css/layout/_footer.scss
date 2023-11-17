@@ -26,10 +26,11 @@
     padding: (variables.$base-size * 2) 0;
 
     &--copyright {
+      @include mixins.font-family("iA Writer");
       @include mixins.center-vertical;
-      @include mixins.typescale(scale-0, normal, text);
+      @include mixins.typescale(scale--1, normal, text);
 
-      color: variables.$black-30;
+      color: variables.$white-80;
       margin: (variables.$base-size) 0;
     }
 
@@ -45,18 +46,21 @@
     list-style-type: none;
 
     li {
-      margin: (variables.$base-size * 0.5) 0;
+      @include mixins.font-family("iA Writer");
+
+      margin: variables.$space-2xs 0;
+      text-transform: uppercase;
     }
 
     > li:not(:last-child) {
-      margin-right: variables.$base-size;
+      margin-right: variables.$space-m;
     }
 
     a {
-      @include mixins.typescale(scale-0, bold, text);
+      @include mixins.typescale(scale--1, normal, text);
 
-      color: variables.$black-30;
-      padding: 0.5rem 0;
+      color: variables.$white-80;
+      padding: variables.$space-2xs 0;
     }
 
     a:hover,

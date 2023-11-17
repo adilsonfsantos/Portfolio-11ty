@@ -4,7 +4,6 @@
   &__module {
     &--site {
       display: grid;
-      gap: variables.$grid-gutter;
       max-width: variables.$grid-width-site;
       padding-inline: variables.$grid-gutter;
       margin-inline: auto;
@@ -12,7 +11,6 @@
 
     &--blog {
       display: grid;
-      gap: variables.$grid-gutter;
       max-width: variables.$grid-width-post;
       padding-inline: variables.$grid-gutter;
       margin-inline: auto;

@@ -6,6 +6,8 @@
 }
 
 .projetos {
+  gap: variables.$grid-gutter;
+
   hr {
     height: 1px;
     background-color: variables.$black-10;
@@ -14,28 +16,27 @@
 
   &__header {
     &--title {
-      @include mixins.typescale(scale-2, bold, headline);
+      @include mixins.typescale(scale-4, medium, headline);
 
       color: variables.$white;
     }
 
     &--subtitle {
-      @include mixins.typescale(scale-1, normal, text);
+      @include mixins.typescale(scale-0, normal, text);
       @include mixins.font-family("iA Writer");
 
-      color: variables.$black-30;
+      color: variables.$white-80;
     }
   }
 
   &__principais {
     @include mixins.grid;
 
-    gap: variables.$base-size * 2;
+    gap: variables.$space-l;
     grid-auto-rows: auto;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
     @include mixins.viewport(xsmall) {
-      gap: variables.$base-size * 2;
       grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
     }
 

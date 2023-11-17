@@ -17,22 +17,23 @@
 
     justify-content: center;
     min-height: 96svh;
-    padding-bottom: variables.$base-size * 0.5;
-    padding-top: variables.$base-size * 4.5;
+    padding-bottom: variables.$space-xs;
+    padding-top: variables.$space-2xl;
     z-index: 2;
 
     &--title {
-      @include mixins.typescale(scale-4, bold, title);
+      @include mixins.typescale(scale-6, medium, title);
 
       color: variables.$white;
+      margin: 0;
     }
 
     &--subtitle {
       @include mixins.font-family("iA Writer");
-      @include mixins.typescale(scale-1, normal, text);
+      @include mixins.typescale(scale-0, normal, text);
 
       color: variables.$white-80;
-      margin-top: variables.$base-size * .5;
+      margin-top: variables.$space-xs;
       max-width: variables.$base-size * 40;
     }
   }

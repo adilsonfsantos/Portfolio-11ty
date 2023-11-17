@@ -70,13 +70,13 @@ img {
    @include mixins.flex-center;
 
    background-color: variables.$black-20;
-   border-radius: variables.$base-size * 1.5;
+   border-radius: variables.$space-m;
    color: variables.$white;
    display: inline-flex;
-   height: variables.$base-size * 2.5;
+   height: variables.$space-l;
    inset: 0;
    margin: 0 auto;
-   max-width: variables.$base-size * 14;
+   max-width: 25ch;
    position: absolute;
    transform: translateY(-100%);
    transition: transform 0.3s;

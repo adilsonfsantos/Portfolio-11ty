@@ -35,16 +35,15 @@
     width: 100%;
 
     &--title {
-      @include mixins.typescale(scale-2, bold, headline);
+      @include mixins.typescale(scale-2, medium, headline);
 
       color: variables.$white;
-      line-height: 125%;
-      margin-bottom: variables.$base-size;
+      margin-bottom: variables.$space-m;
     }
 
     &--tag {
       @include mixins.font-family("iA Writer");
-      @include mixins.typescale(scale-0, normal, text);
+      @include mixins.typescale(scale--2, normal, text);
 
       color: variables.$white-80;
     }

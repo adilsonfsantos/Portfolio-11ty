@@ -1,40 +1,39 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
 .post {
   @include grid;
 
   background: $black;
-  padding-top: $base-size * 3.5;
+  padding-top: variables.$space-3xl;
 
   &__header {
     min-height: 55vh;
+    padding-top: variables.$space-xl;
 
     &--container {
-      padding-top: $base-size * 3;
-      padding-bottom: $base-size * 2;
-
-      @include viewport(xsmall) {
-        padding-top: $base-size * 6;
-      }
+      margin-bottom: variables.$space-xl;
     }
 
     &--title {
-      @include typescale(scale-3, bold, headline);
+      @include typescale(scale-6, medium, headline);
 
       color: $white;
-      margin-bottom: $base-size * 0.5;
+      margin: 0;
+      max-width: 720px;
+
     }
 
     &--description {
       @include typescale(scale-0, normal, text);
 
       color: $white-80;
+      max-width: 720px;
     }
   }
 
-
-
   &__hero {
     @include grid;
-
 
     &--container {
       @include grid;
@@ -46,41 +45,30 @@
   &__info {
     @include grid;
 
-    gap: $base-size * 1.5;
+    gap: variables.$space-xl;
     grid-template-columns: repeat(auto-fit, minmax(160px, auto));
-    margin: $base-size * 2 0;
-
+    margin-bottom: variables.$space-xl;
   }
 
   &__info--title {
-    @include typescale(scale-0, bold, headline);
+    @include typescale(scale--2, medium, text);
 
+    border-top: solid $black-10 1px;
     color: $white;
-    margin-bottom: $base-size * 0.25;
-  }
-
-  &__info--list {
-    margin-bottom: $base-size * 1.5;
-    margin-left: $base-size;
+    padding-top: variables.$space-s;
+    text-transform: uppercase
   }
 
   &__info--text {
-    @include typescale(scale-0, normal, text);
+    @include typescale(scale--1, normal, text);
+    @include mixins.font-family("iA Writer");
 
     color: $white-80;
   }
 
   &__splash {
-    @include grid;
-
-    &--container {
-      @include grid;
-
-    }
-
     &--picture {
       @include center-horizontal;
-      @include aspect-ratio(1920, 960);
 
       overflow: hidden;
       position: relative;
@@ -91,25 +79,26 @@
       color: $white;
       height: auto;
       max-width: none;
-      position: absolute;
-      top: 0;
       width: 100%;
-
     }
   }
 
-  &__content {
-    @include grid;
+  hr {
+    border: none;
+    background-color: variables.$black-10;
+    height: 1px;
+    margin-top: variables.$space-xl;
+    }
 
-  :is(h1, h2, h3, h4, h5, h6, p, blockquote, ul, ol, li){
-      max-width: 640px;
+  &__content {
+    h1, h2, h3, h4, h5, h6, p, blockquote, ul, ol, li {
+      max-width: 720px;
       margin: auto;
+      width: 100%;
     }
 
     &--container {
       @include grid;
-
-      row-gap: $base-size;
     }
 
     @include viewport(large) {
@@ -126,15 +115,24 @@
     h2,
     h3,
     h4 {
-      @include typescale(scale-1, bold, headline);
+      @include typescale(scale-4, medium, headline);
 
       color: $white-90;
-      margin-top: $base-size * 2;
+      margin-top: variables.$space-2xl;
+      margin-bottom: variables.$space-xs;
+      width: 100%;
+    }
+
+    &__photo {
+      @include center-horizontal;
+
+      max-width: $page-width;
+      overflow: hidden;
       width: 100%;
 
-      // @include viewport(xs-small) {
-      //   @include typescale(scale-3, bold, headline);
-      // }
+      + p {
+        margin-bottom: variables.$space-xl;
+      }
     }
 
     p {
@@ -143,21 +141,36 @@
 
       color: $white-80;
 
+      + p {
+        margin-top: variables.$space-xs;
+      }
 
-      // @include viewport(md-medium) {
-      //   @include typescale(scale-2, normal, text);
-      // }
+      + picture {
+        margin-top: variables.$space-xl;
+      }
     }
+
+    picture + p {
+        margin-top: variables.$space-xl;
+    }
+
+    picture + picture {
+        margin-top: variables.$space-xl;
+      }
 
     ul,
     ol {
       @include typescale(scale-0, normal, text);
 
-      padding-left: $base-size;
+      padding-left: variables.$space-xs;
+    }
+
+    p + ul, ol {
+        margin-top: variables.$space-xs;
     }
 
     li > ul {
-      margin: ($base-size * 0.5);
+      margin: variables.$space-2xs;
     }
 
     li {
@@ -168,45 +181,32 @@
     }
 
     li:not(:last-child) {
-      margin-bottom: $base-size * 0.5;
+      margin-bottom: variables.$space-2xs;
     }
   }
 
   blockquote {
     border-left: 2px solid $primary;
-    padding-left: $base-size * 2;
-    margin: $base-size * 2 auto;
+    padding-left: variables.$space-m;
+    margin: variables.$space-m auto;
 
     p {
-      @include typescale(scale-1, normal, text);
+      @include typescale(scale-1, bold, text);
 
       color: $white-90;
       margin: 0;
     }
 
     cite {
-      @include typescale(scale-0, bold, headline);
+      @include typescale(scale-0, normal, headline);
 
       font-style: normal;
       color: $white-80;
-      margin-top: $base-size;
+      margin-top: variables.$space-xs;
     }
-  }
-
-  &__photo {
-    @include center-horizontal;
-
-    max-width: 1280px;
-    overflow: hidden;
-    width: 100%;
   }
 
   &__photo > img {
     height: auto;
   }
-
-  // span {
-  //   grid-column: 1/-1;
-  // }
-
 }

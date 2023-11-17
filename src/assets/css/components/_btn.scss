@@ -2,7 +2,7 @@
 @use "../abstracts/variables";
 
 .btn {
-  @include mixins.typescale(scale-1, bold, text);
+  @include mixins.typescale(scale-1, medium, text);
   @include mixins.font-position(center);
   @include mixins.transition(background, 0.4s, variables.$animation-standard);
 

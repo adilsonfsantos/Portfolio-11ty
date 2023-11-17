@@ -44,21 +44,6 @@
   display: inline-block;
 }
 
-// @mixin grid-base() {
-  // @each $name, $width, $column, $margin in $grid-breakpoints-map {
-  //   $grid-margin: #{map.get($grid-breakpoints-map, $name, margin)};
-
-  //   @if $name == "default" {
-  //     grid-template-columns: minmax(5vw, 1fr) minmax(0, $page-width) minmax(5vw, 1fr);
-  //   } @else {
-  //     @include viewport($name) {
-  //       grid-template-columns: minmax($grid-margin, auto) minmax(0, $page-width) minmax($grid-margin, auto);
-  //     }
-  //   }
-  // }
-
-// }
-
 @mixin grid-image {
   grid-template-columns:
     minmax(5vw, 1fr) minmax(0, 1024px) minmax(
@@ -67,21 +52,6 @@
     );
 }
 
-// @mixin layout-grid($size, $column: column, $gap: gap) {
-//   @if not(index(map-keys($grid-breakpoints-map), $size)) {
-//     @warn "Atenção: `#{size}` não é um breakpoint válido.";
-//   } @else {
-//     column-gap: #{map.get($grid-breakpoints-map, $size, $gap)};
-// grid-template-columns:
-//       repeat(
-//         #{map.get($grid-breakpoints-map, $size, $column)},
-//         minmax(0, 1fr)
-//       );
-//   }
-
-
-
-// }
 
 @mixin grid-post {
   grid-template-columns: minmax(0, 680px);
@@ -129,10 +99,12 @@
   font-size: #{map.get(variables.$type-map, $size, size)};
 
   @if $weight == "bold" {
+    font-weight: 600;
+  } @else if $weight == "medium"{
     font-weight: 500;
   } @else if $weight == "normal" {
     font-weight: 400;
-  } @else if $weight == "light"{
+  } @else if $weight == "light" {
     font-weight: 300;
   } @else{
     @warn " Atenção: `#{$weight}` não é um valor válido.";
@@ -143,7 +115,7 @@
   } @else if $line == "headline" {
     line-height: 120%;
   } @else if $line == "text" {
-    line-height: 150%;
+    line-height: 160%;
   } @else {
     @warn " atenção: `#{$line}` não é um valor válido.";
   }

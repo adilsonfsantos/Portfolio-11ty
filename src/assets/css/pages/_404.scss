@@ -19,7 +19,7 @@ body {
     justify-content: center;
 
     &--title {
-      @include typescale(scale-4, bold, headline);
+      @include typescale(scale-4, medium, headline);
       @include font-position(center);
 
       color: $white;

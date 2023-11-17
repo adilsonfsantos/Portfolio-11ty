@@ -31,12 +31,12 @@
     &--logo > svg {
       display: inherit;
       fill: currentcolor;
-      height: variables.$base-size * 1.25;
+      height: 18px;
       margin: variables.$base-size 0;
       width: auto;
 
       @include mixins.viewport(3xlarge) {
-        height: variables.$base-size * 1.5;
+        height: 24px;
       }
     }
 
@@ -54,8 +54,12 @@
 
 .nav {
   &__link {
-    @include mixins.typescale(scale-0, bold, text);
+    @include mixins.typescale(scale-0, medium, text);
     @include mixins.transition(color, 0.4s, variables.$animation-standard);
+
+    @include mixins.viewport(small) {
+        @include mixins.typescale(scale--1, medium, text);
+    }
 
     color: variables.$white-80;
     line-height: 1.2;
@@ -66,12 +70,8 @@
       color: variables.$white;
     }
 
-    &:not(:last-child) {
-      margin-right: variables.$base-size;
-
-      @include mixins.viewport(xsmall) {
-        margin-right: variables.$base-size * 2;
-      }
+    &:first-child {
+      margin-right: variables.$space-xs;
     }
 
     &--active {
