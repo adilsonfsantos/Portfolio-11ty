@@ -19,7 +19,7 @@ layout: default
            <div class="noise"></div>
           {% assign card = post.data.image | prepend : "src" %}
           {% assign alt = post.data.description %}
-          {% images card, alt, "card__picture", "card__picture--image", "(min-width: 1260px) 470px, (min-width: 620px) calc(42.1vw - 52px), calc(92.33vw - 64px), 100vw" %}
+          {% images card, alt, "card__picture", "card__picture--image", "card" %}
           <div class="card__description">
             <h3 class="card__description--title">{{ post.data.title | escape }}</h3>
             <span class="card__description--tag">

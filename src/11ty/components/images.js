@@ -5,15 +5,18 @@ async function images(
   alt,
   classParent,
   classDescendent,
-  sizes = "(min-width: 1210px) 1104px, 100vw"
+  sizes
 ) {
   if (alt === undefined || typeof alt !== "string") {
     // You bet we throw an error on missing alt (alt="" works okay)
     throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
   }
 
+  let newSizes;
+  let lowSrc;
+
   let metadata = await Image(src, {
-    widths: [320, 480, 640, 768, 992, 1104, 1200, 1920],
+    widths: [320, 480, 768, 1104, 1650, 1920],
     formats: ["webp", "jpeg"],
     sharpOptions: {
       ChromaSubsampling: "4:4:4",
@@ -24,8 +27,16 @@ async function images(
     outputDir: "dist/assets/images",
   });
 
-  let lowsrc = metadata.jpeg[0];
-  let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
+    if (sizes === "card") {
+    newSizes =  "(min-width: 1260px) 470px, (min-width: 620px) calc(42.1vw - 52px), calc(92.33vw - 64px), 100vw";
+    lowSrc = metadata.jpeg[1];
+  } else if ( sizes === "banner") {
+    newSizes =  "(min-width: 1200px) 1104px, 87.5vw";
+    lowSrc = metadata.jpeg[2];
+  } else {
+    newSizes =  "(min-width: 1200px) 1104px, 87.5vw";
+    lowSrc = metadata.jpeg[2];
+  }
 
   return `<picture class="${classParent}">
     ${Object.values(metadata)
@@ -34,14 +45,14 @@ async function images(
           imageFormat[0].sourceType
         }" srcset="${imageFormat
           .map((entry) => entry.srcset)
-          .join(", ")}" sizes="${sizes}">`;
+          .join(", ")}" sizes="${newSizes}">`;
       })
       .join("\n")}
       <img
         class="${classDescendent}"
-        src="${lowsrc.url}"
-        width="${highsrc.width}"
-        height="${highsrc.height}"
+        src="${lowSrc.url}"
+        width="${lowSrc.width}"
+        height="${lowSrc.height}"
         alt="${alt}"
         loading="lazy"
         decoding="async">
