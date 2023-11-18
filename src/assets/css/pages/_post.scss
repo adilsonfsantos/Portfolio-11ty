@@ -68,10 +68,7 @@
 
   &__splash {
     &--picture {
-      @include center-horizontal;
-
       overflow: hidden;
-      position: relative;
       width: 100%;
     }
 
