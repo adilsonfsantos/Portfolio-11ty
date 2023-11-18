@@ -30,13 +30,10 @@ permalink: "/projetos/{{page.fileSlug}}/"
             <h3 class="post__info--title">Data</h3>
             <p class="post__info--text">{{ page.date | date: "%Y" }}</p>
           </div>
-          {%- if showproject == true -%}
-          {% include "project" %}
-          {% endif %}
       </div>
       <div class="post__splash--container">
         {% assign picture = image | prepend : "src" %}
-        {% images picture, title, "post__splash--picture", "post__splash--image" %}
+        {% images picture, title, "post__splash--picture", "post__splash--image", "(min-width: 1200px) 1104px, 87.5vw" %}
       </div>
     </div>
     <div class="post__content" itemprop="articleBody">

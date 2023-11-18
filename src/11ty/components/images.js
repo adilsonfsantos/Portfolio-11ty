@@ -5,7 +5,7 @@ async function images(
   alt,
   classParent,
   classDescendent,
-  sizes = "100vw"
+  sizes = "(min-width: 1210px) 1104px, 87.5vw"
 ) {
   if (alt === undefined || typeof alt !== "string") {
     // You bet we throw an error on missing alt (alt="" works okay)
@@ -13,7 +13,7 @@ async function images(
   }
 
   let metadata = await Image(src, {
-    widths: [320, 480, 768, 992, 1200, 1920],
+    widths: [320, 480, 640, 768, 992, 1200, 1920],
     formats: ["webp", "jpeg"],
     sharpOptions: {
       ChromaSubsampling: "4:4:4",
