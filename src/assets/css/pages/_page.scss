@@ -71,4 +71,11 @@
       margin-bottom: variables.$space-2xs;
     }
   }
+
+  hr {
+    border: none;
+    background-color: variables.$black-10;
+    height: 1px;
+    margin-top: variables.$space-xl;
+  }
 }
