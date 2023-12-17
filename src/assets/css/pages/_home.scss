@@ -1,0 +1,55 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.container{
+  position: relative;
+}
+
+.projetos {
+  gap: variables.$grid-gutter;
+
+  hr {
+    height: 1px;
+    background-color: variables.$black-10;
+    border: none;
+  }
+
+  &__header {
+    &--title {
+      @include mixins.typescale(scale-4, medium, headline);
+
+      color: variables.$white;
+    }
+
+    &--subtitle {
+      @include mixins.typescale(scale-0, normal, text);
+      @include mixins.font-family("iA Writer");
+
+      color: variables.$white-80;
+    }
+  }
+
+  &__principais {
+    @include mixins.grid;
+
+    gap: variables.$space-l;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    @include mixins.viewport(xsmall) {
+      grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+    }
+
+    @include mixins.viewport(large) {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    @include mixins.viewport(xlarge) {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+
+    @include mixins.viewport(3xlarge) {
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    }
+  }
+}

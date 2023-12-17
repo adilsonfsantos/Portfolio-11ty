@@ -3,24 +3,20 @@
   publish = "dist"
 
 [[headers]]
-  for = "/"
+  for = "/*"
   [headers.values]
     Cache-Control = "no-cache"
-    Content-Security-Policy = "default-src 'none';script-src 'self' 'unsafe-inline'; img-src 'self'; connect-src 'self'; font-src 'self'; style-src 'self' 'unsafe-inline'; manifest-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests;  block-all-mixed-content; disown-opener; report-to default; report-uri 'https://adilsonsantos.report-uri.com/r/d/csp/enforce'; prefetch-src 'self'; connect-src 'self'; frame-src 'none'"
-    Feature-Policy = "vibrate 'none'; geolocation 'none'; midi 'none'; notifications 'none'; push 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; payment 'none'"
+    Content-Security-Policy = "default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; connect-src 'self'; font-src 'self'; manifest-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'; prefetch-src 'self'; frame-src 'self'; upgrade-insecure-requests; block-all-mixed-content; require-trusted-types-for 'script'"
+    Cross-Origin-Opener-Policy = "same-origin; report-to='default'"
+    Cross-Origin-Embedder-Policy = "require-corp; report-to='default'"
+    Cross-Origin-Resource-Policy = "same-site"
+    Expect-CT = "max-age=2592000, report-uri=https://adilsonsantos.report-uri.com/r/d/ct/enforce"
+    Permissions-Policy = "vibrate=(none), geolocation=(none), midi=(none), notifications=(none), push=(none), sync-xhr=(none), microphone=(none), camera=(none), magnetometer=(none), gyroscope=(none), speaker=(none), payment=(none)"
     Referrer-Policy = "no-referrer"
+    Report-To = """{"group":"default","max_age":31536000,"endpoints":[{"url":"https://adilsonsantos.report-uri.com/a/d/g"}],"include_subdomains":true}"""
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-
-
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Expect-CT = "max-age=2592000, report-uri=https://adilsonsantos.report-uri.com/r/d/ct/enforce"
-    Report-To = """{"group":"default","max_age":31536000,"endpoints":[{"url":"https://adilsonsantos.report-uri.com/a/d/g"}],"include_subdomains":true}"""
     X-Content-Type-Options = "nosniff"
 
 [[headers]]
@@ -30,7 +26,7 @@
     Cache-Control = "no-cache"
 
 [[headers]]
-  for = "/*.(apng|bmp|ico|jpeg|jpg|png|svg|webp)"
+  for = "/*.(apng|avif|bmp|ico|jpeg|jpg|png|svg|webp)"
   [headers.values]
     Cache-Control = "public, max-age=31536000"
 
@@ -91,3 +87,23 @@ for = "/*.css"
 
 [context.branch-deploy.environment]
   NODE_ENV = "development"
+
+
+[[plugins]]
+  package = "netlify-plugin-submit-sitemap"
+	[plugins.inputs]
+
+	# The base url of your site (optional, default = main URL set in Netlify)
+	baseUrl = "https://adilsonsantos.netlify.app"
+
+	# Path to the sitemap URL (optional, default = /sitemap.xml)
+	sitemapPath = "/sitemap.xml"
+
+	# Time in seconds to not submit the sitemap after successful submission
+	ignorePeriod = 0
+
+	# Enabled providers to submit sitemap to (optional, default = 'google', 'yandex'). Possible providers are currently only 'google', 'yandex'.
+	providers = [
+		"google",
+		"yandex"
+	]

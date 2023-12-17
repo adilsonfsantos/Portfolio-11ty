@@ -34,12 +34,12 @@ Realizar um redesign da logo limitado pelas seguintes regras:
 
 Desenvolver um grid utilizando a proporção áurea para adaptar a logo e seus elementos.
 
-{% picture "/assets/images/estudio16-grid.png", "Grid de construção para os elementos da marca", "post__photo", "post__photo--image" %}
+{% images "src/assets/images/estudio16-grid.png", "Grid de construção para os elementos da marca", "post__photo", "post__photo--image" %}
 
 E adaptar a paleta de cores para uma mais agradável e harmonica.
 
-{% picture "/assets/images/estudio16-paleta.png", "Paleta de cores da nova logo", "post__photo", "post__photo--image" %}
+{% images "src/assets/images/estudio16-paleta.png", "Paleta de cores da nova logo", "post__photo", "post__photo--image" %}
 
-{% picture "/assets/images/estudio16-comparacao.png", "Comparação da entre a versão de 2016 e a de 2020", "post__photo", "post__photo--image" %}
+{% images "src/assets/images/estudio16-comparacao.png", "Comparação da entre a versão de 2016 e a de 2020", "post__photo", "post__photo--image" %}
 
-{% picture "/assets/images/estudio16-mono.png", "Versões monocromáticas da logo", "post__photo", "post__photo--image" %}
+{% images "src/assets/images/estudio16-mono.png", "Versões monocromáticas da logo", "post__photo", "post__photo--image" %}

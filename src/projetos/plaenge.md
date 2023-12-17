@@ -56,12 +56,12 @@ Com os wireframes desenvolvidos pela Francianne e utilizando referencias de marc
 
 Para a composição do layout utilizamos como referência a Golden Hour, que diretamente remete ao horário da volta para casa, a satisfação, a sensação de dever cumprido e o momento de recuperar energias.
 
-{% picture "/assets/images/plaenge-guide.png", "Fontes e paleta de cores do layout.", "post__photo", "post__photo--image" %}
+{% images "src/assets/images/plaenge-guide.png", "Fontes e paleta de cores do layout.", "post__photo", "post__photo--image" %}
 
 A paleta de cores utilizada busca trazer calor e conforto mantendo o foco na sofisticação, a tipografia busca manter o conceito de exclusividade com a fonte principal geométrica sem serifa.
 
 O uso de espaço foi generosamente utilizado para garantir o respiro e a elegância dos elementos, ao mesmo tempo mantendo a conforto proposto para o layout.
 
-{% picture "/assets/images/plaenge-full.png", "Imagem da home.", "post__photo", "post__photo--image" %}
+{% images "src/assets/images/plaenge-full.png", "Imagem da home.", "post__photo", "post__photo--image" %}
 
-{% picture "/assets/images/plaenge-app-outro.png", "Diversas telas do app.", "post__photo", "post__photo--image" %}
+{% images "src/assets/images/plaenge-app-outro.png", "Diversas telas do app.", "post__photo", "post__photo--image" %}

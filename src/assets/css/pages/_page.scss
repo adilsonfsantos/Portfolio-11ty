@@ -1,0 +1,81 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.page {
+  @include grid;
+
+  padding-top: variables.$space-3xl;
+
+  &__header {
+    padding-top: variables.$space-xl;
+    margin-bottom: variables.$space-l;
+
+    &--title {
+      @include typescale(scale-6, medium, headline);
+
+      color: $white;
+      margin: 0;
+    }
+  }
+
+  &__content {
+    &--container {
+      @include grid;
+    }
+
+    .headline-link {
+      color: $black-30;
+      text-decoration: underline;
+    }
+
+    h1, h2, h3, h4 {
+      @include typescale(scale-4, medium, headline);
+
+      color: $white-90;
+      margin-top: variables.$space-2xl;
+      margin-bottom: variables.$space-xs;
+      width: 100%;
+
+    }
+
+    p {
+      @include typescale(scale-0, normal, text);
+      @include font-family("iA Writer");
+
+      color: $white-80;
+    }
+
+    p + p {
+      margin-top: variables.$space-xs;
+    }
+
+    ul,
+    ol {
+      @include typescale(scale-0, normal, text);
+
+      padding-left: variables.$space-xs;
+    }
+
+    li {
+      @include typescale(scale-0, normal, text);
+      @include font-family("iA Writer");
+
+      color: $white-80;
+
+      > ul {
+        margin:  variables.$space-2xs;
+      }
+    }
+
+    li li:not(:last-child) {
+      margin-bottom: variables.$space-2xs;
+    }
+  }
+
+  hr {
+    border: none;
+    background-color: variables.$black-10;
+    height: 1px;
+    margin-top: variables.$space-xl;
+  }
+}

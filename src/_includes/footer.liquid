@@ -1,19 +1,21 @@
 <footer class="footer grid--base">
-    <div class="grid--module">
-      <div class="footer__container">
-        <div class="footer__container--copyright">
-          <p>©2019 &ndash; <span id="currentYear"></span><noscript>{{ "now" | date: "%Y" }}</noscript> {{site.title}}<br>Todos os direitos reservados.</p>
+  <div class="footer__gradient"></div>
+  <div class="noise"></div>
+  <div class="footer__container grid__module--site">
+      <div class="footer__content">
+        <div class="footer__content--copyright">
+          <p>&copy;2019 &ndash; {% year %} {{site.title}}<br>Todos os direitos reservados.</p>
         </div>
-        <div class="footer__container--spacer"></div>
-        <ul class="footer__container--social">
+        <div class="footer__content--spacer"></div>
+        <ul class="footer__content--social">
           {% if site.author.email == blank %}
             {% else %}
             <li>
-              <a href="mailto:{{ site.author.email | base64 }}">Email</a>
+              <a href="mailto:{{ site.author.email }}">Email</a>
             </li>
           {% endif %}
-          {%- for link in social.links -%}
-          <li><a href="{{ link.url }}" rel="noopener">{{link.name}}</a></li>
+          {%- for link in site.social -%}
+          <li><a href="{{ link.url }}" rel="noopener" target="_blank">{{link.name}}</a></li>
           {%- endfor -%}
         </ul>
       </div></div>

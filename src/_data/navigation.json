@@ -1,6 +1,12 @@
 {
   "nav": [
-    { "name": "Projetos", "url": "/" },
-    { "name": "Sobre", "url": "/sobre/" }
+    {
+      "name": "Projetos",
+      "url": "/"
+    },
+    {
+      "name": "Sobre",
+      "url": "/sobre/"
+    }
   ]
 }

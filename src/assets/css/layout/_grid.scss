@@ -1,0 +1,19 @@
+@use "../abstracts/variables";
+
+.grid {
+  &__module {
+    &--site {
+      display: grid;
+      max-width: variables.$grid-width-site;
+      padding-inline: variables.$grid-gutter;
+      margin-inline: auto;
+    }
+
+    &--blog {
+      display: grid;
+      max-width: variables.$grid-width-post;
+      padding-inline: variables.$grid-gutter;
+      margin-inline: auto;
+    }
+  }
+}

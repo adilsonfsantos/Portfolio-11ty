@@ -1,0 +1,81 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.header {
+  @include mixins.grid;
+
+  background-color: variables.$black;
+  border-bottom: 1px solid variables.$black-10;
+  position: fixed;
+  width: 100vw;
+  z-index: 4;
+
+  @supports (backdrop-filter: none) {
+    background-color: rgba(variables.$black, .8);
+    backdrop-filter: saturate(180%) blur(variables.$base-size * 0.25);
+  }
+
+  &__container {
+    width: 100%;
+  }
+
+  &__content {
+    @include mixins.flex;
+
+    align-items: center;
+
+    &--logo {
+      color: variables.$white;
+    }
+
+    &--logo > svg {
+      display: inherit;
+      fill: currentcolor;
+      height: 18px;
+      margin: variables.$base-size 0;
+      width: auto;
+
+      @include mixins.viewport(3xlarge) {
+        height: 24px;
+      }
+    }
+
+    &--spacer {
+      flex-grow: 1;
+    }
+
+    &__nav {
+      @include mixins.flex;
+
+      align-self: center;
+    }
+  }
+}
+
+.nav {
+  &__link {
+    @include mixins.typescale(scale-0, medium, text);
+    @include mixins.transition(color, 0.4s, variables.$animation-standard);
+
+    @include mixins.viewport(small) {
+        @include mixins.typescale(scale--1, medium, text);
+    }
+
+    color: variables.$white-80;
+    line-height: 1.2;
+    padding: variables.$base-size 0;
+
+    &:hover,
+    &:focus {
+      color: variables.$white;
+    }
+
+    &:first-child {
+      margin-right: variables.$space-xs;
+    }
+
+    &--active {
+      color: variables.$white;
+    }
+  }
+}

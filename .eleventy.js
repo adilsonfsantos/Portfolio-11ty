@@ -1,31 +1,45 @@
 "use-strict";
 const markdownIt = require("markdown-it");
 const markdownItAttrs = require("markdown-it-attrs");
-const slugify = require("slugify");
 const xmlFiltersPlugin = require("eleventy-xml-plugin");
 const mila = require("markdown-it-link-attributes");
+const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
+const eleventySass = require("@11tyrocks/eleventy-plugin-sass-lightningcss");
+const { minify } = require("html-minifier-terser")
+const criticalCss = require("eleventy-critical-css");
+const { compress } = require('eleventy-plugin-compress');
 
-const componentsDir = "./src/_includes/components";
-const pictureCard = require(`${componentsDir}/PictureCard.js`);
-const picture = require(`${componentsDir}/Picture.js`);
-const pictureHero = require(`${componentsDir}/PictureHero.js`);
+const { blockquote } = require("./src/11ty/components/blockquote");
+const { images } = require("./src/11ty/components/images");
 
-const filtersDir = "./src/_includes/filters";
-const base64 = require(`${filtersDir}/base64.js`);
-const slug = require(`${filtersDir}/slug.js`);
-const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
+process.setMaxListeners(50);
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(UpgradeHelper);
+  // DON'T USE .GITIGNORE
+  eleventyConfig.setUseGitIgnore(false);
+
+  eleventyConfig.addFilter("addNbsp", (str) => {
+    if (!str) {
+      return;
+    }
+    let title = str.replace(/((.*)\s(.*))$/g, "$2&nbsp;$3");
+    title = title.replace(/"(.*)"/g, '\\"$1\\"');
+    return title;
+  });
 
   //  SHORTCODE
-  eleventyConfig.addShortcode("picture-card", pictureCard);
-  eleventyConfig.addShortcode("picture", picture);
-  eleventyConfig.addShortcode("picture-hero", pictureHero);
+  eleventyConfig.addShortcode("year", () => {
+    let year = new Date().getFullYear();
+    return year.toString(); // or `return String(year);`
+  });
 
-  //  FILTERS
-  eleventyConfig.addFilter("base64", base64);
-  eleventyConfig.addFilter("slug", slug);
+  eleventyConfig.addLiquidShortcode("images", images);
+  // {% images "path_to_image", "alt_text", "class", "subclass" %}
+
+  eleventyConfig.addPairedShortcode("blockquote", blockquote);
+  // {% blockquote "Lorem Ipsum" %}
+  // Vestibulum id ligula porta felis euismod semper.
+  // {% endblockquote %}
 
   //  MARKDOWN SETTINGS
   const markdownItOptions = {
@@ -34,9 +48,9 @@ module.exports = function (eleventyConfig) {
     typographer: true,
   };
   const markdownItAttrsOptions = {
-    leftDelimiter: "{:",
+    leftDelimiter: "{",
     rightDelimiter: "}",
-    allowedAttributes: ["id", "class", /^data\-.*$/],
+    allowedAttributes: ["id", "class", /^data-.*$/],
   };
 
   const milaOptions = {
@@ -55,20 +69,29 @@ module.exports = function (eleventyConfig) {
 
   //   PLUGINS
   eleventyConfig.addPlugin(xmlFiltersPlugin);
-
-  //  COLLECTIONS
-  eleventyConfig.addCollection("posts", (collection) => {
-    const coll = collection.getFilteredByTag("post");
-
-    for (let i = 0; i < coll.length; i++) {
-      const prevPost = coll[i - 1];
-      const nextPost = coll[i + 1];
-
-      coll[i].data["prevPost"] = prevPost;
-      coll[i].data["nextPost"] = nextPost;
-    }
-
-    return coll.reverse();
+  eleventyConfig.addPlugin(directoryOutputPlugin);
+  eleventyConfig.addPlugin(criticalCss, {
+    inline: {
+      strategy: "default",
+    },
+      dimensions: [
+        {
+          width: 240,
+          height: 320,
+        },
+        {
+          width: 320,
+          height: 568,
+        },
+        {
+          width: 1024,
+          height: 1024,
+        },
+        {
+          width: 1366,
+          height: 768,
+        },
+      ],
   });
 
   //  LAYOUT ALIASES
@@ -76,27 +99,46 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("home", "layouts/home.liquid");
   eleventyConfig.addLayoutAlias("post", "layouts/post.liquid");
   eleventyConfig.addLayoutAlias("page", "layouts/page.liquid");
-
   eleventyConfig.addLayoutAlias("404", "layouts/404.liquid");
 
   // PASSTHROUGHT ELEMENTS
-  eleventyConfig.addPassthroughCopy({ "src/icons/*": "/" });
   eleventyConfig.addPassthroughCopy({
     "src/netlify.toml": "/netlify.toml",
-  });
-  eleventyConfig.addPassthroughCopy({
+    "src/root/*": "/",
     "src/assets/images/thumbnail.jpg": "/assets/images/thumbnail.jpg",
+    "src/assets/images/Noise.png": "/assets/images/Noise.png",
+    "src/assets/fonts/*": "/assets/fonts/",
   });
 
-  // DON'T USE .GITIGNORE
-  eleventyConfig.setUseGitIgnore(false);
+  // SERVER OPTIONS
+  eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+  eleventyConfig.addWatchTarget("**/*.(scss|liquid|md)");
+
+  // MINIFY SASS
+  eleventyConfig.addPlugin(eleventySass);
+
+  // MINIFY HTML
+  eleventyConfig.addTransform("htmlmin", function (content) {
+    if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
+      let minified = minify(content, {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true,
+        },
+      });
+      return minified;
+    }
+
+    return content;
+  });
+
+  eleventyConfig.addPlugin(compress);
 
   return {
     dir: {
       data: "_data",
-      includes: "_includes",
-      input: "tmp/src",
-      output: "tmp/dist",
+      input: "src",
+      output: "dist",
     },
   };
 };

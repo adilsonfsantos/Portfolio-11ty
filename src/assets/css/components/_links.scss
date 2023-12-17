@@ -1,0 +1,13 @@
+article a,
+h3 > a,
+h4 > a,
+span > a,
+.contato > .link {
+  color: inherit;
+}
+
+article p > a,
+article li > a {
+  color: $secondary-90;
+  text-decoration: underline;
+}

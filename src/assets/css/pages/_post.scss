@@ -1,0 +1,209 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.post {
+  @include grid;
+
+  background: $black;
+  padding-top: variables.$space-3xl;
+
+  &__header {
+    min-height: 55vh;
+    padding-top: variables.$space-xl;
+
+    &--container {
+      margin-bottom: variables.$space-xl;
+    }
+
+    &--title {
+      @include typescale(scale-6, medium, headline);
+
+      color: $white;
+      margin: 0;
+      max-width: 720px;
+
+    }
+
+    &--description {
+      @include typescale(scale-0, normal, text);
+
+      color: $white-80;
+      max-width: 720px;
+    }
+  }
+
+  &__hero {
+    @include grid;
+
+    &--container {
+      @include grid;
+
+      border-bottom: 2px solid $black-30;
+    }
+  }
+
+  &__info {
+    @include grid;
+
+    gap: variables.$space-xl;
+    grid-template-columns: repeat(auto-fit, minmax(160px, auto));
+    margin-bottom: variables.$space-xl;
+  }
+
+  &__info--title {
+    @include typescale(scale--2, medium, text);
+
+    border-top: solid $black-10 1px;
+    color: $white;
+    padding-top: variables.$space-s;
+    text-transform: uppercase
+  }
+
+  &__info--text {
+    @include typescale(scale--1, normal, text);
+    @include mixins.font-family("iA Writer");
+
+    color: $white-80;
+  }
+
+  &__splash {
+    &--picture {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    &--image {
+      color: $white;
+      height: auto;
+      max-width: none;
+      width: 100%;
+    }
+  }
+
+  hr {
+    border: none;
+    background-color: variables.$black-10;
+    height: 1px;
+    margin-top: variables.$space-xl;
+    }
+
+  &__content {
+    h1, h2, h3, h4, h5, h6, p, blockquote, ul, ol, li {
+      max-width: 720px;
+      margin: auto;
+      width: 100%;
+    }
+
+    &--container {
+      @include grid;
+    }
+
+    @include viewport(large) {
+      &--container > * {
+        grid-column: 2;
+      }
+    }
+
+    .headline-link {
+      color: $white;
+      text-decoration: underline;
+    }
+
+    h2,
+    h3,
+    h4 {
+      @include typescale(scale-4, medium, headline);
+
+      color: $white-90;
+      margin-top: variables.$space-2xl;
+      margin-bottom: variables.$space-xs;
+      width: 100%;
+    }
+
+    &__photo {
+      @include center-horizontal;
+
+      max-width: $page-width;
+      overflow: hidden;
+      width: 100%;
+
+      + p {
+        margin-bottom: variables.$space-xl;
+      }
+    }
+
+    p {
+      @include typescale(scale-0, normal, text);
+      @include font-family("iA Writer");
+
+      color: $white-80;
+
+      + p {
+        margin-top: variables.$space-xs;
+      }
+
+      + picture {
+        margin-top: variables.$space-xl;
+      }
+    }
+
+    picture + p {
+        margin-top: variables.$space-xl;
+    }
+
+    picture + picture {
+        margin-top: variables.$space-xl;
+      }
+
+    ul,
+    ol {
+      @include typescale(scale-0, normal, text);
+
+      padding-left: variables.$space-xs;
+    }
+
+    p + ul, ol {
+        margin-top: variables.$space-xs;
+    }
+
+    li > ul {
+      margin: variables.$space-2xs;
+    }
+
+    li {
+      @include typescale(scale-0, normal, text);
+      @include font-family("iA Writer");
+
+      color: $white-80;
+    }
+
+    li:not(:last-child) {
+      margin-bottom: variables.$space-2xs;
+    }
+  }
+
+  blockquote {
+    border-left: 2px solid $primary;
+    padding-left: variables.$space-m;
+    margin: variables.$space-m auto;
+
+    p {
+      @include typescale(scale-1, bold, text);
+
+      color: $white-90;
+      margin: 0;
+    }
+
+    cite {
+      @include typescale(scale-0, normal, headline);
+
+      font-style: normal;
+      color: $white-80;
+      margin-top: variables.$space-xs;
+    }
+  }
+
+  &__photo > img {
+    height: auto;
+  }
+}

@@ -1,29 +1,36 @@
 ---
 layout: default
 ---
+<div class="container">
+    <div class="noise"></div>
 {% include "hero" %}
-<section class="projetos" id="projetos">
-  <div class="grid--module">
+<main id="main">
+  <section class="projetos grid__module--site" id="projetos">
+    <hr/>
     <div class="projetos__header">
       <h2 class="projetos__header--title">Principais projetos</h2>
-      <span class="projetos__header--subtitle"
-        >Ou algumas coisas legais que eu fiz.</span
-      >
+      <span class="projetos__header--subtitle">
+        Ou algumas coisas legais que eu fiz.
+      </span>
     </div>
     <div class="projetos__principais">
-      {%- for post in collections.posts -%}
-      <a href="{{ post.url | url }}" class="card" title="{{ post.data.title }}">
-        {% picture-card post.data.image, post.data.description, "card__picture", "card__picture--image" %}
-        <div class="card__description">
-          <h3 class="card__description--title">{{ post.data.title }}</h3>
-          <span
-            class="card__description--tag"
-            >{{ post.data.categories | join: " • ") }}</span
-          >
+      {%- for post in collections.post reversed -%}
+        <a href="{{ post.url | url }}" class="card" title="{{ post.data.title }}">
+           <div class="noise"></div>
+          {% assign card = post.data.image | prepend : "src" %}
+          {% assign alt = post.data.description %}
+          {% images card, alt, "card__picture", "card__picture--image", "card" %}
+          <div class="card__description">
+            <h3 class="card__description--title">{{ post.data.title | escape }}</h3>
+            <span class="card__description--tag">
+              {{ post.data.categories | join: " • " }}
+            </span>
         </div>
       </a>
       {%- endfor -%}
     </div>
-  </div>
-</section>
+    <hr/>
+  </section>
 {% include "contact" %}
+</main>
+</div>

@@ -1,0 +1,56 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.card {
+  @include mixins.flex;
+  @include mixins.flex-column;
+  @include mixins.transition(all, 0.4s, variables.$animation-standard);
+
+  background-color: variables.$black;
+  border: 1px solid variables.$black-10;
+  max-width: 100%;
+  position: relative;
+
+  &__picture {
+    padding: variables.$space-m;
+    padding-bottom: 0;
+    overflow: hidden;
+    width: 100%;
+
+    &--image {
+      color: variables.$white;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__description {
+    @include mixins.flex;
+    @include mixins.flex-column;
+
+    flex: 1;
+    justify-content: space-between;
+    padding: variables.$space-m;
+    position: relative;
+    width: 100%;
+
+    &--title {
+      @include mixins.typescale(scale-2, medium, headline);
+
+      color: variables.$white;
+      margin-bottom: variables.$space-m;
+    }
+
+    &--tag {
+      @include mixins.font-family("iA Writer");
+      @include mixins.typescale(scale--2, normal, text);
+
+      color: variables.$white-80;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: variables.$black-10;
+  }
+}

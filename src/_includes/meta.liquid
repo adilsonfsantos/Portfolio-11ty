@@ -1,23 +1,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>{% if title %} {{ title }} | {{ site.title }} {% else %} {{ site.title }} {% endif %}</title>
+<title>{% if title %} {{ title }} | {{ site.title }} {% else%} {{ site.title }} {% endif %}</title>
+
+<meta name="author" content="Adilson Santos">
+
 <meta
   name="description"
-  content="{% if description %}{{ description }}{% else %}{{
-    site.description
-  }}{% endif %}"
+  content="{% if description %}{{ description }}{% else %}{{site.description}}{% endif %}"
 />
-<meta itemprop="keywords" content="Adilson, Santos, Adilson Santos, Design, Designer, UI, UX, branding, ilustrações, visuais, Portfólio, Portfolio{% if
-page.keywords == blank %} {% else %} ,{{ page.keywords | join: ", " }}
-{% endif %}"/>
 
 {%- comment -%}Twitter{%- endcomment -%}
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title"
-  content="{% if page.title %}{{ page.title }}{% else %}{{
-    site.title }}{% endif %}"/>
+  content="{% if page.title %}{{ page.title }}{% else %}{{site.title }}{% endif %}"/>
 <meta name="twitter:description" content="
-  {% if page.description %}{{ page.description }}{% else %}{{
-    site.description }}{% endif %}"/>
+  {% if page.description %}{{ page.description }}{% else %}{{site.description }}{% endif %}"/>
 <meta name="twitter:site" content="{{ site.url }}" />
 <meta name="twitter:creator" content="{{ site.author.name }}" />
 <meta name="twitter:image:src" content="{{ site.url }}{{ image }}"/>
@@ -26,14 +22,10 @@ page.keywords == blank %} {% else %} ,{{ page.keywords | join: ", " }}
 {%- comment -%}Open Graph{%- endcomment -%}
 <meta
   name="og:title"
-  content="{% if page.title %}{{ page.title }}{% else %}{{
-    site.title
-  }}{% endif %}"/>
+  content="{% if page.title %}{{ page.title }}{% else %}{{site.title}}{% endif %}"/>
 <meta
   name="og:description"
-  content="{% if page.description %}{{ page.description }}{% else %}{{
-    site.description
-  }}{% endif %}"/>
+  content="{% if page.description %}{{ page.description }}{% else %}{{site.description}}{% endif %}"/>
 <meta name="og:image" content="{{ site.url }}{{ image }}" />
 <meta name="og:url" content="{{ site.url }}{{ page.url }}" />
 <meta name="og:site_name" content="{{ site.name }}" />
@@ -47,7 +39,7 @@ page.keywords == blank %} {% else %} ,{{ page.keywords | join: ", " }}
   "url": "{{ site.url }}",
   "headline": "{{ site.title }}",
   "name": "{{ site.name }}",
-  {% assign sameLinks = social.links | map: 'url' %}
+  {% assign sameLinks = site.social | map: 'url' %}
   "sameAs": {{ sameLinks | json }},
   "image": "{{ site.url }}{{ image | url }}",
   "author": { "@type": "Person", "name": "{{site.author.name}}" },
@@ -70,27 +62,18 @@ page.keywords == blank %} {% else %} ,{{ page.keywords | join: ", " }}
   sizes="16x16"
   type="image/png"
 />
-<link href="/site.webmanifest" rel="application/manifest+json" charset="UTF-8"/>
+<link href="/site.webmanifest" rel="application/manifest+json"/>
 <link
   color="#212121"
   href="/safari-pinned-tab.svg"
   rel="mask-icon"
 />
-<meta content="#1d1d1d" name="msapplication-TileColor" />
+<meta content="#1d1d1d" name="msapplication-TileColor"/>
 <meta
   content="/mstile-144x144.png"
   name="msapplication-TileImage"
 />
 <meta content="#121212" name="theme-color" />
-<meta content="/browserconfig.xml" name="msapplication-config" />
+<meta content="/browserconfig.xml" name="msapplication-config"/>
 <meta content="nopin" name="pinterest" />
-<meta name="generator" content="Eleventy">
-{% if layout == 'home' %}
-<style>{% include "critical-home.css" %}</style>
-{% elsif layout == 'post' %}
-<style>{% include "critical-post.css" %}</style>
-{% elsif layout == 'page' %}
-<style>{% include "critical-page.css" %}</style>
-{% elsif layout == '404' %}
-<style>{% include "critical-404.css"%}</style>
-{% endif %}
+<meta name="generator" content="{{ eleventy.generator }}">

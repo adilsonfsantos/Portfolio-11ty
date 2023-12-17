@@ -1,75 +1,57 @@
 ---
 layout: default
-permalink: "/projetos/{{page.fileSlug}}/index.html"
+permalink: "/projetos/{{page.fileSlug}}/"
 ---
-
-<article
-  class="post"
-  itemscope
-  itemtype="http://schema.org/BlogPosting"
-  role="article"
->
-  <div class="post__header">
-    <div class="post__header--container">
-      <h1 class="post__header--title" itemprop="name headline">
-        {{- title -}}
-      </h1>
-      <h2 class="post__header--description" itemprop="description">
-        {{ description }}
-      </h2>
-    </div>
-    <div class="post__hero">
-      <div class="post__hero--container">
-        <div class="post__info">
-          <div class="function">
-            <h3 class="post__info--title">Minha Função</h3>
+<main id="main">
+  <div class="noise"></div>
+  <article
+    class="post grid__module--site"
+    itemscope
+    itemtype="http://schema.org/BlogPosting"
+    role="article"
+  >
+    <div class="post__header">
+      <div class="post__header--container">
+        <h1 class="post__header--title" itemprop="name headline">
+          {{ title | escape }}
+        </h1>
+      </div>
+      <div class="post__info">
+        <div class="function">
+          <h3 class="post__info--title">Minha Função</h3>
             {% for role in roles %}
             <p class="post__info--text">{{ role }}</p>
             {% endfor %}
-          </div>
-          {%- if showteam == true -%}
+        </div>
+        {%- if showteam == true -%}
           {% include "team" %}
           {%- endif -%}
           <div class="year">
             <h3 class="post__info--title">Data</h3>
             <p class="post__info--text">{{ page.date | date: "%Y" }}</p>
           </div>
-          {%- if showproject == true -%}
-          {% include "project" %}
-          {% endif %}
-        </div>
       </div>
-    </div>
-    <div class="post__splash">
       <div class="post__splash--container">
-        {% picture-hero image, title, "post__splash--picture", "post__splash--image" %}
+        {% assign picture = image | prepend : "src" %}
+        {% images picture, title, "post__splash--picture", "post__splash--image", "banner" %}
       </div>
     </div>
-  </div>
-  <div class="post__content" itemprop="articleBody">
-    <div class="post__content--container">
-      {{ content }}
+    <div class="post__content" itemprop="articleBody">
+      <div class="post__content--container">
+        {{ content }}
+      </div>
     </div>
-  </div>
-</article>
-<section class="postnav">
-  <div class="postnav--container">
-  {% if prevPost %}
-  <a href="{{ prevPost.url }}" class="postnav__link" rel="next">
-      <div class="postnav__link--content">
-        <p class="postnav__link--caption">Próximo projeto</p>
-        <h3 class="postnav__link--title">{{ prevPost.data.title }}</h3>
-      </div>
-      <div class="postnav__link--icon"><svg class="postnav__link--forward" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg></div>
-  </a>
-  {%- else -%}
-  <a href="{{ "/" | url }}" class="postnav__link" rel="prev">
-      <div>
-        <p class="postnav__link--caption">Sem mais projetos</p>
-          <h3 class="postnav__link--title">Voltar</h3>
-      </div>
-      <div class="postnav__link--icon"><svg class="postnav__link--forward" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg></div>
-  </a>
-  {% endif %}
-</div>
-</section>
+    <hr>
+  </article>
+  <section class="postnav grid__module--site">
+    <div class="postnav--container">
+      {% assign previousPost = collections.post | getPreviousCollectionItem %}
+      {% if previousPost %}
+      <a href="{{ previousPost.url }}" class="postnav__link" rel="next">Próximo projeto →<br><span class="postnav__link--title">{{ previousPost.data.title }}</span>
+      </a>
+      {%- else -%}
+      <a href="{{ "/" | url }}" class="postnav__link" rel="prev">Sem mais projetos →<br><span class="postnav__link--title">Voltar para a home</span></a>
+      {% endif %}
+    </div>
+  </section>
+</main>

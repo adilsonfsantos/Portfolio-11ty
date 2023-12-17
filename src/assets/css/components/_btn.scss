@@ -1,0 +1,49 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.btn {
+  @include mixins.typescale(scale-1, medium, text);
+  @include mixins.font-position(center);
+  @include mixins.transition(background, 0.4s, variables.$animation-standard);
+
+  background-position: center;
+  border-radius: variables.$base-size * 1.5;
+  min-width: 120px;
+  padding: variables.$base-size * 0.875 variables.$base-size;
+  position: relative;
+  text-transform: uppercase;
+
+  &::after {
+    @include mixins.absolute;
+
+    opacity: 0;
+  }
+
+  &__primary {
+    color: variables.$white;
+    background-color: variables.$black-20;
+    border: solid 1px variables.$black-20;
+
+    &:hover,
+    &:focus {
+      color: variables.$black;
+      background:
+        variables.$secondary
+        radial-gradient(circle, transparent 1%, variables.$secondary 1%) center /
+        150000%;
+    }
+
+    &:active {
+      background-color: variables.$white;
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      opacity: 1;
+    }
+  }
+}

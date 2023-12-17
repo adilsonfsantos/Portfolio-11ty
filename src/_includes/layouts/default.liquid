@@ -1,19 +1,21 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang }}" class="no-js">
+  <!DOCTYPE html>
+  <html lang="{{ site.lang }}">
   <head>
     <meta charset="UTF-8"/>
-    <!-- htmlmin:ignore -->
     {% include "meta" %}
-    <!-- htmlmin:ignore -->
-    <script type="text/javascript">document.documentElement.classList.remove("no-js")</script>
-    <link rel="preload" as="font" href="/assets/fonts/Inter-Regular.woff2" type="font/woff2" crossorigin="crossorigin">
-    <link rel="preload" as="font" href="/assets/fonts/Inter-SemiBold.woff2" type="font/woff2" crossorigin="crossorigin">
-    {% assign main_js = js-manifest['main.js'] | prepend: '/assets/js/' %}
-    <script async src="{{ main_js }}" charset="UTF-8"></script>
-  </head>
-  <body>
-    {% include "header" %} {{ content }}
-    {% include "footer" %}
+    <link rel="preload" as="font" href="/assets/fonts/Inter-Regular.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="/assets/fonts/Inter-Medium.woff2" type="font/woff2" crossorigin>
     {% include "css" %}
+  </head>
+  <a class="skip-to-content-link" href="#main">Pular para o conteúdo</a>
+  <body>
+    {%  # Bypass Facebook tracking:
+        # https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser#how-to-protect-yourself-as-a-user
+    %}
+    <span id="iab-pcm-sdk"></span>
+    <span id="iab-autofill-sdk"></span>
+    {% include "header" %}
+    {{ content }}
+    {% include "footer" %}
   </body>
 </html>

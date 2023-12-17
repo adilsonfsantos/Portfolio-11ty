@@ -44,8 +44,8 @@ Baseado no Briefing realizado junto a Sagrado definimos os conceitos básicos pa
 Antes de começar a projetar, eu desenvolvi um guide para o layout que utilizava as cores e a tipografia da marca.
 Na tipografia foi utilizada a escala Perfect Fourth ou Quarta Justa (1.333) para criar um ritmo mais agradável de leitura.
 
-{% picture "/assets/images/sagrado-guide.png", "Guide com fontes e paleta de cores do layout.", "post__photo", "post__photo--image" %}
+{% images "src/assets/images/sagrado-guide.png", "Guide com fontes e paleta de cores do layout.", "post__photo", "post__photo--image" %}
 
 A utilização de espaço em branco é bastante utilizada para guiar os olhos do usuários além de dar respiro entre os elementos do layout.
 
-{% picture "/assets/images/sagrado-full.png", "Imagem demonstra uma parte do layout da página sobre a história da Sagrado.", "post__photo", "post__photo--image" %}
+{% images "src/assets/images/sagrado-full.png", "Imagem demonstra uma parte do layout da página sobre a história da Sagrado.", "post__photo", "post__photo--image" %}
