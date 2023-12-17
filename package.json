@@ -34,7 +34,7 @@
     "eleventy-critical-css": "^2.0.2",
     "eleventy-plugin-rev": "^2.0.0",
     "eleventy-xml-plugin": "^0.1.0",
-    "eslint": "^8.55.0",
+    "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "html-minifier-terser": "^7.2.0",
     "markdown-it": "^14.0.0",
