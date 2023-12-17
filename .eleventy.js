@@ -5,9 +5,9 @@ const xmlFiltersPlugin = require("eleventy-xml-plugin");
 const mila = require("markdown-it-link-attributes");
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 const eleventySass = require("@11tyrocks/eleventy-plugin-sass-lightningcss");
-const { minify } = require("html-minifier-terser")
+const { minify } = require("html-minifier-terser");
 const criticalCss = require("eleventy-critical-css");
-const { compress } = require('eleventy-plugin-compress');
+const { compress } = require("eleventy-plugin-compress");
 
 const { blockquote } = require("./src/11ty/components/blockquote");
 const { images } = require("./src/11ty/components/images");
@@ -74,24 +74,24 @@ module.exports = function (eleventyConfig) {
     inline: {
       strategy: "default",
     },
-      dimensions: [
-        {
-          width: 240,
-          height: 320,
-        },
-        {
-          width: 320,
-          height: 568,
-        },
-        {
-          width: 1024,
-          height: 1024,
-        },
-        {
-          width: 1366,
-          height: 768,
-        },
-      ],
+    dimensions: [
+      {
+        width: 240,
+        height: 320,
+      },
+      {
+        width: 320,
+        height: 568,
+      },
+      {
+        width: 1024,
+        height: 1024,
+      },
+      {
+        width: 1366,
+        height: 768,
+      },
+    ],
   });
 
   //  LAYOUT ALIASES

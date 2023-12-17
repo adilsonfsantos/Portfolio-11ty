@@ -8,7 +8,6 @@ const postcssPresetEnv = require("postcss-preset-env");
 
 // COMPILE
 function jsBuild() {
-
   build({
     entryPoints: ["node_modules/instant.page/instantpage.js"],
     entryNames: "[name]-[hash]",
@@ -20,10 +19,7 @@ function jsBuild() {
     outfile: "dist/assets/js/main.js",
   })
     .then((result) => {
-      fs.writeFileSync(
-        "src/_data/metajs.json",
-        JSON.stringify(result, null, 2)
-      );
+      fs.writeFileSync("src/_data/metajs.json", JSON.stringify(result, null, 2));
     })
     .catch(() => process.exit(1));
 }
@@ -42,25 +38,22 @@ function cssBuild() {
     plugins: [
       sassPlugin({
         async transform(source) {
-          const { css } = await postcss([
-            postcssPresetEnv({ stage: 3 }),
-          ]).process(source, { from: undefined });
+          const { css } = await postcss([postcssPresetEnv({ stage: 3 })]).process(source, {
+            from: undefined,
+          });
           return css;
         },
       }),
     ],
   })
     .then((result) => {
-      fs.writeFileSync(
-        "src/_data/metacss.json",
-        JSON.stringify(result, null, 2)
-      );
+      fs.writeFileSync("src/_data/metacss.json", JSON.stringify(result, null, 2));
     })
     .catch(() => process.exit(1));
 }
-module.exports = {jsBuild, cssBuild}
+module.exports = { jsBuild, cssBuild };
 
-  /*   eleventyConfig.addGlobalData(
+/*   eleventyConfig.addGlobalData(
     "mainjs",
     Object.keys(jsObj.metafile.outputs)[1]
   );
