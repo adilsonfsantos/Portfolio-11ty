@@ -2,48 +2,34 @@
 @use "../abstracts/variables";
 
 .btn {
-  @include mixins.typescale(scale-1, medium, text);
+  @include mixins.typescale(scale--1, medium, headline);
   @include mixins.font-position(center);
-  @include mixins.transition(background, 0.4s, variables.$animation-standard);
+  @include mixins.transition(all, $speed: variables.$animation-standard);
 
-  background-position: center;
-  border-radius: variables.$base-size * 1.5;
+  border-radius: variables.$space-m;
   min-width: 120px;
-  padding: variables.$base-size * 0.875 variables.$base-size;
-  position: relative;
+  padding: variables.$space-xs variables.$space-m;
   text-transform: uppercase;
-
-  &::after {
-    @include mixins.absolute;
-
-    opacity: 0;
-  }
 
   &__primary {
     color: variables.$white;
-    background-color: variables.$black-20;
-    border: solid 1px variables.$black-20;
+    background-color: variables.$black;
+    border: 2px solid variables.$secondary;
 
     &:hover,
     &:focus {
       color: variables.$black;
-      background:
-        variables.$secondary
-        radial-gradient(circle, transparent 1%, variables.$secondary 1%) center /
-        150000%;
+      background-color: variables.$secondary-90;
     }
 
     &:active {
-      background-color: variables.$white;
-      background-size: 100%;
-      transition: background 0s;
+      color: variables.$black;
+      background-color: variables.$secondary-90;
     }
   }
 
-  &:hover,
-  &:focus {
-    &::after {
-      opacity: 1;
-    }
+  &__secondary {
+    background-color: variables.$black-20;
+    color: variables.$white;
   }
 }
