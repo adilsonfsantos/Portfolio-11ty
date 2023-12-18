@@ -1,31 +1,28 @@
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
 
 .hero {
-  @include grid;
+  @include mixins.grid;
 
-  background-color: $black;
-  flex-grow: 1;
+  align-items: center;
+  height: 100vh;
+  position: relative;
 
-  &__error {
-    @include flex;
-    @include flex-column;
+  &--container {
+    z-index: 2;
+  }
 
-    align-items: center;
-    grid-column: 2;
-    justify-content: center;
+  &--title {
+    @include mixins.font-position(center);
+    @include mixins.typescale(scale-6, medium, title);
 
-    &--title {
-      @include typescale(scale-4, medium, headline);
-      @include font-position(center);
+    color: variables.$white;
+    margin: 0;
+  }
 
-      color: $white;
-      margin-bottom: $base-size * 1.5;
-      margin-top: $base-size * 3;
-      width: 100%;
-    }
+  .btn {
+    display: inline-flex;
+    justify-self: center;
+    margin-top: variables.$space-m;
   }
 }
