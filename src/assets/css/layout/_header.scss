@@ -52,7 +52,7 @@
 .nav {
   &__link {
     @include mixins.typescale(scale-0, medium, text);
-    @include mixins.transition(color, $speed: variables.$animation-standard);
+    @include mixins.transition(color);
 
     @include mixins.viewport(small) {
       @include mixins.typescale(scale--1, medium, text);

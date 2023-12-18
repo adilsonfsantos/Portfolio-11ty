@@ -4,7 +4,7 @@
 .btn {
   @include mixins.typescale(scale--1, medium, headline);
   @include mixins.font-position(center);
-  @include mixins.transition(all, $speed: variables.$animation-standard);
+  @include mixins.transition(all);
 
   border-radius: variables.$space-m;
   min-width: 120px;
