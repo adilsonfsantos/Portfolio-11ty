@@ -2,8 +2,7 @@
 @use "../abstracts/variables";
 
 .hero {
-  @include mixins.grid;
-
+  display: grid;
   height: 100%;
   position: relative;
 
@@ -12,9 +11,8 @@
   }
 
   &__normal {
-    @include mixins.flex;
-    @include mixins.flex-column;
-
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     min-height: 96svh;
     padding-bottom: variables.$space-xs;
@@ -38,5 +36,3 @@
     }
   }
 }
-
-

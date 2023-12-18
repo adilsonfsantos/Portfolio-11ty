@@ -17,41 +17,9 @@
   }
 }
 
-// ASPECT RATIO FOR LAZYLOAD IMAGES
-@mixin aspect-ratio($width, $height) {
-  padding-top: math.div($height, $width) * 100%;
-}
-
-// LAYOUT
-@mixin flex {
-  display: flex;
-}
-
-@mixin flex-column {
-  flex-direction: column;
-}
-
-@mixin flex-center {
-  align-items: center;
-  justify-content: center;
-}
-
-@mixin grid {
-  display: grid;
-}
-
-@mixin inline {
-  display: inline-block;
-}
-
 @mixin grid-image {
-  grid-template-columns:
-    minmax(5vw, 1fr) minmax(0, 1024px) minmax(
-      5vw,
-      1fr
-    );
+  grid-template-columns: minmax(5vw, 1fr) minmax(0, 1024px) minmax(5vw, 1fr);
 }
-
 
 @mixin grid-post {
   grid-template-columns: minmax(0, 680px);
@@ -61,23 +29,10 @@
   }
 }
 
-// MARGINS
-@mixin center-horizontal {
-  margin: 0 auto;
-}
-
-@mixin center-vertical {
-  margin: auto 0;
-}
-
-@mixin center {
-  margin: auto;
-}
-
 // ANIMATION
 @mixin transition(
   $name: all,
-  $duration: $elevation-transition-duration,
+  $duration: variables.$duration-standard,
   $speed: variables.$animation-standard,
   $delay: 0ms
 ) {
@@ -86,7 +41,7 @@
 
 @mixin animation(
   $name,
-  $duration: $elevation-transition-duration,
+  $duration: variables.$duration-standard,
   $speed: variables.$animation-standard,
   $loop: 1,
   $delay: 0ms
@@ -100,13 +55,13 @@
 
   @if $weight == "bold" {
     font-weight: 600;
-  } @else if $weight == "medium"{
+  } @else if $weight == "medium" {
     font-weight: 500;
   } @else if $weight == "normal" {
     font-weight: 400;
   } @else if $weight == "light" {
     font-weight: 300;
-  } @else{
+  } @else {
     @warn " Atenção: `#{$weight}` não é um valor válido.";
   }
 
@@ -163,13 +118,3 @@
     text-align: left;
   }
 }
-
-// HELPER
-@mixin absolute {
-  content: "";
-  height: 100%;
-  inset: 0;
-  position: absolute;
-  width: 100%;
-}
-

@@ -2,9 +2,8 @@
 @use "../abstracts/variables";
 
 .footer {
-  @include mixins.grid;
-
   align-items: center;
+  display: grid;
   background: variables.$black;
   position: relative;
 
@@ -19,19 +18,18 @@
   }
 
   &__content {
-    @include mixins.flex;
-
     align-items: center;
+    display: flex;
     flex-wrap: wrap;
     padding: (variables.$base-size * 2) 0;
 
     &--copyright {
       @include mixins.font-family("iA Writer");
-      @include mixins.center-vertical;
       @include mixins.typescale(scale--1, normal, text);
 
       color: variables.$white-80;
       margin: (variables.$base-size) 0;
+      place-self: center;
     }
 
     &--spacer {
@@ -40,8 +38,7 @@
   }
 
   &__content--social {
-    @include mixins.flex;
-
+    display: flex;
     flex-wrap: wrap;
     list-style-type: none;
 

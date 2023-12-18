@@ -2,16 +2,15 @@
 @use "../abstracts/variables";
 
 .header {
-  @include mixins.grid;
-
   background-color: variables.$black;
   border-bottom: 1px solid variables.$black-10;
+  display: grid;
   position: fixed;
   width: 100vw;
   z-index: 4;
 
   @supports (backdrop-filter: none) {
-    background-color: rgba(variables.$black, .8);
+    background-color: rgba(variables.$black, 0.8);
     backdrop-filter: saturate(180%) blur(variables.$base-size * 0.25);
   }
 
@@ -20,9 +19,8 @@
   }
 
   &__content {
-    @include mixins.flex;
-
     align-items: center;
+    display: flex;
 
     &--logo {
       color: variables.$white;
@@ -45,9 +43,8 @@
     }
 
     &__nav {
-      @include mixins.flex;
-
       align-self: center;
+      display: flex;
     }
   }
 }
@@ -55,10 +52,10 @@
 .nav {
   &__link {
     @include mixins.typescale(scale-0, medium, text);
-    @include mixins.transition(color, 0.4s, variables.$animation-standard);
+    @include mixins.transition(color, $speed: variables.$animation-standard);
 
     @include mixins.viewport(small) {
-        @include mixins.typescale(scale--1, medium, text);
+      @include mixins.typescale(scale--1, medium, text);
     }
 
     color: variables.$white-80;

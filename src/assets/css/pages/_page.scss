@@ -2,8 +2,7 @@
 @use "../abstracts/mixins";
 
 .page {
-  @include grid;
-
+  display: grid;
   padding-top: variables.$space-3xl;
 
   &__header {
@@ -20,7 +19,7 @@
 
   &__content {
     &--container {
-      @include grid;
+      display: grid;
     }
 
     .headline-link {
@@ -28,14 +27,16 @@
       text-decoration: underline;
     }
 
-    h1, h2, h3, h4 {
+    h1,
+    h2,
+    h3,
+    h4 {
       @include typescale(scale-4, medium, headline);
 
       color: $white-90;
       margin-top: variables.$space-2xl;
       margin-bottom: variables.$space-xs;
       width: 100%;
-
     }
 
     p {
@@ -63,7 +64,7 @@
       color: $white-80;
 
       > ul {
-        margin:  variables.$space-2xs;
+        margin: variables.$space-2xs;
       }
     }
 

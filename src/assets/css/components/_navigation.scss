@@ -3,8 +3,7 @@
 
 .postnav {
   &--container {
-    @include mixins.grid;
-
+    display: grid;
     padding: variables.$space-3xl 0;
   }
 
@@ -13,7 +12,7 @@
 
     color: $secondary-90;
 
-    @include mixins.viewport(medium){
+    @include mixins.viewport(medium) {
       margin: auto;
       text-align: center;
     }

@@ -2,12 +2,12 @@
 @use "../abstracts/variables";
 
 .card {
-  @include mixins.flex;
-  @include mixins.flex-column;
-  @include mixins.transition(all, 0.4s, variables.$animation-standard);
+  @include mixins.transition(all, $speed: variables.$animation-standard);
 
   background-color: variables.$black;
   border: 1px solid variables.$black-10;
+  display: flex;
+  flex-direction: column;
   max-width: 100%;
   position: relative;
 
@@ -25,9 +25,8 @@
   }
 
   &__description {
-    @include mixins.flex;
-    @include mixins.flex-column;
-
+    display: flex;
+    flex-direction: column;
     flex: 1;
     justify-content: space-between;
     padding: variables.$space-m;

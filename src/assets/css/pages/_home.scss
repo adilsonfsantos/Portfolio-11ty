@@ -1,7 +1,7 @@
 @use "../abstracts/mixins";
 @use "../abstracts/variables";
 
-.container{
+.container {
   position: relative;
 }
 
@@ -30,8 +30,7 @@
   }
 
   &__principais {
-    @include mixins.grid;
-
+    display: grid;
     gap: variables.$space-l;
     grid-auto-rows: auto;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
