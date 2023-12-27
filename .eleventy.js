@@ -132,7 +132,10 @@ module.exports = function (eleventyConfig) {
     return content;
   });
 
-  eleventyConfig.addPlugin(compress);
+  eleventyConfig.addPlugin(compress, {
+    enabled: true,
+    algorithm: "brotli"
+  });
 
   return {
     dir: {
