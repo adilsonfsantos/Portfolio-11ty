@@ -108,9 +108,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "src/netlify.toml": "/netlify.toml",
     "src/root/*": "/",
-    "src/assets/images/thumbnail.jpg": "/assets/images/thumbnail.jpg",
-    "src/assets/images/Noise.png": "/assets/images/Noise.png",
-    "src/assets/images/Noise.webp": "/assets/images/Noise.webp",
+    "src/assets/images/thumbnail.png": "/assets/images/thumbnail.png",
+    "src/assets/images/noise.png": "/assets/images/noise.png",
     "src/assets/fonts/*": "/assets/fonts/",
   });
 
