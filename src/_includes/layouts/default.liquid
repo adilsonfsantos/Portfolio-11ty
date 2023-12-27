@@ -2,18 +2,18 @@
   <html lang="{{ site.lang }}">
   <head>
     <meta charset="UTF-8"/>
-    <link rel="preload" as="image" href="/assets/images/Noise.png">
-    <link rel="preload" as="font" href="/assets/fonts/Inter-Regular.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="/assets/fonts/iAWriterDuoS-Regular.woff2" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="/assets/fonts/Inter-Medium.woff2" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="/assets/fonts/IaWriterDuoS-Regular.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="image" href="/assets/images/Noise.webp">
     {% include "meta" %}
     {% include "css" %}
   </head>
   <a class="skip-to-content-link btn btn__secondary" href="#main">Pular para o conteúdo</a>
   <body>
-    {%  # Bypass Facebook tracking:
+    {%- comment -%}
+        # Bypass Facebook tracking:
         # https://krausefx.com/blog/ios-privacy-instagram-and-facebook-can-track-anything-you-do-on-any-website-in-their-in-app-browser#how-to-protect-yourself-as-a-user
-    %}
+    {%- endcomment -%}
     <span id="iab-pcm-sdk"></span>
     <span id="iab-autofill-sdk"></span>
     {% include "header" %}

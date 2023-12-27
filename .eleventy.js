@@ -74,6 +74,9 @@ module.exports = function (eleventyConfig) {
     inline: {
       strategy: "default",
     },
+    ignore: {
+      rule: [/\.noise/],
+    },
     dimensions: [
       {
         width: 240,
@@ -107,6 +110,7 @@ module.exports = function (eleventyConfig) {
     "src/root/*": "/",
     "src/assets/images/thumbnail.jpg": "/assets/images/thumbnail.jpg",
     "src/assets/images/Noise.png": "/assets/images/Noise.png",
+    "src/assets/images/Noise.webp": "/assets/images/Noise.webp",
     "src/assets/fonts/*": "/assets/fonts/",
   });
 
