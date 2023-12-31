@@ -4,7 +4,7 @@
   "url": "https://adilsonsantos.netlify.app",
   "lang": "pt-BR",
   "description": "Meu nome é Adilson Santos e eu sou um designer focado em identidades visuais, UI e UX.",
-  "image": "https://adilsonsantos.netlify.app/assets/images/thumbnail.jpg",
+  "image": "https://adilsonsantos.netlify.app/assets/images/thumbnail.png",
   "feed": {
     "subtitle": "Meu nome é Adilson Santos e eu sou um designer focado em identidades visuais, UI e UX.",
     "filename": "feed.xml",
@@ -16,10 +16,6 @@
     "email": "adilson.design@outlook.com"
   },
   "social": [
-    {
-      "name": "Behance",
-      "url": "https://behance.net/adilsonfsantos"
-    },
     {
       "name": "Github",
       "url": "https://github.com/adilsonfsantos"
