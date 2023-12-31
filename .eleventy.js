@@ -33,7 +33,7 @@ module.exports = function (eleventyConfig) {
     return year.toString(); // or `return String(year);`
   });
 
-  eleventyConfig.addLiquidShortcode("images", images);
+  eleventyConfig.addShortcode("images", images);
   // {% images "path_to_image", "alt_text", "class", "subclass" %}
 
   eleventyConfig.addPairedShortcode("blockquote", blockquote);
@@ -137,7 +137,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(compress, {
     enabled: true,
-    algorithm: "brotli"
+    algorithm: "brotli",
   });
 
   return {
