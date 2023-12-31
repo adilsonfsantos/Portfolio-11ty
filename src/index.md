@@ -1,5 +1,5 @@
 ---
 layout: home
-image: /assets/images/thumbnail.jpg
+image: /assets/images/thumbnail.png
 permalink: /
 ---
