@@ -10,9 +10,9 @@
     margin-bottom: variables.$space-l;
 
     &--title {
-      @include typescale(scale-6, medium, headline);
+      @include mixins.typescale(scale-6, medium, headline);
 
-      color: $white;
+      color: variables.$white;
       margin: 0;
     }
   }
@@ -23,7 +23,7 @@
     }
 
     .headline-link {
-      color: $black-30;
+      color: variables.$black-30;
       text-decoration: underline;
     }
 
@@ -31,19 +31,19 @@
     h2,
     h3,
     h4 {
-      @include typescale(scale-4, medium, headline);
+      @include mixins.typescale(scale-4, medium, headline);
 
-      color: $white-90;
+      color: variables.$white-90;
       margin-top: variables.$space-2xl;
       margin-bottom: variables.$space-xs;
       width: 100%;
     }
 
     p {
-      @include typescale(scale-0, normal, text);
-      @include font-family("iA Writer");
+      @include mixins.typescale(scale-0, normal, text);
+      @include mixins.font-family("iA Writer");
 
-      color: $white-80;
+      color: variables.$white-80;
     }
 
     p + p {
@@ -52,16 +52,16 @@
 
     ul,
     ol {
-      @include typescale(scale-0, normal, text);
+      @include mixins.typescale(scale-0, normal, text);
 
       padding-left: variables.$space-xs;
     }
 
     li {
-      @include typescale(scale-0, normal, text);
-      @include font-family("iA Writer");
+      @include mixins.typescale(scale-0, normal, text);
+      @include mixins.font-family("iA Writer");
 
-      color: $white-80;
+      color: variables.$white-80;
 
       > ul {
         margin: variables.$space-2xs;

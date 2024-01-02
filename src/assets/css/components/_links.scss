@@ -1,3 +1,5 @@
+@use "../abstracts/variables";
+
 article a,
 h3 > a,
 h4 > a,
@@ -8,6 +10,7 @@ span > a,
 
 article p > a,
 article li > a {
-  color: $secondary-90;
+  color: variables.$secondary-90;
   text-decoration: underline;
 }
+

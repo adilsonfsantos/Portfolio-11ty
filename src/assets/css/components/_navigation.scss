@@ -10,7 +10,7 @@
   &__link {
     @include mixins.typescale(scale-3, normal, headline);
 
-    color: $secondary-90;
+    color: variables.$secondary-90;
 
     @include mixins.viewport(medium) {
       margin: auto;
@@ -18,13 +18,13 @@
     }
 
     &--content {
-      color: $white;
+      color: variables.$white;
     }
 
     &--title {
-      @include typescale(scale-5, medium, headline);
+      @include mixins.typescale(scale-5, medium, headline);
 
-      color: $white;
+      color: variables.$white;
     }
   }
 }
