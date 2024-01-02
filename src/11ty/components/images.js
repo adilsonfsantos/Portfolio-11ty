@@ -16,7 +16,11 @@ async function images(path, altText, classParent, classDescendent, type) {
     sharpOptions: {
       ChromaSubsampling: "4:4:4",
       Progressive: true,
-      Quality: 95,
+      Quality: 80,
+    },
+    sharpWebpOptions: {
+      quality: 95,
+      smartSubsample: true,
     },
     urlPath: "/assets/images",
     outputDir: "dist/assets/images",
