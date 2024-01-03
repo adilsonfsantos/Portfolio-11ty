@@ -11,9 +11,9 @@
 {%- comment -%}Twitter{%- endcomment -%}
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title"
-  content="{% if page.title %}{{ page.title }}{% else %}{{site.title }}{% endif %}"/>
+	content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"/>
 <meta name="twitter:description" content="
-  {% if page.description %}{{ page.description }}{% else %}{{site.description }}{% endif %}"/>
+	{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"/>
 <meta name="twitter:site" content="{{ site.url }}" />
 <meta name="twitter:creator" content="{{ site.author.name }}" />
 <meta name="twitter:image:src" content="{{ site.url }}{{ image }}"/>
@@ -21,11 +21,13 @@
 
 {%- comment -%}Open Graph{%- endcomment -%}
 <meta
-  name="og:title"
-  content="{% if page.title %}{{ page.title }}{% else %}{{site.title}}{% endif %}"/>
+	name="og:title"
+	content="{% if page.title %}{{ page.title }}{% else %}{{site.title}}{% endif %}"/>
 <meta
-  name="og:description"
-  content="{% if page.description %}{{ page.description }}{% else %}{{site.description}}{% endif %}"/>
+	name="og:description"
+	content="{% if page.description %}{{ page.description }}
+	{% else %}{{ site.description }}{% endif %}"
+/>
 <meta name="og:image" content="{{ site.url }}{{ image }}" />
 <meta name="og:url" content="{{ site.url }}{{ page.url }}" />
 <meta name="og:site_name" content="{{ site.name }}" />
@@ -34,16 +36,20 @@
 
 {%- comment -%}JSOn-LD Structured data{%- endcomment -%}
 <script type="application/ld+json">
-  {"description": "{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}",
-  "@type": "WebSite",
-  "url": "{{ site.url }}",
-  "headline": "{{ site.title }}",
-  "name": "{{ site.name }}",
-  {% assign sameLinks = site.social | map: 'url' %}
-  "sameAs": {{ sameLinks | json }},
-  "image": "{{ site.url }}{{ image | url }}",
-  "author": { "@type": "Person", "name": "{{site.author.name}}" },
-  "@context": "https://schema.org"}
+	{"description":
+		"{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}",
+	"@type": "WebSite",
+	"url": "{{ site.url }}",
+	"headline": "{{ site.title }}",
+	"name": "{{ site.name }}",
+	{% assign sameLinks = site.social | map: 'url' %}
+	"sameAs": {{ sameLinks | json }},
+	"image": "{{ site.url }}{{ image | url }}",
+	"author": {
+		"@type": "Person",
+		"name": "{{site.author.name}}"
+	},
+	"@context": "https://schema.org"}
 </script>
 {%- comment -%}Icons{%- endcomment -%}
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">

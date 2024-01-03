@@ -1,22 +1,24 @@
 <footer class="footer grid--base">
-  <div class="footer__gradient"></div>
-  <div class="noise"></div>
-  <div class="footer__container grid__module--site">
-      <div class="footer__content">
-        <div class="footer__content--copyright">
-          <p>&copy;2019 &ndash; {% year %} {{site.title}}<br>Todos os direitos reservados.</p>
-        </div>
-        <div class="footer__content--spacer"></div>
-        <ul class="footer__content--social">
-          {% if site.author.email == blank %}
-            {% else %}
-            <li>
-              <a href="mailto:{{ site.author.email }}">Email</a>
-            </li>
-          {% endif %}
-          {%- for link in site.social -%}
-          <li><a href="{{ link.url }}" rel="noopener" target="_blank">{{link.name}}</a></li>
-          {%- endfor -%}
-        </ul>
-      </div></div>
-  </footer>
+	<div class="footer__gradient"></div>
+	<div class="noise"></div>
+	<div class="footer__container grid__module--site">
+		<div class="footer__content">
+			<div class="footer__content--copyright">
+				<p>&copy;2019 &ndash; {% year %} {{site.title}}<br>Todos os direitos reservados.</p>
+			</div>
+			<div class="footer__content--spacer"></div>
+			<ul class="footer__content--social">
+				{% unless site.author.email == blank %}
+					<li>
+						<a href="mailto:{{ site.author.email }}">Email</a>
+					</li>
+				{% endunless %}
+				{%- for link in site.social -%}
+					<li>
+						<a href="{{ link.url }}" rel="noopener" target="_blank">{{link.name}}</a>
+					</li>
+				{%- endfor -%}
+			</ul>
+		</div>
+	</div>
+</footer>

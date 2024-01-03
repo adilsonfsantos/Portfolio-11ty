@@ -1,54 +1,54 @@
 {
-  "name": "portfolio-11ty",
-  "version": "1.0.0",
-  "description": "Portfolio of Adilson Santos using 11ty and Gulp",
-  "main": "gulpfile.js",
-  "scripts": {
-    "stylelint": "stylelint \"src/**/*.scss\" --ignore-path .gitignore",
-    "eslint": "eslint \"**/*.js\" --ignore-path .gitignore",
-    "prod": "npx @11ty/eleventy --incremental --quiet",
-    "dev": "npx @11ty/eleventy --incremental --serve"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/adilsonfsantos/Portfolio-11ty.git"
-  },
-  "author": "Adilson Santos",
-  "keywords": [
-    "11ty",
-    "Eleventy"
-  ],
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/adilsonfsantos/Portfolio-11ty/issues"
-  },
-  "homepage": "https://github.com/adilsonfsantos/Portfolio-11ty#readme",
-  "browserslist": [
-    "defaults"
-  ],
-  "dependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-img": "^3.1.8",
-    "@11ty/eleventy-plugin-directory-output": "^1.0.1",
-    "@11tyrocks/eleventy-plugin-sass-lightningcss": "^1.1.0",
-    "eleventy-critical-css": "^2.0.2",
-    "eleventy-plugin-rev": "^2.0.0",
-    "eleventy-xml-plugin": "^0.1.0",
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "html-minifier-terser": "^7.2.0",
-    "markdown-it": "^14.0.0",
-    "markdown-it-attrs": "^4.1.6",
-    "markdown-it-link-attributes": "^4.0.1",
-    "prettier": "3.1.1",
-    "require-dir": "^1.2.0",
-    "sass": "^1.69.5",
-    "slugify": "^1.6.6",
-    "stylelint": "^16.1.0",
-    "stylelint-config-standard-scss": "^12.0.0",
-    "stylelint-scss": "^6.0.0"
-  },
-  "devDependencies": {
-    "eleventy-plugin-compress": "^1.0.5"
-  }
+	"name": "portfolio-11ty",
+	"version": "1.0.0",
+	"description": "Portfolio of Adilson Santos using 11ty and Gulp",
+	"main": "gulpfile.js",
+	"scripts": {
+		"stylelint": "stylelint \"src/**/*.scss\" --ignore-path .gitignore",
+		"eslint": "eslint \"**/*.js\" --ignore-path .gitignore",
+		"prod": "npx @11ty/eleventy --incremental --quiet",
+		"dev": "npx @11ty/eleventy --incremental --serve"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/adilsonfsantos/Portfolio-11ty.git"
+	},
+	"author": "Adilson Santos",
+	"keywords": [
+		"11ty",
+		"Eleventy"
+	],
+	"license": "GPL-3.0-or-later",
+	"bugs": {
+		"url": "https://github.com/adilsonfsantos/Portfolio-11ty/issues"
+	},
+	"homepage": "https://github.com/adilsonfsantos/Portfolio-11ty#readme",
+	"browserslist": [
+		"defaults"
+	],
+	"dependencies": {
+		"@11ty/eleventy": "^2.0.1",
+		"@11ty/eleventy-img": "^3.1.8",
+		"@11ty/eleventy-plugin-directory-output": "^1.0.1",
+		"@11tyrocks/eleventy-plugin-sass-lightningcss": "^1.1.0",
+		"eleventy-critical-css": "^2.0.2",
+		"eleventy-plugin-rev": "^2.0.0",
+		"eleventy-xml-plugin": "^0.1.0",
+		"eslint": "^8.56.0",
+		"eslint-config-prettier": "^9.1.0",
+		"html-minifier-terser": "^7.2.0",
+		"markdown-it": "^14.0.0",
+		"markdown-it-attrs": "^4.1.6",
+		"markdown-it-link-attributes": "^4.0.1",
+		"prettier": "3.1.1",
+		"require-dir": "^1.2.0",
+		"sass": "^1.69.5",
+		"slugify": "^1.6.6",
+		"stylelint": "^16.1.0",
+		"stylelint-config-standard-scss": "^12.0.0",
+		"stylelint-scss": "^6.0.0"
+	},
+	"devDependencies": {
+		"eleventy-plugin-compress": "^1.0.5"
+	}
 }

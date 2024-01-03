@@ -1,13 +1,13 @@
 <div class="project">
-  <h3 class="post__info--title">Ver projeto</h3>
-{% for info in project %}
-  <p class="post__info--text">
-    {%- assign external = info.link -%} {%- if external ==
-    false -%}
-    <span>{{ project.name }}</span>
-    {%- else -%}
-    <a href="{{ external }}" target="_blank" rel="noopener">{{ info.name }}</a>
-    {%- endif -%}
-  </p>
-{% endfor %}
+	<h3 class="post__info--title">Ver projeto</h3>
+	{% for info in project %}
+		<p class="post__info--text">
+		{%- assign external = info.link -%}
+		{%- if external == false -%}
+			<span>{{ project.name }}</span>
+		{%- else -%}
+			<a href="{{ external }}" target="_blank" rel="noopener">{{ info.name }}</a>
+		{%- endif -%}
+		</p>
+	{% endfor %}
 </div>

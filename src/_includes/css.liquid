@@ -1,10 +1,11 @@
-{% if layout == 'home' %}
-  {% assign style_css = "home.css" %}
-{% elsif layout == 'post' %}
-  {% assign style_css = "post.css" %}
-{% elsif layout == 'page' %}
-  {% assign style_css = "page.css" %}
-{% elsif layout == '404' %}
-  {% assign style_css = "404.css" %}
-{% endif %}
+{% case layout %}
+	{% when "home" %}
+		{% assign style_css = "home.css" %}
+	{% when 'post' %}
+		{% assign style_css = "post.css" %}
+	{% when 'page' %}
+		{% assign style_css = "page.css" %}
+	{% when '404' %}
+		{% assign style_css = "404.css" %}
+{% endcase %}
 <link rel="stylesheet" href="{{ style_css | prepend: "/assets/css/" }}">
