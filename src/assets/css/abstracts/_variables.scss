@@ -1,18 +1,18 @@
 // Brand Colors
-$black: #0F0F0F;
-$primary: #FD3A39;
-$secondary: #F4C947;
-$white: #EEE;
+$black: #0f0f0f;
+$primary: #fd3a39;
+$secondary: #f4c947;
+$white: #eee;
 
 // Variation Colors
 $black-10: #222;
-$black-20: #3A3A3A;
-$black-30: #5A5A5A;
-$white-80: #AEAEAE;
-$white-90: #CECECE;
-$primary-20: #6F0E10;
-$primary-40: #D40D1C;
-$secondary-90: #FDDB7D;
+$black-20: #3a3a3a;
+$black-30: #5a5a5a;
+$white-80: #aeaeae;
+$white-90: #cecece;
+$primary-20: #6f0e10;
+$primary-40: #d40d1c;
+$secondary-90: #fddb7d;
 
 // Sizes
 $base-size: 1em;
@@ -20,91 +20,91 @@ $page-width: $base-size * 80;
 
 // Breakpoints
 $grid-breakpoints-map: (
-  default: (
-    width: 0,
-    column: 4,
-    margin: $base-size,
-    gap: 16px,
-  ),
-  xsmall: (
-    width: 319px,
-    column: 4,
-    margin: $base-size,
-    gap: 16px,
-  ),
-  small: (
-    width: 479px,
-    column: 4,
-    margin: $base-size * 1.5,
-    gap: 24px,
-  ),
-  medium: (
-    width: 639px,
-    column: 6,
-    margin: $base-size * 2.5,
-    gap: 24px,
-  ),
-  large: (
-    width: 767px,
-    column: 6,
-    margin: $base-size * 3,
-    gap: 32px,
-  ),
-  xlarge: (
-    width: 995px,
-    column: 6,
-    margin: $base-size * 4,
-    gap: 32px,
-  ),
-  2xlarge: (
-    width: 1199px,
-    column: 8,
-    margin: $base-size * 6,
-    gap: 40px,
-  ),
-  3xlarge: (
-    width: 1280px,
-    column: 8,
-    margin: $base-size * 4,
-    gap: 48px,
-  ),
+	default: (
+		width: 0,
+		column: 4,
+		margin: $base-size,
+		gap: 16px,
+	),
+	xsmall: (
+		width: 319px,
+		column: 4,
+		margin: $base-size,
+		gap: 16px,
+	),
+	small: (
+		width: 479px,
+		column: 4,
+		margin: $base-size * 1.5,
+		gap: 24px,
+	),
+	medium: (
+		width: 639px,
+		column: 6,
+		margin: $base-size * 2.5,
+		gap: 24px,
+	),
+	large: (
+		width: 767px,
+		column: 6,
+		margin: $base-size * 3,
+		gap: 32px,
+	),
+	xlarge: (
+		width: 995px,
+		column: 6,
+		margin: $base-size * 4,
+		gap: 32px,
+	),
+	2xlarge: (
+		width: 1199px,
+		column: 8,
+		margin: $base-size * 6,
+		gap: 40px,
+	),
+	3xlarge: (
+		width: 1280px,
+		column: 8,
+		margin: $base-size * 4,
+		gap: 48px,
+	),
 );
 
 // Animation
 $animation-standard: cubic-bezier(0.22, 1, 0.36, 1) !default;
-$duration-standard: .4s;
+$duration-standard: 0.4s;
 
 // Font Size
 // https://utopia.fyi/space/calculator?c=232,16,1.125,1240,20,1.125,6,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C5,s-l&g=s,l,xl,12
 $font-size: $base-size;
 $type-map: (
-  scale-6: (
-    size: clamp(2.0275rem, 1.9108rem + 0.8046vw, 2.5344rem),
-  ),
-  scale-5: (
-    size: clamp(1.8019rem, 1.6982rem + 0.7153vw, 2.2525rem),
-  ),
-  scale-4: (
-    size: clamp(1.6019rem, 1.5097rem + 0.6359vw, 2.0025rem),
-  ),
-  scale-3: (
-    size: clamp(1.4238rem, 1.3418rem + 0.5655vw, 1.78rem),
-  ),
-  scale-2: (
-    size: clamp(1.2656rem, 1.1928rem + 0.502vw, 1.5819rem),
-  ),
-  scale-1: (
-    size: clamp(1.125rem, 1.0603rem + 0.4464vw, 1.4063rem),
-  ),
-  scale-0: (
-    size: clamp(1rem, 0.9425rem + 0.3968vw, 1.25rem),
-  ),
-  scale--1: (
-    size: clamp(0.8888rem, 0.8375rem + 0.3532vw, 1.1113rem),
-  ),
-  scale--2: (
-  size: clamp(0.79rem, 0.7445rem + 0.3135vw, 0.9875rem),
-  ),
+	scale-6: (
+		size: clamp(2.0275rem, 1.9108rem + 0.8046vw, 2.5344rem),
+	),
+	scale-5: (
+		size: clamp(1.8019rem, 1.6982rem + 0.7153vw, 2.2525rem),
+	),
+	scale-4: (
+		size: clamp(1.6019rem, 1.5097rem + 0.6359vw, 2.0025rem),
+	),
+	scale-3: (
+		size: clamp(1.4238rem, 1.3418rem + 0.5655vw, 1.78rem),
+	),
+	scale-2: (
+		size: clamp(1.2656rem, 1.1928rem + 0.502vw, 1.5819rem),
+	),
+	scale-1: (
+		size: clamp(1.125rem, 1.0603rem + 0.4464vw, 1.4063rem),
+	),
+	scale-0: (
+		size: clamp(1rem, 0.9425rem + 0.3968vw, 1.25rem),
+	),
+	scale--1: (
+		size: clamp(0.8888rem, 0.8375rem + 0.3532vw, 1.1113rem),
+	),
+	scale--2: (
+		size: clamp(0.79rem, 0.7445rem + 0.3135vw, 0.9875rem),
+	),
 );
 $space-3xs: clamp(0.25rem, 0.2356rem + 0.0992vw, 0.3125rem);
 $space-2xs: clamp(0.5rem, 0.4712rem + 0.1984vw, 0.625rem);
@@ -132,6 +132,4 @@ $space-3xl: clamp(5rem, 4.7123rem + 1.9841vw, 6.25rem);
 // Grid sizes
 $grid-width-site: $base-size * 75;
 $grid-width-post: $base-size * 45;
-$grid-gutter: clamp(1rem, calc(0.50rem + 3.33vw),
-3.00rem);
-
+$grid-gutter: clamp(1rem, calc(0.5rem + 3.33vw), 3rem);

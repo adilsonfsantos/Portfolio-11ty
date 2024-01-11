@@ -2,26 +2,26 @@
 @use "../abstracts/variables";
 
 .hero {
-  align-items: center;
-  display: grid;
-  height: 100vh;
-  position: relative;
+	align-items: center;
+	display: grid;
+	height: 100vh;
+	position: relative;
 
-  &--container {
-    z-index: 2;
-  }
+	&--container {
+		z-index: 2;
+	}
 
-  &--title {
-    @include mixins.typescale(scale-6, medium, title);
+	&--title {
+		@include mixins.typescale(scale-6, medium, title);
 
-    color: variables.$white;
-    margin: 0;
-    text-align: center;
-  }
+		color: variables.$white;
+		margin: 0;
+		text-align: center;
+	}
 
-  .btn {
-    display: inline-flex;
-    justify-self: center;
-    margin-top: variables.$space-m;
-  }
+	.btn {
+		display: inline-flex;
+		justify-self: center;
+		margin-top: variables.$space-m;
+	}
 }

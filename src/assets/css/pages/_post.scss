@@ -2,214 +2,219 @@
 @use "../abstracts/mixins";
 
 .post {
-  background: variables.$black;
-  display: grid;
-  padding-top: variables.$space-3xl;
+	background: variables.$black;
+	display: grid;
+	padding-top: variables.$space-3xl;
 
-  &__header {
-    min-height: 55vh;
-    padding-top: variables.$space-xl;
+	&__header {
+		min-height: 55vh;
+		padding-top: variables.$space-xl;
 
-    &--container {
-      margin-bottom: variables.$space-xl;
-    }
+		&--container {
+			margin-bottom: variables.$space-xl;
+		}
 
-    &--title {
-      @include mixins.typescale(scale-6, medium, headline);
+		&--title {
+			@include mixins.typescale(scale-6, medium, headline);
 
-      color: variables.$white;
-      margin: 0;
-      max-width: 720px;
-    }
+			color: variables.$white;
+			margin: 0;
+			max-width: 720px;
+			text-wrap: balance;
 
-    &--description {
-      @include mixins.typescale(scale-0, normal, text);
+		}
 
-      color: variables.$white-80;
-      max-width: 720px;
-    }
-  }
+		&--description {
+			@include mixins.typescale(scale-0, normal, text);
 
-  &__hero {
-    display: grid;
+			color: variables.$white-80;
+			max-width: 720px;
+		}
+	}
 
-    &--container {
-      border-bottom: 2px solid variables.$black-30;
-      display: grid;
-    }
-  }
+	&__hero {
+		display: grid;
 
-  &__info {
-    display: grid;
-    gap: variables.$space-xl;
-    grid-template-columns: repeat(auto-fit, minmax(160px, auto));
-    margin-bottom: variables.$space-xl;
-  }
+		&--container {
+			border-bottom: 2px solid variables.$black-30;
+			display: grid;
+		}
+	}
 
-  &__info--title {
-    @include mixins.typescale(scale--2, medium, text);
+	&__info {
+		display: grid;
+		gap: variables.$space-xl;
+		grid-template-columns: repeat(auto-fit, minmax(160px, auto));
+		margin-bottom: variables.$space-xl;
+	}
 
-    border-top: solid variables.$black-10 1px;
-    color: variables.$white;
-    padding-top: variables.$space-s;
-    text-transform: uppercase;
-  }
+	&__info--title {
+		@include mixins.typescale(scale--2, medium, text);
 
-  &__info--text {
-    @include mixins.typescale(scale--1, normal, text);
-    @include mixins.font-family("iA Writer");
+		border-top: solid variables.$black-10 1px;
+		color: variables.$white;
+		padding-top: variables.$space-s;
+		text-transform: uppercase;
+	}
 
-    color: variables.$white-80;
-  }
+	&__info--text {
+		@include mixins.typescale(scale--1, normal, text);
+		@include mixins.font-family("iA Writer");
 
-  &__splash {
-    &--picture {
-      overflow: hidden;
-      width: 100%;
-    }
+		color: variables.$white-80;
+	}
 
-    &--image {
-      color: variables.$white;
-      height: auto;
-      max-width: none;
-      width: 100%;
-    }
-  }
+	&__splash {
+		&--picture {
+			overflow: hidden;
+			width: 100%;
+		}
 
-  hr {
-    border: none;
-    background-color: variables.$black-10;
-    height: 1px;
-    margin-top: variables.$space-xl;
-  }
+		&--image {
+			color: variables.$white;
+			height: auto;
+			max-width: none;
+			width: 100%;
+		}
+	}
 
-  &__content {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    blockquote,
-    ul,
-    ol,
-    li {
-      max-width: 720px;
-      margin: auto;
-      width: 100%;
-    }
+	hr {
+		border: none;
+		background-color: variables.$black-10;
+		height: 1px;
+		margin-top: variables.$space-xl;
+	}
 
-    &--container {
-      display: grid;
-    }
+	&__content {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		blockquote,
+		ul,
+		ol,
+		li {
+			max-width: 720px;
+			margin: auto;
+			width: 100%;
+		}
 
-    @include mixins.viewport(large) {
-      &--container > * {
-        grid-column: 2;
-      }
-    }
+		&--container {
+			display: grid;
+		}
 
-    .headline-link {
-      color: variables.$white;
-      text-decoration: underline;
-    }
+		@include mixins.viewport(large) {
+			&--container > * {
+				grid-column: 2;
+			}
+		}
 
-    h2,
-    h3,
-    h4 {
-      @include mixins.typescale(scale-4, medium, headline);
+		.headline-link {
+			color: variables.$white;
+			text-decoration: underline;
+		}
 
-      color: variables.$white-90;
-      margin-top: variables.$space-2xl;
-      margin-bottom: variables.$space-xs;
-      width: 100%;
-    }
+		h2,
+		h3,
+		h4 {
+			@include mixins.typescale(scale-4, medium, headline);
 
-    &__photo {
-      margin: 0 auto;
-      max-width: variables.$page-width;
-      overflow: hidden;
-      width: 100%;
+			color: variables.$white-90;
+			margin-top: variables.$space-2xl;
+			margin-bottom: variables.$space-xs;
+			text-wrap: balance;
+			width: 100%;
+		}
 
-      + p {
-        margin-bottom: variables.$space-xl;
-      }
-    }
+		&__photo {
+			margin: 0 auto;
+			max-width: variables.$page-width;
+			overflow: hidden;
+			width: 100%;
 
-    p {
-      @include mixins.typescale(scale-0, normal, text);
-      @include mixins.font-family("iA Writer");
+			+ p {
+				margin-bottom: variables.$space-xl;
+			}
+		}
 
-      color: variables.$white-80;
+		p {
+			@include mixins.typescale(scale-0, normal, text);
+			@include mixins.font-family("iA Writer");
 
-      + p {
-        margin-top: variables.$space-xs;
-      }
+			color: variables.$white-80;
 
-      + picture {
-        margin-top: variables.$space-xl;
-      }
-    }
+			+ p {
+				margin-top: variables.$space-xs;
+			}
 
-    picture + p {
-      margin-top: variables.$space-xl;
-    }
+			+ picture {
+				margin-top: variables.$space-xl;
+			}
+		}
 
-    picture + picture {
-      margin-top: variables.$space-xl;
-    }
+		picture + p {
+			margin-top: variables.$space-xl;
+		}
 
-    ul,
-    ol {
-      @include mixins.typescale(scale-0, normal, text);
+		picture + picture {
+			margin-top: variables.$space-xl;
+		}
 
-      padding-left: variables.$space-xs;
-    }
+		ul,
+		ol {
+			@include mixins.typescale(scale-0, normal, text);
 
-    p + ul,
-    p + ol {
-      margin-top: variables.$space-xs;
-    }
+			padding-left: variables.$space-xs;
+		}
 
-    li > ul {
-      margin: variables.$space-2xs;
-    }
+		p + ul,
+		p + ol {
+			margin-top: variables.$space-xs;
+		}
 
-    li {
-      @include mixins.typescale(scale-0, normal, text);
-      @include mixins.font-family("iA Writer");
+		li > ul {
+			margin: variables.$space-2xs;
+		}
 
-      color: variables.$white-80;
-    }
+		li {
+			@include mixins.typescale(scale-0, normal, text);
+			@include mixins.font-family("iA Writer");
 
-    li:not(:last-child) {
-      margin-bottom: variables.$space-2xs;
-    }
-  }
+			color: variables.$white-80;
+		}
 
-  blockquote {
-    border-left: 2px solid variables.$primary;
-    padding-left: variables.$space-m;
-    margin: variables.$space-m auto;
+		li:not(:last-child) {
+			margin-bottom: variables.$space-2xs;
+		}
+	}
 
-    p {
-      @include mixins.typescale(scale-1, bold, text);
+	blockquote {
+		border-left: 2px solid variables.$primary;
+		padding-left: variables.$space-m;
+		margin: variables.$space-m auto;
 
-      color: variables.$white-90;
-      margin: 0;
-    }
+		p {
+			@include mixins.typescale(scale-1, bold, text);
 
-    cite {
-      @include mixins.typescale(scale-0, normal, headline);
+			color: variables.$white-90;
+			margin: 0;
+		}
 
-      font-style: normal;
-      color: variables.$white-80;
-      margin-top: variables.$space-xs;
-    }
-  }
+		cite {
+			@include mixins.typescale(scale-0, normal, headline);
 
-  &__photo > img {
-    height: auto;
-  }
+			font-style: normal;
+			color: variables.$white-80;
+			margin-top: variables.$space-xs;
+		}
+	}
+
+	&__photo > img {
+		color: variables.$white-80;
+		height: auto;
+		text-align: center;
+	}
 }
