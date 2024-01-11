@@ -27,6 +27,16 @@ module.exports = function (eleventyConfig) {
 		return title;
 	});
 
+	// https://spencermortensen.com/articles/email-obfuscation/#link-url
+	eleventyConfig.addFilter("encode", (text) => {
+		let code = '';
+		for (let i = 0; i < text.length; ++i) {
+		code += '%' + text.charCodeAt(i).toString(16);
+	}
+
+	return code;
+	})
+
 	//  SHORTCODE
 	eleventyConfig.addShortcode("year", () => {
 		let year = new Date().getFullYear();

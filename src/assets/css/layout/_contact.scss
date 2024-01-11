@@ -2,63 +2,67 @@
 @use "../abstracts/variables";
 
 .contato {
-  align-items: center;
-  display: grid;
-  overflow: hidden;
-  padding: variables.$space-3xl 0;
-  position: relative;
+	align-items: center;
+	display: grid;
+	overflow: hidden;
+	padding: variables.$space-3xl 0;
+	position: relative;
 
-  &__gradient {
-    background: linear-gradient(45deg, #f4252b 0%, #f4c947 100%);
-    bottom: -50%;
-    content: "";
-    filter: 16px;
-    left: -10%;
-    mask-image: radial-gradient(
-      50% 50% at 50% 50%,
-      rgba(0 0 0 / 40%) 0%,
-      rgba(255 255 255 / 0%) 100%
-    );
-    pointer-events: none;
-    position: absolute;
-    top: 50%;
-    width: 120%;
-  }
+	&__gradient {
+		background: linear-gradient(45deg, #f4252b 0%, #f4c947 100%);
+		bottom: -50%;
+		content: "";
+		filter: 16px;
+		left: -10%;
+		mask-image: radial-gradient(
+			50% 50% at 50% 50%,
+			rgba(0 0 0 / 40%) 0%,
+			rgba(255 255 255 / 0%) 100%
+		);
+		pointer-events: none;
+		position: absolute;
+		top: 50%;
+		width: 120%;
+	}
 
-  &__info {
-    grid-column: 1/-1;
+	&__info {
+		grid-column: 1/-1;
 
-    @include mixins.viewport(small) {
-      text-align: center;
-    }
-  }
+		@include mixins.viewport(small) {
+			text-align: center;
+		}
+	}
 
-  &__call {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+	&__call {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 
-    &--cta {
-      @include mixins.typescale(scale-6, medium, headline);
+		&--cta {
+			@include mixins.typescale(scale-6, medium, headline);
 
-      color: variables.$white;
-      margin-bottom: variables.$space-xs;
-    }
+			color: variables.$white;
+			margin-bottom: variables.$space-xs;
+		}
 
-    &--subtitle {
-      @include mixins.typescale(scale-0, normal, text);
-      @include mixins.font-family("iA Writer");
+		&--subtitle {
+			@include mixins.typescale(scale-0, normal, text);
+			@include mixins.font-family("iA Writer");
 
-      color: variables.$white-80;
-      max-width: 640px;
-    }
+			color: variables.$white-80;
+			max-width: 640px;
+		}
 
-    &--email {
-      word-wrap: anywhere;
-    }
-  }
+		&--email {
+			word-wrap: anywhere;
+		}
+	}
 
-  a {
-    color: variables.$secondary-90;
-  }
+	a {
+		color: variables.$secondary-90;
+	}
+
+	b {
+		display: none;
+	}
 }

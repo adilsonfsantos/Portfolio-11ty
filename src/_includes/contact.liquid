@@ -7,8 +7,9 @@
 				<p class="contato__call--subtitle">Me chama no
 					<a href="{{site.social | map: 'url' | last }}">LinkedIn</a>
 					ou manda um email para
-					<a href="mailto:{{ site.author.email }}" class="contato__call--email">
-						{{ site.author.email }}
+					<a href="mailto:{{ site.author.email | encode }}"
+						class="contato__call--email">
+						<b>design</b>{{ site.author.email }}
 					</a>
 				</p>
 			</div>
