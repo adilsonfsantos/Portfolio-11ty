@@ -19,7 +19,7 @@
 
 			color: variables.$white;
 			margin: 0;
-			max-width: 720px;
+			width: min(100%, 720px);
 			text-wrap: balance;
 
 		}
@@ -28,7 +28,7 @@
 			@include mixins.typescale(scale-0, normal, text);
 
 			color: variables.$white-80;
-			max-width: 720px;
+			width: min(100%, 720px);
 		}
 	}
 
@@ -97,9 +97,8 @@
 		ul,
 		ol,
 		li {
-			max-width: 720px;
 			margin: auto;
-			width: 100%;
+			width: min(100%, 720px);
 		}
 
 		&--container {
@@ -126,7 +125,6 @@
 			margin-top: variables.$space-2xl;
 			margin-bottom: variables.$space-xs;
 			text-wrap: balance;
-			width: 100%;
 		}
 
 		&__photo {

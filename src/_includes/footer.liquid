@@ -10,7 +10,7 @@
 			<ul class="footer__content--social">
 				{% unless site.author.email == blank %}
 					<li>
-						<a href="mailto:{{ site.author.email }}">Email</a>
+						<a href="mailto:{{ site.author.email | encode }}">Email</a>
 					</li>
 				{% endunless %}
 				{%- for link in site.social -%}
