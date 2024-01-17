@@ -31,7 +31,7 @@
 		"@11ty/eleventy": "^2.0.1",
 		"@11ty/eleventy-img": "^3.1.8",
 		"@11ty/eleventy-plugin-directory-output": "^1.0.1",
-		"@11tyrocks/eleventy-plugin-sass-lightningcss": "^1.1.0",
+		"@11tyrocks/eleventy-plugin-sass-lightningcss": "^1.2.0",
 		"eleventy-critical-css": "^2.0.2",
 		"eleventy-plugin-rev": "^2.0.0",
 		"eleventy-xml-plugin": "^0.1.0",
