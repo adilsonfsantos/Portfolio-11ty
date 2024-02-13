@@ -29,7 +29,7 @@
 	],
 	"dependencies": {
 		"@11ty/eleventy": "^2.0.1",
-		"@11ty/eleventy-img": "^3.1.8",
+		"@11ty/eleventy-img": "^4.0.2",
 		"@11ty/eleventy-plugin-directory-output": "^1.0.1",
 		"@11tyrocks/eleventy-plugin-sass-lightningcss": "^1.2.0",
 		"eleventy-critical-css": "^2.0.2",
@@ -47,12 +47,12 @@
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
 		"html-minifier-terser": "^7.2.0",
-		"stylelint": "^16.2.0",
+		"stylelint": "^16.2.1",
 		"stylelint-config-standard-scss": "^13.0.0",
 		"stylelint-scss": "^6.1.0",
 		"stylelint-config-prettier-scss": "^1.0.0",
 		"stylelint-config-recommended-scss": "^14.0.0",
-		"prettier": "3.2.4"
+		"prettier": "3.2.5"
 
 	}
 }
