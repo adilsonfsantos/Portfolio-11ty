@@ -1,15 +1,15 @@
 {
 	"name": "Adilson Santos",
 	"title": "Adilson Santos",
-	"url": "https://adilsonsantos.netlify.app",
+	"url": "https://adilsonsantos.pages.dev",
 	"lang": "pt-BR",
 	"description": "Meu nome é Adilson Santos e eu sou um designer focado em identidades visuais, UI e UX.",
-	"image": "https://adilsonsantos.netlify.app/assets/images/thumbnail.png",
+	"image": "https://adilsonsantos.pages.dev/assets/images/thumbnail.png",
 	"feed": {
 		"subtitle": "Meu nome é Adilson Santos e eu sou um designer focado em identidades visuais, UI e UX.",
 		"filename": "feed.xml",
 		"path": "/feed/feed.xml",
-		"id": "https://adilsonsantos.netlify.app"
+		"id": "https://adilsonsantos.pages.dev"
 	},
 	"author": {
 		"name": "Adilson Santos",
