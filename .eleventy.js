@@ -117,6 +117,8 @@ module.exports = function (eleventyConfig) {
 	// PASSTHROUGHT ELEMENTS
 	eleventyConfig.addPassthroughCopy({
 		"src/netlify.toml": "/netlify.toml",
+		"src/_redirects": "/_redirects",
+		"src/_headers": "_headers",
 		"src/root/*": "/",
 		"src/assets/images/thumbnail.png": "/assets/images/thumbnail.png",
 		"src/assets/images/noise.png": "/assets/images/noise.png",
