@@ -12,14 +12,14 @@ async function images(path, altText, classParent, classDescendent, type) {
 
 	let metadata = await Image(path, {
 		widths: [320, 480, 768, 1104, 1650, 1920],
-		formats: ["webp", "jpeg"],
+		formats: ["webp"],
 		sharpOptions: {
 			ChromaSubsampling: "4:4:4",
 			Progressive: true,
 			Quality: 80,
 		},
 		sharpWebpOptions: {
-			quality: 95,
+			quality: 90,
 			smartSubsample: true,
 		},
 		urlPath: "/assets/images",
@@ -30,15 +30,15 @@ async function images(path, altText, classParent, classDescendent, type) {
 		imageSizes =
 			"(min-width: 1260px) 470px, (min-width: 620px) calc(42.1vw - 52px), \
 			calc(92.33vw - 64px), 100vw";
-		lowQuality = metadata.jpeg[1];
+		lowQuality = metadata.webp[1];
 		loadType = "lazy";
 	} else if (type === "banner") {
 		imageSizes = "(min-width: 1200px) 1104px, 87.5vw";
-		lowQuality = metadata.jpeg[2];
+		lowQuality = metadata.webp[2];
 		loadType = "eager";
 	} else {
 		imageSizes = "(min-width: 1200px) 1104px, 87.5vw";
-		lowQuality = metadata.jpeg[2];
+		lowQuality = metadata.webp[2];
 		loadType = "lazy";
 	}
 
