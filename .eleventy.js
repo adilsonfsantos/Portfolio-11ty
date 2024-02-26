@@ -6,8 +6,6 @@ const mila = require("markdown-it-link-attributes");
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 const eleventySass = require("@11tyrocks/eleventy-plugin-sass-lightningcss");
 const { minify } = require("html-minifier-terser");
-const criticalCss = require("eleventy-critical-css");
-const { compress } = require("eleventy-plugin-compress");
 
 const { blockquote } = require("./src/11ty/components/blockquote");
 const { images } = require("./src/11ty/components/images");
@@ -80,32 +78,6 @@ module.exports = function (eleventyConfig) {
 	//   PLUGINS
 	eleventyConfig.addPlugin(xmlFiltersPlugin);
 	eleventyConfig.addPlugin(directoryOutputPlugin);
-	eleventyConfig.addPlugin(criticalCss, {
-		inline: {
-			strategy: "default",
-		},
-		ignore: {
-			rule: [/\.noise/],
-		},
-		dimensions: [
-			{
-				width: 240,
-				height: 320,
-			},
-			{
-				width: 320,
-				height: 568,
-			},
-			{
-				width: 1024,
-				height: 1024,
-			},
-			{
-				width: 1366,
-				height: 768,
-			},
-		],
-	});
 
 	//  LAYOUT ALIASES
 	eleventyConfig.addLayoutAlias("default", "layouts/default.liquid");
@@ -143,11 +115,6 @@ module.exports = function (eleventyConfig) {
 		}
 
 		return content;
-	});
-
-	eleventyConfig.addPlugin(compress, {
-		enabled: true,
-		algorithm: "brotli",
 	});
 
 	return {
