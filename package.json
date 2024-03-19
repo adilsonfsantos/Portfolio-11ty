@@ -34,7 +34,7 @@
 		"@11tyrocks/eleventy-plugin-sass-lightningcss": "^1.2.0",
 		"eleventy-xml-plugin": "^0.1.0",
 		"html-minifier-terser": "^7.2.0",
-		"markdown-it": "^14.0.0",
+		"markdown-it": "^14.1.0",
 		"markdown-it-attrs": "^4.1.6",
 		"markdown-it-link-attributes": "^4.0.1",
 		"require-dir": "^1.2.0",
