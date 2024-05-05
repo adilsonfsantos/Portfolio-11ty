@@ -38,15 +38,15 @@
 		"markdown-it-attrs": "^4.1.6",
 		"markdown-it-link-attributes": "^4.0.1",
 		"require-dir": "^1.2.0",
-		"sass": "^1.75.0",
+		"sass": "^1.76.0",
 		"slugify": "^1.6.6"
 	},
 	"devDependencies": {
-		"eslint": "^9.1.1",
+		"eslint": "^9.2.0",
 		"eslint-config-prettier": "^9.1.0",
-		"stylelint": "^16.4.0",
+		"stylelint": "^16.5.0",
 		"stylelint-config-standard-scss": "^13.1.0",
-		"stylelint-scss": "^6.2.1",
+		"stylelint-scss": "^6.3.0",
 		"stylelint-config-prettier-scss": "^1.0.0",
 		"stylelint-config-recommended-scss": "^14.0.0",
 		"prettier": "3.2.5"
