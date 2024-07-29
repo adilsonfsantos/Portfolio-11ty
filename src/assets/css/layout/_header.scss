@@ -2,77 +2,77 @@
 @use "../abstracts/variables";
 
 .header {
-  background-color: variables.$black;
-  border-bottom: 1px solid variables.$black-10;
-  display: grid;
-  position: fixed;
-  width: 100vw;
-  z-index: 4;
+	background-color: variables.$black;
+	border-bottom: 1px solid variables.$black-10;
+	display: grid;
+	position: fixed;
+	width: 100vw;
+	z-index: 4;
 
-  @supports (backdrop-filter: none) {
-    background-color: rgba(variables.$black, 0.8);
-    backdrop-filter: saturate(180%) blur(variables.$base-size * 0.25);
-  }
+	@supports (backdrop-filter: none) {
+		background-color: rgba(variables.$black, 0.8);
+		backdrop-filter: saturate(180%) blur(variables.$base-size * 0.25);
+	}
 
-  &__container {
-    width: 100%;
-  }
+	&__container {
+		width: 100%;
+	}
 
-  &__content {
-    align-items: center;
-    display: flex;
+	&__content {
+		align-items: center;
+		display: flex;
 
-    &--logo {
-      color: variables.$white;
-    }
+		&--logo {
+			color: variables.$white;
+		}
 
-    &--logo > svg {
-      display: inherit;
-      fill: currentcolor;
-      height: 18px;
-      margin: variables.$base-size 0;
-      width: auto;
+		&--logo>svg {
+			display: inherit;
+			fill: currentcolor;
+			height: 18px;
+			margin: variables.$base-size 0;
+			width: auto;
 
-      @include mixins.viewport(3xlarge) {
-        height: 24px;
-      }
-    }
+			@include mixins.viewport(3xlarge) {
+				height: 24px;
+			}
+		}
 
-    &--spacer {
-      flex-grow: 1;
-    }
+		&--spacer {
+			flex-grow: 1;
+		}
 
-    &__nav {
-      align-self: center;
-      display: flex;
-    }
-  }
+		&__nav {
+			align-self: center;
+			display: flex;
+		}
+	}
 }
 
 .nav {
-  &__link {
-    @include mixins.typescale(scale-0, medium, text);
-    @include mixins.transition(color);
+	&__link {
+		color: variables.$white-80;
+		line-height: 1.2;
+		padding: variables.$base-size 0;
 
-    @include mixins.viewport(small) {
-      @include mixins.typescale(scale--1, medium, text);
-    }
+		@include mixins.typescale(scale-0, medium, text);
+		@include mixins.transition(color);
 
-    color: variables.$white-80;
-    line-height: 1.2;
-    padding: variables.$base-size 0;
+		@include mixins.viewport(small) {
+			@include mixins.typescale(scale--1, medium, text);
+		}
 
-    &:hover,
-    &:focus {
-      color: variables.$white;
-    }
+		&:hover,
+		&:focus {
+			color: variables.$white;
+		}
 
-    &:first-child {
-      margin-right: variables.$space-xs;
-    }
+		&:first-child {
+			margin-right: variables.$space-xs;
+		}
 
-    &--active {
-      color: variables.$white;
-    }
-  }
+		&--active {
+			color: variables.$white;
+		}
+	}
 }
