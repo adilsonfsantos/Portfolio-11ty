@@ -1,7 +1,7 @@
 ---
 title: Plaenge
 date: 2019-05-01T22:31:40.716Z
-image: /assets/images/plaenge-Banner.png
+image: /portfolio-static/assets/images/plaenge-Banner.png
 description: >-
   Conheça um pouco do processo em trazer praticidade e elegância para o site e aplicativo da construtora Plaenge.
 categories:
@@ -45,20 +45,20 @@ Utilizando a Golden Hour como base para o layout, buscamos remeter ao horário d
 
 A paleta de cores utilizada busca trazer calor e conforto e a tipografia sem serifa transmite a sofisticação da marca Plaenge.
 
-{% images "src/assets/images/plaenge-guide.png", "Fontes e paleta de cores do layout.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/plaenge-guide.png", "Fontes e paleta de cores do layout.", "post__photo", "post__photo--image" %}
 
 O uso do espaço em branco também foi utilizado para garantir o respiro dos elementos e passar simultaneamente o conforto proposto para o layout.
 
-{% images "src/assets/images/plaenge-Site-home.png", "Layout da página home do site.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/plaenge-Site-home.png", "Layout da página home do site.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/plaenge-Site-empreendimento.png", "Detalhe da página empreendimentos do site.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/plaenge-Site-empreendimento.png", "Detalhe da página empreendimentos do site.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/plaenge-Site-aplaenge.png", "Trecho da página do site sobre a Plaenge.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/plaenge-Site-aplaenge.png", "Trecho da página do site sobre a Plaenge.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/plaenge-App-home.png", "Detalhe da home e outras telas do aplicativo.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/plaenge-App-home.png", "Detalhe da home e outras telas do aplicativo.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/plaenge-App-outro.png", "Detalhes de outras telas do aplicativo.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/plaenge-App-outro.png", "Detalhes de outras telas do aplicativo.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/plaenge-Site-PVC.png", "Design da página home do portal do cliente.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/plaenge-Site-PVC.png", "Design da página home do portal do cliente.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/plaenge-Site-PVC2.png", "Detalhe de diversas páginas do portal do cliente.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/plaenge-Site-PVC2.png", "Detalhe de diversas páginas do portal do cliente.", "post__photo", "post__photo--image" %}

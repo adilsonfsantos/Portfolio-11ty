@@ -1,7 +1,7 @@
 ---
 title: Toyota Empilhadeiras
 date: 2020-03-31T00:00:00Z
-image: /assets/images/Toyota-Banner.png
+image: /portfolio-static/assets/images/Toyota-Banner.png
 description: Conheça um pouco do processo em trazer praticidade e elegância para
   o site e aplicativo da construtora Plaenge.
 categories:
@@ -36,12 +36,12 @@ Para atender os requisitos solicitados, foi definido que a interface deveria uti
 
 Utilizando as cores da marca, o vermelho foi escolhido como destaque, o cinza e preto para detalhes e o branco como fundo.
 
-{% images "src/assets/images/Toyota-Home.png", "Parte de cima da página home do site, contendo um banner com carrossel e um trecho o que você procura com opções de empilhadeiras, rebocadores e serviços.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/Toyota-Home.png", "Parte de cima da página home do site, contendo um banner com carrossel e um trecho o que você procura com opções de empilhadeiras, rebocadores e serviços.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/Toyota-Home-2.png", "Trecho da da página home do site mostrando alguns modelos da linha de empilhadeiras e informações sobre a localização e contato.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/Toyota-Home-2.png", "Trecho da da página home do site mostrando alguns modelos da linha de empilhadeiras e informações sobre a localização e contato.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/Toyota-Vitrine.png", "Página de vitrine do site, contendo diversos modelos de empilhadeiras.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/Toyota-Vitrine.png", "Página de vitrine do site, contendo diversos modelos de empilhadeiras.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/Toyota-PDP.png", "Página de produto do site, demonstrando a empilhadeira em destaque e suas informações técnicas.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/Toyota-PDP.png", "Página de produto do site, demonstrando a empilhadeira em destaque e suas informações técnicas.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/Toyota-Outros.png", "Outras páginas do site.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/Toyota-Outros.png", "Outras páginas do site.", "post__photo", "post__photo--image" %}

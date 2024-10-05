@@ -1,7 +1,7 @@
 ---
 title: Sagrado Boulangerie
 date: 2019-11-31T00:00:00.000Z
-image: /assets/images/sagrado-Banner.png
+image: /portfolio-static/assets/images/sagrado-Banner.png
 description: >-
   Processo de como foi realizado o redesign do site da Sagrado Boulangerie
 keywords:
@@ -44,12 +44,12 @@ francês, pois apesar do nome francês Boulangerie a Sagrado não busca utilizar
 Antes de começar a projetar, eu desenvolvi um guide para o layout que utilizava as cores e a tipografia da marca.
 Na tipografia, foi utilizada a escala Perfect Fourth ou Quarta Justa (1.333) para criar um ritmo mais agradável de leitura.
 
-{% images "src/assets/images/sagrado-Guide.jpg", "Guide com fontes e paleta de cores do layout.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/sagrado-Guide.jpg", "Guide com fontes e paleta de cores do layout.", "post__photo", "post__photo--image" %}
 
 A utilização de espaço em branco é bastante utilizada para guiar os olhos dos usuários, além de dar respiro entre os elementos do layout.
 
-{% images "src/assets/images/sagrado-home.png", "Layout completo da página home do site.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/sagrado-home.png", "Layout completo da página home do site.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/sagrado-Outros.png", "Design das páginas de blog do site.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/sagrado-Outros.png", "Design das páginas de blog do site.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/sagrado-Detalhe-Footer.png", "Detalhe do footer do site.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/sagrado-Detalhe-Footer.png", "Detalhe do footer do site.", "post__photo", "post__photo--image" %}

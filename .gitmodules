@@ -1,0 +1,3 @@
+[submodule "portfolio-static"]
+	path = src/portfolio-static
+	url = git@github.com:adilsonfsantos/portfolio-static.git

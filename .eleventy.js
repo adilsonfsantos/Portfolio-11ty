@@ -87,10 +87,11 @@ export default function(eleventyConfig) {
 
 	// PASSTHROUGHT ELEMENTS
 	eleventyConfig.addPassthroughCopy({
-		"src/netlify.toml": "/netlify.toml",
 		"src/root/*": "/",
 		"src/root/assets/fonts/*": "/assets/fonts/",
-		"src/root/assets/images/*": "/assets/images/",
+		"src/portfolio-static/root/*": "/",
+		"src/portfolio-static/assets/images/noise.webp": "/assets/images/noise.webp",
+		"src/portfolio-static/assets/videos/*" : "/assets/videos"
 	});
 
 	// SERVER OPTIONS

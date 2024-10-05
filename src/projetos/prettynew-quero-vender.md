@@ -1,7 +1,7 @@
 ---
 title: PrettyNew - Quero vender
 date: 2022-06-01T00:00:00.000Z
-image: /assets/images/prettyNew-Banner.png
+image: /portfolio-static/assets/images/prettyNew-Banner.png
 description: >-
   Conheça um pouco do processo em trazer praticidade e elegância para o site e o aplicativo da construtora Plaenge.
 categories:
@@ -28,6 +28,6 @@ Para isso, foi definido que o ponto-chave que a animação deveria destacar seri
 
 Assim foi feita a seguinte animação.
 
-<video src="/assets/images/prettyNew-Feed.mp4" preload="none" poster="/assets/images/prettyNew-Feed-Poster.webp" controls></video>
+<video src="/assets/videos/prettyNew-Feed.mp4" preload="none" poster="/assets/videos/prettyNew-Feed-Poster.webp" controls></video>
 
-<video src="/assets/images/prettyNew-Stories.mp4" preload="none" poster="/assets/images/prettyNew-Stories-Poster.webp" controls></video>
+<video src="/assets/videos/prettyNew-Stories.mp4" preload="none" poster="/assets/videos/prettyNew-Stories-Poster.webp" controls></video>

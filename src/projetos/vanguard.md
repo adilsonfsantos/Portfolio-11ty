@@ -1,7 +1,7 @@
 ---
 title: Vanguard
 date: 2019-09-24T00:00:00Z
-image: /assets/images/Vanguard-Banner.png
+image: /portfolio-static/assets/images/Vanguard-Banner.png
 description: >-
   Conheça um pouco do processo em trazer praticidade e elegância para o site e o aplicativo da construtora Plaenge.
 categories:
@@ -49,12 +49,12 @@ Como a Vanguard utilizava o layout e identidade da Plaenge, os problemas abordad
 
 Utilizando as cores da marca, foram criadas diversas escalas para que os elementos do layout fossem acessíveis. Também foi definida uma escala modular para a tipografia da marca, de modo que a harmonia e a legibilidade se mantivessem entre as versões desktop e mobile.
 
-{% images "src/assets/images/Vanguard-Guide.png", "Guia de estilos demonstrando as cores e tipografia utilizadas no site da Vanguard.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/Vanguard-Guide.png", "Guia de estilos demonstrando as cores e tipografia utilizadas no site da Vanguard.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/Vanguard-Site-Home.png", "Detalhe da página home demonstra uma parte do layout da página home.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/Vanguard-Site-Home.png", "Detalhe da página home demonstra uma parte do layout da página home.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/Vanguard-Site-empreendimento.png", "Trecho da página de empreendimentos com informações sobre o imóvel.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/Vanguard-Site-empreendimento.png", "Trecho da página de empreendimentos com informações sobre o imóvel.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/Vanguard-Site-empreendimento2.png", "Diversos detalhes da página de empreendimentos.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/Vanguard-Site-empreendimento2.png", "Diversos detalhes da página de empreendimentos.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/Vanguard-App-fluxo.png", "Diversas telas do aplicativo da Vanguard.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/Vanguard-App-fluxo.png", "Diversas telas do aplicativo da Vanguard.", "post__photo", "post__photo--image" %}

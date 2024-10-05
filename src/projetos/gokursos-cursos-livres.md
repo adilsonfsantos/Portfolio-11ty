@@ -1,7 +1,7 @@
 ---
 title: GoKursos - Cursos Livres
 date: 2024-03-05T00:00:00.000Z
-image: /assets/images/gokursos_livres-Banner.png
+image: /portfolio-static/assets/images/gokursos_livres-Banner.png
 description: >-
   Detalhe sobre a campanha de cursos livres realizada para a GoKursos.
 categories:
@@ -39,12 +39,12 @@ Em seguida, visei adicionar elementos similares ao estilo de ilustrações linea
 
 Por fim, a tipografia também deveria seguir o estilo retro futurista e, para isso, a família transducer foi escolhida.
 
-{% images "src/assets/images/gokursos_livres-Geral.png", "Mulher sorrindo com notebook no post geral de promoção dos cursos online da GoKursos.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/gokursos_livres-Geral.png", "Mulher sorrindo com notebook no post geral de promoção dos cursos online da GoKursos.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/gokursos_livres-Gestão.png", "Homem sorrindo e apontando no post de promoção dos cursos online de gestão da GoKursos.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/gokursos_livres-Gestão.png", "Homem sorrindo e apontando no post de promoção dos cursos online de gestão da GoKursos.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/gokursos_livres-Negócios.png", "Mulher sorrindo e apontando no post de promoção dos cursos online de negócios da GoKursos.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/gokursos_livres-Negócios.png", "Mulher sorrindo e apontando no post de promoção dos cursos online de negócios da GoKursos.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/gokursos_livres-Saúde.png", "Homem sorrindo em destaque no post de promoção dos cursos online de saúde da GoKursos.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/gokursos_livres-Saúde.png", "Homem sorrindo em destaque no post de promoção dos cursos online de saúde da GoKursos.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/gokursos_livres-Tecnologia.png", "Homem feliz e usando o celular no post de promoção dos cursos online de tecnologia da GoKursos.", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/gokursos_livres-Tecnologia.png", "Homem feliz e usando o celular no post de promoção dos cursos online de tecnologia da GoKursos.", "post__photo", "post__photo--image" %}

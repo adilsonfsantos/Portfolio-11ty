@@ -1,7 +1,7 @@
 ---
 title: Pó de Chá
 date: 2020-02-16T00:00:00.000Z
-image: /assets/images/podecha-Banner.png
+image: /portfolio-static/assets/images/podecha-Banner.png
 description: >-
   Processo da criação da interface da Pó de Chá.
 categories:
@@ -28,18 +28,18 @@ Transmitir a sensação de bem-estar e a relação com a natureza dos produtos d
 
 Com base nas cores da marca, foi desenvolvida uma paleta que pudesse passar os sentimentos de leveza e bem-estar desejados. Além disso, foi elaborada uma escala tipográfica de modo que houvesse harmonia entre o texto e os elementos.
 
-{% images "src/assets/images/podecha-Guide.png", "Imagem demonstra uma parte do layout da página sobre a história da Sagrado", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/podecha-Guide.png", "Imagem demonstra uma parte do layout da página sobre a história da Sagrado", "post__photo", "post__photo--image" %}
 
 Para o desenvolvimento da interface, foi decidido que os produtos da Pó de Chá seriam o destaque principal, para isso foram utilizadas ilustrações dos chás em diversas áreas do site para que o público se sentisse familiarizado com as embalagens da marca.
 
 Além disso, buscando trazer um sentimento aconchegante e receptivo, foram utilizadas formas arredondadas para os elementos.
 
-{% images "src/assets/images/podecha-Home.png", "Imagem demonstra uma parte do layout da página sobre a história da Sagrado", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/podecha-Home.png", "Imagem demonstra uma parte do layout da página sobre a história da Sagrado", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/podecha-Parceiro.png", "Imagem demonstra uma parte do layout da página sobre a história da Sagrado", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/podecha-Parceiro.png", "Imagem demonstra uma parte do layout da página sobre a história da Sagrado", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/podecha-Receita.png", "Imagem demonstra uma parte do layout da página sobre a história da Sagrado", "post__photo", "post__photo--image" %}
+{% images "src/portfolio-static/assets/images/podecha-Receita.png", "Imagem demonstra uma parte do layout da página sobre a história da Sagrado", "post__photo", "post__photo--image" %}
 
 Também foram desenvolvidas algumas animações para instruir os clientes sobre o modo de preparo do chá.
 
-<video src="/assets/images/Po_de_Cha-Gifs.mp4" preload="none" poster="/assets/images/Po_de_Cha-Gifs-Poster.webp" controls></video>
+<video src="/assets/videos/Po_de_Cha-Gifs.mp4" preload="none" poster="/assets/videos/Po_de_Cha-Gifs-Poster.webp" controls></video>
