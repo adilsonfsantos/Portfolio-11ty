@@ -1,18 +1,17 @@
-"use-strict";
-const markdownIt = require("markdown-it");
-const markdownItAttrs = require("markdown-it-attrs");
-const xmlFiltersPlugin = require("eleventy-xml-plugin");
-const mila = require("markdown-it-link-attributes");
-const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
-const eleventySass = require("@11tyrocks/eleventy-plugin-sass-lightningcss");
-const { minify } = require("html-minifier-terser");
+import directoryOutputPlugin from "@11ty/eleventy-plugin-directory-output";
+import eleventySass from "@11tyrocks/eleventy-plugin-sass-lightningcss";
+import xmlFiltersPlugin from "eleventy-xml-plugin";
+import { minify } from "html-minifier-terser";
+import markdownIt from "markdown-it";
+import markdownItAttrs from "markdown-it-attrs";
+import mila from "markdown-it-link-attributes";
 
-const { blockquote } = require("./src/11ty/components/blockquote");
-const { images } = require("./src/11ty/components/images");
+import blockquote from "./src/11ty/components/blockquote.js";
+import images from "./src/11ty/components/images.js";
 
 process.setMaxListeners(50);
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	// DON'T USE .GITIGNORE
 	eleventyConfig.setUseGitIgnore(false);
 
@@ -90,9 +89,6 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({
 		"src/netlify.toml": "/netlify.toml",
 		"src/root/*": "/",
-		"src/assets/images/thumbnail.png": "/assets/images/thumbnail.png",
-		"src/assets/images/noise.png": "/assets/images/noise.png",
-		"src/assets/fonts/*": "/assets/fonts/",
 	});
 
 	// SERVER OPTIONS
