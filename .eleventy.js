@@ -91,6 +91,7 @@ export default function(eleventyConfig) {
 		"src/root/assets/fonts/*": "/assets/fonts/",
 		"src/portfolio-static/root/*": "/",
 		"src/portfolio-static/assets/images/noise.webp": "/assets/images/noise.webp",
+		"src/portfolio-static/assets/images/thumbnail.png": "/assets/images/thumbnail.png",
 		"src/portfolio-static/assets/videos/*" : "/assets/videos"
 	});
 
