@@ -1,10 +1,9 @@
 ---
-title: GoKursos - Cursos Livres 
+title: GoKursos - Cursos Livres
 date: 2024-03-05T00:00:00.000Z
-card: /assets/images/gokursos_livres-Card.png
 image: /assets/images/gokursos_livres-Banner.png
 description: >-
-  Um pouco sobre a campanha de volta às aulas feita para o Mackenzie Aeja.
+  Detalhe sobre a campanha de cursos livres realizada para a GoKursos.
 categories:
   - Direção de arte
 roles:

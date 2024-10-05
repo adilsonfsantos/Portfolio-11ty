@@ -1,22 +1,9 @@
 ---
 title: Plaenge
 date: 2019-05-01T22:31:40.716Z
-image: /assets/images/plaenge-wide.png
+image: /assets/images/plaenge-Banner.png
 description: >-
-  Conheça um pouco do processo em trazer praticidade e elegância para o site e o aplicativo da construtora Plaenge.
-keywords:
-  - app
-  - aplicativo
-  - web
-  - site
-  - website
-  - Plaenge
-  - construtora
-  - empreendimentos
-  - layout
-  - usabilidade
-  - Golden Hour
-  - Prototipagem
+  Conheça um pouco do processo em trazer praticidade e elegância para o site e aplicativo da construtora Plaenge.
 categories:
   - UI Design
 roles:
@@ -37,31 +24,41 @@ project:
 
 #### Introdução
 
-Em Maio de 2019 durante o meu estágio como UI designer na [Agência Chleba](https://www.chleba.net/), a Plaenge solicitou um redesign do seu site para que ele possa refletir a nova identidade visual da marca e também um aplicativo para facilitar o acesso dos usuários as informações dos empreendimentos.
+Com mais de 48 anos de atuação no segmento imobiliário, a Plaenge é a maior construtora da região sul do Brasil. Presente em 4 estados brasileiros e também no Chile, seu foco é sempre trazer sofisticação e conforto para seus clientes.
 
-Antes de falar do layout você precisa saber de algumas coisas sobre a Plaenge, atuando há mais de 40 anos nos segmentos de incorporação residencial, construção civil, projetos e montagens industriais, a Plaenge é atualmente a maior construtora imobiliária do sul do Brasil e um dos mais tradicionais grupos de engenharia do país. Presente em 4 estados do brasileiros e no também no Chile a Plaenge sempre busca trazer nos seus serviços a sofisticação e conforto para os seus clientes.
+E nessa busca por entregar a melhor experiência para seus clientes, a Plaenge percebeu a necessidade de facilitar o acesso dos usuários às informações dos empreendimentos. Para isso, foi solicitado à [Agência Chleba](https://www.chleba.net/) um redesign do site e o desenvolvimento de um aplicativo.
 
-#### Desafio
+## Desafio
 
-O site anterior da Plaenge possui diversos problemas de usabilidade os quais você pode ver no case de UX feito pela [Francianne Tonin](https://www.behance.net/gallery/83533089/UX-UI-Construtora-Plaenge) e a partir deste case foram definidos os seguintes princípios da nova UI:
+Com base no levantamento feito pela [Francianne Tonin](https://www.behance.net/gallery/83533089/UX-UI-Construtora-Plaenge), foram definidos os seguintes princípios da nova interface:
 
-- Desenvolver um interface limpa e interativa.
-- Trazer maior transparência para o processo de compra.
-- Valorizar possíveis clientes e torná-los parte da Plaenge.
-- Trazer os conceito de sofisticação e exclusividade para o layout.
+O site anterior da Plaenge possui diversos problemas de usabilidade, os quais você pode ver no case de UX feito pela [Francianne Tonin](https://www.behance.net/gallery/83533089/UX-UI-Construtora-Plaenge). A partir deste case, foram definidos os seguintes princípios da nova UI:
 
-#### Solução
+- Desenvolver uma interface limpa e interativa;
+- Trazer maior transparência para o processo de compra;
+- Valorizar possíveis clientes e torná-los parte da Plaenge;
+- Trazer os conceitos de sofisticação e exclusividade para o layout.
 
-Com os wireframes desenvolvidos pela Francianne e utilizando referencias de marcas como a [Tesla](https://www.tesla.com/) e o [El Moderne Hotel](https://elmodernehotel.com/en/), eu desenvolvi os layouts do site e app utilizando os conceitos da marca.
+## Solução
 
-Para a composição do layout utilizamos como referência a Golden Hour, que diretamente remete ao horário da volta para casa, a satisfação, a sensação de dever cumprido e o momento de recuperar energias.
+Utilizando a Golden Hour como base para o layout, buscamos remeter ao horário da volta para casa e o momento de recuperar energias.
+
+A paleta de cores utilizada busca trazer calor e conforto e a tipografia sem serifa transmite a sofisticação da marca Plaenge.
 
 {% images "src/assets/images/plaenge-guide.png", "Fontes e paleta de cores do layout.", "post__photo", "post__photo--image" %}
 
-A paleta de cores utilizada busca trazer calor e conforto mantendo o foco na sofisticação, a tipografia busca manter o conceito de exclusividade com a fonte principal geométrica sem serifa.
+O uso do espaço em branco também foi utilizado para garantir o respiro dos elementos e passar simultaneamente o conforto proposto para o layout.
 
-O uso de espaço foi generosamente utilizado para garantir o respiro e a elegância dos elementos, ao mesmo tempo mantendo a conforto proposto para o layout.
+{% images "src/assets/images/plaenge-Site-home.png", "Layout da página home do site.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/plaenge-full.png", "Imagem da home.", "post__photo", "post__photo--image" %}
+{% images "src/assets/images/plaenge-Site-empreendimento.png", "Detalhe da página empreendimentos do site.", "post__photo", "post__photo--image" %}
 
-{% images "src/assets/images/plaenge-app-outro.png", "Diversas telas do app.", "post__photo", "post__photo--image" %}
+{% images "src/assets/images/plaenge-Site-aplaenge.png", "Trecho da página do site sobre a Plaenge.", "post__photo", "post__photo--image" %}
+
+{% images "src/assets/images/plaenge-App-home.png", "Detalhe da home e outras telas do aplicativo.", "post__photo", "post__photo--image" %}
+
+{% images "src/assets/images/plaenge-App-outro.png", "Detalhes de outras telas do aplicativo.", "post__photo", "post__photo--image" %}
+
+{% images "src/assets/images/plaenge-Site-PVC.png", "Design da página home do portal do cliente.", "post__photo", "post__photo--image" %}
+
+{% images "src/assets/images/plaenge-Site-PVC2.png", "Detalhe de diversas páginas do portal do cliente.", "post__photo", "post__photo--image" %}
