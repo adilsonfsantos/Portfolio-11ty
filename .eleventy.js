@@ -11,7 +11,7 @@ import images from "./src/11ty/components/images.js";
 
 process.setMaxListeners(50);
 
-export default function (eleventyConfig) {
+export default function(eleventyConfig) {
 	// DON'T USE .GITIGNORE
 	eleventyConfig.setUseGitIgnore(false);
 
@@ -28,10 +28,10 @@ export default function (eleventyConfig) {
 	eleventyConfig.addFilter("encode", (text) => {
 		let code = '';
 		for (let i = 0; i < text.length; ++i) {
-		code += '%' + text.charCodeAt(i).toString(16);
-	}
+			code += '%' + text.charCodeAt(i).toString(16);
+		}
 
-	return code;
+		return code;
 	})
 
 	//  SHORTCODE
@@ -89,6 +89,8 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({
 		"src/netlify.toml": "/netlify.toml",
 		"src/root/*": "/",
+		"src/root/assets/fonts/*": "/assets/fonts/",
+		"src/root/assets/images/*": "/assets/images/",
 	});
 
 	// SERVER OPTIONS
@@ -99,7 +101,7 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(eleventySass);
 
 	// MINIFY HTML
-	eleventyConfig.addTransform("htmlmin", function (content) {
+	eleventyConfig.addTransform("htmlmin", function(content) {
 		if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
 			let minified = minify(content, {
 				options: {
