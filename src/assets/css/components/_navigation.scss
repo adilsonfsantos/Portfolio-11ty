@@ -2,29 +2,29 @@
 @use "../abstracts/mixins";
 
 .postnav {
-  &--container {
-    display: grid;
-    padding: variables.$space-3xl 0;
-  }
+	&--container {
+		display: grid;
+		padding: variables.$space-3xl 0;
+	}
 
-  &__link {
-    @include mixins.typescale(scale-3, normal, headline);
+	&__link {
+		@include mixins.typescale(scale-3, normal, headline);
 
-    color: variables.$secondary-90;
+		color: variables.$secondary-90;
 
-    @include mixins.viewport(medium) {
-      margin: auto;
-      text-align: center;
-    }
+		@include mixins.viewport(medium) {
+			margin: auto;
+			text-align: center;
+		}
 
-    &--content {
-      color: variables.$white;
-    }
+		&--content {
+			color: variables.$white;
+		}
 
-    &--title {
-      @include mixins.typescale(scale-5, medium, headline);
+		&--title {
+			@include mixins.typescale(scale-5, medium, headline);
 
-      color: variables.$white;
-    }
-  }
+			color: variables.$white;
+		}
+	}
 }

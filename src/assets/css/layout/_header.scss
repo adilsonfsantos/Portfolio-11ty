@@ -51,7 +51,7 @@
 
 .nav {
 	&__link {
-		color: variables.$white-80;
+		color: variables.$white-90;
 		line-height: 1.2;
 		padding: variables.$base-size 0;
 
@@ -73,6 +73,7 @@
 
 		&--active {
 			color: variables.$white;
+			text-decoration: underline;
 		}
 	}
 }

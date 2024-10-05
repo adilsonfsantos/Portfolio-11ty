@@ -2,67 +2,68 @@
 @use "../abstracts/variables";
 
 .footer {
-  align-items: center;
-  display: grid;
-  background: variables.$black;
-  position: relative;
+	align-items: center;
+	display: grid;
+	background: variables.$black;
+	position: relative;
 
-  &__gradient {
-    background: linear-gradient(90deg, #FD3A39 0%, #F4C947 100%);
-    height: 1px;
-    grid-column: 1/-1;
-  }
+	&__gradient {
+		background: linear-gradient(90deg, variables.$primary 0%, variables.$secondary 100%);
+		height: 1px;
+		grid-column: 1/-1;
+	}
 
-  &__container {
-    width: 100%;
-  }
+	&__container {
+		width: 100%;
+	}
 
-  &__content {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    padding: (variables.$base-size * 2) 0;
+	&__content {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		padding: (variables.$base-size * 2) 0;
 
-    &--copyright {
-      @include mixins.font-family("iA Writer");
-      @include mixins.typescale(scale--1, normal, text);
+		&--copyright {
+			@include mixins.typescale(scale--1, normal, text);
 
-      color: variables.$white-80;
-      margin: (variables.$base-size) 0;
-      place-self: center;
-    }
+			color: variables.$white-90;
+			margin: (variables.$base-size) 0;
+			place-self: center;
+		}
 
-    &--spacer {
-      flex-grow: 1;
-    }
-  }
+		&--spacer {
+			flex-grow: 1;
+		}
+	}
 
-  &__content--social {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
+	&__content--social {
+		display: flex;
+		flex-wrap: wrap;
+		list-style-type: none;
 
-    li {
-      @include mixins.font-family("iA Writer");
+		li {
+			margin: variables.$space-2xs 0;
+		}
 
-      margin: variables.$space-2xs 0;
-      text-transform: uppercase;
-    }
+		>li:not(:last-child) {
+			margin-right: variables.$space-m;
+		}
 
-    > li:not(:last-child) {
-      margin-right: variables.$space-m;
-    }
+		a {
+			color: variables.$white-90;
+			padding: variables.$space-2xs 0;
 
-    a {
-      @include mixins.typescale(scale--1, normal, text);
+			@include mixins.typescale(scale-0, medium, text);
+			@include mixins.transition(color);
 
-      color: variables.$white-80;
-      padding: variables.$space-2xs 0;
-    }
+			@include mixins.viewport(small) {
+				@include mixins.typescale(scale--1, medium, text);
+			}
+		}
 
-    a:hover,
-    a:focus {
-      color: variables.$white;
-    }
-  }
+		a:hover,
+		a:focus {
+			color: variables.$white;
+		}
+	}
 }

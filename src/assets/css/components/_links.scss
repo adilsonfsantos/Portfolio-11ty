@@ -1,16 +1,15 @@
 @use "../abstracts/variables";
 
 article a,
-h3 > a,
-h4 > a,
-span > a,
-.contato > .link {
-  color: inherit;
+h3>a,
+h4>a,
+span>a,
+.contato>.link {
+	color: inherit;
 }
 
-article p > a,
-article li > a {
-  color: variables.$secondary-90;
-  text-decoration: underline;
+article p>a,
+article li>a {
+	color: variables.$secondary-90;
+	text-decoration: underline;
 }
-

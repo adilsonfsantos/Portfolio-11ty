@@ -2,7 +2,6 @@
 @use "../abstracts/mixins";
 
 .post {
-	background: variables.$black;
 	display: grid;
 	padding-top: variables.$space-3xl;
 
@@ -21,13 +20,12 @@
 			margin: 0;
 			width: min(100%, 720px);
 			text-wrap: balance;
-
 		}
 
 		&--description {
 			@include mixins.typescale(scale-0, normal, text);
 
-			color: variables.$white-80;
+			color: variables.$white-90;
 			width: min(100%, 720px);
 		}
 	}
@@ -61,7 +59,7 @@
 		@include mixins.typescale(scale--1, normal, text);
 		@include mixins.font-family("iA Writer");
 
-		color: variables.$white-80;
+		color: variables.$white-90;
 	}
 
 	&__splash {
@@ -86,7 +84,10 @@
 	}
 
 	&__content {
-		h1,
+		&--container {
+			display: grid;
+		}
+
 		h2,
 		h3,
 		h4,
@@ -101,16 +102,6 @@
 			width: min(100%, 720px);
 		}
 
-		&--container {
-			display: grid;
-		}
-
-		@include mixins.viewport(large) {
-			&--container > * {
-				grid-column: 2;
-			}
-		}
-
 		.headline-link {
 			color: variables.$white;
 			text-decoration: underline;
@@ -118,46 +109,85 @@
 
 		h2,
 		h3,
-		h4 {
-			@include mixins.typescale(scale-4, medium, headline);
-
-			color: variables.$white-90;
-			margin-top: variables.$space-2xl;
-			margin-bottom: variables.$space-xs;
+		h4,
+		h5,
+		h6 {
+			color: variables.$white;
+			margin-bottom: variables.$space-s;
 			text-wrap: balance;
 		}
 
-		&__photo {
-			margin: 0 auto;
-			max-width: variables.$page-width;
-			overflow: hidden;
-			width: 100%;
+		h2 {
+			@include mixins.typescale(scale-4, medium, headline);
 
-			+ p {
-				margin-bottom: variables.$space-xl;
-			}
+			margin-top: variables.$space-3xl;
+		}
+
+		h3 {
+			@include mixins.typescale(scale-2, medium, headline);
+
+			margin-top: variables.$space-2xl;
+		}
+
+		h4 {
+			@include mixins.typescale(scale-1, medium, headline);
+
+			margin-top: variables.$space-xl;
+		}
+
+		h5 {
+			@include mixins.typescale(scale-0, medium, headline);
+
+			margin-top: variables.$space-l;
+		}
+
+		h6 {
+			@include mixins.typescale(scale-0, medium, headline);
+
+			margin-top: variables.$space-l;
+		}
+
+		h2+h3,
+		h3+h4,
+		h4+h5,
+		h5+h6 {
+			margin-top: 0;
 		}
 
 		p {
 			@include mixins.typescale(scale-0, normal, text);
 			@include mixins.font-family("iA Writer");
 
-			color: variables.$white-80;
-
-			+ p {
-				margin-top: variables.$space-xs;
-			}
-
-			+ picture {
-				margin-top: variables.$space-xl;
-			}
+			color: variables.$white-90;
 		}
 
-		picture + p {
-			margin-top: variables.$space-xl;
+		p+p {
+			margin-top: variables.$space-s;
 		}
 
-		picture + picture {
+		img,
+		video {
+			margin: 0 auto;
+			max-width: variables.$page-width;
+			overflow: hidden;
+			width: 100%;
+			color: variables.$white-90;
+			height: auto;
+			text-align: center;
+		}
+
+		video {
+			max-height: 80dvh;
+
+		}
+
+		p+picture,
+		p+video,
+		picture+p,
+		picture+picture,
+		video+video,
+		picture+video,
+		video+picture {
 			margin-top: variables.$space-xl;
 		}
 
@@ -165,23 +195,24 @@
 		ol {
 			@include mixins.typescale(scale-0, normal, text);
 
-			padding-left: variables.$space-xs;
+			padding-left: variables.$space-s;
 		}
 
-		p + ul,
-		p + ol {
+		p+ul,
+		p+ol {
 			margin-top: variables.$space-xs;
 		}
 
-		li > ul {
-			margin: variables.$space-2xs;
+		ul+p,
+		ol+p {
+			margin-top: variables.$space-xs;
 		}
 
 		li {
 			@include mixins.typescale(scale-0, normal, text);
 			@include mixins.font-family("iA Writer");
 
-			color: variables.$white-80;
+			color: variables.$white-90;
 		}
 
 		li:not(:last-child) {
@@ -197,22 +228,17 @@
 		p {
 			@include mixins.typescale(scale-1, bold, text);
 
-			color: variables.$white-90;
+			color: variables.$white;
 			margin: 0;
 		}
 
 		cite {
-			@include mixins.typescale(scale-0, normal, headline);
+			@include mixins.typescale(scale-0, normal, text);
+			@include mixins.font-family("iA Writer");
 
-			font-style: normal;
-			color: variables.$white-80;
+			font-style: italic;
+			color: variables.$white-90;
 			margin-top: variables.$space-xs;
 		}
-	}
-
-	&__photo > img {
-		color: variables.$white-80;
-		height: auto;
-		text-align: center;
 	}
 }

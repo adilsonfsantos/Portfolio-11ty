@@ -1,13 +1,12 @@
 @charset 'UTF-8';
-@import "abstracts/variables";
-@import "abstracts/mixins";
-@import "base/base";
-@import "base/typography";
-@import "layout/grid";
-@import "layout/footer";
-@import "layout/header";
-@import "components/btn";
-@import "components/noise";
-@import "components/bg-grid";
-@import "pages/404";
-
+@use "abstracts/variables.scss";
+@use "abstracts/mixins.scss";
+@use "base/base.scss";
+@use "base/typography.scss";
+@use "layout/grid.scss";
+@use "layout/footer.scss";
+@use "layout/header.scss";
+@use "components/btn.scss";
+@use "components/noise.scss";
+@use "components/bg-grid.scss";
+@use "pages/404.scss" as error;
