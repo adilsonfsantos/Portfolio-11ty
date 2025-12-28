@@ -9,9 +9,7 @@ import mila from "markdown-it-link-attributes";
 import blockquote from "./src/11ty/components/blockquote.js";
 import images from "./src/11ty/components/images.js";
 
-process.setMaxListeners(50);
-
-export default function(eleventyConfig) {
+export default function (eleventyConfig) {
 	// DON'T USE .GITIGNORE
 	eleventyConfig.setUseGitIgnore(false);
 
@@ -32,7 +30,7 @@ export default function(eleventyConfig) {
 		}
 
 		return code;
-	})
+	});
 
 	//  SHORTCODE
 	eleventyConfig.addShortcode("year", () => {
@@ -124,4 +122,4 @@ export default function(eleventyConfig) {
 			output: "dist",
 		},
 	};
-};
+}
