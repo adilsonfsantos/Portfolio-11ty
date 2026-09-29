@@ -68,10 +68,10 @@
 			margin-top: variables.$space-l;
 		}
 
-		h2+h3,
-		h3+h4,
-		h4+h5,
-		h5+h6 {
+		h2 + h3,
+		h3 + h4,
+		h4 + h5,
+		h5 + h6 {
 			margin-top: 0;
 		}
 
@@ -82,7 +82,7 @@
 			color: variables.$white-90;
 		}
 
-		p+p {
+		p + p {
 			margin-top: variables.$space-s;
 		}
 
@@ -93,16 +93,16 @@
 			padding-left: variables.$space-s;
 		}
 
-		p+ul,
-		p+ol {
+		p + ul,
+		p + ol {
 			margin-top: variables.$space-2xs;
 		}
 
-		ul+p {
+		ul + p {
 			margin-top: variables.$space-s;
 		}
 
-		li>ul {
+		li > ul {
 			margin: variables.$space-2xs;
 		}
 

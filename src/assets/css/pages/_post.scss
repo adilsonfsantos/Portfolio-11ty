@@ -147,10 +147,10 @@
 			margin-top: variables.$space-l;
 		}
 
-		h2+h3,
-		h3+h4,
-		h4+h5,
-		h5+h6 {
+		h2 + h3,
+		h3 + h4,
+		h4 + h5,
+		h5 + h6 {
 			margin-top: 0;
 		}
 
@@ -161,7 +161,7 @@
 			color: variables.$white-90;
 		}
 
-		p+p {
+		p + p {
 			margin-top: variables.$space-s;
 		}
 
@@ -178,16 +178,15 @@
 
 		video {
 			max-height: 80dvh;
-
 		}
 
-		p+picture,
-		p+video,
-		picture+p,
-		picture+picture,
-		video+video,
-		picture+video,
-		video+picture {
+		p + picture,
+		p + video,
+		picture + p,
+		picture + picture,
+		video + video,
+		picture + video,
+		video + picture {
 			margin-top: variables.$space-xl;
 		}
 
@@ -198,13 +197,13 @@
 			padding-left: variables.$space-s;
 		}
 
-		p+ul,
-		p+ol {
+		p + ul,
+		p + ol {
 			margin-top: variables.$space-xs;
 		}
 
-		ul+p,
-		ol+p {
+		ul + p,
+		ol + p {
 			margin-top: variables.$space-xs;
 		}
 

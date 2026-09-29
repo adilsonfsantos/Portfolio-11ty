@@ -24,9 +24,9 @@ export default function (eleventyConfig) {
 
 	// https://spencermortensen.com/articles/email-obfuscation/#link-url
 	eleventyConfig.addFilter("encode", (text) => {
-		let code = '';
+		let code = "";
 		for (let i = 0; i < text.length; ++i) {
-			code += '%' + text.charCodeAt(i).toString(16);
+			code += "%" + text.charCodeAt(i).toString(16);
 		}
 
 		return code;
@@ -88,9 +88,11 @@ export default function (eleventyConfig) {
 		"src/root/*": "/",
 		"src/root/assets/fonts/*": "/assets/fonts/",
 		"src/portfolio-static/root/*": "/",
-		"src/portfolio-static/assets/images/noise.webp": "/assets/images/noise.webp",
-		"src/portfolio-static/assets/images/thumbnail.png": "/assets/images/thumbnail.png",
-		"src/portfolio-static/assets/videos/*" : "/assets/videos"
+		"src/portfolio-static/assets/images/noise.webp":
+			"/assets/images/noise.webp",
+		"src/portfolio-static/assets/images/thumbnail.png":
+			"/assets/images/thumbnail.png",
+		"src/portfolio-static/assets/videos/*": "/assets/videos",
 	});
 
 	// SERVER OPTIONS
@@ -101,7 +103,7 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(eleventySass);
 
 	// MINIFY HTML
-	eleventyConfig.addTransform("htmlmin", function(content) {
+	eleventyConfig.addTransform("htmlmin", function (content) {
 		if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
 			let minified = minify(content, {
 				options: {

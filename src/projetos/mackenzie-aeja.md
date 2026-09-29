@@ -27,17 +27,26 @@ team:
 
 ## Introdução
 
-O Mackenzie Aeja é um projeto que desde 2009 oferece ensino gratuito para jovens e adultos que não tiveram acesso ou não deram continuidade aos seus estudos.
+O Mackenzie Aeja é um projeto que desde 2009 oferece ensino gratuito para jovens
+e adultos que não tiveram acesso ou não deram continuidade aos seus estudos.
 
 ## Desafio
 
-Para divulgar a volta às aulas, o Mackenzie solicitou para a [Agência Chleba](https://www.chleba.net/) criar uma arte para recepcionar os novos alunos e os veteranos, marcando um novo ciclo de aprendizado de forma receptiva, alegre e motivadora.
+Para divulgar a volta às aulas, o Mackenzie solicitou para a
+[Agência Chleba](https://www.chleba.net/) criar uma arte para recepcionar os
+novos alunos e os veteranos, marcando um novo ciclo de aprendizado de forma
+receptiva, alegre e motivadora.
 
 ## Solução
 
-Durante a criação, a principal ideia foi a de um lembrete, para que a arte fosse vista mais como um recado para o aluno do que um comunicado institucional.
+Durante a criação, a principal ideia foi a de um lembrete, para que a arte fosse
+vista mais como um recado para o aluno do que um comunicado institucional.
 
-Assim, o azul da paleta de cores foi escolhido por ser um oposto direto ao vermelho tradicional Mackenzie e para passar um sentimento de segurança e receptividade aos alunos, as ilustrações dos elementos ao redor utilizam cores pastéis para que o contraste com o fundo fosse agradável e, ao mesmo tempo, não passar um conceito infantil.
+Assim, o azul da paleta de cores foi escolhido por ser um oposto direto ao
+vermelho tradicional Mackenzie e para passar um sentimento de segurança e
+receptividade aos alunos, as ilustrações dos elementos ao redor utilizam cores
+pastéis para que o contraste com o fundo fosse agradável e, ao mesmo tempo, não
+passar um conceito infantil.
 
 {% images "src/portfolio-static/assets/images/mackenzie_aeja_cartaz.png", "Cartaz com a frase &quot; Sejam bem-vindos a um novo ano cheio de desafios oportunidades e conquistas ao alcance de todos.&quot;", "post__photo", "post__photo--image" %}
 

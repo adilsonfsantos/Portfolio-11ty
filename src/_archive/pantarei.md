@@ -24,12 +24,18 @@ team:
 
 ## Introdução
 
-A Pantarei é uma empresa focada em desenvolver soluções com design, seja na comunicação gráfica ou com produto a Pantarei busca trazer qualidade e sustentabilidade para as suas criações.
+A Pantarei é uma empresa focada em desenvolver soluções com design, seja na
+comunicação gráfica ou com produto a Pantarei busca trazer qualidade e
+sustentabilidade para as suas criações.
 
 {% blockquote "Heráclito" %}
-"Ninguém pode entrar duas vezes no mesmo rio, pois quando nele se entra novamente, não se encontra as mesmas águas e o próprio ser já se modificou."
+"Ninguém pode entrar duas vezes no mesmo rio, pois quando nele se entra
+novamente, não se encontra as mesmas águas e o próprio ser já se modificou."
 {% endblockquote %}
 
-A marca foi baseada no pensamento de Heráclito que busca passar o conceito da constante transformação, as curvas representam a água e a simetria do ambigrama além de auxiliar na visualização da marca trazem essa transformação ao demonstrar que a sua experiência com a Pantarei nunca será a mesma.
+A marca foi baseada no pensamento de Heráclito que busca passar o conceito da
+constante transformação, as curvas representam a água e a simetria do ambigrama
+além de auxiliar na visualização da marca trazem essa transformação ao
+demonstrar que a sua experiência com a Pantarei nunca será a mesma.
 
 {% images "src/assets/images/pantarei-cartao.png", "Cartão de visita da Pantarei", "post__photo", "post__photo--image" %}

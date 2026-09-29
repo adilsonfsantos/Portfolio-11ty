@@ -16,4 +16,5 @@ Source code from portfolio of Adilson Santos
 
 [GNU General Public License v3.0](https://github.com/adilsonfsantos/Portfolio-11ty/blob/master/LICENSE.md)
 
-All Images and texts from projects folders is licensed under [CC BY-NC-ND 4.0](http://creativecommons.org/licenses/by-nc-nd/4.0/).
+All Images and texts from projects folders is licensed under
+[CC BY-NC-ND 4.0](http://creativecommons.org/licenses/by-nc-nd/4.0/).

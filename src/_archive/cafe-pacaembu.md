@@ -27,10 +27,12 @@ team:
 
 ## Introdução
 
-Em 1957 Michel Halla uniu sua paixão pelo futebol e pelo café e com uma
-pequena torre de torrefação de café no centro de Vargem Grande do sul,
-interior de São Paulo e desde então o Café Pacaembu busca satisfazer seus
-clientes por meio do sabor e qualidade. E durante o meu estágio na [Agência Chleba](https://www.chleba.net/) criei alguns posts para as redes sociais remetendo a história e conceitos da marca do Café Pacaembu.
+Em 1957 Michel Halla uniu sua paixão pelo futebol e pelo café e com uma pequena
+torre de torrefação de café no centro de Vargem Grande do sul, interior de São
+Paulo e desde então o Café Pacaembu busca satisfazer seus clientes por meio do
+sabor e qualidade. E durante o meu estágio na
+[Agência Chleba](https://www.chleba.net/) criei alguns posts para as redes
+sociais remetendo a história e conceitos da marca do Café Pacaembu.
 
 {% images "src/assets/images/cafe-pacaembu-receita.png", "Stories e post da receita que ensina a fazer um café com suco de laranja.", "post__photo", "post__photo--image" %}
 
