@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page.liquid
 title: Sobre mim
 description:
   Conheça um pouco mais sobre Adilson Santos designer de identidades visuais, UI

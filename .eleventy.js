@@ -12,6 +12,8 @@ import images from "./src/11ty/components/images.js";
 export default function (eleventyConfig) {
 	// DON'T USE .GITIGNORE
 	eleventyConfig.setUseGitIgnore(false);
+	eleventyConfig.setLayoutsDirectory("_layouts");
+	eleventyConfig.setLayoutResolution(false);
 
 	eleventyConfig.addFilter("addNbsp", (str) => {
 		if (!str) {
@@ -75,13 +77,6 @@ export default function (eleventyConfig) {
 	//   PLUGINS
 	eleventyConfig.addPlugin(xmlFiltersPlugin);
 	eleventyConfig.addPlugin(directoryOutputPlugin);
-
-	//  LAYOUT ALIASES
-	eleventyConfig.addLayoutAlias("default", "layouts/default.liquid");
-	eleventyConfig.addLayoutAlias("home", "layouts/home.liquid");
-	eleventyConfig.addLayoutAlias("post", "layouts/post.liquid");
-	eleventyConfig.addLayoutAlias("page", "layouts/page.liquid");
-	eleventyConfig.addLayoutAlias("404", "layouts/404.liquid");
 
 	// PASSTHROUGHT ELEMENTS
 	eleventyConfig.addPassthroughCopy({
