@@ -42,7 +42,7 @@
 		"markdown-it-attrs": "^5.0.1",
 		"markdown-it-link-attributes": "^4.0.1",
 		"require-dir": "^1.2.0",
-		"sass": "^1.106.0",
+		"sass": "^1.106.1",
 		"slugify": "^1.6.9"
 	},
 	"devDependencies": {
