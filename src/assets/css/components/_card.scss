@@ -2,54 +2,55 @@
 @use "../abstracts/variables";
 
 .card {
-  @include mixins.transition(all);
+	@include mixins.transition(all);
 
-  background-color: variables.$black;
-  border: 1px solid variables.$black-10;
-  display: flex;
-  flex-direction: column;
-  max-width: 100%;
-  position: relative;
+	background-color: variables.$black;
+	border: 1px solid variables.$black-10;
+	display: flex;
+	flex-direction: column;
+	max-width: 100%;
+	position: relative;
 
-  &__picture {
-    padding: variables.$space-m;
-    padding-bottom: 0;
-    overflow: hidden;
-    width: 100%;
+	picture {
+		padding: variables.$space-m;
+		padding-bottom: 0;
+		overflow: hidden;
+		width: 100%;
+	}
 
-    &--image {
-      color: variables.$white;
-      width: 100%;
-      height: 100%;
-    }
-  }
+	&picture--image {
+		color: variables.$white;
+		width: 100%;
+		height: 100%;
+	}
 
-  &__description {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    justify-content: space-between;
-    padding: variables.$space-m;
-    position: relative;
-    width: 100%;
+	&__description {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		justify-content: space-between;
+		padding: variables.$space-m;
+		position: relative;
+		width: 100%;
 
-    &--title {
-      @include mixins.typescale(scale-2, medium, headline);
+		&--title {
+			@include mixins.typescale(scale-2, medium, headline);
 
-      color: variables.$white;
-      margin-bottom: variables.$space-m;
-    }
+			color: variables.$white;
+			margin-bottom: variables.$space-m;
+		}
 
-    &--tag {
-      @include mixins.font-family("iA Writer");
-      @include mixins.typescale(scale--2, normal, text);
+		&--tag {
+			@include mixins.font-family("iA Writer");
+			@include mixins.typescale(scale--2, normal, text);
 
-      color: variables.$white-80;
-    }
-  }
+			color: variables.$white-90;
+			text-transform: uppercase;
+		}
+	}
 
-  &:hover,
-  &:focus {
-    background-color: variables.$black-10;
-  }
+	&:hover,
+	&:focus {
+		background-color: variables.$black-10;
+	}
 }

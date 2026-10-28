@@ -2,34 +2,34 @@
 @use "../abstracts/variables";
 
 .btn {
-  @include mixins.typescale(scale--1, medium, headline);
-  @include mixins.font-position(center);
-  @include mixins.transition(all);
+	@include mixins.typescale(scale--1, medium, headline);
+	@include mixins.font-position(center);
+	@include mixins.transition(all);
 
-  border-radius: variables.$space-m;
-  min-width: 120px;
-  padding: variables.$space-xs variables.$space-m;
-  text-transform: uppercase;
+	border-radius: variables.$space-m;
+	min-width: 120px;
+	padding: variables.$space-xs variables.$space-m;
+	text-transform: uppercase;
 
-  &__primary {
-    color: variables.$white;
-    background-color: variables.$black;
-    border: 2px solid variables.$secondary;
+	&__primary {
+		color: variables.$white;
+		background-color: variables.$black;
+		border: 2px solid variables.$secondary;
 
-    &:hover,
-    &:focus {
-      color: variables.$black;
-      background-color: variables.$secondary-90;
-    }
+		&:hover,
+		&:focus {
+			color: variables.$black;
+			background-color: variables.$secondary-90;
+		}
 
-    &:active {
-      color: variables.$black;
-      background-color: variables.$secondary-90;
-    }
-  }
+		&:active {
+			color: variables.$black;
+			background-color: variables.$secondary-90;
+		}
+	}
 
-  &__secondary {
-    background-color: variables.$black-20;
-    color: variables.$white;
-  }
+	&__secondary {
+		background-color: variables.$black-20;
+		color: variables.$white;
+	}
 }

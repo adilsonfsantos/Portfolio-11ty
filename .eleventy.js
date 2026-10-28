@@ -1,20 +1,19 @@
-"use-strict";
-const markdownIt = require("markdown-it");
-const markdownItAttrs = require("markdown-it-attrs");
-const xmlFiltersPlugin = require("eleventy-xml-plugin");
-const mila = require("markdown-it-link-attributes");
-const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
-const eleventySass = require("@11tyrocks/eleventy-plugin-sass-lightningcss");
-const { minify } = require("html-minifier-terser");
+import directoryOutputPlugin from "@11ty/eleventy-plugin-directory-output";
+import eleventySass from "@11tyrocks/eleventy-plugin-sass-lightningcss";
+import xmlFiltersPlugin from "eleventy-xml-plugin";
+import { minify } from "html-minifier-terser";
+import markdownIt from "markdown-it";
+import markdownItAttrs from "markdown-it-attrs";
+import mila from "markdown-it-link-attributes";
 
-const { blockquote } = require("./src/11ty/components/blockquote");
-const { images } = require("./src/11ty/components/images");
+import blockquote from "./src/11ty/components/blockquote.js";
+import images from "./src/11ty/components/images.js";
 
-process.setMaxListeners(50);
-
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	// DON'T USE .GITIGNORE
 	eleventyConfig.setUseGitIgnore(false);
+	eleventyConfig.setLayoutsDirectory("_layouts");
+	eleventyConfig.setLayoutResolution(false);
 
 	eleventyConfig.addFilter("addNbsp", (str) => {
 		if (!str) {
@@ -27,13 +26,13 @@ module.exports = function (eleventyConfig) {
 
 	// https://spencermortensen.com/articles/email-obfuscation/#link-url
 	eleventyConfig.addFilter("encode", (text) => {
-		let code = '';
+		let code = "";
 		for (let i = 0; i < text.length; ++i) {
-		code += '%' + text.charCodeAt(i).toString(16);
-	}
+			code += "%" + text.charCodeAt(i).toString(16);
+		}
 
-	return code;
-	})
+		return code;
+	});
 
 	//  SHORTCODE
 	eleventyConfig.addShortcode("year", () => {
@@ -79,20 +78,16 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(xmlFiltersPlugin);
 	eleventyConfig.addPlugin(directoryOutputPlugin);
 
-	//  LAYOUT ALIASES
-	eleventyConfig.addLayoutAlias("default", "layouts/default.liquid");
-	eleventyConfig.addLayoutAlias("home", "layouts/home.liquid");
-	eleventyConfig.addLayoutAlias("post", "layouts/post.liquid");
-	eleventyConfig.addLayoutAlias("page", "layouts/page.liquid");
-	eleventyConfig.addLayoutAlias("404", "layouts/404.liquid");
-
 	// PASSTHROUGHT ELEMENTS
 	eleventyConfig.addPassthroughCopy({
-		"src/netlify.toml": "/netlify.toml",
 		"src/root/*": "/",
-		"src/assets/images/thumbnail.png": "/assets/images/thumbnail.png",
-		"src/assets/images/noise.png": "/assets/images/noise.png",
-		"src/assets/fonts/*": "/assets/fonts/",
+		"src/root/assets/fonts/*": "/assets/fonts/",
+		"src/portfolio-static/root/*": "/",
+		"src/portfolio-static/assets/images/noise.webp":
+			"/assets/images/noise.webp",
+		"src/portfolio-static/assets/images/thumbnail.png":
+			"/assets/images/thumbnail.png",
+		"src/portfolio-static/assets/videos/*": "/assets/videos",
 	});
 
 	// SERVER OPTIONS
@@ -124,4 +119,4 @@ module.exports = function (eleventyConfig) {
 			output: "dist",
 		},
 	};
-};
+}

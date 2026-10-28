@@ -1,6 +1,12 @@
-const Image = require("@11ty/eleventy-img");
+import Image from "@11ty/eleventy-img";
 
-async function images(path, altText, classParent, classDescendent, type) {
+export default async function images(
+	path,
+	altText,
+	classParent,
+	classDescendent,
+	type,
+) {
 	if (altText === undefined || typeof altText !== "string") {
 		// You bet we throw an error on missing alt (alt="" works okay)
 		throw new Error(`Missing \`alt\` on image from: ${path}`);
@@ -11,7 +17,7 @@ async function images(path, altText, classParent, classDescendent, type) {
 	let loadType;
 
 	let metadata = await Image(path, {
-		widths: [320, 480, 768, 1104, 1650, 1920],
+		widths: [320, 480, 768, 1104],
 		formats: ["webp"],
 		sharpOptions: {
 			ChromaSubsampling: "4:4:4",
@@ -60,5 +66,3 @@ async function images(path, altText, classParent, classDescendent, type) {
         			decoding="async">
 		</picture>`;
 }
-
-module.exports = { images };

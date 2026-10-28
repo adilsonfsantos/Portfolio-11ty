@@ -30,7 +30,7 @@
 			@include mixins.font-family("iA Writer");
 			@include mixins.typescale(scale-0, normal, text);
 
-			color: variables.$white-80;
+			color: variables.$white-90;
 			margin-top: variables.$space-xs;
 			max-width: variables.$base-size * 40;
 		}

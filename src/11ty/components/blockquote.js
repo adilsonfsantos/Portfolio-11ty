@@ -1,4 +1,4 @@
-function blockquote(content, source, type) {
+export default function blockquote(content, source, type) {
 	const typeAttr = type ? `data-type="${type}"` : "";
 
 	return `<blockquote ${typeAttr}>
@@ -6,5 +6,3 @@ function blockquote(content, source, type) {
 		<cite>— ${source}</cite>
 		</blockquote>`;
 }
-
-module.exports = { blockquote };

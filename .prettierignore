@@ -1,0 +1,15 @@
+# build output
+dist/
+
+# Cache
+.cache/
+
+# dependencies
+node_modules/
+
+# binary assets
+src/portfolio-static/assets/images/
+src/portfolio-static/assets/videos/
+
+# fonts
+src/root/assets/fonts/
