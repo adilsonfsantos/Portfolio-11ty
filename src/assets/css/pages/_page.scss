@@ -2,24 +2,28 @@
 @use "../abstracts/mixins";
 
 .page {
-	display: grid;
-	padding-top: variables.$space-3xl;
+	max-inline-size: variables.$viewport-max;
+	padding-inline: variables.$grid-gutter;
+	margin-inline: auto;
+	padding-block-start: variables.$space-3xl;
 
-	&__header {
-		padding-top: variables.$space-xl;
-		margin-bottom: variables.$space-l;
+	&__title {
+		@include mixins.typescale(scale-6, medium, headline);
 
-		&--title {
-			@include mixins.typescale(scale-6, medium, headline);
+		color: variables.$color-white;
+		font-family: variables.$font-headline;
 
-			color: variables.$white;
-			margin: 0;
+		+ p {
+			margin-block-start: variables.$space-xl;
 		}
 	}
 
 	&__content {
-		&--container {
-			display: grid;
+		@include mixins.flow(variables.$space-l);
+		@include mixins.content-grid;
+
+		@media (width >= variables.$breakpoint-desktop) {
+			padding-block-start: variables.$space-3xl;
 		}
 
 		h2,
@@ -27,101 +31,51 @@
 		h4,
 		h5,
 		h6 {
-			color: variables.$white;
-			margin-bottom: variables.$space-s;
-			text-wrap: balance;
-		}
-
-		h1 {
-			@include mixins.typescale(scale-6, medium, headline);
-
-			margin-top: variables.$space-3xl;
-		}
-
-		h2 {
-			@include mixins.typescale(scale-4, medium, headline);
-
-			margin-top: variables.$space-3xl;
-		}
-
-		h3 {
 			@include mixins.typescale(scale-2, medium, headline);
 
-			margin-top: variables.$space-2xl;
+			--flow-space: #{variables.$space-xl};
+
+			color: variables.$color-white;
+			font-family: variables.$font-headline;
 		}
 
-		h4 {
-			@include mixins.typescale(scale-1, medium, headline);
-
-			margin-top: variables.$space-xl;
-		}
-
-		h5 {
-			@include mixins.typescale(scale-0, medium, headline);
-
-			margin-top: variables.$space-l;
-		}
-
-		h6 {
-			@include mixins.typescale(scale-0, medium, headline);
-
-			margin-top: variables.$space-l;
-		}
-
-		h2 + h3,
-		h3 + h4,
-		h4 + h5,
-		h5 + h6 {
-			margin-top: 0;
-		}
-
-		p {
+		p,
+		li {
 			@include mixins.typescale(scale-0, normal, text);
-			@include mixins.font-family("iA Writer");
 
-			color: variables.$white-90;
-		}
-
-		p + p {
-			margin-top: variables.$space-s;
+			color: variables.$color-white-90;
 		}
 
 		ul,
 		ol {
-			@include mixins.typescale(scale-0, normal, text);
+			@include mixins.flow(variables.$space-m);
 
-			padding-left: variables.$space-s;
+			margin-block-end: 0;
+			padding-inline-start: variables.$space-s;
+			list-style-type: square;
 		}
+	}
 
-		p + ul,
-		p + ol {
-			margin-top: variables.$space-2xs;
-		}
+	a {
+		color: variables.$color-secondary-90;
+		text-decoration: underline;
+		text-underline-offset: 4px;
 
-		ul + p {
-			margin-top: variables.$space-s;
-		}
-
-		li > ul {
-			margin: variables.$space-2xs;
-		}
-
-		li {
-			@include mixins.typescale(scale-0, normal, text);
-			@include mixins.font-family("iA Writer");
-
-			color: variables.$white-90;
-		}
-
-		li:not(:last-child) {
-			margin-bottom: variables.$space-2xs;
+		&:focus-visible {
+			outline: 2px solid variables.$color-secondary-90;
+			outline-offset: 2px;
 		}
 	}
 
 	hr {
 		border: none;
-		background-color: variables.$black-10;
+		background-color: variables.$color-black-10;
 		height: 1px;
-		margin-top: variables.$space-xl;
+		margin-block-start: variables.$space-xl;
+		width: 100%;
+	}
+
+	strong {
+		font-weight: 700;
 	}
 }

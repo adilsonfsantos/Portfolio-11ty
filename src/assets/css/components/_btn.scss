@@ -1,35 +1,91 @@
 @use "../abstracts/mixins";
 @use "../abstracts/variables";
 
+@mixin btn-base {
+	@include mixins.typescale(scale-0, medium, headline);
+
+	inline-size: max-content;
+	padding-block: variables.$space-s;
+	padding-inline: variables.$space-m;
+	transition:
+		background-color 0.3s ease,
+		border-color 0.3s ease,
+		color 0.3s ease,
+		transform 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+		scale 150ms cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+@mixin btn-hover($text-color, $bg-color, $border-color) {
+	@media (hover: hover) and (pointer: fine) {
+		&:hover {
+			color: $text-color;
+			background-color: $bg-color;
+			border-color: $border-color;
+		}
+	}
+}
+
+@mixin btn-active($text-color, $bg-color, $border-color) {
+	&:active {
+		color: $text-color;
+		background-color: $bg-color;
+		border-color: $border-color;
+		scale: 0.97;
+	}
+}
+
 .btn {
-	@include mixins.typescale(scale--1, medium, headline);
-	@include mixins.font-position(center);
-	@include mixins.transition(all);
+	&--primary {
+		@include btn-base;
 
-	border-radius: variables.$space-m;
-	min-width: 120px;
-	padding: variables.$space-xs variables.$space-m;
-	text-transform: uppercase;
+		color: variables.$color-secondary-90;
+		border: 1px solid variables.$color-secondary-90;
+		background-color: rgb(variables.$color-secondary-90, 0.2);
 
-	&__primary {
-		color: variables.$white;
-		background-color: variables.$black;
-		border: 2px solid variables.$secondary;
-
-		&:hover,
-		&:focus {
-			color: variables.$black;
-			background-color: variables.$secondary-90;
+		@supports (backdrop-filter: blur(1px)) {
+			backdrop-filter: saturate(180%) blur(4px);
 		}
 
-		&:active {
-			color: variables.$black;
-			background-color: variables.$secondary-90;
+		@include btn-hover(
+			variables.$color-black,
+			variables.$color-secondary-90,
+			variables.$color-secondary-90
+		);
+		@include btn-active(
+			variables.$color-black,
+			variables.$color-secondary-90,
+			variables.$color-secondary-90
+		);
+
+		&:focus-visible {
+			outline-color: variables.$color-secondary-90;
 		}
 	}
 
-	&__secondary {
-		background-color: variables.$black-20;
-		color: variables.$white;
+	&--secondary {
+		@include btn-base;
+
+		color: variables.$color-white;
+		background-color: variables.$color-white-70;
+		border: 1px solid variables.$color-white-70;
+
+		@supports (backdrop-filter: blur(1px)) {
+			backdrop-filter: saturate(180%) blur(4px);
+		}
+
+		@include btn-hover(
+			variables.$color-black,
+			variables.$color-white,
+			variables.$color-white
+		);
+		@include btn-active(
+			variables.$color-black,
+			variables.$color-white,
+			variables.$color-white
+		);
+
+		&:focus-visible {
+			outline-color: variables.$color-white;
+		}
 	}
 }

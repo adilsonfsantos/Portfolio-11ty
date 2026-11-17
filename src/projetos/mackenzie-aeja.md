@@ -1,7 +1,7 @@
 ---
 title: Mackenzie Aeja - Volta às aulas
 date: 2020-01-23T00:00:00.000Z
-image: /portfolio-static/assets/images/mackenzie_aeja_Banner.png
+image: mackenzie_aeja
 description: >-
   Um pouco sobre a campanha de volta às aulas feita para o Mackenzie Aeja.
 categories:
@@ -27,29 +27,30 @@ team:
 
 ## Introdução
 
-O Mackenzie Aeja é um projeto que desde 2009 oferece ensino gratuito para jovens
-e adultos que não tiveram acesso ou não deram continuidade aos seus estudos.
+O Mackenzie AEJA é um projeto institucional do Mackenzie que, desde 1947,
+oferece ensino gratuito para jovens e adultos que não tiveram acesso ou não
+deram continuidade aos seus estudos. Buscando desenvolver uma aprendizagem
+significativa, o AEJA valoriza os saberes e experiências que cada aluno traz ao
+longo da vida e integra ao currículo de ensino para formar cidadãos preparados
+para seguir aprendendo e atuando com responsabilidade na sociedade.
 
-## Desafio
-
-Para divulgar a volta às aulas, o Mackenzie solicitou para a
+Para divulgar a volta às aulas e divulgar o projeto, o Mackenzie solicitou à
 [Agência Chleba](https://www.chleba.net/) criar uma arte para recepcionar os
 novos alunos e os veteranos, marcando um novo ciclo de aprendizado de forma
 receptiva, alegre e motivadora.
 
 ## Solução
 
-Durante a criação, a principal ideia foi a de um lembrete, para que a arte fosse
-vista mais como um recado para o aluno do que um comunicado institucional.
+Durante a criação, a principal ideia foi a de um lembrete, para a arte ser vista
+de forma mais íntima como um recado do que um comunicado institucional.
 
-Assim, o azul da paleta de cores foi escolhido por ser um oposto direto ao
-vermelho tradicional Mackenzie e para passar um sentimento de segurança e
-receptividade aos alunos, as ilustrações dos elementos ao redor utilizam cores
-pastéis para que o contraste com o fundo fosse agradável e, ao mesmo tempo, não
-passar um conceito infantil.
+Assim, para transmitir um sentimento de segurança e calma aos alunos, o azul foi
+escolhido por contrastar com o vermelho tradicional Mackenzie, as ilustrações
+dos elementos ao redor utilizam cores pastéis para que o contraste com o fundo
+fosse agradável e, ao mesmo tempo, não passar um conceito totalmente infantil.
 
-{% images "src/portfolio-static/assets/images/mackenzie_aeja_cartaz.png", "Cartaz com a frase &quot; Sejam bem-vindos a um novo ano cheio de desafios oportunidades e conquistas ao alcance de todos.&quot;", "post__photo", "post__photo--image" %}
+{% image "mackenzie_aeja_cartaz.png", "Cartaz com a frase 'Sejam bem-vindos a um novo ano cheio de desafios, oportunidades e conquistas ao alcance de todos.' e materiais escolares ao redor.", "popout" %}
 
-{% images "src/portfolio-static/assets/images/mackenzie_aeja_banner_site.png", "Banner para o site do Mackenzie com a arte adaptada do cartaz", "post__photo", "post__photo--image" %}
+{% image "mackenzie_aeja_banner_site.png", "Banner para o site do Mackenzie com a arte adaptada do cartaz.", "popout" %}
 
-{% images "src/portfolio-static/assets/images/mackenzie_aeja_instagram.png", "Post do Instagram com a arte adaptada do cartaz", "post__photo", "post__photo--image" %}
+{% image "mackenzie_aeja_instagram.png", "Post para o Instagram com a arte adaptada do cartaz.", "popout" %}

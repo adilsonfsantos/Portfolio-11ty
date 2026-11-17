@@ -4,6 +4,9 @@
 	"description": "Portfolio of Adilson Santos using 11ty",
 	"main": ".eleventy.js",
 	"type": "module",
+	"engines": {
+		"node": "^24 || ^26"
+	},
 	"scripts": {
 		"build": "npx @11ty/eleventy --incremental --quiet",
 		"dev": "npx @11ty/eleventy --incremental --serve",
@@ -12,7 +15,17 @@
 		"stylelint": "stylelint 'src/**/*.{css,scss}' --cache --cache-location .cache/stylelint",
 		"stylelint:fix": "stylelint --fix 'src/**/*.{css,scss}' --cache --cache-location .cache/stylelint",
 		"format": "prettier --check . --cache --cache-location .cache/prettier",
-		"format:fix": "prettier --write . --cache --cache-location .cache/prettier"
+		"format:fix": "prettier --write . --cache --cache-location .cache/prettier",
+		"lint": "npm run eslint && npm run stylelint && npm run format",
+		"ci": "npm run lint && npm run build",
+		"prepare": "husky"
+	},
+	"lint-staged": {
+		"*.{js,ts,astro,mdx}": [
+			"npm run eslint"
+		],
+		"*.{scss,css}": "npm run stylelint",
+		"*.{astro,js,ts,json,mdx,scss,css}": "npm run format"
 	},
 	"repository": {
 		"type": "git",
@@ -29,7 +42,7 @@
 	},
 	"homepage": "https://github.com/adilsonfsantos/Portfolio-11ty#readme",
 	"browserslist": [
-		"defaults"
+		"baseline newly available with downstream"
 	],
 	"dependencies": {
 		"@11ty/eleventy": "^3.1.8",
@@ -51,6 +64,8 @@
 		"eslint": "^10.14.0",
 		"eslint-config-prettier": "^10.1.8",
 		"globals": "^17.14.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^17.6.1",
 		"prettier": "3.9.10",
 		"stylelint": "^17.16.0",
 		"stylelint-config-standard-scss": "^17.0.0",

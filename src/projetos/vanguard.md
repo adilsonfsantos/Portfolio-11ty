@@ -1,7 +1,7 @@
 ---
 title: Vanguard
 date: 2019-09-24T00:00:00Z
-image: /portfolio-static/assets/images/Vanguard-Banner.png
+image: Vanguard
 description: >-
   Conheça um pouco do processo em trazer praticidade e elegância para o site e o
   aplicativo da construtora Plaenge.
@@ -21,17 +21,10 @@ team:
     role: UX Designer
 ---
 
-import Picture from "@components/Image.astro" import VanguardAppFluxo from
-"@images/Vanguard-App-fluxo.png" import VanguardGuide from
-"@images/Vanguard-Guide.png" import VanguardSiteEmpreendimento from
-"@images/Vanguard-Site-empreendimento.png" import VanguardSiteEmpreendimento2
-from "@images/Vanguard-Site-empreendimento2.png" import VanguardSiteHome from
-"@images/Vanguard-Site-Home.png"
-
 ## Introdução
 
 Fundada em 2006, a Vanguard surgiu a partir da necessidade do Grupo Plaenge de
-atender um público jovem. Sendo assim, a pioneira na criação de empreendimentos
+atender a um público jovem. Sendo a pioneira na criação de empreendimentos
 pensados para este segmento no Brasil.
 
 Sempre procurando estar à frente do seu tempo, a Vanguard visa trazer uma
@@ -41,12 +34,12 @@ E para trazer essa experiência para o âmbito digital, a
 [Agência Chleba](https://www.chleba.net/) foi escolhida para projetar um
 aplicativo e um redesign do site.
 
-## Desafio
+## Solução
 
 Como a Vanguard utilizava o layout e identidade da Plaenge, os problemas
 abordados no levantamento da
 [Francianne Tonin](https://www.behance.net/gallery/83533089/UX-UI-Construtora-Plaenge)
-se repetiam. E com base nesses estudos e nos princípios da Vanguard, foram
+se repetiam. Com base nesses estudos e nos princípios da Vanguard, foram
 definidos os seguintes fundamentos para a nova interface.
 
 - Projetar uma interface que fosse única para a Vanguard;
@@ -56,19 +49,17 @@ definidos os seguintes fundamentos para a nova interface.
 - Trazer os princípios de ousadia, criatividade e autenticidade para a interface
   do site e aplicativo.
 
-## Solução
-
 Utilizando as cores da marca, foram criadas diversas escalas para que os
 elementos do layout fossem acessíveis. Também foi definida uma escala modular
 para a tipografia da marca, de modo que a harmonia e a legibilidade se
 mantivessem entre as versões desktop e mobile.
 
-{% images "src/portfolio-static/assets/images/Vanguard-Guide.png", "Guia de estilos demonstrando as cores e tipografia utilizadas no site da Vanguard.", "post__photo", "post__photo--image" %}
+{% image "Vanguard-Guide.png", "Guia de estilos com as cores e tipografias utilizadas no site da Vanguard.", "popout" %}
 
-{% images "src/portfolio-static/assets/images/Vanguard-Site-Home.png", "Detalhe da página home demonstra uma parte do layout da página home.", "post__photo", "post__photo--image" %}
+{% image "Vanguard-Site-Home.png", "Detalhe da página home com carrossel, empreendimentos disponíveis, banner decorativo e quiz para ajudar o cliente a encontrar o seu imóvel ideal.", "full-width" %}
 
-{% images "src/portfolio-static/assets/images/Vanguard-Site-empreendimento.png", "Trecho da página de empreendimentos com informações sobre o imóvel.", "post__photo", "post__photo--image" %}
+{% image "Vanguard-Site-empreendimento.png", "Trecho da página de empreendimentos com suas informações técnicas e fotos.", "full-width" %}
 
-{% images "src/portfolio-static/assets/images/Vanguard-Site-empreendimento2.png", "Diversos detalhes da página de empreendimentos.", "post__photo", "post__photo--image" %}
+{% image "Vanguard-Site-empreendimento2.png", "Detalhes da página de empreendimentos com fotos do ambiente, planta, status da obra e informações sobre o bairro em vista áerea.", "full-width" %}
 
-{% images "src/portfolio-static/assets/images/Vanguard-App-fluxo.png", "Diversas telas do aplicativo da Vanguard.", "post__photo", "post__photo--image" %}
+{% image "Vanguard-App-fluxo.png", "Telas do aplicativo mostrando os empreendimentos disponíveis e informações técnicas.", "full-width" %}

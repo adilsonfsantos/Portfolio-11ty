@@ -2,12 +2,42 @@
 <html lang="{{ site.lang }}">
 	<head>
 		<meta charset="UTF-8"/>
-		<link rel="preload" as="font" href="/assets/fonts/iAWriterDuoS-Regular.woff2" type="font/woff2" crossorigin>
-		<link rel="preload" as="font" href="/assets/fonts/Inter-Medium.woff2" type="font/woff2" crossorigin>
+		<link
+			rel="preload"
+			as="font"
+			href="/assets/fonts/ClashGrotesk-Variable-subset.woff2"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			as="image"
+			href="/assets/images/noise.svg"
+			type="image/webp"
+			fetchpriority="high"
+		/>
 		{% include "meta" %}
-		{% include "css" %}
+		<style>
+			.noise {
+				position: relative;
+				overflow: hidden;
+			}
+			.noise::before {
+				content: "";
+				background-image: url("/assets/images/noise.svg");
+				background-repeat: repeat;
+				background-size: 400px 400px;
+				pointer-events: none;
+				position: absolute;
+				inset: 0;
+				z-index: -1;
+			}
+		</style>
+		<link rel="stylesheet" href="{{ css | prepend: "/assets/css/" }}">
 	</head>
-	<a class="skip-to-content-link btn btn__secondary" href="#main">Pular para o conteúdo</a>
+		<a class="skip-to-content-link btn--primary" href="#main">
+			Pular para o conteúdo
+		</a>
 	<body>
 		{%- comment -%}
 			# Bypass Facebook tracking:
@@ -16,7 +46,9 @@
 		<span id="iab-pcm-sdk"></span>
 		<span id="iab-autofill-sdk"></span>
 		{% include "header" %}
-		{{ content }}
-		{% include "footer" %}
+		<div class="wrapper noise">
+			{{ content }}
+			{% include "footer" %}
+		</div>
 	</body>
 </html>

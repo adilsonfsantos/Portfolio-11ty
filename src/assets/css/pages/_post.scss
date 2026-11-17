@@ -2,242 +2,163 @@
 @use "../abstracts/mixins";
 
 .post {
-	display: grid;
-	padding-top: variables.$space-3xl;
+	max-inline-size: variables.$viewport-max;
+	padding-inline: variables.$grid-gutter;
+	margin-inline: auto;
+	padding-block-start: variables.$space-3xl;
 
 	&__header {
-		min-height: 55vh;
-		padding-top: variables.$space-xl;
+		padding-block-start: variables.$space-xl;
 
-		&--container {
-			margin-bottom: variables.$space-xl;
-		}
-
-		&--title {
-			@include mixins.typescale(scale-6, medium, headline);
-
-			color: variables.$white;
-			margin: 0;
-			width: min(100%, 720px);
-			text-wrap: balance;
-		}
-
-		&--description {
-			@include mixins.typescale(scale-0, normal, text);
-
-			color: variables.$white-90;
-			width: min(100%, 720px);
+		img {
+			color: variables.$color-white;
 		}
 	}
 
-	&__hero {
-		display: grid;
+	&__title {
+		@include mixins.typescale(scale-6, medium, headline);
 
-		&--container {
-			border-bottom: 2px solid variables.$black-30;
-			display: grid;
-		}
+		color: variables.$color-white;
+		font-family: variables.$font-headline;
+		padding-block-end: variables.$space-xl;
 	}
 
 	&__info {
 		display: grid;
-		gap: variables.$space-xl;
-		grid-template-columns: repeat(auto-fit, minmax(160px, auto));
-		margin-bottom: variables.$space-xl;
-	}
+		gap: variables.$grid-gutter;
+		grid-template-columns: repeat(
+			auto-fit,
+			minmax(clamp(10rem, 30%, 16rem), 1fr)
+		);
+		margin-block-end: variables.$space-xl;
 
-	&__info--title {
-		@include mixins.typescale(scale--2, medium, text);
-
-		border-top: solid variables.$black-10 1px;
-		color: variables.$white;
-		padding-top: variables.$space-s;
-		text-transform: uppercase;
-	}
-
-	&__info--text {
-		@include mixins.typescale(scale--1, normal, text);
-		@include mixins.font-family("iA Writer");
-
-		color: variables.$white-90;
-	}
-
-	&__splash {
-		&--picture {
-			overflow: hidden;
-			width: 100%;
+		&__container {
+			border-block-start: 1px solid variables.$color-black-10;
 		}
 
-		&--image {
-			color: variables.$white;
-			height: auto;
-			max-width: none;
-			width: 100%;
-		}
-	}
+		&__title {
+			@include mixins.typescale(scale--1, medium, text);
 
-	hr {
-		border: none;
-		background-color: variables.$black-10;
-		height: 1px;
-		margin-top: variables.$space-xl;
+			color: variables.$color-white-90;
+			margin-block-start: variables.$space-m;
+		}
+
+		&__text {
+			@include mixins.typescale(scale-0, normal, text);
+
+			margin-block-start: variables.$space-s;
+			color: variables.$color-white;
+		}
 	}
 
 	&__content {
-		&--container {
-			display: grid;
-		}
+		@include mixins.flow(variables.$space-m);
+		@include mixins.content-grid;
 
-		h2,
-		h3,
-		h4,
-		h5,
-		h6,
-		p,
-		blockquote,
-		ul,
-		ol,
-		li {
-			margin: auto;
-			width: min(100%, 720px);
-		}
-
-		.headline-link {
-			color: variables.$white;
-			text-decoration: underline;
-		}
+		margin-block-start: variables.$space-2xl;
 
 		h2,
 		h3,
 		h4,
 		h5,
 		h6 {
-			color: variables.$white;
-			margin-bottom: variables.$space-s;
-			text-wrap: balance;
+			--flow-space: #{variables.$space-xl};
+
+			color: variables.$color-white;
+			font-family: variables.$font-headline;
 		}
 
 		h2 {
-			@include mixins.typescale(scale-4, medium, headline);
-
-			margin-top: variables.$space-3xl;
+			@include mixins.typescale(scale-2, medium, headline);
 		}
 
 		h3 {
-			@include mixins.typescale(scale-2, medium, headline);
-
-			margin-top: variables.$space-2xl;
-		}
-
-		h4 {
 			@include mixins.typescale(scale-1, medium, headline);
-
-			margin-top: variables.$space-xl;
 		}
 
+		h4,
 		h5 {
 			@include mixins.typescale(scale-0, medium, headline);
-
-			margin-top: variables.$space-l;
 		}
 
 		h6 {
-			@include mixins.typescale(scale-0, medium, headline);
-
-			margin-top: variables.$space-l;
+			@include mixins.typescale(scale--1, medium, headline);
 		}
 
-		h2 + h3,
-		h3 + h4,
-		h4 + h5,
-		h5 + h6 {
-			margin-top: 0;
-		}
-
-		p {
+		p,
+		li {
 			@include mixins.typescale(scale-0, normal, text);
-			@include mixins.font-family("iA Writer");
 
-			color: variables.$white-90;
+			color: variables.$color-white-90;
 		}
 
-		p + p {
-			margin-top: variables.$space-s;
+		ul,
+		ol {
+			@include mixins.flow(variables.$space-m);
+
+			padding-inline-start: variables.$space-s;
+			list-style-type: square;
 		}
 
 		img,
 		video {
-			margin: 0 auto;
-			max-width: variables.$page-width;
-			overflow: hidden;
 			width: 100%;
-			color: variables.$white-90;
-			height: auto;
 			text-align: center;
+			text-wrap: balance;
 		}
 
 		video {
 			max-height: 80dvh;
 		}
 
-		p + picture,
-		p + video,
-		picture + p,
-		picture + picture,
-		video + video,
-		picture + video,
-		video + picture {
-			margin-top: variables.$space-xl;
+		blockquote {
+			border-inline-start: 2px solid variables.$color-primary;
+			padding-inline-start: variables.$space-m;
+
+			--flow-space: #{variables.$space-xl};
 		}
 
-		ul,
-		ol {
+		blockquote > p {
+			@include mixins.typescale(scale-1, semibold, text);
+
+			color: variables.$color-white;
+		}
+
+		blockquote > cite {
 			@include mixins.typescale(scale-0, normal, text);
 
-			padding-left: variables.$space-s;
-		}
-
-		p + ul,
-		p + ol {
-			margin-top: variables.$space-xs;
-		}
-
-		ul + p,
-		ol + p {
-			margin-top: variables.$space-xs;
-		}
-
-		li {
-			@include mixins.typescale(scale-0, normal, text);
-			@include mixins.font-family("iA Writer");
-
-			color: variables.$white-90;
-		}
-
-		li:not(:last-child) {
-			margin-bottom: variables.$space-2xs;
+			font-style: italic;
+			color: variables.$color-white-90;
+			margin-block-start: variables.$space-xs;
 		}
 	}
 
-	blockquote {
-		border-left: 2px solid variables.$primary;
-		padding-left: variables.$space-m;
-		margin: variables.$space-m auto;
+	a {
+		color: variables.$color-secondary-90;
+		text-decoration: underline;
+		text-underline-offset: 4px;
 
-		p {
-			@include mixins.typescale(scale-1, bold, text);
-
-			color: variables.$white;
-			margin: 0;
+		&:focus-visible {
+			outline: 2px solid variables.$color-secondary-90;
+			outline-offset: 2px;
 		}
+	}
 
-		cite {
-			@include mixins.typescale(scale-0, normal, text);
-			@include mixins.font-family("iA Writer");
+	picture,
+	figure,
+	img {
+		@include mixins.typescale(scale-0, normal, text);
 
-			font-style: italic;
-			color: variables.$white-90;
-			margin-top: variables.$space-xs;
+		--flow-space: #{variables.$space-xl};
+
+		color: variables.$color-white-90;
+
+		+ p {
+			--flow-space: #{variables.$space-xl};
 		}
+	}
+
+	strong {
+		font-weight: 700;
 	}
 }

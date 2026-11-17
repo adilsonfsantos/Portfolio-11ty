@@ -1,7 +1,7 @@
 ---
 title: Brava
 date: 2022-07-14T00:00:00.000Z
-image: /portfolio-static/assets/images/Brava-Banner.png
+image: Brava
 description: Processo de redesign do site da Brava
 categories:
   - UI Design
@@ -22,15 +22,8 @@ setores como o agronegócio, tecnologia, construção civil, saúde e muitos out
 sempre buscando entregar resultados sólidos e ágeis, de forma humana e
 inclusiva.
 
-## Desafio
-
-Para representar a qualidade nos serviços oferecidos pela Brava foi solicitado à
-[Agência Chleba](https://www.chleba.net/) o redesign do seu site. Redesign que
-deveria possuir os seguintes princípios da Brava:
-
-- Credibilidade;
-- Grandiosidade;
-- Humanização.
+Para representar a qualidade nos serviços oferecidos pela Brava, foi solicitado
+à [Agência Chleba](https://www.chleba.net/) o redesign do seu site.
 
 ## Solução
 
@@ -38,7 +31,7 @@ Antes de criar o layout, foi desenvolvido um guia de estilo para definir a
 tipografia e a paleta de cores que seriam utilizadas na interface, para evitar
 inconsistências no desenvolvimento.
 
-{% images "src/portfolio-static/assets/images/Brava-Guide.png", "Guia de estilos das cores e tipografia para o site da Brava.", "post__photo", "post__photo--image" %}
+{% image "Brava-Guide.png", "Guia de estilos com as cores e tipografia para o site da Brava.", "popout" %}
 
 Após o guia de estilos, a interface foi desenvolvida utilizando os elementos
 principais da marca, como a forma da letra V e as linhas retas que a compõem.
@@ -46,8 +39,8 @@ principais da marca, como a forma da letra V e as linhas retas que a compõem.
 Além disso, pessoas foram utilizadas em múltiplos trechos para trazer a
 humanização solicitada.
 
-{% images "src/portfolio-static/assets/images/Brava-Home.png", "Layout da página home.", "post__photo", "post__photo--image" %}
+{% image "Brava-Home.png", "Layout da página home mostrando os elementos, como carrossel, áreas de atuação e dados sobre a Brava.", "full-width" %}
 
-{% images "src/portfolio-static/assets/images/Brava-Outros.png", "Design de um trecho da página somos.", "post__photo", "post__photo--image" %}
+{% image "Brava-Somos.png", "Design de um trecho da página somos mostrando os valores da marca (Inovação, método, empatia e perenidade).", "full-width" %}
 
-{% images "src/portfolio-static/assets/images/Brava-Somos.png", "Layout de outros elementos do site.", "post__photo", "post__photo--image" %}
+{% image "Brava-Outros.png", "Dois layouts de outras páginas do site mostrando o que a Brava pode oferecer e fazer para os clientes e o que ela mais valoriza na empresa.", "full-width" %}

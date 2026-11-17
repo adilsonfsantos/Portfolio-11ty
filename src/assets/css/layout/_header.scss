@@ -2,78 +2,68 @@
 @use "../abstracts/variables";
 
 .header {
-	background-color: variables.$black;
-	border-bottom: 1px solid variables.$black-10;
-	display: grid;
 	position: fixed;
-	width: 100vw;
+	inset-block-start: 0;
+	inline-size: 100%;
 	z-index: 4;
+	background-color: rgb(variables.$color-black, 0.8);
+	border-block-end: 1px solid variables.$color-black-10;
 
-	@supports (backdrop-filter: none) {
-		background-color: rgba(variables.$black, 0.8);
-		backdrop-filter: saturate(180%) blur(variables.$base-size * 0.25);
-	}
-
-	&__container {
-		width: 100%;
+	@supports (backdrop-filter: blur(1px)) {
+		backdrop-filter: saturate(180%) blur(4px);
 	}
 
 	&__content {
 		align-items: center;
 		display: flex;
+		inline-size: 100%;
+		margin-inline: auto;
+		max-inline-size: variables.$viewport-max;
+		padding-inline: variables.$grid-gutter;
 
-		&--logo {
-			color: variables.$white;
+		&-logo {
+			color: variables.$color-white;
+			padding-block: variables.$space-s;
 		}
 
-		&--logo > svg {
-			display: inherit;
+		&-logo > svg {
+			display: block;
 			fill: currentcolor;
-			height: 18px;
-			margin: variables.$base-size 0;
-			width: auto;
-
-			@include mixins.viewport(3xlarge) {
-				height: 24px;
-			}
+			inline-size: auto;
+			block-size: 24px;
 		}
 
-		&--spacer {
+		&-spacer {
 			flex-grow: 1;
 		}
 
-		&__nav {
-			align-self: center;
+		&-nav {
 			display: flex;
+			gap: variables.$space-xs;
 		}
 	}
-}
 
-.nav {
 	&__link {
-		color: variables.$white-90;
-		line-height: 1.2;
-		padding: variables.$base-size 0;
+		@include mixins.typescale(scale-0, medium, headline);
 
-		@include mixins.typescale(scale-0, medium, text);
-		@include mixins.transition(color);
+		color: variables.$color-white-70;
+		padding-block: variables.$space-s;
+		transition: color 0.3s ease;
 
-		@include mixins.viewport(small) {
-			@include mixins.typescale(scale--1, medium, text);
+		@media (hover: hover) and (pointer: fine) {
+			&:hover {
+				color: variables.$color-white;
+			}
 		}
 
-		&:hover,
-		&:focus {
-			color: variables.$white;
+		&:active,
+		&--current {
+			color: variables.$color-white;
 		}
 
-		&:first-child {
-			margin-right: variables.$space-xs;
-		}
-
-		&--active {
-			color: variables.$white;
-			text-decoration: underline;
+		&:focus-visible {
+			outline: 2px solid variables.$color-white;
+			outline-offset: 2px;
 		}
 	}
 }

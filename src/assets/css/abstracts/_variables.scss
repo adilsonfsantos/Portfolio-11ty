@@ -1,135 +1,118 @@
 // Brand Colors
-$black: #0f0f0f;
-$primary: #fd3a39;
-$secondary: #f4c947;
-$white: #eee;
+$color-black: #0f0f0f;
+$color-primary: #fd3a39;
+$color-secondary: #f4c947;
+$color-white: #eee;
 
 // Variation Colors
-$black-10: #222;
-$black-20: #3a3a3a;
-$black-30: #5a5a5a;
-$white-80: #aeaeae;
-$white-90: #cecece;
-$primary-20: #6f0e10;
-$primary-40: #d40d1c;
-$secondary-90: #fddb7d;
+$color-black-10: #222;
+$color-black-20: #3a3a3a;
+$color-black-30: #5a5a5a;
+$color-white-70: #aeaeae;
+$color-white-90: #cecece;
+$color-primary-20: #6f0e10;
+$color-primary-40: #d40d1c;
+$color-secondary-90: #fddb7d;
+
+// Typography
+$font-headline:
+	"Clash Grotesk", "Helvetica Neue", "Roboto", "Arial Nova", "Arial", system-ui,
+	sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+	"Noto Color Emoji";
+$font-body:
+	"Inter", "Helvetica Neue", "Roboto", "Arial Nova", "Arial", system-ui,
+	sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+	"Noto Color Emoji";
 
 // Sizes
 $base-size: 1em;
-$page-width: $base-size * 80;
 
-// Breakpoints
-$grid-breakpoints-map: (
-	default: (
-		width: 0,
-		column: 4,
-		margin: $base-size,
-		gap: 16px,
+// https://utopia.fyi/grid/calculator/?c=232,16,1.125,1240,20,1.2,6,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l&g=s,l,xl,12
+
+$viewport-min: 14.5rem; // 232px;
+$viewport-max: 77.5rem; // 1240px
+$font-size-min: 1rem;
+$font-size-max: 1.25rem;
+$type-scale-min: 1.125;
+$type-scale-max: 1.2;
+$progress: progress(100vw, $viewport-min, $viewport-max);
+
+// Font Size
+$type-map: (
+	scale-6: (
+		min-size: 2.0273rem,
+		max-size: 3.7325rem,
+		min-tracking: -0.0222em,
+		max-tracking: -0.0217em,
 	),
-	xsmall: (
-		width: 319px,
-		column: 4,
-		margin: $base-size,
-		gap: 16px,
+	scale-5: (
+		min-size: 1.802rem,
+		max-size: 3.1104rem,
+		min-tracking: -0.0218em,
+		max-tracking: -0.0205em,
 	),
-	small: (
-		width: 479px,
-		column: 4,
-		margin: $base-size * 1.5,
-		gap: 24px,
+	scale-4: (
+		min-size: 1.6018rem,
+		max-size: 2.592rem,
+		min-tracking: -0.0208em,
+		max-tracking: -0.0187em,
 	),
-	medium: (
-		width: 639px,
-		column: 6,
-		margin: $base-size * 2.5,
-		gap: 24px,
+	scale-3: (
+		min-size: 1.4238rem,
+		max-size: 2.4414rem,
+		min-tracking: -0.0202em,
+		max-tracking: -0.0175em,
 	),
-	large: (
-		width: 767px,
-		column: 6,
-		margin: $base-size * 3,
-		gap: 32px,
+	scale-2: (
+		min-size: 1.2656rem,
+		max-size: 1.8rem,
+		min-tracking: -0.0182em,
+		max-tracking: -0.0145em,
 	),
-	xlarge: (
-		width: 995px,
-		column: 6,
-		margin: $base-size * 4,
-		gap: 32px,
+	scale-1: (
+		min-size: 1.125rem,
+		max-size: 1.5rem,
+		min-tracking: -0.0155em,
+		max-tracking: -0.0115em,
 	),
-	2xlarge: (
-		width: 1199px,
-		column: 8,
-		margin: $base-size * 6,
-		gap: 40px,
+	scale-0: (
+		min-size: 1rem,
+		max-size: 1.25rem,
+		min-tracking: -0.0125em,
+		max-tracking: -0.0085em,
 	),
-	3xlarge: (
-		width: 1280px,
-		column: 8,
-		margin: $base-size * 4,
-		gap: 48px,
+	scale--1: (
+		min-size: 0.8889rem,
+		max-size: 1.0417rem,
+		min-tracking: -0.0095em,
+		max-tracking: -0.0055em,
+	),
+	scale--2: (
+		min-size: 0.7901rem,
+		max-size: 0.8681rem,
+		min-tracking: -0.0065em,
+		max-tracking: -0.0035em,
 	),
 );
+
+// Spacing
+$space-3xs: calc(0.25rem + (0.3125rem - 0.25rem) * $progress);
+$space-2xs: calc(0.5rem + (0.625rem - 0.5rem) * $progress);
+$space-xs: calc(0.75rem + (0.9375rem - 0.75rem) * $progress);
+$space-s: calc(1rem + (1.25rem - 1rem) * $progress);
+$space-m: calc(1.5rem + (1.875rem - 1.5rem) * $progress);
+$space-l: calc(2rem + (2.5rem - 2rem) * $progress);
+$space-xl: calc(3rem + (3.75rem - 3rem) * $progress);
+$space-2xl: calc(4rem + (5rem - 4rem) * $progress);
+$space-3xl: calc(6rem + (7.5rem - 6rem) * $progress);
+
+// Breakpoint https://viewports.fyi/
+$breakpoint-desktop: 800px;
+
+// Grid layout
+$grid-content-size: 60ch;
+$grid-gutter: calc(1rem + (2.5rem - 1rem) * $progress);
 
 // Animation
 $animation-standard: cubic-bezier(0.22, 1, 0.36, 1) !default;
-$duration-standard: 0.4s;
-
-// Font Size
-// https://utopia.fyi/space/calculator?c=232,16,1.125,1240,20,1.125,6,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C5,s-l&g=s,l,xl,12
-$font-size: $base-size;
-$type-map: (
-	scale-6: (
-		size: clamp(2.0275rem, 1.9108rem + 0.8046vw, 2.5344rem),
-	),
-	scale-5: (
-		size: clamp(1.8019rem, 1.6982rem + 0.7153vw, 2.2525rem),
-	),
-	scale-4: (
-		size: clamp(1.6019rem, 1.5097rem + 0.6359vw, 2.0025rem),
-	),
-	scale-3: (
-		size: clamp(1.4238rem, 1.3418rem + 0.5655vw, 1.78rem),
-	),
-	scale-2: (
-		size: clamp(1.2656rem, 1.1928rem + 0.502vw, 1.5819rem),
-	),
-	scale-1: (
-		size: clamp(1.125rem, 1.0603rem + 0.4464vw, 1.4063rem),
-	),
-	scale-0: (
-		size: clamp(1rem, 0.9425rem + 0.3968vw, 1.25rem),
-	),
-	scale--1: (
-		size: clamp(0.8888rem, 0.8375rem + 0.3532vw, 1.1113rem),
-	),
-	scale--2: (
-		size: clamp(0.79rem, 0.7445rem + 0.3135vw, 0.9875rem),
-	),
-);
-$space-3xs: clamp(0.25rem, 0.2356rem + 0.0992vw, 0.3125rem);
-$space-2xs: clamp(0.5rem, 0.4712rem + 0.1984vw, 0.625rem);
-$space-xs: clamp(0.75rem, 0.7068rem + 0.2976vw, 0.9375rem);
-$space-s: clamp(1rem, 0.9425rem + 0.3968vw, 1.25rem);
-$space-m: clamp(1.5rem, 1.4137rem + 0.5952vw, 1.875rem);
-$space-l: clamp(2rem, 1.8849rem + 0.7937vw, 2.5rem);
-$space-xl: clamp(3rem, 2.8274rem + 1.1905vw, 3.75rem);
-$space-2xl: clamp(4rem, 3.7698rem + 1.5873vw, 5rem);
-$space-3xl: clamp(5rem, 4.7123rem + 1.9841vw, 6.25rem);
-
-// /* One-up pairs */
-// $space-3xs-2xs: clamp(0.25rem, calc(0.19rem + 0.40vw), 0.50rem);
-// $space-2xs-xs: clamp(0.50rem, calc(0.44rem + 0.40vw), 0.75rem);
-// $space-xs-s: clamp(0.75rem, calc(0.69rem + 0.40vw), 1.00rem);
-// $space-s-m: clamp(1.00rem, calc(0.88rem + 0.80vw), 1.50rem);
-// $space-m-l: clamp(1.50rem, calc(1.38rem + 0.80vw), 2.00rem);
-// $space-l-xl: clamp(2.00rem, calc(1.76rem + 1.60vw), 3.00rem);
-// $space-xl-2xl: clamp(3.00rem, calc(2.76rem + 1.60vw), 4.00rem);
-// $space-2xl-3xl: clamp(4.00rem, calc(3.52rem + 3.20vw), 6.00rem);
-
-// /* Custom pairs */
-// $space-s-l: clamp(1.00rem, calc(0.66rem + 2.28vw), 2.25rem);
-
-// Grid sizes
-$grid-width-site: $base-size * 75;
-$grid-width-post: $base-size * 45;
-$grid-gutter: clamp(1rem, calc(0.5rem + 3.33vw), 3rem);
+$duration-standard: 0.3s;

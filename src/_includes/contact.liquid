@@ -1,18 +1,33 @@
 <section class="contato" id="contato">
 	<div class="contato__gradient"></div>
-	<div class="grid__module--site">
-		<div class="contato__info">
-			<div class="contato__call">
-				<h2 class="contato__call--cta">Vamos conversar!</h2>
-				<p class="contato__call--subtitle">Me chama no
-					<a href="{{site.social | map: 'url' | last }}">LinkedIn</a>
-					ou manda um email para
-					<a href="mailto:{{ site.author.email | encode }}"
-						class="contato__call--email">
-						<b>design</b>{{ site.author.email }}
-					</a>
-				</p>
-			</div>
+		<div class="contato__content">
+			<h2 class="contato__cta">Vamos conversar!</h2>
+			<p class="contato__subtitle">Quer falar sobre um projeto ou precisa de alguém para ajudar na sua equipe?
+				<br />
+				É só me chamar.
+			</p>
+			<div class="contato__info">
+				<div class="contato__info__container">
+					<h3 class="contato__info__title">E-mail</h3>
+					<div class="contato__info-spacer"></div>
+					<p class="contato__info__text">
+						<a href="mailto:{{ site.author.email | encode }}">
+							<b class="contato__hidden">blocked</b>
+							{{ site.author.email }}
+						</a>
+					</p>
+				</div>
+				{%- for link in site.social.links -%}
+				<div class="contato__info__container">
+					<h3 class="contato__info__title">{{link.name}}</h3>
+					<div class="contato__info-spacer" /></div>
+					<p class="contato__info__text">
+						<a href={{link.url}} rel="noopener" target="_blank">
+							<b class="contato__hidden">blocked</b>
+							{{link.username}}
+						</a>
+					</p>
+				</div>
+				{%- endfor -%}
 		</div>
-	</div>
 </section>

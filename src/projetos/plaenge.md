@@ -1,7 +1,7 @@
 ---
 title: Plaenge
 date: 2019-05-01T22:31:40.716Z
-image: /portfolio-static/assets/images/plaenge-Banner.png
+image: plaenge
 description: >-
   Conheça um pouco do processo em trazer praticidade e elegância para o site e
   aplicativo da construtora Plaenge.
@@ -23,7 +23,7 @@ project:
     link: https://www.plaenge.com.br/
 ---
 
-#### Introdução
+## Introdução
 
 Com mais de 48 anos de atuação no segmento imobiliário, a Plaenge é a maior
 construtora da região sul do Brasil. Presente em 4 estados brasileiros e também
@@ -35,45 +35,39 @@ empreendimentos. Para isso, foi solicitado à
 [Agência Chleba](https://www.chleba.net/) um redesign do site e o
 desenvolvimento de um aplicativo.
 
-## Desafio
-
-Com base no levantamento feito pela
-[Francianne Tonin](https://www.behance.net/gallery/83533089/UX-UI-Construtora-Plaenge),
-foram definidos os seguintes princípios da nova interface:
+## Solução
 
 O site anterior da Plaenge possui diversos problemas de usabilidade, os quais
-você pode ver no case de UX feito pela
+você pode ver no estudo feito pela
 [Francianne Tonin](https://www.behance.net/gallery/83533089/UX-UI-Construtora-Plaenge).
-A partir deste case, foram definidos os seguintes princípios da nova UI:
+A partir deste estudo, foram definidos os seguintes princípios da nova UI:
 
 - Desenvolver uma interface limpa e interativa;
 - Trazer maior transparência para o processo de compra;
 - Valorizar possíveis clientes e torná-los parte da Plaenge;
 - Trazer os conceitos de sofisticação e exclusividade para o layout.
 
-## Solução
-
 Utilizando a Golden Hour como base para o layout, buscamos remeter ao horário da
 volta para casa e o momento de recuperar energias.
 
-A paleta de cores utilizada busca trazer calor e conforto e a tipografia sem
+A paleta de cores utilizada busca trazer calor e conforto, e a tipografia sem
 serifa transmite a sofisticação da marca Plaenge.
 
-{% images "src/portfolio-static/assets/images/plaenge-guide.png", "Fontes e paleta de cores do layout.", "post__photo", "post__photo--image" %}
+{% image "plaenge-guide.png", "Guia de fontes e paleta de cores para o site.", "popout" %}
 
 O uso do espaço em branco também foi utilizado para garantir o respiro dos
 elementos e passar simultaneamente o conforto proposto para o layout.
 
-{% images "src/portfolio-static/assets/images/plaenge-Site-home.png", "Layout da página home do site.", "post__photo", "post__photo--image" %}
+{% image "plaenge-Site-home.png", "Layout da página home, mostrando o carrossel, empreendimentos disponíveis e um banner com a frase 'sonhe viver o presente'.", "full-width" %}
 
-{% images "src/portfolio-static/assets/images/plaenge-Site-empreendimento.png", "Detalhe da página empreendimentos do site.", "post__photo", "post__photo--image" %}
+{% image "plaenge-Site-empreendimento.png", "Detalhe da página de empreendimentos com informações técnicas, imagem da planta e fotos do apartamento.", "full-width" %}
 
-{% images "src/portfolio-static/assets/images/plaenge-Site-aplaenge.png", "Trecho da página do site sobre a Plaenge.", "post__photo", "post__photo--image" %}
+{% image "plaenge-Site-aplaenge.png", "Trecho da página sobre a Plaenge, mostrando seus valores, história e diferenciais em destaque. Ao lado, um mapa com todos os locais de atendimento.", "full-width" %}
 
-{% images "src/portfolio-static/assets/images/plaenge-App-home.png", "Detalhe da home e outras telas do aplicativo.", "post__photo", "post__photo--image" %}
+{% image "plaenge-App-home.png", "Telas do aplicativo mostrando a home, eventos e agenda.", "full-width" %}
 
-{% images "src/portfolio-static/assets/images/plaenge-App-outro.png", "Detalhes de outras telas do aplicativo.", "post__photo", "post__photo--image" %}
+{% image "plaenge-App-outro.png", "Duas telas do aplicativo, uma com o status da obra, sua timeline e porcentagem da obra, outra com as solicitações e suas categorias.", "full-width" %}
 
-{% images "src/portfolio-static/assets/images/plaenge-Site-PVC.png", "Design da página home do portal do cliente.", "post__photo", "post__photo--image" %}
+{% image "plaenge-Site-PVC.png", "Página home do portal do cliente com card para solicitações, próxima data de visita, status da obra e banner de indicação para outros clientes.", "full-width" %}
 
-{% images "src/portfolio-static/assets/images/plaenge-Site-PVC2.png", "Detalhe de diversas páginas do portal do cliente.", "post__photo", "post__photo--image" %}
+{% image "plaenge-Site-PVC2.png", "Dois layouts do portal do cliente, um com o status da obra em detalhe, outro com os dados do empreendimento como nome da torre, andar e apartamento.", "full-width" %}

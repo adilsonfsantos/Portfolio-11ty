@@ -1,5 +1,7 @@
 import directoryOutputPlugin from "@11ty/eleventy-plugin-directory-output";
-import eleventySass from "@11tyrocks/eleventy-plugin-sass-lightningcss";
+import path from "node:path";
+import * as sass from "sass";
+// import eleventySass from "@11tyrocks/eleventy-plugin-sass-lightningcss";
 import xmlFiltersPlugin from "eleventy-xml-plugin";
 import { minify } from "html-minifier-terser";
 import markdownIt from "markdown-it";
@@ -7,7 +9,8 @@ import markdownItAttrs from "markdown-it-attrs";
 import mila from "markdown-it-link-attributes";
 
 import blockquote from "./src/11ty/components/blockquote.js";
-import images from "./src/11ty/components/images.js";
+import image from "./src/11ty/components/image.js";
+import video from "./src/11ty/components/video.js";
 
 export default function (eleventyConfig) {
 	// DON'T USE .GITIGNORE
@@ -40,8 +43,11 @@ export default function (eleventyConfig) {
 		return year.toString(); // or `return String(year);`
 	});
 
-	eleventyConfig.addShortcode("images", images);
-	// {% images "path_to_image", "alt_text", "class", "subclass" %}
+	eleventyConfig.addShortcode("image", image);
+	// {% images "path_to_image", "alt_text", "class", priority %}
+
+	eleventyConfig.addShortcode("video", video);
+	// {% images "path_to_video", "type", "poster" %}
 
 	eleventyConfig.addPairedShortcode("blockquote", blockquote);
 	// {% blockquote "Lorem Ipsum" %}
@@ -81,21 +87,44 @@ export default function (eleventyConfig) {
 	// PASSTHROUGHT ELEMENTS
 	eleventyConfig.addPassthroughCopy({
 		"src/root/*": "/",
-		"src/root/assets/fonts/*": "/assets/fonts/",
-		"src/portfolio-static/root/*": "/",
-		"src/portfolio-static/assets/images/noise.webp":
-			"/assets/images/noise.webp",
-		"src/portfolio-static/assets/images/thumbnail.png":
-			"/assets/images/thumbnail.png",
+		"src/root/assets/fonts/**": "/assets/fonts",
+		"src/root/assets/images/**": "/assets/images",
 		"src/portfolio-static/assets/videos/*": "/assets/videos",
 	});
 
 	// SERVER OPTIONS
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+	eleventyConfig.addTemplateFormats("scss");
 	eleventyConfig.addWatchTarget("**/*.(scss|liquid|md)");
 
+	eleventyConfig.addExtension("scss", {
+		outputFileExtension: "css",
+
+		// opt-out of Eleventy Layouts
+		useLayouts: false,
+
+		compile: async function (inputContent, inputPath) {
+			let parsed = path.parse(inputPath);
+			// Don’t compile file names that start with an underscore
+			if (parsed.name.startsWith("_")) {
+				return;
+			}
+
+			let result = sass.compileString(inputContent, {
+				loadPaths: [parsed.dir || ".", this.config.dir.includes],
+			});
+
+			// Map dependencies for incremental builds
+			this.addDependencies(inputPath, result.loadedUrls);
+
+			return async () => {
+				return result.css;
+			};
+		},
+	});
+
 	// MINIFY SASS
-	eleventyConfig.addPlugin(eleventySass);
+	// eleventyConfig.addPlugin(eleventySass);
 
 	// MINIFY HTML
 	eleventyConfig.addTransform("htmlmin", function (content) {

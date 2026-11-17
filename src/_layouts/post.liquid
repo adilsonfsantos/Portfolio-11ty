@@ -1,66 +1,73 @@
 ---
 layout: default.liquid
 permalink: "/projetos/{{page.fileSlug}}/"
+css: post.css
 ---
+{% assign previousPost = collections.post | getPreviousCollectionItem %}
+{% assign src = image | append: "-Banner.png" %}
 <main id="main">
-	<div class="noise"></div>
+	<div class="hero__bg"></div>
 	<article
-		class="post grid__module--site"
+		class="post"
 		itemscope
 		itemtype="http://schema.org/BlogPosting"
-		role="article"
 	>
 		<div class="post__header">
-			<div class="post__header--container">
-				<h1 class="post__header--title" itemprop="name headline">{{ title | escape }}</h1>
-			</div>
+			<h1 class="post__title" itemprop="name headline">
+				{{ title | escape }}
+			</h1>
 			<div class="post__info">
-				<div class="function">
-					<h3 class="post__info--title">Minha Função</h3>
+				<div class="post__info__container">
+					<p class="post__info__title">Minha Função</p>
 					{% for role in roles %}
-						<p class="post__info--text">{{ role }}</p>
+						<p class="post__info__text">{{ role }}</p>
 					{% endfor %}
 				</div>
 				{%- if showteam == true -%}
-					{% include "team" %}
+					<div class="post__info__container">
+						<h3 class="post__info__title">Equipe</h3>
+						{% for person in team %}
+							{%- assign portfolio = person.portfolio -%}
+							<p class="post__info__text">
+							{%- if portfolio -%}
+								<a href="{{ portfolio }}" target="_blank"
+								rel="noopener noreferrer">
+									{{ person.name }}
+								</a>
+							{%- else -%}
+								{{ person.name }}
+							{%- endif -%}, {{ person.role }}
+							</p>
+						{% endfor %}
+					</div>
 				{%- endif -%}
-				<div class="year">
-					<h3 class="post__info--title">Data</h3>
-					<p class="post__info--text">{{ page.date | date: "%Y" }}</p>
+				<div class="post__info__container">
+					<h3 class="post__info__title">Data</h3>
+					<p class="post__info__text">{{ page.date | date: "%Y" }}</p>
 				</div>
 			</div>
-			<div class="post__splash--container">
-				{% assign splash = image | prepend : "src" %}
-				{% images splash, title, "post__splash--picture", "post__splash--image", "banner" %}
-			</div>
+			{% image src, "", "banner", priority %}
 		</div>
 		<div class="post__content" itemprop="articleBody">
-			<div class="post__content--container">
-				{{ content }}
-			</div>
+			{{ content }}
 		</div>
-		<hr>
 	</article>
-	<section class="postnav grid__module--site">
-		<div class="postnav--container">
-			{% assign previousPost = collections.post | getPreviousCollectionItem %}
+	<section class="postnav">
+		<div class="postnav__content">
 			{% if previousPost %}
-				<a
-					href="{{ previousPost.url }}"
-					class="postnav__link"
-					rel="next"
-					>Próximo projeto →
+				<a href="{{ previousPost.url }}" class="postnav__link"
+				rel="next">
+					Próximo projeto
 					<br>
-					<span class="postnav__link--title">{{ previousPost.data.title }}</span>
+					<span class="postnav__title">
+						{{ previousPost.data.title }}
+					</span>
     			</a>
     		{%- else -%}
-				<a
-					href="{{ "/" | url }}"
-					class="postnav__link"
-					rel="prev"
-					>Sem mais projetos →
+				<a href="{{ "/" | url }}" class="postnav__link">
+					Sem mais projetos →
 					<br>
-					<span class="postnav__link--title">Voltar para a home</span>
+					<span class="postnav__title">Voltar para a home</span>
 				</a>
     		{% endif %}
 		</div>

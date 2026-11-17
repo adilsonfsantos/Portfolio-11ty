@@ -15,14 +15,13 @@
 		"name": "Adilson Santos",
 		"email": "adilson.design@outlook.com"
 	},
-	"social": [
-		{
-			"name": "Github",
-			"url": "https://github.com/adilsonfsantos"
-		},
-		{
-			"name": "LinkedIn",
-			"url": "https://linkedin.com/in/adilsonfsantos"
-		}
-	]
+	"social": {
+		"links": [
+			{
+				"name": "LinkedIn",
+				"url": "https://linkedin.com/in/adilsonfsantos",
+				"username": "adilsonfsantos"
+			}
+		]
+	}
 }

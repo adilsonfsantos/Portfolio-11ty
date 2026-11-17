@@ -1,7 +1,7 @@
 ---
 title: PrettyNew - Quero vender
 date: 2022-06-01T00:00:00.000Z
-image: /portfolio-static/assets/images/prettyNew-Banner.png
+image: prettyNew
 description: >-
   Conheça um pouco do processo em trazer praticidade e elegância para o site e o
   aplicativo da construtora Plaenge.
@@ -17,27 +17,25 @@ team:
 
 ## Introdução
 
-Desde 2014 a PrettyNew busca unir a moda com o consumo consciente, atuando como
-um marketplace de produtos de luxo a PrettyNew conecta pessoas que desejam
-adquirir itens de alta qualidade com quem busca dar um novo destino as suas
-peças, sendo referência pela sua autenticidade rigorosa e preocupação com o
-impacto ambiental.
-
-## Desafio
+Desde 2014, a PrettyNew busca unir a moda com o consumo consciente, conectando
+pessoas que desejam adquirir itens de alta qualidade com quem busca dar um novo
+destino às suas peças, sendo referência pela sua autenticidade rigorosa e
+preocupação com o impacto ambiental.
 
 Para orientar os usuários e divulgar a marca PrettyNew, foi solicitada à
-[Agência Chleba](https://www.chleba.net/) uma animação que demonstrasse o passo
-a passo da venda de produtos no site da PrettyNew onde fui responsável pela
+[Agência Chleba](https://www.chleba.net/) uma animação que demonstre o passo a
+passo da venda de produtos no site da PrettyNew, da qual fui responsável pela
 criação.
 
 ## Solução
 
-Para isso, foi definido que o ponto-chave que a animação deveria destacar seria
-a simplicidade no processo, então buscou-se fazer uma animação com poucos
-elementos visuais que não distraíssem o cliente.
+Por ser um mercado de alto valor, usuários podem ter receio de vender por meio
+de plataformas.
 
-Assim foi feita a seguinte animação.
+Sendo assim, decidi que a animação deveria destacar a praticidade no processo,
+buscando trazer clareza na leitura das informações. Para isso, não foram
+utilizados elementos da marca que distraíssem o usuário, apenas o processo e os
+textos possuem destaque em um fundo mais sóbrio.
 
-<video src="/assets/videos/prettyNew-Feed.mp4" preload="none" poster="/assets/videos/prettyNew-Feed-Poster.webp" controls></video>
-
-<video src="/assets/videos/prettyNew-Stories.mp4" preload="none" poster="/assets/videos/prettyNew-Stories-Poster.webp" controls></video>
+{% video "prettyNew-Feed.mp4", "prettyNew-Feed-Poster.webp", "popout" %}
+{% video "prettyNew-Stories.mp4", "prettyNew-Stories-Poster.webp", "popout" %}

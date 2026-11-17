@@ -2,72 +2,73 @@
 @use "../abstracts/variables";
 
 .footer {
-	align-items: center;
-	display: grid;
-	background: variables.$black;
+	background: variables.$color-black;
 	position: relative;
+	isolation: isolate;
 
 	&__gradient {
 		background: linear-gradient(
-			90deg,
-			variables.$primary 0%,
-			variables.$secondary 100%
+			in oklab 90deg,
+			variables.$color-primary 0%,
+			variables.$color-secondary 100%
 		);
-		height: 1px;
-		grid-column: 1/-1;
+		block-size: 1px;
+		inline-size: 100%;
 	}
 
 	&__container {
-		width: 100%;
+		margin-inline: auto;
+		max-inline-size: variables.$viewport-max;
+		padding-block: variables.$space-l;
+		padding-inline: variables.$grid-gutter;
 	}
 
 	&__content {
 		align-items: center;
 		display: flex;
 		flex-wrap: wrap;
-		padding: (variables.$base-size * 2) 0;
-
-		&--copyright {
-			@include mixins.typescale(scale--1, normal, text);
-
-			color: variables.$white-90;
-			margin: (variables.$base-size) 0;
-			place-self: center;
-		}
-
-		&--spacer {
-			flex-grow: 1;
-		}
+		justify-content: space-between;
+		gap: variables.$space-m;
 	}
 
-	&__content--social {
+	&__copyright {
+		@include mixins.typescale(scale-0, normal, text);
+
+		color: variables.$color-white-90;
+	}
+
+	&__spacer {
+		flex-grow: 1;
+	}
+
+	&__social {
 		display: flex;
 		flex-wrap: wrap;
-		list-style-type: none;
-
-		li {
-			margin: variables.$space-2xs 0;
-		}
-
-		> li:not(:last-child) {
-			margin-right: variables.$space-m;
-		}
+		gap: variables.$space-m;
+		list-style: none;
+		padding: 0;
 
 		a {
-			color: variables.$white-90;
-			padding: variables.$space-2xs 0;
-
 			@include mixins.typescale(scale-0, medium, text);
-			@include mixins.transition(color);
 
-			@include mixins.viewport(small) {
-				@include mixins.typescale(scale--1, medium, text);
-			}
+			color: variables.$color-white-70;
+			padding-block: variables.$space-xs;
+			transition: color 0.3s ease;
 		}
 
-		a:hover,
-		a:focus {
-			color: variables.$white;
+		a:focus-visible {
+			outline: 2px solid variables.$color-white;
+			outline-offset: 2px;
+		}
+
+		a:active {
+			color: variables.$color-white;
+		}
+
+		@media (hover: hover) and (pointer: fine) {
+			a:hover {
+				color: variables.$color-white;
+			}
 		}
 	}
 }

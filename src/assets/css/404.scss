@@ -1,12 +1,9 @@
 @charset 'UTF-8';
-@use "abstracts/variables";
-@use "abstracts/mixins";
-@use "base/base";
+@use "base/reset";
 @use "base/typography";
-@use "layout/grid";
-@use "layout/footer";
-@use "layout/header";
+@use "base/base";
 @use "components/btn";
-@use "components/noise";
-@use "components/bg-grid";
-@use "pages/404.scss" as error;
+@use "layout/header";
+@use "pages/not-found";
+@use "layout/hero";
+@use "layout/footer";

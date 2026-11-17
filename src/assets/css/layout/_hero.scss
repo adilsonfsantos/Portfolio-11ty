@@ -2,37 +2,49 @@
 @use "../abstracts/variables";
 
 .hero {
-	display: grid;
-	height: 100%;
 	position: relative;
+	overflow: hidden;
 
-	&__container {
-		width: 100%;
-	}
-
-	&__normal {
+	&__content {
+		max-inline-size: variables.$viewport-max;
+		padding-inline: variables.$grid-gutter;
+		margin-inline: auto;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		min-height: 96svh;
-		padding-bottom: variables.$space-xs;
-		padding-top: variables.$space-2xl;
-		z-index: 2;
+		min-block-size: clamp(20rem, 88svh, 56rem);
+		padding-block: variables.$space-3xl variables.$space-l;
+	}
 
-		&--title {
-			@include mixins.typescale(scale-6, medium, title);
+	&__title {
+		@include mixins.typescale(scale-6, medium, title);
 
-			color: variables.$white;
-			margin: 0;
-		}
+		color: variables.$color-white;
+		font-family: variables.$font-headline;
+	}
 
-		&--subtitle {
-			@include mixins.font-family("iA Writer");
-			@include mixins.typescale(scale-0, normal, text);
+	&__subtitle {
+		@include mixins.typescale(scale-1, normal, text);
 
-			color: variables.$white-90;
-			margin-top: variables.$space-xs;
-			max-width: variables.$base-size * 40;
-		}
+		color: variables.$color-white-90;
+		margin-block-start: variables.$space-m;
+		max-inline-size: 60ch;
+		text-wrap: balance;
+	}
+
+	&__bg {
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		background:
+			linear-gradient(to right, variables.$color-black-10 1px, transparent 1px),
+			linear-gradient(to bottom, variables.$color-black-10 1px, transparent 1px);
+		background-size: 1.5em 1.5em;
+		mask-image: linear-gradient(
+			180deg,
+			rgba(variables.$color-black, 0%) 0%,
+			rgba(variables.$color-black, 50%) 50%,
+			rgba(variables.$color-white, 0%) 100%
+		);
 	}
 }

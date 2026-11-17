@@ -1,7 +1,7 @@
 ---
 title: Pó de Chá
 date: 2020-02-16T00:00:00.000Z
-image: /portfolio-static/assets/images/podecha-Banner.png
+image: podecha
 description: >-
   Processo da criação da interface da Pó de Chá.
 categories:
@@ -22,36 +22,32 @@ de forma que os óleos das ervas são preservados para o consumo.
 
 E para trazer a visão da Pó de Chá para a área digital, a
 [Agência Chleba](https://www.chleba.net/) foi escolhida para projetar e
-desenvolver um site, o qual fui responsável pela criação da interface.
-
-## Desafio
-
-Transmitir a sensação de bem-estar e a relação com a natureza dos produtos da Pó
-de Chá por meio de uma interface moderna e acessível.
+desenvolver um site que transmitisse a sensação de bem-estar e a relação com a
+natureza dos produtos por meio de uma interface moderna e acessível.
 
 ## Solução
 
-Com base nas cores da marca, foi desenvolvida uma paleta que pudesse passar os
+Com base nas cores da marca, foi desenvolvida uma paleta que passasse os
 sentimentos de leveza e bem-estar desejados. Além disso, foi elaborada uma
 escala tipográfica de modo que houvesse harmonia entre o texto e os elementos.
 
-{% images "src/portfolio-static/assets/images/podecha-Guide.png", "Imagem demonstra uma parte do layout da página sobre a história da Sagrado", "post__photo", "post__photo--image" %}
+{% image "podecha-Guide.png", "Guia de tipografia e paleta de cores com variações da marca Pó de Chá.", "popout" %}
 
 Para o desenvolvimento da interface, foi decidido que os produtos da Pó de Chá
-seriam o destaque principal, para isso foram utilizadas ilustrações dos chás em
+seriam o destaque principal. Para isso, foram utilizadas ilustrações dos chás em
 diversas áreas do site para que o público se sentisse familiarizado com as
 embalagens da marca.
 
 Além disso, buscando trazer um sentimento aconchegante e receptivo, foram
 utilizadas formas arredondadas para os elementos.
 
-{% images "src/portfolio-static/assets/images/podecha-Home.png", "Imagem demonstra uma parte do layout da página sobre a história da Sagrado", "post__photo", "post__photo--image" %}
+{% image "podecha-Home.png", "Página home com carrossel, chás para a venda, explicação da produção, fotos do Instagram e mapa dos estabelecimentos.", "full-width" %}
 
-{% images "src/portfolio-static/assets/images/podecha-Parceiro.png", "Imagem demonstra uma parte do layout da página sobre a história da Sagrado", "post__photo", "post__photo--image" %}
+{% image "podecha-Parceiro.png", "Layout da página seja parceiro, explicando benefícios de ser um parceiro e um formulário para inscrição.", "full-width" %}
 
-{% images "src/portfolio-static/assets/images/podecha-Receita.png", "Imagem demonstra uma parte do layout da página sobre a história da Sagrado", "post__photo", "post__photo--image" %}
+{% image "podecha-Receita.png", "Design da página de receitas, demonstrando formas de preparo e ingredientes para o chá.", "full-width" %}
 
 Também foram desenvolvidas algumas animações para instruir os clientes sobre o
 modo de preparo do chá.
 
-<video src="/assets/videos/Po_de_Cha-Gifs.mp4" preload="none" poster="/assets/videos/Po_de_Cha-Gifs-Poster.webp" controls></video>
+{% video "Po_de_Cha-Gifs.mp4", "Po_de_Cha-Gifs-Poster.webp", "popout" %}

@@ -1,0 +1,14 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.hero--not-found {
+	text-align: center;
+
+	.hero__content {
+		align-items: center;
+	}
+
+	a[role="button"] {
+		margin-block-start: variables.$space-m;
+	}
+}

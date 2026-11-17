@@ -1,69 +1,60 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>{% if title %} {{ title }} | {{ site.title }} {% else%} {{ site.title }} {% endif %}</title>
+{% assign socialUrls = site.social.links | map: 'url' | json %}
+{% assign canonicalUrl = site.url | append: page.url %}
+{% assign socialImageUrl = "value" %}
+{% if title %}
+	{% assign title = title | append: " | " | append: site.name %}
+{% else %}
+	{% assign title = site.name | append: " - Designer" %}
+{% endif %}
 
-<meta name="author" content="Adilson Santos">
-
-<meta
-  name="description"
-  content="{% if description %}{{ description }}{% else %}{{site.description}}{% endif %}"
-/>
-
-<link rel="canonical" href="{{site.url}}{{page.url}}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>{{ title }}</title>
+<meta name="author" content="{{site.author.name}}"/>
+<meta name="description" content="{{ description }}"/>
+<link rel="canonical" href="{{ canonicalUrl }}" />
 
 {%- comment -%}Twitter{%- endcomment -%}
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title"
-	content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"/>
-<meta name="twitter:description" content="
-	{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"/>
-<meta name="twitter:site" content="{{ site.url }}" />
+<meta name="twitter:title" content="{{ title }}"/>
+<meta name="twitter:description" content="{{ description }}"/>
 <meta name="twitter:creator" content="{{ site.author.name }}" />
-<meta name="twitter:image:src" content="{{ site.url }}{{ image }}"/>
+<meta name="twitter:image" content="{{ socialImageUrl }}"/>
 <meta name="twitter:dnt" content="on">
 
 {%- comment -%}Open Graph{%- endcomment -%}
-<meta
-	name="og:title"
-	content="{% if page.title %}{{ page.title }}{% else %}{{site.title}}{% endif %}"/>
-<meta
-	name="og:description"
-	content="{% if page.description %}{{ page.description }}
-	{% else %}{{ site.description }}{% endif %}"
-/>
-<meta name="og:image" content="{{ site.url }}{{ image }}" />
-<meta name="og:url" content="{{ site.url }}{{ page.url }}" />
+<meta name="og:title" content="{{ title }}"/>
+<meta name="og:description" content="{{ description }}"/>
+<meta name="og:image" content="{{ socialImageUrl }}" />
+<meta name="og:url" content="{{ canonicalUrl }}" />
 <meta name="og:site_name" content="{{ site.name }}" />
 <meta name="og:locale" content="{{ site.lang }}"/>
 <meta name="og:type" content="website"/>
 
+{%- comment -%}Icons{%- endcomment -%}
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+
+<meta content="nopin" name="pinterest" />
+<meta name="generator" content="{{ eleventy.generator }}">
+<meta
+	name="robots"
+	content="noimageindex, nositelinkssearchbox, noarchive, noai, noimageai"
+>
+
 {%- comment -%}JSOn-LD Structured data{%- endcomment -%}
-<script type="application/ld+json">
-	{"description":
-		"{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}",
+<script type="application/ld+json"> {
+	"@context": "https://schema.org",
 	"@type": "WebSite",
-	"url": "{{ site.url }}",
+	"url": "{{ canonicalUrl }}",
 	"headline": "{{ site.title }}",
 	"name": "{{ site.name }}",
-	{% assign sameLinks = site.social | map: 'url' %}
-	"sameAs": {{ sameLinks | json }},
-	"image": "{{ site.url }}{{ image | url }}",
+	"image": "{{ socialImageUrl }}",
 	"author": {
 		"@type": "Person",
 		"name": "{{site.author.name}}"
 	},
-	"@context": "https://schema.org"}
+	"sameAs": {{ socialUrls }},
+	}
 </script>
-{%- comment -%}Icons{%- endcomment -%}
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f0f0f">
-<meta name="msapplication-TileColor" content="#0f0f0f">
-<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
-<link rel="manifest" href="/site.webmanifest">
-<link color="#0F0F0F" href="/safari-pinned-tab.svg" rel="mask-icon"/>
-<meta content="#0F0F0F" name="msapplication-TileColor"/>
-<meta content="/mstile-144x144.png" name="msapplication-TileImage"/>
-<meta content="/browserconfig.xml" name="msapplication-config"/>
-<meta content="nopin" name="pinterest" />
-<meta name="generator" content="{{ eleventy.generator }}">
-<meta name="robots" content="noimageindex, nositelinkssearchbox, noarchive, noai, noimageai">

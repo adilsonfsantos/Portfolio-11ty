@@ -1,119 +1,85 @@
 @use "sass:list";
-@use "sass:math";
 @use "sass:map";
 @use "variables";
 
-@mixin viewport($size, $orientation: portrait, $width: width) {
-	@if not(list.index(map.keys(variables.$grid-breakpoints-map), $size)) {
-		@warn "Atenção: `#{$size}` não é um breakpoint válido.";
-	} @else if $orientation == landscape {
-		@media (min-width: #{map.get(variables.$grid-breakpoints-map, $size, $width)}) and (orientation: landscape) {
-			@content;
-		}
-	} @else {
-		@media (min-width: #{map.get(variables.$grid-breakpoints-map, $size, $width)}) {
-			@content;
-		}
+// Typography
+@mixin typescale($size, $weight: normal, $line: text) {
+	$type-map: variables.$type-map;
+
+	@if not list.index(map.keys($type-map), $size) {
+		@warn "Atenção: `#{$size}` não é um tamanho válido.";
 	}
-}
 
-@mixin grid-image {
-	grid-template-columns: minmax(5vw, 1fr) minmax(0, 1024px) minmax(5vw, 1fr);
-}
+	$font-min: map.get($type-map, $size, min-size);
+	$font-max: map.get($type-map, $size, max-size);
+	$tracking-min: map.get($type-map, $size, min-tracking);
+	$tracking-max: map.get($type-map, $size, max-tracking);
 
-@mixin grid-post {
-	grid-template-columns: minmax(0, 680px);
+	font-size: calc($font-min + ($font-max - $font-min) * variables.$progress);
+	letter-spacing: calc(
+		$tracking-min + ($tracking-max - $tracking-min) * variables.$progress
+	);
 
-	@include viewport(large) {
-		grid-template-columns: 1fr minmax(0, 680px) 1fr;
+	@supports (text-box: trim-both cap alphabetic) {
+		text-box: trim-both cap alphabetic;
 	}
-}
 
-// ANIMATION
-@mixin transition(
-	$name: all,
-	$duration: variables.$duration-standard,
-	$speed: variables.$animation-standard,
-	$delay: 0ms
-) {
-	transition: $name $duration $speed $delay;
-}
-
-@mixin animation(
-	$name,
-	$duration: variables.$duration-standard,
-	$speed: variables.$animation-standard,
-	$loop: 1,
-	$delay: 0ms
-) {
-	animation: $name $duration $speed $loop;
-}
-
-// FONT
-@mixin typescale($size, $weight: 400, $line) {
-	font-size: #{map.get(variables.$type-map, $size, size)};
-
-	@if $weight == "bold" {
+	@if $weight == semibold {
 		font-weight: 600;
-	} @else if $weight == "medium" {
+	} @else if $weight == medium {
 		font-weight: 500;
-	} @else if $weight == "normal" {
+	} @else if $weight == normal {
 		font-weight: 400;
-	} @else if $weight == "light" {
+	} @else if $weight == light {
 		font-weight: 300;
 	} @else {
-		@warn " Atenção: `#{$weight}` não é um valor válido.";
+		@warn "Atenção: `#{$weight}` não é um valor válido.";
 	}
 
-	@if $line == "title" {
-		line-height: 100%;
-	} @else if $line == "headline" {
-		line-height: 120%;
-	} @else if $line == "text" {
-		line-height: 160%;
+	@if $line == title {
+		line-height: 1.1;
+	} @else if $line == headline {
+		line-height: 1.2;
+	} @else if $line == text {
+		line-height: 1.6;
 	} @else {
-		@warn " atenção: `#{$line}` não é um valor válido.";
+		@warn "Atenção: `#{$line}` não é um valor válido.";
 	}
 }
 
-@mixin font-family($family) {
-	@if $family == "Inter" {
-		font-family:
-			"Inter UI",
-			-apple-system,
-			BlinkMacSystemFont,
-			"Helvetica Neue",
-			Roboto,
-			Arial,
-			sans-serif,
-			"Apple Color Emoji",
-			"Segoe UI Emoji",
-			"Segoe UI Symbol",
-			"Noto Color Emoji";
-	} @else if $family == "iA Writer" {
-		font-family:
-			"iA Writer Duo",
-			-apple-system,
-			BlinkMacSystemFont,
-			"Helvetica Neue",
-			Roboto,
-			Arial,
-			sans-serif,
-			"Apple Color Emoji",
-			"Segoe UI Emoji",
-			"Segoe UI Symbol",
-			"Noto Color Emoji";
-	} @else {
-		@warn " atenção: `#{$family}` não é um valor válido.";
+// abstracts/_grid.scss ou layout/_grid.scss
+@mixin content-grid {
+	display: grid;
+	grid-template-columns:
+		[full-width] minmax(variables.$grid-gutter, 1fr)
+		[popout-start] minmax(0, variables.$space-xl)
+		[content-start] minmax(0, variables.$grid-content-size)
+		[content-end] minmax(0, variables.$space-xl)
+		[popout-end] minmax(variables.$grid-gutter, 1fr)
+		[full-width-end];
+
+	> * {
+		grid-column: full-width / full-width-end;
+
+		@media (width >= variables.$breakpoint-desktop) {
+			grid-column: content-start / content-end;
+		}
+	}
+
+	> .full-width {
+		grid-column: full-width / full-width-end;
+	}
+
+	> .popout {
+		@media (width >= variables.$breakpoint-desktop) {
+			grid-column: popout-start / popout-end;
+		}
 	}
 }
 
-@mixin font-position($position) {
-	@if $position == center {
-		text-align: center;
-	} @else if $position == right {
-		text-align: right;
-	} @else if $position == left {
-		text-align: left;
+// Flow (vertical rhythm)
+@mixin flow($space: variables.$space-s) {
+	> * + * {
+		margin-block-start: var(--flow-space, #{$space});
 	}
 }

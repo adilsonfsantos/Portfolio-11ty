@@ -2,70 +2,129 @@
 @use "../abstracts/variables";
 
 .contato {
+	display: flex;
 	align-items: center;
-	display: grid;
-	overflow: hidden;
-	padding: variables.$space-3xl 0;
+	justify-content: center;
 	position: relative;
+	overflow: hidden;
+	min-block-size: clamp(20rem, 88svh, 30rem);
 
 	&__gradient {
+		position: absolute;
+		inset-block: 50% -50%;
+		inset-inline-start: -10%;
+		inline-size: 120%;
+		pointer-events: none;
 		background: linear-gradient(
-			45deg,
-			variables.$primary 0%,
-			variables.$secondary 100%
+			in oklab 45deg,
+			variables.$color-primary 0%,
+			variables.$color-secondary 100%
 		);
-		bottom: -50%;
-		content: "";
-		left: -10%;
 		mask-image: radial-gradient(
-			50% 50% at 50% 50%,
+			ellipse closest-side,
 			rgb(0 0 0 / 40%) 0%,
 			rgb(255 255 255 / 0%) 100%
 		);
-		pointer-events: none;
-		position: absolute;
-		top: 50%;
-		width: 120%;
 	}
 
-	&__info {
-		grid-column: 1/-1;
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		gap: variables.$space-l;
+		margin-inline: auto;
+		max-inline-size: variables.$viewport-max;
+		padding-block: variables.$space-2xl;
+		padding-inline: variables.$grid-gutter;
 
-		@include mixins.viewport(small) {
+		@media (width >= 33rem) {
+			justify-content: center;
 			text-align: center;
 		}
 	}
 
-	&__call {
+	&__cta {
+		@include mixins.typescale(scale-6, medium, title);
+
+		color: variables.$color-white;
+		font-family: variables.$font-headline;
+	}
+
+	&__subtitle {
+		@include mixins.typescale(scale-1, normal, text);
+
+		color: variables.$color-white-90;
+		max-inline-size: 60ch;
+		margin-inline: auto;
+		text-wrap: balance;
+	}
+
+	&__email {
+		@include mixins.typescale(scale-1, normal, text);
+
+		color: variables.$color-secondary-90;
+		text-decoration: underline;
+		overflow-wrap: break-word;
+
+		&:focus-visible {
+			outline: 2px solid variables.$color-secondary-90;
+			outline-offset: 2px;
+		}
+	}
+
+	&__info {
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		flex-wrap: wrap;
+		gap: variables.$space-m;
+		max-inline-size: 50ch;
+		margin-inline: auto;
+		inline-size: 100%;
 
-		&--cta {
-			@include mixins.typescale(scale-6, medium, headline);
-
-			color: variables.$white;
-			margin-bottom: variables.$space-xs;
-		}
-
-		&--subtitle {
+		&__title {
 			@include mixins.typescale(scale-0, normal, text);
-			@include mixins.font-family("iA Writer");
 
-			color: variables.$white-90;
-			max-width: 640px;
+			color: variables.$color-white;
 		}
 
-		&--email {
-			overflow-wrap: break-word;
+		&__text {
+			@include mixins.typescale(scale-0, normal, text);
+
+			color: variables.$color-white-90;
+		}
+
+		b {
+			display: none;
+		}
+
+		&-spacer {
+			flex-grow: 1;
+			border-block-start: variables.$color-black-30 1px solid;
+		}
+
+		&__container {
+			display: flex;
+			align-items: center;
+			gap: variables.$space-2xs;
+			flex-wrap: wrap;
+			inline-size: 100%;
 		}
 	}
 
 	a {
-		color: variables.$secondary-90;
+		@include mixins.typescale(scale-0, medium, text);
+
+		color: variables.$color-secondary-90;
+		padding-block: variables.$space-xs;
+		text-decoration: underline;
+		overflow-wrap: break-word;
+
+		&:focus-visible {
+			outline: 2px solid variables.$color-secondary-90;
+			outline-offset: 2px;
+		}
 	}
 
-	b {
+	/* Explicit utility to hide decorative-only text */
+	&__hidden {
 		display: none;
 	}
 }
